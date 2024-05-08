@@ -4,19 +4,21 @@ using System.Data.SqlClient;
 using System.Windows;
 using Warehouse.storage1;
 using Warehouse.View.Contractor;
-using Warehouse.View.EditPage;
+using Warehouse.View.Employee;
 
 namespace Warehouse.View.Main
 {
     public partial class MainPage : Window
     {
         private ContractorRepo contractorRepo;
+        private EmployeeRepo employeeRepo;
 
         public MainPage()
         {
             InitializeComponent();
 
             contractorRepo = new ContractorRepoImpl();
+            employeeRepo = new EmployeeRepoImpl();
         }
 
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
@@ -40,6 +42,19 @@ namespace Warehouse.View.Main
         private void Contractor_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             contractorRepo.fetchContractorToGrid(ContractorGrid);
+
+            ContractorGrid.Visibility = Visibility.Visible;
+
+            EmployeeGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void Employee_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            employeeRepo.fetchEmployeeToGrid(EmployeeGrid);
+
+            EmployeeGrid.Visibility = Visibility.Visible;
+
+            ContractorGrid.Visibility = Visibility.Collapsed;
         }
 
         private void AddContractor_Click(object sender, RoutedEventArgs e)
@@ -79,6 +94,52 @@ namespace Warehouse.View.Main
                 catch (SqlException)
                 {
                     MessageBox.Show("Удаление невозможно. Удалите связанные данные с этим контрагентом!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите поле для удаления!");
+            }
+        }
+
+        private void AddEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            CreateEmployee employee = new CreateEmployee(EmployeeGrid);
+            employee.ShowDialog();
+        }
+
+        private void EditEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = EmployeeGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                EditEmployee employee = new EditEmployee(Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), Convert.ToString(selectedRow.Row.ItemArray[2]), Convert.ToString(selectedRow.Row.ItemArray[3]), Convert.ToString(selectedRow.Row.ItemArray[4]), EmployeeGrid);
+                employee.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Не выбрана строка для редактирования", "Ошибка", MessageBoxButton.OK);
+            }
+        }
+
+        private void DeleteEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = EmployeeGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                try
+                {
+                    long employeeId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
+
+                    employeeRepo.deleteEmployee(employeeId);
+                    employeeRepo.fetchEmployeeToGrid(EmployeeGrid);
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этим сотрудником!");
                     return;
                 }
             }

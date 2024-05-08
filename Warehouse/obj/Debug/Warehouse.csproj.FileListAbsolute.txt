@@ -167,3 +167,7 @@ D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Contractor\Cr
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Contractor\CreateContractor.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Contractor\EditContractor.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Contractor\EditContractor.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Employee\CreateEmployee.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Employee\CreateEmployee.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Employee\EditEmployee.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Employee\EditEmployee.baml

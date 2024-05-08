@@ -14,9 +14,7 @@
 
         public string bankName { get; set; }
 
-        public ContractorEntity()
-        {
-        }
+        public ContractorEntity() { }
 
         public ContractorEntity(long contractorId, string address, string title, string settlementAccount, string phoneNumber, string bankName)
         {
