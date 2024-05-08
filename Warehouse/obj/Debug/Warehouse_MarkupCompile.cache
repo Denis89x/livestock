@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Учеба\Диплом\warehouse-main\Warehouse\App.xaml
-1655306406
+18-1726513956
 
-33-1385026160
+38-1942469951
 33-556314184
-Auth\AuthPage.xaml;Auth\MainWindow.xaml;Profile\PrfSettings.xaml;View\AddPage\AddFromComboBoxOrder.xaml;View\AddPage\OrderAdd.xaml;View\AddPage\ProductAdd.xaml;View\AddPage\ProductType.xaml;View\AddPage\SupplierAdd.xaml;View\AuthView.xaml;View\EditPage\ProductEdit.xaml;View\EditPage\ProductTypeEdit.xaml;View\EditPage\SupplierEdit.xaml;View\FIltrationAndSearch\Filtration.xaml;View\FIltrationAndSearch\Search.xaml;View\Main\MainPage.xaml;View\OutputDocuments\MainOutput.xaml;
+Auth\AuthPage.xaml;Auth\MainWindow.xaml;Profile\PrfSettings.xaml;View\AddPage\AddFromComboBoxOrder.xaml;View\AddPage\OrderAdd.xaml;View\AddPage\ProductAdd.xaml;View\AddPage\ProductType.xaml;View\AddPage\SupplierAdd.xaml;View\AuthView.xaml;View\Contractor\CreateContractor.xaml;View\Contractor\EditContractor.xaml;View\EditPage\ProductEdit.xaml;View\EditPage\ProductTypeEdit.xaml;View\EditPage\SupplierEdit.xaml;View\FIltrationAndSearch\Filtration.xaml;View\FIltrationAndSearch\Search.xaml;View\Main\MainPage.xaml;View\OutputDocuments\MainOutput.xaml;
 
 False
 

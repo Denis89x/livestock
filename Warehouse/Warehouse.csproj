@@ -101,6 +101,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Entity\ContractorEntity.cs" />
     <Compile Include="DTO\ComboBoxDTO.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Profile\PrfSettings.xaml.cs">
@@ -112,6 +113,8 @@
     <Compile Include="storage1\AuthRepo.cs" />
     <Compile Include="storage1\AuthRepoImpl.cs" />
     <Compile Include="storage1\AuthSession.cs" />
+    <Compile Include="storage1\ContractorRepo.cs" />
+    <Compile Include="storage1\ContractorRepoImpl.cs" />
     <Compile Include="storage1\Database.cs" />
     <Compile Include="Storage\ComboBoxOrder.cs" />
     <Compile Include="View\AddPage\AddFromComboBoxOrder.xaml.cs">
@@ -131,6 +134,12 @@
     </Compile>
     <Compile Include="View\AuthView.xaml.cs">
       <DependentUpon>AuthView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contractor\CreateContractor.xaml.cs">
+      <DependentUpon>CreateContractor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contractor\EditContractor.xaml.cs">
+      <DependentUpon>EditContractor.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\EditPage\ProductEdit.xaml.cs">
       <DependentUpon>ProductEdit.xaml</DependentUpon>
@@ -200,6 +209,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AuthView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contractor\CreateContractor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Contractor\EditContractor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

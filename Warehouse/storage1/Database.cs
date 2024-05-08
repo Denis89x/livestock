@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Controls;
 
 namespace Warehouse.storage1
 {
@@ -30,6 +31,24 @@ namespace Warehouse.storage1
             {
                 sqlConnection.Open();
             }
+        }
+
+        public void selectQuery(string query, DataGrid dataGrid)
+        {
+            checkConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dataGrid.ItemsSource = dataTable.DefaultView;
+            checkConnection();
+        }
+
+        public void executeQuery(string query)
+        {
+            checkConnection();
+            SqlCommand command = new SqlCommand(query, sqlConnection);
+            command.ExecuteNonQuery();
+            checkConnection();
         }
     }
 }

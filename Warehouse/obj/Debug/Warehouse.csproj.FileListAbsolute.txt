@@ -163,3 +163,7 @@ D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\Warehouse.Properti
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\Warehouse.csproj.GenerateResource.cache
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\Warehouse.csproj.CoreCompileInputs.cache
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\Warehouse.csproj.Up2Date
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Contractor\CreateContractor.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Contractor\CreateContractor.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Contractor\EditContractor.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Contractor\EditContractor.baml

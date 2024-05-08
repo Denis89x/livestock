@@ -61,7 +61,7 @@
             <DataGrid   
                 Margin="160,30,30,30" 
                 Visibility="Visible"
-                x:Name="ProductTypeGrid" 
+                x:Name="ContractorGrid" 
                 AutoGenerateColumns="false"
                 CanUserResizeColumns="False" 
                 CanUserAddRows="False" 
@@ -73,17 +73,21 @@
                 IsReadOnly="True"
                 Foreground="#FF7643D2">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ProductTypeId" Binding="{Binding product_type_id}" Visibility="Hidden"/>
-                    <DataGridTextColumn Header="Наименование" Width="*" Binding="{Binding type_name}"/>
+                    <DataGridTextColumn Header="ContractorId" Binding="{Binding contractor_id}" Visibility="Hidden"/>
+                    <DataGridTextColumn Header="Адрес" Width="*" Binding="{Binding address}"/>
+                    <DataGridTextColumn Header="Наименование" Width="*" Binding="{Binding title}"/>
+                    <DataGridTextColumn Header="Расчётный номер" Width="*" Binding="{Binding settlement_account}"/>
+                    <DataGridTextColumn Header="Номер телефона" Width="*" Binding="{Binding phone_number}"/>
+                    <DataGridTextColumn Header="Название банка" Width="*" Binding="{Binding bank_name}"/>
                 </DataGrid.Columns>
                 <DataGrid.ContextMenu>
                     <ContextMenu>
-                        <MenuItem x:Name="AddProductType" Header="Добавить"/>
-                        <MenuItem x:Name="EditProductType" Header="Редактировать"/>
-                        <MenuItem x:Name="DeleteProductType"  Header="Удалить"/>
-                        <MenuItem x:Name="FiltrationProductType" Header="Фильтрация"/>
-                        <MenuItem x:Name="SearchProductType" Header="Поиск"/>
-                        <MenuItem x:Name="ProductTypeCancel" Header="Отменить"/>
+                        <MenuItem x:Name="AddContractor" Header="Добавить" Click="AddContractor_Click"/>
+                        <MenuItem x:Name="EditContractor" Header="Редактировать" Click="EditContractor_Click"/>
+                        <MenuItem x:Name="DeleteContractor" Header="Удалить" Click="DeleteContractor_Click"/>
+                        <MenuItem x:Name="FiltrationContractor" Header="Фильтрация"/>
+                        <MenuItem x:Name="SearchContractor" Header="Поиск"/>
+                        <MenuItem x:Name="CancelContractor" Header="Отменить"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
@@ -99,43 +103,43 @@
                     </Button>
                 </Grid>
                 <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FF003B75">
-                    <ListViewItem x:Name="Order" Height="60" >
+                    <ListViewItem x:Name="Contractor" Height="60" PreviewMouseLeftButtonDown="Contractor_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="NewspaperPlus" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Заказ" VerticalAlignment="Center" Margin="0 10"/>
+                            <TextBlock Text="Контрагенты" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="60" x:Name="Supplier">
+                    <ListViewItem Height="60" x:Name="Supplier" Visibility="Collapsed">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="BookAccount" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Поставщики" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="60" x:Name="Product">
+                    <ListViewItem Height="60" x:Name="Product" Visibility="Collapsed">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="PackageVariantPlus" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Продукты" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="ProductType" Height="60">
+                    <ListViewItem x:Name="ProductType" Height="60" Visibility="Collapsed">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="PackageVariant" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Тип продукта" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="Output" Height="60">
+                    <ListViewItem x:Name="Output" Height="60" Visibility="Collapsed">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="MicrosoftWord" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Документы" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="Settings" Height="60">
+                    <ListViewItem x:Name="Settings" Height="60" Visibility="Collapsed">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="CogOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Настройки" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="AdminRegistration" Height="60">
+                    <ListViewItem x:Name="AdminRegistration" Height="60" Visibility="Collapsed">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="AccountPlusOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Регистрация" VerticalAlignment="Center" Margin="0 10"/>
