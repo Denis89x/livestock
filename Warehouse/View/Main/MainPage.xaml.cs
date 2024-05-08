@@ -4,14 +4,16 @@ using System.Data.SqlClient;
 using System.Windows;
 using Warehouse.storage1;
 using Warehouse.View.Contractor;
+using Warehouse.View.Division;
 using Warehouse.View.Employee;
 
 namespace Warehouse.View.Main
 {
     public partial class MainPage : Window
     {
-        private ContractorRepo contractorRepo;
+        private DivisionRepo divisionRepo;
         private EmployeeRepo employeeRepo;
+        private ContractorRepo contractorRepo;
 
         public MainPage()
         {
@@ -19,6 +21,7 @@ namespace Warehouse.View.Main
 
             contractorRepo = new ContractorRepoImpl();
             employeeRepo = new EmployeeRepoImpl();
+            divisionRepo = new DivisionRepoImpl();
         }
 
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
@@ -46,6 +49,7 @@ namespace Warehouse.View.Main
             ContractorGrid.Visibility = Visibility.Visible;
 
             EmployeeGrid.Visibility = Visibility.Collapsed;
+            DivisionGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Employee_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -55,6 +59,18 @@ namespace Warehouse.View.Main
             EmployeeGrid.Visibility = Visibility.Visible;
 
             ContractorGrid.Visibility = Visibility.Collapsed;
+            DivisionGrid.Visibility = Visibility.Collapsed;
+        }
+
+
+        private void Division_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            divisionRepo.fetchDivisionToGrid(DivisionGrid);
+
+            DivisionGrid.Visibility = Visibility.Visible;
+
+            ContractorGrid.Visibility = Visibility.Collapsed;
+            EmployeeGrid.Visibility = Visibility.Collapsed;
         }
 
         private void AddContractor_Click(object sender, RoutedEventArgs e)
@@ -140,6 +156,52 @@ namespace Warehouse.View.Main
                 catch (SqlException)
                 {
                     MessageBox.Show("Удаление невозможно. Удалите связанные данные с этим сотрудником!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите поле для удаления!");
+            }
+        }
+
+        private void AddDivision_Click(object sender, RoutedEventArgs e)
+        {
+            AddDivision division = new AddDivision(DivisionGrid);
+            division.ShowDialog();
+        }
+
+        private void EditDivision_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = DivisionGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                EditDivision division = new EditDivision(Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), DivisionGrid);
+                division.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Не выбрана строка для редактирования", "Ошибка", MessageBoxButton.OK);
+            }
+        }
+
+        private void DeleteDivision_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = DivisionGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                try
+                {
+                    long divisionId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
+
+                    divisionRepo.deleteDivision(divisionId);
+                    divisionRepo.fetchDivisionToGrid(DivisionGrid);
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этим подразделением!");
                     return;
                 }
             }
