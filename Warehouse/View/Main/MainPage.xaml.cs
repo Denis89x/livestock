@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows;
 using Warehouse.storage1;
+using Warehouse.View.Cattle;
 using Warehouse.View.Contractor;
 using Warehouse.View.Division;
 using Warehouse.View.Employee;
@@ -11,6 +12,7 @@ namespace Warehouse.View.Main
 {
     public partial class MainPage : Window
     {
+        private CattleRepo cattleRepo;
         private DivisionRepo divisionRepo;
         private EmployeeRepo employeeRepo;
         private ContractorRepo contractorRepo;
@@ -22,6 +24,7 @@ namespace Warehouse.View.Main
             contractorRepo = new ContractorRepoImpl();
             employeeRepo = new EmployeeRepoImpl();
             divisionRepo = new DivisionRepoImpl();
+            cattleRepo = new CattleRepoImpl();
         }
 
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
@@ -50,6 +53,7 @@ namespace Warehouse.View.Main
 
             EmployeeGrid.Visibility = Visibility.Collapsed;
             DivisionGrid.Visibility = Visibility.Collapsed;
+            CattleGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Employee_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -60,8 +64,8 @@ namespace Warehouse.View.Main
 
             ContractorGrid.Visibility = Visibility.Collapsed;
             DivisionGrid.Visibility = Visibility.Collapsed;
+            CattleGrid.Visibility = Visibility.Collapsed;
         }
-
 
         private void Division_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
@@ -71,6 +75,18 @@ namespace Warehouse.View.Main
 
             ContractorGrid.Visibility = Visibility.Collapsed;
             EmployeeGrid.Visibility = Visibility.Collapsed;
+            CattleGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void ProductType_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            cattleRepo.fetchCattleToGrid(CattleGrid);
+
+            CattleGrid.Visibility = Visibility.Visible;
+
+            ContractorGrid.Visibility = Visibility.Collapsed;
+            EmployeeGrid.Visibility = Visibility.Collapsed;
+            DivisionGrid.Visibility = Visibility.Collapsed;
         }
 
         private void AddContractor_Click(object sender, RoutedEventArgs e)
@@ -202,6 +218,52 @@ namespace Warehouse.View.Main
                 catch (SqlException)
                 {
                     MessageBox.Show("Удаление невозможно. Удалите связанные данные с этим подразделением!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите поле для удаления!");
+            }
+        }
+
+        private void AddCattle_Click(object sender, RoutedEventArgs e)
+        {
+            CreateCattle cattle = new CreateCattle(CattleGrid);
+            cattle.ShowDialog();
+        }
+
+        private void EditCattle_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = CattleGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                EditCattle cattle = new EditCattle(Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), CattleGrid);
+                cattle.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Не выбрана строка для редактирования", "Ошибка", MessageBoxButton.OK);
+            }
+        }
+
+        private void DeleteCattle_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = CattleGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                try
+                {
+                    long cattleId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
+
+                    cattleRepo.deleteCattle(cattleId);
+                    cattleRepo.fetchCattleToGrid(CattleGrid);
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этим видом скота!");
                     return;
                 }
             }

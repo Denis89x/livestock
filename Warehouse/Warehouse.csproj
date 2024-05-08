@@ -101,6 +101,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Entity\CattleEntity.cs" />
     <Compile Include="Entity\ContractorEntity.cs" />
     <Compile Include="DTO\ComboBoxDTO.cs" />
     <Compile Include="Entity\DivisionEntity.cs" />
@@ -115,6 +116,8 @@
     <Compile Include="storage1\AuthRepo.cs" />
     <Compile Include="storage1\AuthRepoImpl.cs" />
     <Compile Include="storage1\AuthSession.cs" />
+    <Compile Include="storage1\CattleRepo.cs" />
+    <Compile Include="storage1\CattleRepoImpl.cs" />
     <Compile Include="storage1\ContractorRepo.cs" />
     <Compile Include="storage1\ContractorRepoImpl.cs" />
     <Compile Include="storage1\Database.cs" />
@@ -140,6 +143,12 @@
     </Compile>
     <Compile Include="View\AuthView.xaml.cs">
       <DependentUpon>AuthView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cattle\CreateCattle.xaml.cs">
+      <DependentUpon>CreateCattle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cattle\EditCattle.xaml.cs">
+      <DependentUpon>EditCattle.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Contractor\CreateContractor.xaml.cs">
       <DependentUpon>CreateContractor.xaml</DependentUpon>
@@ -227,6 +236,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AuthView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Cattle\CreateCattle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Cattle\EditCattle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
