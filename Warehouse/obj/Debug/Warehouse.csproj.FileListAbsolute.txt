@@ -179,3 +179,7 @@ D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Cattle\Create
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Cattle\EditCattle.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Cattle\CreateCattle.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Cattle\EditCattle.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Product\CreateProduct.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Product\EditProduct.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Product\CreateProduct.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Product\EditProduct.baml

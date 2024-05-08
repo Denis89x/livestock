@@ -7,12 +7,14 @@ using Warehouse.View.Cattle;
 using Warehouse.View.Contractor;
 using Warehouse.View.Division;
 using Warehouse.View.Employee;
+using Warehouse.View.Product;
 
 namespace Warehouse.View.Main
 {
     public partial class MainPage : Window
     {
         private CattleRepo cattleRepo;
+        private ProductRepo productRepo;
         private DivisionRepo divisionRepo;
         private EmployeeRepo employeeRepo;
         private ContractorRepo contractorRepo;
@@ -24,6 +26,7 @@ namespace Warehouse.View.Main
             contractorRepo = new ContractorRepoImpl();
             employeeRepo = new EmployeeRepoImpl();
             divisionRepo = new DivisionRepoImpl();
+            productRepo = new ProductRepoImpl();
             cattleRepo = new CattleRepoImpl();
         }
 
@@ -54,6 +57,7 @@ namespace Warehouse.View.Main
             EmployeeGrid.Visibility = Visibility.Collapsed;
             DivisionGrid.Visibility = Visibility.Collapsed;
             CattleGrid.Visibility = Visibility.Collapsed;
+            ProductGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Employee_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -65,6 +69,7 @@ namespace Warehouse.View.Main
             ContractorGrid.Visibility = Visibility.Collapsed;
             DivisionGrid.Visibility = Visibility.Collapsed;
             CattleGrid.Visibility = Visibility.Collapsed;
+            ProductGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Division_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -76,9 +81,10 @@ namespace Warehouse.View.Main
             ContractorGrid.Visibility = Visibility.Collapsed;
             EmployeeGrid.Visibility = Visibility.Collapsed;
             CattleGrid.Visibility = Visibility.Collapsed;
+            ProductGrid.Visibility = Visibility.Collapsed;
         }
 
-        private void ProductType_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void Cettle_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             cattleRepo.fetchCattleToGrid(CattleGrid);
 
@@ -87,6 +93,19 @@ namespace Warehouse.View.Main
             ContractorGrid.Visibility = Visibility.Collapsed;
             EmployeeGrid.Visibility = Visibility.Collapsed;
             DivisionGrid.Visibility = Visibility.Collapsed;
+            ProductGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void Product_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            productRepo.fetchProductToGrid(ProductGrid);
+
+            ProductGrid.Visibility = Visibility.Visible;
+
+            ContractorGrid.Visibility = Visibility.Collapsed;
+            EmployeeGrid.Visibility = Visibility.Collapsed;
+            DivisionGrid.Visibility = Visibility.Collapsed;
+            CattleGrid.Visibility = Visibility.Collapsed;
         }
 
         private void AddContractor_Click(object sender, RoutedEventArgs e)
@@ -260,6 +279,52 @@ namespace Warehouse.View.Main
 
                     cattleRepo.deleteCattle(cattleId);
                     cattleRepo.fetchCattleToGrid(CattleGrid);
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этим видом скота!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите поле для удаления!");
+            }
+        }
+
+        private void AddProduct_Click(object sender, RoutedEventArgs e)
+        {
+            CreateProduct product = new CreateProduct(ProductGrid);
+            product.ShowDialog();
+        }
+
+        private void EditProduct_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = ProductGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                EditProduct product = new EditProduct(Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), Convert.ToString(selectedRow.Row.ItemArray[2]), Convert.ToString(selectedRow.Row.ItemArray[3]), ProductGrid);
+                product.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Не выбрана строка для редактирования", "Ошибка", MessageBoxButton.OK);
+            }
+        }
+
+        private void DeleteProduct_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = ProductGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                try
+                {
+                    long productId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
+
+                    productRepo.deleteProduct(productId);
+                    productRepo.fetchProductToGrid(ProductGrid);
                 }
                 catch (SqlException)
                 {

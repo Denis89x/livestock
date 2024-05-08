@@ -181,6 +181,37 @@
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
+            <DataGrid   
+                Margin="160,30,30,30" 
+                Visibility="Collapsed"
+                x:Name="ProductGrid" 
+                AutoGenerateColumns="false"
+                CanUserResizeColumns="False" 
+                CanUserAddRows="False" 
+                CanUserDeleteRows="False" 
+                CanUserReorderColumns="False" 
+                SelectionMode="Single" 
+                SelectionUnit="FullRow" 
+                CanUserResizeRows="False" 
+                IsReadOnly="True"
+                Foreground="#FF7643D2">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ProductId" Binding="{Binding product_id}" Visibility="Hidden"/>
+                    <DataGridTextColumn Header="Название" Width="*" Binding="{Binding title}"/>
+                    <DataGridTextColumn Header="Сорт" Width="*" Binding="{Binding sort}"/>
+                    <DataGridTextColumn Header="Единица измерения" Width="*" Binding="{Binding unit}"/>
+                </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="AddProduct" Header="Добавить" Click="AddProduct_Click"/>
+                        <MenuItem x:Name="EditProduct" Header="Редактировать" Click="EditProduct_Click"/>
+                        <MenuItem x:Name="DeleteProduct" Header="Удалить" Click="DeleteProduct_Click"/>
+                        <MenuItem x:Name="FiltrationProduct" Header="Фильтрация"/>
+                        <MenuItem x:Name="SearchProduct" Header="Поиск"/>
+                        <MenuItem x:Name="CancelProduct" Header="Отменить"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
         </Grid>
         <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#19000000">
             <StackPanel>
@@ -211,16 +242,16 @@
                             <TextBlock Text="Подразделение" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="ProductType" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="ProductType_PreviewMouseLeftButtonDown">
+                    <ListViewItem x:Name="Cettle" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="Cettle_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="PackageVariant" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Группы скота" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="Output" Height="60" Visibility="Collapsed">
+                    <ListViewItem x:Name="Product" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="Product_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="MicrosoftWord" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Документы" VerticalAlignment="Center" Margin="0 10"/>
+                            <TextBlock Text="Продукция" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="Settings" Height="60" Visibility="Collapsed">
