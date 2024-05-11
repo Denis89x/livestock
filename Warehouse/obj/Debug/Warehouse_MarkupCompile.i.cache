@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Учеба\Диплом\warehouse-main\Warehouse\App.xaml
-26-1067336949
+28-232992567
 
-59804285465
+671945132353
 33-556314184
-Auth\AuthPage.xaml;Auth\MainWindow.xaml;Profile\PrfSettings.xaml;View\AddPage\AddFromComboBoxOrder.xaml;View\AddPage\OrderAdd.xaml;View\AddPage\ProductAdd.xaml;View\AddPage\ProductType.xaml;View\AddPage\SupplierAdd.xaml;View\AuthView.xaml;View\Cattle\CreateCattle.xaml;View\Cattle\EditCattle.xaml;View\Contractor\CreateContractor.xaml;View\Contractor\EditContractor.xaml;View\Division\AddDivision.xaml;View\Division\EditDivision.xaml;View\EditPage\ProductEdit.xaml;View\EditPage\ProductTypeEdit.xaml;View\EditPage\SupplierEdit.xaml;View\Employee\CreateEmployee.xaml;View\Employee\EditEmployee.xaml;View\FIltrationAndSearch\Filtration.xaml;View\FIltrationAndSearch\Search.xaml;View\Main\MainPage.xaml;View\OutputDocuments\MainOutput.xaml;View\Product\CreateProduct.xaml;View\Product\EditProduct.xaml;
+Auth\AuthPage.xaml;Auth\MainWindow.xaml;Profile\PrfSettings.xaml;View\AddPage\AddFromComboBoxOrder.xaml;View\AddPage\OrderAdd.xaml;View\AddPage\ProductAdd.xaml;View\AddPage\ProductType.xaml;View\AddPage\SupplierAdd.xaml;View\AuthView.xaml;View\Cattle\CreateCattle.xaml;View\Cattle\EditCattle.xaml;View\Contractor\CreateContractor.xaml;View\Contractor\EditContractor.xaml;View\Division\AddDivision.xaml;View\Division\EditDivision.xaml;View\EditPage\ProductEdit.xaml;View\EditPage\ProductTypeEdit.xaml;View\EditPage\SupplierEdit.xaml;View\Employee\CreateEmployee.xaml;View\Employee\EditEmployee.xaml;View\FIltrationAndSearch\Filtration.xaml;View\FIltrationAndSearch\Search.xaml;View\Main\MainPage.xaml;View\OutputDocuments\MainOutput.xaml;View\Product\CreateProduct.xaml;View\Product\EditProduct.xaml;View\Statement\CreateStatement.xaml;View\Statement\EditStatement.xaml;
 
 True
 

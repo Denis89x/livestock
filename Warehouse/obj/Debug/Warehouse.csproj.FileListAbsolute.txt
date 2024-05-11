@@ -183,3 +183,7 @@ D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Product\Creat
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Product\EditProduct.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Product\CreateProduct.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Product\EditProduct.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Statement\CreateStatement.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Statement\CreateStatement.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Statement\EditStatement.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Statement\EditStatement.baml

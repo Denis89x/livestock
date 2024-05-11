@@ -102,11 +102,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Entity\CattleEntity.cs" />
+    <Compile Include="Entity\ComboBoxEntity.cs" />
     <Compile Include="Entity\ContractorEntity.cs" />
     <Compile Include="DTO\ComboBoxDTO.cs" />
     <Compile Include="Entity\DivisionEntity.cs" />
     <Compile Include="Entity\EmployeeEntity.cs" />
     <Compile Include="Entity\ProductEntity.cs" />
+    <Compile Include="Entity\StatementEntity.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Profile\PrfSettings.xaml.cs">
       <DependentUpon>PrfSettings.xaml</DependentUpon>
@@ -128,6 +130,10 @@
     <Compile Include="storage1\EmployeeRepoImpl.cs" />
     <Compile Include="storage1\ProductRepo.cs" />
     <Compile Include="storage1\ProductRepoImpl.cs" />
+    <Compile Include="storage1\StatementComboBoxRepo.cs" />
+    <Compile Include="storage1\StatementComboBoxRepoImpl.cs" />
+    <Compile Include="storage1\StatementRepo.cs" />
+    <Compile Include="storage1\StatementRepoImpl.cs" />
     <Compile Include="Storage\ComboBoxOrder.cs" />
     <Compile Include="View\AddPage\AddFromComboBoxOrder.xaml.cs">
       <DependentUpon>AddFromComboBoxOrder.xaml</DependentUpon>
@@ -197,6 +203,12 @@
     </Compile>
     <Compile Include="View\Product\EditProduct.xaml.cs">
       <DependentUpon>EditProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Statement\CreateStatement.xaml.cs">
+      <DependentUpon>CreateStatement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Statement\EditStatement.xaml.cs">
+      <DependentUpon>EditStatement.xaml</DependentUpon>
     </Compile>
     <Page Include="Auth\AuthPage.xaml">
       <SubType>Designer</SubType>
@@ -313,6 +325,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Product\EditProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Statement\CreateStatement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Statement\EditStatement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

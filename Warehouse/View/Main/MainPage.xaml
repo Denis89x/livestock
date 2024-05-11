@@ -212,6 +212,46 @@
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
+            <DataGrid   
+                Margin="160,30,30,30" 
+                Visibility="Collapsed"
+                x:Name="StatementGrid" 
+                AutoGenerateColumns="false"
+                CanUserResizeColumns="False" 
+                CanUserAddRows="False" 
+                CanUserDeleteRows="False" 
+                CanUserReorderColumns="False" 
+                SelectionMode="Single" 
+                SelectionUnit="FullRow" 
+                CanUserResizeRows="False" 
+                IsReadOnly="True"
+                Foreground="#FF7643D2">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="StatementId" Binding="{Binding statement_id}" Visibility="Hidden"/>
+                    <DataGridTextColumn Header="Номер ведомости" Width="*" Binding="{Binding statement_number}"/>
+                    <DataGridTextColumn Header="Подразделение" Width="*" Binding="{Binding division_type}"/>
+                    <DataGridTextColumn Header="Группа скота" Width="*" Binding="{Binding cattle_type}"/>
+                    <DataGridTextColumn Header="Сотрудник" Width="*" Binding="{Binding surname}"/>
+                    <DataGridTextColumn Header="Г/П" Width="*" Binding="{Binding product_title}"/>
+                    <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding date}"/>
+                    <DataGridTextColumn Header="Основание" Width="*" Binding="{Binding foundation}"/>
+                    <DataGridTextColumn Header="Наименование" Width="*" Binding="{Binding title}"/>
+                    <DataGridTextColumn Header="Ед.изм" Width="*" Binding="{Binding unit}"/>
+                    <DataGridTextColumn Header="Норма поставки" Width="*" Binding="{Binding supply_rate}"/>
+                    <DataGridTextColumn Header="Кол-во животных" Width="*" Binding="{Binding animal_quantity}"/>
+                    <DataGridTextColumn Header="Кол-во кормов" Width="*" Binding="{Binding feed_quantity}"/>
+                </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="AddStatement" Header="Добавить" Click="AddStatement_Click"/>
+                        <MenuItem x:Name="EditStatement" Header="Редактировать" Click="EditStatement_Click"/>
+                        <MenuItem x:Name="DeleteStatement" Header="Удалить" Click="DeleteStatement_Click"/>
+                        <MenuItem x:Name="FiltrationStatement" Header="Фильтрация"/>
+                        <MenuItem x:Name="SearchStatement" Header="Поиск"/>
+                        <MenuItem x:Name="CancelStatement" Header="Отменить"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
         </Grid>
         <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#19000000">
             <StackPanel>
@@ -254,10 +294,10 @@
                             <TextBlock Text="Продукция" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="Settings" Height="60" Visibility="Collapsed">
+                    <ListViewItem x:Name="Statement" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="Statement_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="CogOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Настройки" VerticalAlignment="Center" Margin="0 10"/>
+                            <TextBlock Text="Расход кормов" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="AdminRegistration" Height="60" Visibility="Collapsed">

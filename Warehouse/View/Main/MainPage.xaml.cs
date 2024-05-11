@@ -8,6 +8,7 @@ using Warehouse.View.Contractor;
 using Warehouse.View.Division;
 using Warehouse.View.Employee;
 using Warehouse.View.Product;
+using Warehouse.View.Statement;
 
 namespace Warehouse.View.Main
 {
@@ -17,6 +18,7 @@ namespace Warehouse.View.Main
         private ProductRepo productRepo;
         private DivisionRepo divisionRepo;
         private EmployeeRepo employeeRepo;
+        private StatementRepo statementRepo;
         private ContractorRepo contractorRepo;
 
         public MainPage()
@@ -24,6 +26,7 @@ namespace Warehouse.View.Main
             InitializeComponent();
 
             contractorRepo = new ContractorRepoImpl();
+            statementRepo = new StatementRepoImpl();
             employeeRepo = new EmployeeRepoImpl();
             divisionRepo = new DivisionRepoImpl();
             productRepo = new ProductRepoImpl();
@@ -58,6 +61,7 @@ namespace Warehouse.View.Main
             DivisionGrid.Visibility = Visibility.Collapsed;
             CattleGrid.Visibility = Visibility.Collapsed;
             ProductGrid.Visibility = Visibility.Collapsed;
+            StatementGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Employee_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -70,6 +74,7 @@ namespace Warehouse.View.Main
             DivisionGrid.Visibility = Visibility.Collapsed;
             CattleGrid.Visibility = Visibility.Collapsed;
             ProductGrid.Visibility = Visibility.Collapsed;
+            StatementGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Division_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -82,6 +87,7 @@ namespace Warehouse.View.Main
             EmployeeGrid.Visibility = Visibility.Collapsed;
             CattleGrid.Visibility = Visibility.Collapsed;
             ProductGrid.Visibility = Visibility.Collapsed;
+            StatementGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Cettle_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -94,6 +100,7 @@ namespace Warehouse.View.Main
             EmployeeGrid.Visibility = Visibility.Collapsed;
             DivisionGrid.Visibility = Visibility.Collapsed;
             ProductGrid.Visibility = Visibility.Collapsed;
+            StatementGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Product_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -106,6 +113,20 @@ namespace Warehouse.View.Main
             EmployeeGrid.Visibility = Visibility.Collapsed;
             DivisionGrid.Visibility = Visibility.Collapsed;
             CattleGrid.Visibility = Visibility.Collapsed;
+            StatementGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void Statement_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            statementRepo.fetchStatementToGrid(StatementGrid);
+
+            StatementGrid.Visibility = Visibility.Visible;
+
+            ContractorGrid.Visibility = Visibility.Collapsed;
+            EmployeeGrid.Visibility = Visibility.Collapsed;
+            DivisionGrid.Visibility = Visibility.Collapsed;
+            CattleGrid.Visibility = Visibility.Collapsed;
+            ProductGrid.Visibility = Visibility.Collapsed;
         }
 
         private void AddContractor_Click(object sender, RoutedEventArgs e)
@@ -336,6 +357,38 @@ namespace Warehouse.View.Main
             {
                 MessageBox.Show("Выберите поле для удаления!");
             }
+        }
+
+        private void AddStatement_Click(object sender, RoutedEventArgs e)
+        {
+            CreateStatement statement = new CreateStatement(StatementGrid);
+            statement.ShowDialog();
+        }
+
+        private void EditStatement_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = StatementGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                EditStatement statement = new EditStatement(
+                    Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), Convert.ToString(selectedRow.Row.ItemArray[2]), 
+                    Convert.ToString(selectedRow.Row.ItemArray[3]), Convert.ToString(selectedRow.Row.ItemArray[4]), Convert.ToString(selectedRow.Row.ItemArray[5]),
+                    Convert.ToString(selectedRow.Row.ItemArray[6]), Convert.ToString(selectedRow.Row.ItemArray[8]), Convert.ToString(selectedRow.Row.ItemArray[9]),
+                    Convert.ToString(selectedRow.Row.ItemArray[10]), Convert.ToString(selectedRow.Row.ItemArray[11]), Convert.ToString(selectedRow.Row.ItemArray[12]),
+                    StatementGrid);
+
+                statement.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Не выбрана строка для редактирования", "Ошибка", MessageBoxButton.OK);
+            }
+        }
+
+        private void DeleteStatement_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
