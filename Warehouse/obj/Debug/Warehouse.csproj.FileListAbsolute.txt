@@ -187,3 +187,7 @@ D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Statement\Cre
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Statement\CreateStatement.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Statement\EditStatement.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Statement\EditStatement.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Waybill\CreateWaybill.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Waybill\CreateWaybill.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Waybill\EditWaybill.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Waybill\EditWaybill.baml

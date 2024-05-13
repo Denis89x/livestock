@@ -109,6 +109,7 @@
     <Compile Include="Entity\EmployeeEntity.cs" />
     <Compile Include="Entity\ProductEntity.cs" />
     <Compile Include="Entity\StatementEntity.cs" />
+    <Compile Include="Entity\WaybillEntity.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Profile\PrfSettings.xaml.cs">
       <DependentUpon>PrfSettings.xaml</DependentUpon>
@@ -134,6 +135,10 @@
     <Compile Include="storage1\StatementComboBoxRepoImpl.cs" />
     <Compile Include="storage1\StatementRepo.cs" />
     <Compile Include="storage1\StatementRepoImpl.cs" />
+    <Compile Include="storage1\WaybillComboBoxRepo.cs" />
+    <Compile Include="storage1\WaybillComboBoxRepoImpl.cs" />
+    <Compile Include="storage1\WaybillRepo.cs" />
+    <Compile Include="storage1\WaybillRepoImpl.cs" />
     <Compile Include="Storage\ComboBoxOrder.cs" />
     <Compile Include="View\AddPage\AddFromComboBoxOrder.xaml.cs">
       <DependentUpon>AddFromComboBoxOrder.xaml</DependentUpon>
@@ -209,6 +214,12 @@
     </Compile>
     <Compile Include="View\Statement\EditStatement.xaml.cs">
       <DependentUpon>EditStatement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Waybill\CreateWaybill.xaml.cs">
+      <DependentUpon>CreateWaybill.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Waybill\EditWaybill.xaml.cs">
+      <DependentUpon>EditWaybill.xaml</DependentUpon>
     </Compile>
     <Page Include="Auth\AuthPage.xaml">
       <SubType>Designer</SubType>
@@ -333,6 +344,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Statement\EditStatement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Waybill\CreateWaybill.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Waybill\EditWaybill.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

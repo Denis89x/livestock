@@ -9,6 +9,7 @@ using Warehouse.View.Division;
 using Warehouse.View.Employee;
 using Warehouse.View.Product;
 using Warehouse.View.Statement;
+using Warehouse.View.Waybill;
 
 namespace Warehouse.View.Main
 {
@@ -16,6 +17,7 @@ namespace Warehouse.View.Main
     {
         private CattleRepo cattleRepo;
         private ProductRepo productRepo;
+        private WaybillRepo waybillRepo;
         private DivisionRepo divisionRepo;
         private EmployeeRepo employeeRepo;
         private StatementRepo statementRepo;
@@ -30,6 +32,7 @@ namespace Warehouse.View.Main
             employeeRepo = new EmployeeRepoImpl();
             divisionRepo = new DivisionRepoImpl();
             productRepo = new ProductRepoImpl();
+            waybillRepo = new WaybillRepoImpl();
             cattleRepo = new CattleRepoImpl();
         }
 
@@ -62,6 +65,7 @@ namespace Warehouse.View.Main
             CattleGrid.Visibility = Visibility.Collapsed;
             ProductGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
+            WaybillGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Employee_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -75,6 +79,7 @@ namespace Warehouse.View.Main
             CattleGrid.Visibility = Visibility.Collapsed;
             ProductGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
+            WaybillGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Division_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -88,6 +93,7 @@ namespace Warehouse.View.Main
             CattleGrid.Visibility = Visibility.Collapsed;
             ProductGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
+            WaybillGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Cettle_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -101,6 +107,7 @@ namespace Warehouse.View.Main
             DivisionGrid.Visibility = Visibility.Collapsed;
             ProductGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
+            WaybillGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Product_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -114,6 +121,7 @@ namespace Warehouse.View.Main
             DivisionGrid.Visibility = Visibility.Collapsed;
             CattleGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
+            WaybillGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Statement_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -127,6 +135,22 @@ namespace Warehouse.View.Main
             DivisionGrid.Visibility = Visibility.Collapsed;
             CattleGrid.Visibility = Visibility.Collapsed;
             ProductGrid.Visibility = Visibility.Collapsed;
+            WaybillGrid.Visibility = Visibility.Collapsed;
+        }
+
+
+        private void Waybill_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            waybillRepo.fetchWaybillToGrid(WaybillGrid);
+
+            WaybillGrid.Visibility = Visibility.Visible;
+
+            ContractorGrid.Visibility = Visibility.Collapsed;
+            EmployeeGrid.Visibility = Visibility.Collapsed;
+            DivisionGrid.Visibility = Visibility.Collapsed;
+            CattleGrid.Visibility = Visibility.Collapsed;
+            ProductGrid.Visibility = Visibility.Collapsed;
+            StatementGrid.Visibility = Visibility.Collapsed;
         }
 
         private void AddContractor_Click(object sender, RoutedEventArgs e)
@@ -388,7 +412,79 @@ namespace Warehouse.View.Main
 
         private void DeleteStatement_Click(object sender, RoutedEventArgs e)
         {
+            var selectedRow = StatementGrid.SelectedItem as DataRowView;
 
+            if (selectedRow != null)
+            {
+                try
+                {
+                    long statementId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
+
+                    statementRepo.deleteStatement(statementId);
+                    statementRepo.fetchStatementToGrid(StatementGrid);
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этой ведомостью!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите поле для удаления!");
+            }
+        }
+
+        private void AddWaybill_Click(object sender, RoutedEventArgs e)
+        {
+            CreateWaybill waybill = new CreateWaybill(WaybillGrid);
+            waybill.ShowDialog();
+        }
+
+        private void EditWaybill_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = WaybillGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                EditWaybill waybill = new EditWaybill(
+                    Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), Convert.ToString(selectedRow.Row.ItemArray[2]),
+                    Convert.ToString(selectedRow.Row.ItemArray[4]), Convert.ToString(selectedRow.Row.ItemArray[5]), Convert.ToString(selectedRow.Row.ItemArray[6]),
+                    Convert.ToString(selectedRow.Row.ItemArray[7]), Convert.ToString(selectedRow.Row.ItemArray[8]), Convert.ToString(selectedRow.Row.ItemArray[9]),
+                    Convert.ToString(selectedRow.Row.ItemArray[10]), Convert.ToString(selectedRow.Row.ItemArray[11]), Convert.ToString(selectedRow.Row.ItemArray[12]),
+                    Convert.ToString(selectedRow.Row.ItemArray[13]), Convert.ToString(selectedRow.Row.ItemArray[14]), WaybillGrid);
+
+                waybill.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Не выбрана строка для редактирования", "Ошибка", MessageBoxButton.OK);
+            }
+        }
+
+        private void DeleteWaybill_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = WaybillGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                try
+                {
+                    long waybillId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
+
+                    waybillRepo.deleteWaybill(waybillId);
+                    waybillRepo.fetchWaybillToGrid(WaybillGrid);
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этой накладной!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите поле для удаления!");
+            }
         }
     }
 }

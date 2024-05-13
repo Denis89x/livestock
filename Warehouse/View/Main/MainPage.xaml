@@ -252,6 +252,48 @@
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
+            <DataGrid   
+                Margin="160,30,30,30" 
+                Visibility="Collapsed"
+                x:Name="WaybillGrid" 
+                AutoGenerateColumns="false"
+                CanUserResizeColumns="False" 
+                CanUserAddRows="False" 
+                CanUserDeleteRows="False" 
+                CanUserReorderColumns="False" 
+                SelectionMode="Single" 
+                SelectionUnit="FullRow" 
+                CanUserResizeRows="False" 
+                IsReadOnly="True"
+                Foreground="#FF7643D2">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="WaybillId" Binding="{Binding waybill_id}" Visibility="Collapsed"/>
+                    <DataGridTextColumn Header="Контрагент" Width="*" Binding="{Binding title}"/>
+                    <DataGridTextColumn Header="Сотрудник" Width="*" Binding="{Binding surname}"/>
+                    <DataGridTextColumn Header="Номер ТТН" Width="*" Binding="{Binding document_number}"/>
+                    <DataGridTextColumn Header="Владелец авто" Width="*" Binding="{Binding car_owner}"/>
+                    <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding date}"/>
+                    <DataGridTextColumn Header="Авто" Width="*" Binding="{Binding vehicle}"/>
+                    <DataGridTextColumn Header="Грузоотправитель" Width="*" Binding="{Binding shipper}"/>
+                    <DataGridTextColumn Header="Грузополучатель" Width="*" Binding="{Binding consignor}"/>
+                    <DataGridTextColumn Header="Место погрузки" Width="*" Binding="{Binding loading_point}"/>
+                    <DataGridTextColumn Header="Место отгрузки" Width="*" Binding="{Binding unloading_point}"/>
+                    <DataGridTextColumn Header="Договор" Width="*" Binding="{Binding treaty}"/>
+                    <DataGridTextColumn Header="Номер авто" Width="*" Binding="{Binding vehicle_number}"/>
+                    <DataGridTextColumn Header="Путеводительный лист" Width="*" Binding="{Binding guide_list_number}"/>
+                    <DataGridTextColumn Header="Маршрут" Width="*" Binding="{Binding route_number}"/>
+                </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="AddWaybill" Header="Добавить" Click="AddWaybill_Click"/>
+                        <MenuItem x:Name="EditWaybill" Header="Редактировать" Click="EditWaybill_Click"/>
+                        <MenuItem x:Name="DeleteWaybill" Header="Удалить" Click="DeleteWaybill_Click"/>
+                        <MenuItem x:Name="FiltrationWaybill" Header="Фильтрация"/>
+                        <MenuItem x:Name="SearchWaybill" Header="Поиск"/>
+                        <MenuItem x:Name="CancelWaybill" Header="Отменить"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
         </Grid>
         <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#19000000">
             <StackPanel>
@@ -298,6 +340,12 @@
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="CogOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Расход кормов" VerticalAlignment="Center" Margin="0 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="Waybill" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="Waybill_PreviewMouseLeftButtonDown">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="CogOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="ТТН" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="AdminRegistration" Height="60" Visibility="Collapsed">

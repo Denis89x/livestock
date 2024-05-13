@@ -22,8 +22,6 @@ namespace Warehouse.View.Statement
             this.statementId = statementId;
             this.dataGrid = dataGrid;
 
-            MessageBox.Show("ID: " + statementId);
-
             statementRepo = new StatementRepoImpl();
             statementComboBoxRepo = new StatementComboBoxRepoImpl();
 

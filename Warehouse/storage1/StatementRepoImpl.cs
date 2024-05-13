@@ -1,5 +1,4 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using Warehouse.Entity;
 
 namespace Warehouse.storage1
@@ -36,8 +35,6 @@ namespace Warehouse.storage1
 
         public void updateStatement(StatementEntity statement)
         {
-            MessageBox.Show("STATEMENT: " + statement);
-
             string query = $"UPDATE statement SET division_id = '{statement.division}', cattle_id = '{statement.cattle}', employee_id = '{statement.employee}', product_id = '{statement.productTitle}', date = '{statement.date}', foundation = N'{statement.foundation}', title = N'{statement.title}', unit = N'{statement.unit}', supply_rate = N'{statement.supplyRate}', animal_quantity = N'{statement.animalQuantity}', feed_quantity = N'{statement.feedQuantity}' WHERE statement_id = '{statement.statementId}'";
 
             database.executeQuery(query);
