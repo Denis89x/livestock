@@ -109,6 +109,7 @@
     <Compile Include="Entity\EmployeeEntity.cs" />
     <Compile Include="Entity\ProductEntity.cs" />
     <Compile Include="Entity\StatementEntity.cs" />
+    <Compile Include="Entity\WaybillCompositionEntity.cs" />
     <Compile Include="Entity\WaybillEntity.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Profile\PrfSettings.xaml.cs">
@@ -122,6 +123,8 @@
     <Compile Include="storage1\AuthSession.cs" />
     <Compile Include="storage1\CattleRepo.cs" />
     <Compile Include="storage1\CattleRepoImpl.cs" />
+    <Compile Include="storage1\ComboBoxRepo.cs" />
+    <Compile Include="storage1\ComboBoxRepoImpl.cs" />
     <Compile Include="storage1\ContractorRepo.cs" />
     <Compile Include="storage1\ContractorRepoImpl.cs" />
     <Compile Include="storage1\Database.cs" />
@@ -137,6 +140,8 @@
     <Compile Include="storage1\StatementRepoImpl.cs" />
     <Compile Include="storage1\WaybillComboBoxRepo.cs" />
     <Compile Include="storage1\WaybillComboBoxRepoImpl.cs" />
+    <Compile Include="storage1\WaybillCompositionRepo.cs" />
+    <Compile Include="storage1\WaybillCompositionRepoImpl.cs" />
     <Compile Include="storage1\WaybillRepo.cs" />
     <Compile Include="storage1\WaybillRepoImpl.cs" />
     <Compile Include="Storage\ComboBoxOrder.cs" />

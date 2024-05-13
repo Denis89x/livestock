@@ -294,14 +294,58 @@
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
+            <DataGrid   
+                Margin="160,30,30,30" 
+                Visibility="Collapsed"
+                x:Name="WaybillCompositionGrid" 
+                AutoGenerateColumns="false"
+                CanUserResizeColumns="False" 
+                CanUserAddRows="False" 
+                CanUserDeleteRows="False" 
+                CanUserReorderColumns="False" 
+                SelectionMode="Single" 
+                SelectionUnit="FullRow" 
+                CanUserResizeRows="False" 
+                IsReadOnly="True"
+                Foreground="#FF7643D2">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="WaybillCompositionId" Binding="{Binding waybill_composition_id}" Visibility="Collapsed"/>
+                    <DataGridTextColumn Header="Номер ТТН" Width="*" Binding="{Binding document_number}"/>
+                    <DataGridTextColumn Header="Продукт" Width="*" Binding="{Binding title}"/>
+                    <DataGridTextColumn Header="Тип" Width="*" Binding="{Binding waybill_type}"/>
+                    <DataGridTextColumn Header="Жирность" Width="*" Binding="{Binding fat}"/>
+                    <DataGridTextColumn Header="Масса" Width="*" Binding="{Binding mass}"/>
+                    <DataGridTextColumn Header="Кислотность" Width="*" Binding="{Binding acidity}"/>
+                    <DataGridTextColumn Header="Температура" Width="*" Binding="{Binding temperature}"/>
+                    <DataGridTextColumn Header="Группа" Width="*" Binding="{Binding cleaning_group}"/>
+                    <DataGridTextColumn Header="Плотность" Width="*" Binding="{Binding density}"/>
+                    <DataGridTextColumn Header="Сорт" Width="*" Binding="{Binding sort}"/>
+                    <DataGridTextColumn Header="Упаковка" Width="*" Binding="{Binding packaging_type}"/>
+                    <DataGridTextColumn Header="Количество" Width="*" Binding="{Binding quantity}"/>
+                    <DataGridTextColumn Header="Брутто" Width="*" Binding="{Binding brutto}"/>
+                    <DataGridTextColumn Header="Тара" Width="*" Binding="{Binding tara}"/>
+                    <DataGridTextColumn Header="Нетто" Width="*" Binding="{Binding netto}"/>
+                    <DataGridTextColumn Header="Класс" Width="*" Binding="{Binding grade}"/>
+                </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="AddWaybillComposition" Header="Добавить" Click="AddWaybillComposition_Click"/>
+                        <MenuItem x:Name="EditWaybillComposition" Header="Редактировать" Click="EditWaybillComposition_Click"/>
+                        <MenuItem x:Name="DeleteWaybillComposition" Header="Удалить" Click="DeleteWaybillComposition_Click"/>
+                        <MenuItem x:Name="FiltrationWaybillComposition" Header="Фильтрация"/>
+                        <MenuItem x:Name="SearchWaybillComposition" Header="Поиск"/>
+                        <MenuItem x:Name="CancelWaybillComposition" Header="Отменить"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
         </Grid>
         <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#19000000">
             <StackPanel>
                 <Grid Height="150">
-                    <Button x:Name="ButtonCloseMenu" Width="60" Height="60" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Background="#66673AB7">
+                    <Button x:Name="ButtonCloseMenu" Width="60" Height="60" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="ButtonCloseMenu_Click" Background="#66673AB7">
                         <materialDesign:PackIcon Kind="ArrowLeft" Foreground="#FF003B75" Width="25" Height="25"/>
                     </Button>
-                    <Button x:Name="ButtonOpenMenu" Width="60" Height="60" VerticalAlignment="Top" HorizontalAlignment="Right" Background="#66673AB7">
+                    <Button x:Name="ButtonOpenMenu" Width="60" Height="60" VerticalAlignment="Top" HorizontalAlignment="Right" Click="ButtonOpenMenu_Click" Background="#66673AB7">
                         <materialDesign:PackIcon Kind="Menu" Foreground="#FF003B75" Width="25" Height="25"/>
                     </Button>
                 </Grid>
@@ -346,6 +390,12 @@
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="CogOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="ТТН" VerticalAlignment="Center" Margin="0 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="WaybillComposition" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="WaybillComposition_PreviewMouseLeftButtonDown">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="CogOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Состав ТТН" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="AdminRegistration" Height="60" Visibility="Collapsed">
