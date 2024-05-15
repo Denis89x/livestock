@@ -220,6 +220,12 @@
     <Compile Include="View\Statement\EditStatement.xaml.cs">
       <DependentUpon>EditStatement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\WaybillComposition\CreateWaybillComposition.xaml.cs">
+      <DependentUpon>CreateWaybillComposition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WaybillComposition\EditWaybillComposition.xaml.cs">
+      <DependentUpon>EditWaybillComposition.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Waybill\CreateWaybill.xaml.cs">
       <DependentUpon>CreateWaybill.xaml</DependentUpon>
     </Compile>
@@ -349,6 +355,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Statement\EditStatement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WaybillComposition\CreateWaybillComposition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WaybillComposition\EditWaybillComposition.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

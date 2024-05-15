@@ -10,6 +10,7 @@ using Warehouse.View.Employee;
 using Warehouse.View.Product;
 using Warehouse.View.Statement;
 using Warehouse.View.Waybill;
+using Warehouse.View.WaybillComposition;
 
 namespace Warehouse.View.Main
 {
@@ -511,17 +512,55 @@ namespace Warehouse.View.Main
 
         private void AddWaybillComposition_Click(object sender, RoutedEventArgs e)
         {
-
+            CreateWaybillComposition waybillComposition = new CreateWaybillComposition(WaybillCompositionGrid);
+            waybillComposition.ShowDialog();
         }
 
         private void EditWaybillComposition_Click(object sender, RoutedEventArgs e)
         {
+            var selectedRow = WaybillCompositionGrid.SelectedItem as DataRowView;
 
+            if (selectedRow != null)
+            {
+                EditWaybillComposition waybill = new EditWaybillComposition(
+                    Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), Convert.ToString(selectedRow.Row.ItemArray[2]),
+                    Convert.ToString(selectedRow.Row.ItemArray[4]), Convert.ToString(selectedRow.Row.ItemArray[5]), Convert.ToString(selectedRow.Row.ItemArray[6]),
+                    Convert.ToString(selectedRow.Row.ItemArray[7]), Convert.ToString(selectedRow.Row.ItemArray[8]), Convert.ToString(selectedRow.Row.ItemArray[9]),
+                    Convert.ToString(selectedRow.Row.ItemArray[10]), Convert.ToString(selectedRow.Row.ItemArray[11]), Convert.ToString(selectedRow.Row.ItemArray[12]),
+                    Convert.ToString(selectedRow.Row.ItemArray[13]), Convert.ToString(selectedRow.Row.ItemArray[14]), Convert.ToString(selectedRow.Row.ItemArray[15]),
+                    Convert.ToString(selectedRow.Row.ItemArray[16]), WaybillCompositionGrid);
+
+                waybill.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Не выбрана строка для редактирования", "Ошибка", MessageBoxButton.OK);
+            }
         }
 
         private void DeleteWaybillComposition_Click(object sender, RoutedEventArgs e)
         {
+            var selectedRow = WaybillCompositionGrid.SelectedItem as DataRowView;
 
+            if (selectedRow != null)
+            {
+                try
+                {
+                    long waybillCompositionId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
+
+                    waybillCompositionRepo.deleteWaybillComposition(waybillCompositionId);
+                    waybillCompositionRepo.fetchWaybillCompositionToGrid(WaybillCompositionGrid);
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этой накладной!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите поле для удаления!");
+            }
         }
     }
 }

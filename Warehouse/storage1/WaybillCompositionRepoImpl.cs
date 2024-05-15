@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using System.Data.SqlClient;
+using System.Windows;
+using System.Windows.Controls;
 using Warehouse.Entity;
 
 namespace Warehouse.storage1
@@ -14,9 +16,15 @@ namespace Warehouse.storage1
 
         public void createWaybillComposition(WaybillCompositionEntity waybillComposition)
         {
-            string query = $"INSERT INTO waybill_composition(waybill_id, product_id, waybill_type, fat, mass, acidity, temperature, cleaning_group, density, sort, packaging_type, quantity, brutto, tara, netto, grade) VALUES('{waybillComposition.waybillId}', '{waybillComposition.productId}', N'{waybillComposition.waybillType}', N'{waybillComposition.fat}', N'{waybillComposition.mass}', N'{waybillComposition.acidity}', N'{waybillComposition.temperature}', N'{waybillComposition.cleaningGroup}', N'{waybillComposition.density}', '{waybillComposition.sort}', '{waybillComposition.packagingType}', N'{waybillComposition.quantity}', N'{waybillComposition.brutto}', N'{waybillComposition.tara}', N'{waybillComposition.netto}', N'{waybillComposition.grade}')";
+            if (isWaybillCompositionExist(waybillComposition.waybillId))
+            {
+                MessageBox.Show("Данная ТТН уже заполнена!");
+            } else
+            {
+                string query = $"INSERT INTO waybill_composition(waybill_id, product_id, waybill_type, fat, mass, acidity, temperature, cleaning_group, density, sort, packaging_type, quantity, brutto, tara, netto, grade) VALUES('{waybillComposition.waybillId}', '{waybillComposition.productId}', N'{waybillComposition.waybillType}', N'{waybillComposition.fat}', N'{waybillComposition.mass}', N'{waybillComposition.acidity}', N'{waybillComposition.temperature}', N'{waybillComposition.cleaningGroup}', N'{waybillComposition.density}', '{waybillComposition.sort}', '{waybillComposition.packagingType}', N'{waybillComposition.quantity}', N'{waybillComposition.brutto}', N'{waybillComposition.tara}', N'{waybillComposition.netto}', N'{waybillComposition.grade}')";
 
-            database.executeQuery(query);
+                database.executeQuery(query);
+            }
         }
 
         public void deleteWaybillComposition(long waybillCompositionId)
@@ -28,7 +36,7 @@ namespace Warehouse.storage1
 
         public void fetchWaybillCompositionToGrid(DataGrid dataGrid)
         {
-            string query = $"SELECT waybill.document_number, finished_product.title, waybill_type, fat, mass, acidity, temperature, cleaning_group, density, sort, packaging_type, quantity, brutto, tara, netto, grade FROM waybill, waybill_composition, finished_product WHERE waybill_composition.waybill_id = waybill.waybill_id AND waybill_composition.product_id = finished_product.product_id";
+            string query = $"SELECT waybill_composition_id, waybill.document_number, finished_product.title, waybill_type, fat, mass, acidity, temperature, cleaning_group, density, waybill_composition.sort, packaging_type, quantity, brutto, tara, netto, grade FROM waybill, waybill_composition, finished_product WHERE waybill_composition.waybill_id = waybill.waybill_id AND waybill_composition.product_id = finished_product.product_id";
 
             database.selectQuery(query, dataGrid);
         }
@@ -38,6 +46,16 @@ namespace Warehouse.storage1
             string query = $"UPDATE waybill_composition SET waybill_id = '{waybillComposition.waybillId}', product_id = '{waybillComposition.productId}', waybill_type = N'{waybillComposition.waybillType}', fat = N'{waybillComposition.fat}', mass = N'{waybillComposition.mass}', acidity = N'{waybillComposition.acidity}', temperature = N'{waybillComposition.temperature}', cleaning_group = N'{waybillComposition.cleaningGroup}', density = N'{waybillComposition.density}', sort = N'{waybillComposition.sort}', packaging_type = N'{waybillComposition.packagingType}', quantity = N'{waybillComposition.quantity}', brutto = N'{waybillComposition.brutto}', tara = N'{waybillComposition.tara}', netto = N'{waybillComposition.tara}', grade = N'{waybillComposition.grade}'";
 
             database.executeQuery(query);
+        }
+
+        private bool isWaybillCompositionExist(long waybillId)
+        {
+            database.checkConnection();
+            SqlCommand command = new SqlCommand($"SELECT COUNT(*) FROM Waybill_Composition WHERE waybill_id = '{waybillId}'", database.getSqlConnection());
+            int result = (int) command.ExecuteScalar();
+            database.checkConnection();
+
+            return result > 0;
         }
     }
 }

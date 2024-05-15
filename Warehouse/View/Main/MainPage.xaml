@@ -312,7 +312,6 @@
                     <DataGridTextColumn Header="WaybillCompositionId" Binding="{Binding waybill_composition_id}" Visibility="Collapsed"/>
                     <DataGridTextColumn Header="Номер ТТН" Width="*" Binding="{Binding document_number}"/>
                     <DataGridTextColumn Header="Продукт" Width="*" Binding="{Binding title}"/>
-                    <DataGridTextColumn Header="Тип" Width="*" Binding="{Binding waybill_type}"/>
                     <DataGridTextColumn Header="Жирность" Width="*" Binding="{Binding fat}"/>
                     <DataGridTextColumn Header="Масса" Width="*" Binding="{Binding mass}"/>
                     <DataGridTextColumn Header="Кислотность" Width="*" Binding="{Binding acidity}"/>

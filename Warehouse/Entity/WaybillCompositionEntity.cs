@@ -76,5 +76,26 @@
             this.netto = netto;
             this.grade = grade;
         }
+
+        public override string ToString()
+        {
+            return $"WaybillCompositionId: {waybillCompositionId}, " +
+                   $"WaybillId: {waybillId}, " +
+                   $"ProductId: {productId}, " +
+                   $"WaybillType: {waybillType}, " +
+                   $"Fat: {fat}, " +
+                   $"Mass: {mass}, " +
+                   $"Acidity: {acidity}, " +
+                   $"Temperature: {temperature}, " +
+                   $"CleaningGroup: {cleaningGroup}, " +
+                   $"Density: {density}, " +
+                   $"Sort: {sort}, " +
+                   $"PackagingType: {packagingType}, " +
+                   $"Quantity: {quantity}, " +
+                   $"Brutto: {brutto}, " +
+                   $"Tara: {tara}, " +
+                   $"Netto: {netto}, " +
+                   $"Grade: {grade}";
+        }
     }
 }

@@ -48,7 +48,7 @@ namespace Warehouse.storage1
 
         public void insertWaybillIntoComboBox(ComboBox box)
         {
-            string query = $"SELECT waybill_id, document_number FROM waybill";
+            string query = $"SELECT waybill_id, CAST(document_number AS VARCHAR) AS document_number FROM waybill";
 
             database.insertValuesIntoComboBox(query, box);
         }

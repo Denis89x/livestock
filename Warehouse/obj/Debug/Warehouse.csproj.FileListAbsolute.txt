@@ -191,3 +191,7 @@ D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Waybill\Creat
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Waybill\CreateWaybill.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Waybill\EditWaybill.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Waybill\EditWaybill.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\WaybillComposition\CreateWaybillComposition.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\WaybillComposition\CreateWaybillComposition.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\WaybillComposition\EditWaybillComposition.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\WaybillComposition\EditWaybillComposition.baml
