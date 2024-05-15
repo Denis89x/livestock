@@ -43,7 +43,7 @@ namespace Warehouse.storage1
 
         public void updateWaybillComposition(WaybillCompositionEntity waybillComposition)
         {
-            string query = $"UPDATE waybill_composition SET waybill_id = '{waybillComposition.waybillId}', product_id = '{waybillComposition.productId}', waybill_type = N'{waybillComposition.waybillType}', fat = N'{waybillComposition.fat}', mass = N'{waybillComposition.mass}', acidity = N'{waybillComposition.acidity}', temperature = N'{waybillComposition.temperature}', cleaning_group = N'{waybillComposition.cleaningGroup}', density = N'{waybillComposition.density}', sort = N'{waybillComposition.sort}', packaging_type = N'{waybillComposition.packagingType}', quantity = N'{waybillComposition.quantity}', brutto = N'{waybillComposition.brutto}', tara = N'{waybillComposition.tara}', netto = N'{waybillComposition.tara}', grade = N'{waybillComposition.grade}'";
+            string query = $"UPDATE waybill_composition SET product_id = '{waybillComposition.productId}', fat = N'{waybillComposition.fat}', mass = N'{waybillComposition.mass}', acidity = N'{waybillComposition.acidity}', temperature = N'{waybillComposition.temperature}', cleaning_group = N'{waybillComposition.cleaningGroup}', density = N'{waybillComposition.density}', sort = N'{waybillComposition.sort}', packaging_type = N'{waybillComposition.packagingType}', quantity = N'{waybillComposition.quantity}', brutto = N'{waybillComposition.brutto}', tara = N'{waybillComposition.tara}', netto = N'{waybillComposition.tara}', grade = N'{waybillComposition.grade}' WHERE waybill_composition_id = '{waybillComposition.waybillId}'";
 
             database.executeQuery(query);
         }

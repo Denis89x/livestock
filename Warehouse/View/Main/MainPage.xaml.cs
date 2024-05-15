@@ -5,6 +5,7 @@ using System.Windows;
 using Warehouse.storage1;
 using Warehouse.View.Cattle;
 using Warehouse.View.Contractor;
+using Warehouse.View.DeliveryNote;
 using Warehouse.View.Division;
 using Warehouse.View.Employee;
 using Warehouse.View.Product;
@@ -23,6 +24,7 @@ namespace Warehouse.View.Main
         private EmployeeRepo employeeRepo;
         private StatementRepo statementRepo;
         private ContractorRepo contractorRepo;
+        private DeliveryNoteRepo deliveryNoteRepo;
         private WaybillCompositionRepo waybillCompositionRepo;
 
         public MainPage()
@@ -30,6 +32,7 @@ namespace Warehouse.View.Main
             InitializeComponent();
 
             waybillCompositionRepo = new WaybillCompositionRepoImpl();
+            deliveryNoteRepo = new DeliveryNoteRepoImpl();
             contractorRepo = new ContractorRepoImpl();
             statementRepo = new StatementRepoImpl();
             employeeRepo = new EmployeeRepoImpl();
@@ -69,6 +72,7 @@ namespace Warehouse.View.Main
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
+            DeliveryNoteGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Employee_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -84,6 +88,7 @@ namespace Warehouse.View.Main
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
+            DeliveryNoteGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Division_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -99,6 +104,7 @@ namespace Warehouse.View.Main
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
+            DeliveryNoteGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Cettle_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -114,6 +120,7 @@ namespace Warehouse.View.Main
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
+            DeliveryNoteGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Product_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -129,6 +136,7 @@ namespace Warehouse.View.Main
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
+            DeliveryNoteGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Statement_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -144,6 +152,7 @@ namespace Warehouse.View.Main
             ProductGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
+            DeliveryNoteGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Waybill_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -159,6 +168,7 @@ namespace Warehouse.View.Main
             ProductGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
+            DeliveryNoteGrid.Visibility = Visibility.Collapsed;
         }
 
         private void WaybillComposition_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -174,6 +184,23 @@ namespace Warehouse.View.Main
             ProductGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
+            DeliveryNoteGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void DeliveryNote_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            deliveryNoteRepo.fetchDeliveryNoteToGrid(DeliveryNoteGrid);
+
+            DeliveryNoteGrid.Visibility = Visibility.Visible;
+
+            ContractorGrid.Visibility = Visibility.Collapsed;
+            EmployeeGrid.Visibility = Visibility.Collapsed;
+            DivisionGrid.Visibility = Visibility.Collapsed;
+            CattleGrid.Visibility = Visibility.Collapsed;
+            ProductGrid.Visibility = Visibility.Collapsed;
+            StatementGrid.Visibility = Visibility.Collapsed;
+            WaybillGrid.Visibility = Visibility.Collapsed;
+            WaybillCompositionGrid.Visibility = Visibility.Collapsed;
         }
 
         private void AddContractor_Click(object sender, RoutedEventArgs e)
@@ -561,6 +588,22 @@ namespace Warehouse.View.Main
             {
                 MessageBox.Show("Выберите поле для удаления!");
             }
+        }
+
+        private void AddDeliveryNote_Click(object sender, RoutedEventArgs e)
+        {
+            CreateDelivery delivery = new CreateDelivery(DeliveryNoteGrid);
+            delivery.ShowDialog();
+        }
+
+        private void EditDeliveryNote_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteDeliveryNote_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -5,7 +5,6 @@ using Warehouse.storage1;
 
 namespace Warehouse.View.WaybillComposition
 {
-
     public partial class EditWaybillComposition : Window
     {
         DataGrid dataGrid;
@@ -119,7 +118,6 @@ namespace Warehouse.View.WaybillComposition
             NextThird.Visibility = Visibility.Collapsed;
         }
 
-
         private void PreviewThird_Click(object sender, RoutedEventArgs e)
         {
             DensityBox.Visibility = Visibility.Visible;
@@ -156,7 +154,6 @@ namespace Warehouse.View.WaybillComposition
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
-            ComboBoxEntity waybill = (ComboBoxEntity)WaybillComboBox.SelectedItem;
             ComboBoxEntity product = (ComboBoxEntity)ProductComboBox.SelectedItem;
 
             string waybillType = "accepted";
@@ -174,7 +171,7 @@ namespace Warehouse.View.WaybillComposition
             string netto = NettoBox.Text;
             string grade = GradeBox.Text;
 
-            WaybillCompositionEntity waybillComposition = new WaybillCompositionEntity(waybillCompositionId, waybill.id, product.id, waybillType, fat, mass, acidity, temperature, cleaningGroup, density, sort, packagingType, quantity, brutto, tara, netto, grade);
+            WaybillCompositionEntity waybillComposition = new WaybillCompositionEntity(waybillCompositionId, product.id, waybillType, fat, mass, acidity, temperature, cleaningGroup, density, sort, packagingType, quantity, brutto, tara, netto, grade);
 
             waybillCompositionRepo.updateWaybillComposition(waybillComposition);
             waybillCompositionRepo.fetchWaybillCompositionToGrid(dataGrid);

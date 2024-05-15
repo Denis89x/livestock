@@ -105,6 +105,7 @@
     <Compile Include="Entity\ComboBoxEntity.cs" />
     <Compile Include="Entity\ContractorEntity.cs" />
     <Compile Include="DTO\ComboBoxDTO.cs" />
+    <Compile Include="Entity\DeliveryNoteEntity.cs" />
     <Compile Include="Entity\DivisionEntity.cs" />
     <Compile Include="Entity\EmployeeEntity.cs" />
     <Compile Include="Entity\ProductEntity.cs" />
@@ -128,6 +129,8 @@
     <Compile Include="storage1\ContractorRepo.cs" />
     <Compile Include="storage1\ContractorRepoImpl.cs" />
     <Compile Include="storage1\Database.cs" />
+    <Compile Include="storage1\DeliveryNoteRepo.cs" />
+    <Compile Include="storage1\DeliveryNoteRepoImpl.cs" />
     <Compile Include="storage1\DivisionRepo.cs" />
     <Compile Include="storage1\DivisionRepoImpl.cs" />
     <Compile Include="storage1\EmployeeRepo.cs" />
@@ -174,6 +177,9 @@
     </Compile>
     <Compile Include="View\Contractor\EditContractor.xaml.cs">
       <DependentUpon>EditContractor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DeliveryNote\CreateDelivery.xaml.cs">
+      <DependentUpon>CreateDelivery.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Division\AddDivision.xaml.cs">
       <DependentUpon>AddDivision.xaml</DependentUpon>
@@ -295,6 +301,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Contractor\EditContractor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DeliveryNote\CreateDelivery.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

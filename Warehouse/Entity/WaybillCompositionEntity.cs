@@ -2,8 +2,6 @@
 {
     internal class WaybillCompositionEntity
     {
-        public long waybillCompositionId { get; set; }
-
         public long waybillId { get; set; }
 
         public long productId {  get; set; }
@@ -56,31 +54,9 @@
             this.grade = grade;
         }
 
-        public WaybillCompositionEntity(long waybillCompositionId, long waybillId, long productId, string waybillType, string fat, string mass, string acidity, string temperature, string cleaningGroup, string density, string sort, string packagingType, string quantity, string brutto, string tara, string netto, string grade)
-        {
-            this.waybillCompositionId = waybillCompositionId;
-            this.waybillId = waybillId;
-            this.productId = productId;
-            this.waybillType = waybillType;
-            this.fat = fat;
-            this.mass = mass;
-            this.acidity = acidity;
-            this.temperature = temperature;
-            this.cleaningGroup = cleaningGroup;
-            this.density = density;
-            this.sort = sort;
-            this.packagingType = packagingType;
-            this.quantity = quantity;
-            this.brutto = brutto;
-            this.tara = tara;
-            this.netto = netto;
-            this.grade = grade;
-        }
-
         public override string ToString()
         {
-            return $"WaybillCompositionId: {waybillCompositionId}, " +
-                   $"WaybillId: {waybillId}, " +
+            return $"WaybillId: {waybillId}, " +
                    $"ProductId: {productId}, " +
                    $"WaybillType: {waybillType}, " +
                    $"Fat: {fat}, " +
