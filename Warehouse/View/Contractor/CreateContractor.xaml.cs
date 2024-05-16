@@ -1,11 +1,13 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.Contractor
 {
     public partial class CreateContractor : Window
     {
+        ContractorValidation validation;
         DataGrid dataGrid;
 
         ContractorRepo contractorRepo;
@@ -15,7 +17,9 @@ namespace Warehouse.View.Contractor
             InitializeComponent();
 
             this.dataGrid = dataGrid;
-            this.contractorRepo = new ContractorRepoImpl();
+
+            contractorRepo = new ContractorRepoImpl();
+            validation = new ContractorValidation();
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)
@@ -33,14 +37,17 @@ namespace Warehouse.View.Contractor
 
             ContractorEntity contractor = new ContractorEntity(address, title, settlement, phone, bank);
 
-            contractorRepo.createContractor(contractor);
-            contractorRepo.fetchContractorToGrid(dataGrid);
+            if (validation.isContractorValid(contractor))
+            {
+                contractorRepo.createContractor(contractor);
+                contractorRepo.fetchContractorToGrid(dataGrid);
 
-            AddressBox.Text = "";
-            TitleBox.Text = "";
-            SettlementBox.Text = "";
-            PhoneBox.Text = "";
-            BankBox.Text = "";
+                AddressBox.Text = "";
+                TitleBox.Text = "";
+                SettlementBox.Text = "";
+                PhoneBox.Text = "";
+                BankBox.Text = "";
+            }
         }
     }
 }

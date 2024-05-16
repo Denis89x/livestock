@@ -2,11 +2,13 @@
 using System.Windows.Controls;
 using Warehouse.Entity;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.Cattle
 {
     public partial class CreateCattle : Window
     {
+        CattleValidation cattleValidation;
         CattleRepo cattleRepo;
 
         DataGrid dataGrid;
@@ -16,6 +18,8 @@ namespace Warehouse.View.Cattle
             InitializeComponent();
 
             cattleRepo = new CattleRepoImpl();
+            cattleValidation = new CattleValidation();
+
             this.dataGrid = dataGrid;
         }
 
@@ -30,10 +34,13 @@ namespace Warehouse.View.Cattle
 
             CattleEntity cattle = new CattleEntity(cattleType);
 
-            cattleRepo.createCattle(cattle);
-            cattleRepo.fetchCattleToGrid(dataGrid);
+            if (cattleValidation.isCattleValid(cattle))
+            {
+                cattleRepo.createCattle(cattle);
+                cattleRepo.fetchCattleToGrid(dataGrid);
 
-            CattleTypeBox.Text = "";
+                CattleTypeBox.Text = "";
+            }
         }
     }
 }

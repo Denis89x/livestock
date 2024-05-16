@@ -52,5 +52,19 @@ namespace Warehouse.storage1
 
             database.insertValuesIntoComboBox(query, box);
         }
+
+        public void insertDeliveryIntoComboBox(ComboBox box)
+        {
+            string query = "SELECT delivery_note_id, CAST(delivery_note_id AS VARCHAR) AS delivery_note_id FROM delivery_note";
+
+            database.insertValuesIntoComboBox(query, box);
+        }
+
+        public void insertRecordCardIntoComboBox(ComboBox box)
+        {
+            string query = "SELECT record_card_id, CAST(record_card_id AS VARCHAR) AS record_card_id FROM record_card";
+
+            database.insertValuesIntoComboBox(query , box);
+        }
     }
 }

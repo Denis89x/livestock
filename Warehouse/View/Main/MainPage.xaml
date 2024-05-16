@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Warehouse.View.Main"
         mc:Ignorable="d"
         Title="Учёт животноводческой продукции" 
-        MinHeight="720"
+        MinHeight="900"
         MinWidth="1050"
         Icon="/Resources/ColorIcon.png"
         Closing="Window_Closing"
@@ -38,12 +38,38 @@
                 <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="150"/>
             </DoubleAnimationUsingKeyFrames>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ContractorGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EmployeeGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DivisionGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="CattleGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ProductGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="StatementGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillCompositionGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryNoteGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryCompositionGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardCompositionGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="UserInfoLabel" From="90,18,739,819" To="180,18,739,819" Duration="0:0:0.5"/>
         </Storyboard>
         <Storyboard x:Key="MenuClose">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
                 <EasingDoubleKeyFrame KeyTime="0" Value="150"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="60"/>
             </DoubleAnimationUsingKeyFrames>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ContractorGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EmployeeGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DivisionGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="CattleGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ProductGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="StatementGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillCompositionGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryNoteGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryCompositionGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardCompositionGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="UserInfoLabel" From="180,18,739,819" To="90,18,739,819" Duration="0:0:0.5"/>
         </Storyboard>
     </Window.Resources>
     <Window.Triggers>
@@ -58,8 +84,14 @@
         <Grid
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch">
+            <Label
+                x:Name="UserInfoLabel"
+                Margin="90,18,739,819"
+                FontSize="15"
+                Foreground="WHITE"
+                >Username: DENIS</Label>
             <DataGrid   
-                Margin="160,30,30,30" 
+                Margin="90,60,30,30" 
                 Visibility="Visible"
                 x:Name="ContractorGrid" 
                 AutoGenerateColumns="false"
@@ -71,7 +103,9 @@
                 SelectionUnit="FullRow" 
                 CanUserResizeRows="False" 
                 IsReadOnly="True"
-                Foreground="#FF7643D2">
+                Foreground="#FF7643D2"
+                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                ScrollViewer.VerticalScrollBarVisibility="Hidden">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ContractorId" Binding="{Binding contractor_id}" Visibility="Hidden"/>
                     <DataGridTextColumn Header="Адрес" Width="*" Binding="{Binding address}"/>
@@ -80,7 +114,7 @@
                     <DataGridTextColumn Header="Номер телефона" Width="*" Binding="{Binding phone_number}"/>
                     <DataGridTextColumn Header="Название банка" Width="*" Binding="{Binding bank_name}"/>
                 </DataGrid.Columns>
-                <DataGrid.ContextMenu>
+                <DataGrid.ContextMenu x:Uid="123">
                     <ContextMenu>
                         <MenuItem x:Name="AddContractor" Header="Добавить" Click="AddContractor_Click"/>
                         <MenuItem x:Name="EditContractor" Header="Редактировать" Click="EditContractor_Click"/>
@@ -92,7 +126,7 @@
                 </DataGrid.ContextMenu>
             </DataGrid>
             <DataGrid   
-                Margin="160,30,30,30" 
+                Margin="90,60,30,30"
                 Visibility="Collapsed"
                 x:Name="EmployeeGrid" 
                 AutoGenerateColumns="false"
@@ -104,7 +138,9 @@
                 SelectionUnit="FullRow" 
                 CanUserResizeRows="False" 
                 IsReadOnly="True"
-                Foreground="#FF7643D2">
+                Foreground="#FF7643D2"
+                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                ScrollViewer.VerticalScrollBarVisibility="Hidden">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ContractorId" Binding="{Binding employee_id}" Visibility="Hidden"/>
                     <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding surname}"/>
@@ -124,7 +160,7 @@
                 </DataGrid.ContextMenu>
             </DataGrid>
             <DataGrid   
-                Margin="160,30,30,30" 
+                Margin="90,60,30,30"
                 Visibility="Collapsed"
                 x:Name="DivisionGrid" 
                 AutoGenerateColumns="false"
@@ -136,7 +172,9 @@
                 SelectionUnit="FullRow" 
                 CanUserResizeRows="False" 
                 IsReadOnly="True"
-                Foreground="#FF7643D2">
+                Foreground="#FF7643D2"
+                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                ScrollViewer.VerticalScrollBarVisibility="Hidden">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="DivisionId" Binding="{Binding division_id}" Visibility="Hidden"/>
                     <DataGridTextColumn Header="Тип подразделения" Width="*" Binding="{Binding division_type}"/>
@@ -153,7 +191,7 @@
                 </DataGrid.ContextMenu>
             </DataGrid>
             <DataGrid   
-                Margin="160,30,30,30" 
+                Margin="90,60,30,30"
                 Visibility="Collapsed"
                 x:Name="CattleGrid" 
                 AutoGenerateColumns="false"
@@ -165,7 +203,9 @@
                 SelectionUnit="FullRow" 
                 CanUserResizeRows="False" 
                 IsReadOnly="True"
-                Foreground="#FF7643D2">
+                Foreground="#FF7643D2"
+                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                ScrollViewer.VerticalScrollBarVisibility="Hidden">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="CattleId" Binding="{Binding cattle_id}" Visibility="Hidden"/>
                     <DataGridTextColumn Header="Вид скота" Width="*" Binding="{Binding cattle_type}"/>
@@ -182,7 +222,7 @@
                 </DataGrid.ContextMenu>
             </DataGrid>
             <DataGrid   
-                Margin="160,30,30,30" 
+                Margin="90,60,30,30"
                 Visibility="Collapsed"
                 x:Name="ProductGrid" 
                 AutoGenerateColumns="false"
@@ -194,7 +234,9 @@
                 SelectionUnit="FullRow" 
                 CanUserResizeRows="False" 
                 IsReadOnly="True"
-                Foreground="#FF7643D2">
+                Foreground="#FF7643D2"
+                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                ScrollViewer.VerticalScrollBarVisibility="Hidden">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ProductId" Binding="{Binding product_id}" Visibility="Hidden"/>
                     <DataGridTextColumn Header="Название" Width="*" Binding="{Binding title}"/>
@@ -213,7 +255,7 @@
                 </DataGrid.ContextMenu>
             </DataGrid>
             <DataGrid   
-                Margin="160,30,30,30" 
+                Margin="90,60,30,30"
                 Visibility="Collapsed"
                 x:Name="StatementGrid" 
                 AutoGenerateColumns="false"
@@ -225,7 +267,9 @@
                 SelectionUnit="FullRow" 
                 CanUserResizeRows="False" 
                 IsReadOnly="True"
-                Foreground="#FF7643D2">
+                Foreground="#FF7643D2"
+                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                ScrollViewer.VerticalScrollBarVisibility="Hidden">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="StatementId" Binding="{Binding statement_id}" Visibility="Hidden"/>
                     <DataGridTextColumn Header="Номер ведомости" Width="*" Binding="{Binding statement_number}"/>
@@ -253,7 +297,7 @@
                 </DataGrid.ContextMenu>
             </DataGrid>
             <DataGrid   
-                Margin="160,30,30,30" 
+                Margin="90,60,30,30"
                 Visibility="Collapsed"
                 x:Name="WaybillGrid" 
                 AutoGenerateColumns="false"
@@ -265,7 +309,9 @@
                 SelectionUnit="FullRow" 
                 CanUserResizeRows="False" 
                 IsReadOnly="True"
-                Foreground="#FF7643D2">
+                Foreground="#FF7643D2"
+                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                ScrollViewer.VerticalScrollBarVisibility="Hidden">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="WaybillId" Binding="{Binding waybill_id}" Visibility="Collapsed"/>
                     <DataGridTextColumn Header="Контрагент" Width="*" Binding="{Binding title}"/>
@@ -295,7 +341,7 @@
                 </DataGrid.ContextMenu>
             </DataGrid>
             <DataGrid   
-                Margin="160,30,30,30" 
+                Margin="90,60,30,30"
                 Visibility="Collapsed"
                 x:Name="WaybillCompositionGrid" 
                 AutoGenerateColumns="false"
@@ -307,7 +353,9 @@
                 SelectionUnit="FullRow" 
                 CanUserResizeRows="False" 
                 IsReadOnly="True"
-                Foreground="#FF7643D2">
+                Foreground="#FF7643D2"
+                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                ScrollViewer.VerticalScrollBarVisibility="Hidden">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="WaybillCompositionId" Binding="{Binding waybill_composition_id}" Visibility="Collapsed"/>
                     <DataGridTextColumn Header="Номер ТТН" Width="*" Binding="{Binding document_number}"/>
@@ -338,7 +386,7 @@
                 </DataGrid.ContextMenu>
             </DataGrid>
             <DataGrid   
-                Margin="160,30,30,30" 
+                Margin="90,60,30,30"
                 Visibility="Collapsed"
                 x:Name="DeliveryNoteGrid" 
                 AutoGenerateColumns="false"
@@ -350,9 +398,11 @@
                 SelectionUnit="FullRow" 
                 CanUserResizeRows="False" 
                 IsReadOnly="True"
-                Foreground="#FF7643D2">
+                Foreground="#FF7643D2"
+                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                ScrollViewer.VerticalScrollBarVisibility="Hidden">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="DeliveryNoteId" Binding="{Binding delivery_note_id}" Visibility="Hidden"/>
+                    <DataGridTextColumn Header="Номер ведомости" Binding="{Binding delivery_note_id}"/>
                     <DataGridTextColumn Header="Подразделение" Width="*" Binding="{Binding division_type}"/>
                     <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding date, StringFormat=dd.MM.yyyy}"/>
                     <DataGridTextColumn Header="Назначение" Width="*" Binding="{Binding assignment}"/>
@@ -368,10 +418,117 @@
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
+            <DataGrid   
+                Margin="90,60,30,30"
+                Visibility="Collapsed"
+                x:Name="DeliveryCompositionGrid" 
+                AutoGenerateColumns="false"
+                CanUserResizeColumns="False" 
+                CanUserAddRows="False" 
+                CanUserDeleteRows="False" 
+                CanUserReorderColumns="False" 
+                SelectionMode="Single" 
+                SelectionUnit="FullRow" 
+                CanUserResizeRows="False" 
+                IsReadOnly="True"
+                Foreground="#FF7643D2"
+                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="DeliveryCompositionId" Binding="{Binding delivery_note_composition_id}" Visibility="Hidden"/>
+                    <DataGridTextColumn Header="Номер ведомости" Width="*" Binding="{Binding delivery_note_id}"/>
+                    <DataGridTextColumn Header="Продукт" Width="*" Binding="{Binding title}"/>
+                    <DataGridTextColumn Header="Единица измерения" Width="*" Binding="{Binding unit}"/>
+                    <DataGridTextColumn Header="Запрошено" Width="*" Binding="{Binding requested}"/>
+                    <DataGridTextColumn Header="Реализовано" Width="*" Binding="{Binding released}"/>
+                    <DataGridTextColumn Header="Стоимость" Width="*" Binding="{Binding price}"/>
+                    <DataGridTextColumn Header="Сумма" Width="*" Binding="{Binding amount}"/>
+                </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="AddDeliveryComposition" Header="Добавить" Click="AddDeliveryComposition_Click"/>
+                        <MenuItem x:Name="EditDeliveryComposition" Header="Редактировать" Click="EditDeliveryComposition_Click"/>
+                        <MenuItem x:Name="DeleteDeliveryComposition" Header="Удалить" Click="DeleteDeliveryComposition_Click"/>
+                        <MenuItem x:Name="FiltrationDeliveryComposition" Header="Фильтрация"/>
+                        <MenuItem x:Name="SearchDeliveryComposition" Header="Поиск"/>
+                        <MenuItem x:Name="CancelDeliveryComposition" Header="Отменить"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
+            <DataGrid   
+                Margin="90,60,30,30"
+                Visibility="Collapsed"
+                x:Name="RecordCardGrid" 
+                AutoGenerateColumns="false"
+                CanUserResizeColumns="False" 
+                CanUserAddRows="False" 
+                CanUserDeleteRows="False" 
+                CanUserReorderColumns="False" 
+                SelectionMode="Single" 
+                SelectionUnit="FullRow" 
+                CanUserResizeRows="False" 
+                IsReadOnly="True"
+                Foreground="#FF7643D2"
+                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Номер карточки" Binding="{Binding record_card_id}"/>
+                    <DataGridTextColumn Header="Продукт" Width="*" Binding="{Binding title}"/>
+                    <DataGridTextColumn Header="Подразделение" Width="*" Binding="{Binding division_type}"/>
+                    <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding surname}"/>
+                    <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding date, StringFormat=dd.MM.yyyy}"/>
+                </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="AddRecordCard" Header="Добавить" Click="AddRecordCard_Click"/>
+                        <MenuItem x:Name="EditRecordCard" Header="Редактировать" Click="EditRecordCard_Click"/>
+                        <MenuItem x:Name="DeleteRecordCard" Header="Удалить" Click="DeleteRecordCard_Click"/>
+                        <MenuItem x:Name="FiltrationRecordCard" Header="Фильтрация"/>
+                        <MenuItem x:Name="SearchRecordCard" Header="Поиск"/>
+                        <MenuItem x:Name="CancelRecordCard" Header="Отменить"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
+            <DataGrid   
+                 Margin="90,60,30,30"
+                 Visibility="Collapsed"
+                 x:Name="RecordCardCompositionGrid" 
+                 AutoGenerateColumns="false"
+                 CanUserResizeColumns="False" 
+                 CanUserAddRows="False" 
+                 CanUserDeleteRows="False" 
+                 CanUserReorderColumns="False" 
+                 SelectionMode="Single" 
+                 SelectionUnit="FullRow" 
+                 CanUserResizeRows="False" 
+                 IsReadOnly="True"
+                 Foreground="#FF7643D2"
+                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="RecordCardCompositionId" Binding="{Binding record_card_composition_id}" Visibility="Hidden"/>
+                    <DataGridTextColumn Header="Номер книжки" Width="*" Binding="{Binding record_card_id}"/>
+                    <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding date, StringFormat=dd.MM.yyyy}"/>
+                    <DataGridTextColumn Header="Количество коров" Width="*" Binding="{Binding cow_quantity}"/>
+                    <DataGridTextColumn Header="Надой(утро)" Width="*" Binding="{Binding milk_yield_morning}"/>
+                    <DataGridTextColumn Header="Надой(день)" Width="*" Binding="{Binding milk_yield_midday}"/>
+                    <DataGridTextColumn Header="Надой(вечер)" Width="*" Binding="{Binding milk_yield_evening}"/>
+                </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="AddRecordCardComposition" Header="Добавить" Click="AddRecordCardComposition_Click"/>
+                        <MenuItem x:Name="EditRecordCardComposition" Header="Редактировать" Click="EditRecordCardComposition_Click"/>
+                        <MenuItem x:Name="DeleteRecordCardComposition" Header="Удалить" Click="DeleteRecordCardComposition_Click"/>
+                        <MenuItem x:Name="FiltrationRecordCardComposition" Header="Фильтрация"/>
+                        <MenuItem x:Name="SearchRecordCardComposition" Header="Поиск"/>
+                        <MenuItem x:Name="CancelRecordCardComposition" Header="Отменить"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
         </Grid>
         <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#19000000">
             <StackPanel>
-                <Grid Height="150">
+                <Grid Height="60">
                     <Button x:Name="ButtonCloseMenu" Width="60" Height="60" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="ButtonCloseMenu_Click" Background="#66673AB7">
                         <materialDesign:PackIcon Kind="ArrowLeft" Foreground="#FF003B75" Width="25" Height="25"/>
                     </Button>
@@ -431,10 +588,28 @@
                     <ListViewItem x:Name="DeliveryNote" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="DeliveryNote_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="CogOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Состав ТТН" VerticalAlignment="Center" Margin="0 10"/>
+                            <TextBlock Text="Требования накладная" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="AdminRegistration" Height="60" Visibility="Collapsed">
+                    <ListViewItem x:Name="DeliveryNoteComposition" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="DeliveryNoteComposition_PreviewMouseLeftButtonDown">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="CogOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Состав накладной" VerticalAlignment="Center" Margin="0 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="RecordCard" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="RecordCard_PreviewMouseLeftButtonDown">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="CogOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Состав накладной" VerticalAlignment="Center" Margin="0 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="RecordCardComposition" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="RecordCardComposition_PreviewMouseLeftButtonDown">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="CogOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Состав накладной" VerticalAlignment="Center" Margin="0 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="AdminRegistration" Height="60" Visibility="Collapsed" PreviewMouseLeftButtonDown="AdminRegistration_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="AccountPlusOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Регистрация" VerticalAlignment="Center" Margin="0 10"/>

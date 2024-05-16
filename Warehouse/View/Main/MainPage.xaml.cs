@@ -2,13 +2,18 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows;
+using Warehouse.Entity;
 using Warehouse.storage1;
+using Warehouse.View.Auth;
 using Warehouse.View.Cattle;
 using Warehouse.View.Contractor;
 using Warehouse.View.DeliveryNote;
+using Warehouse.View.DeliveryNoteComposition;
 using Warehouse.View.Division;
 using Warehouse.View.Employee;
 using Warehouse.View.Product;
+using Warehouse.View.RecordCard;
+using Warehouse.View.RecordCardComposition;
 using Warehouse.View.Statement;
 using Warehouse.View.Waybill;
 using Warehouse.View.WaybillComposition;
@@ -17,6 +22,9 @@ namespace Warehouse.View.Main
 {
     public partial class MainPage : Window
     {
+        private CrudRepo<DeliveryCompositionEntity> deliveryCompositionCrud;
+        private CrudRepo<RecordCardEntity> recordCardCrud;
+        private CrudRepo<RecordCardCompositionEntity> recordCardCompositionCrud;
         private CattleRepo cattleRepo;
         private ProductRepo productRepo;
         private WaybillRepo waybillRepo;
@@ -27,11 +35,14 @@ namespace Warehouse.View.Main
         private DeliveryNoteRepo deliveryNoteRepo;
         private WaybillCompositionRepo waybillCompositionRepo;
 
-        public MainPage()
+        public MainPage(string userRole)
         {
             InitializeComponent();
 
+            deliveryCompositionCrud = new DeliveryCompositionRepoImpl();
             waybillCompositionRepo = new WaybillCompositionRepoImpl();
+            recordCardCompositionCrud = new RecordCardCompositionRepoImpl();
+            recordCardCrud = new RecordCardRepoImpl();
             deliveryNoteRepo = new DeliveryNoteRepoImpl();
             contractorRepo = new ContractorRepoImpl();
             statementRepo = new StatementRepoImpl();
@@ -40,6 +51,42 @@ namespace Warehouse.View.Main
             productRepo = new ProductRepoImpl();
             waybillRepo = new WaybillRepoImpl();
             cattleRepo = new CattleRepoImpl();
+
+            if (userRole.Equals("ROLE_ADMIN"))
+            {
+                AdminRegistration.Visibility = Visibility.Visible;
+            } else if (userRole.Equals("ROLE_ACCOUNTANT"))
+            {
+                ContractorGrid.ContextMenu.Visibility = Visibility.Collapsed;
+                EmployeeGrid.ContextMenu.Visibility = Visibility.Collapsed;
+                DivisionGrid.ContextMenu.Visibility = Visibility.Collapsed;
+                CattleGrid.ContextMenu.Visibility = Visibility.Collapsed;
+                ProductGrid.ContextMenu.Visibility = Visibility.Collapsed;
+                StatementGrid.ContextMenu.Visibility = Visibility.Collapsed;
+                WaybillGrid.ContextMenu.Visibility = Visibility.Collapsed;
+                WaybillCompositionGrid.ContextMenu.Visibility = Visibility.Collapsed;
+                DeliveryNoteGrid.ContextMenu.Visibility = Visibility.Collapsed;
+                DeliveryCompositionGrid.ContextMenu.Visibility = Visibility.Collapsed;
+                RecordCardGrid.ContextMenu.Visibility = Visibility.Collapsed;
+                RecordCardCompositionGrid.ContextMenu.Visibility = Visibility.Collapsed;
+            }
+
+            string userPosition = "";
+
+            if (userRole.Equals("ROLE_ADMIN"))
+            {
+                userPosition = "Администратор";
+            } else if (userRole.Equals("ROLE_ACCOUNTANT"))
+            {
+                userPosition = "Бухгалтер";
+            } else if (userRole.Equals("ROLE_OWNER"))
+            {
+                userPosition = "Заведующий фермой";
+            }
+
+            contractorRepo.fetchContractorToGrid(ContractorGrid);
+
+            UserInfoLabel.Content = $"Имя пользователя: {AuthSession.CurrentUsername}" + "".PadLeft(30, ' ') +  $"Должность: {userPosition}";
         }
 
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
@@ -73,6 +120,9 @@ namespace Warehouse.View.Main
             WaybillGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
+            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Employee_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -89,6 +139,9 @@ namespace Warehouse.View.Main
             WaybillGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
+            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Division_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -105,6 +158,9 @@ namespace Warehouse.View.Main
             WaybillGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
+            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Cettle_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -121,6 +177,9 @@ namespace Warehouse.View.Main
             WaybillGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
+            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Product_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -137,6 +196,9 @@ namespace Warehouse.View.Main
             WaybillGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
+            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Statement_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -153,6 +215,9 @@ namespace Warehouse.View.Main
             WaybillGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
+            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Waybill_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -169,6 +234,9 @@ namespace Warehouse.View.Main
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
+            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
         private void WaybillComposition_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -185,6 +253,9 @@ namespace Warehouse.View.Main
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
+            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
         private void DeliveryNote_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -201,6 +272,72 @@ namespace Warehouse.View.Main
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
+            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void DeliveryNoteComposition_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            deliveryCompositionCrud.fetchToGrid(DeliveryCompositionGrid);
+
+            DeliveryCompositionGrid.Visibility = Visibility.Visible;
+
+            DeliveryNoteGrid.Visibility = Visibility.Collapsed;
+            ContractorGrid.Visibility = Visibility.Collapsed;
+            EmployeeGrid.Visibility = Visibility.Collapsed;
+            DivisionGrid.Visibility = Visibility.Collapsed;
+            CattleGrid.Visibility = Visibility.Collapsed;
+            ProductGrid.Visibility = Visibility.Collapsed;
+            StatementGrid.Visibility = Visibility.Collapsed;
+            WaybillGrid.Visibility = Visibility.Collapsed;
+            WaybillCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void RecordCard_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            recordCardCrud.fetchToGrid(RecordCardGrid);
+
+            RecordCardGrid.Visibility = Visibility.Visible;
+
+            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
+            DeliveryNoteGrid.Visibility = Visibility.Collapsed;
+            ContractorGrid.Visibility = Visibility.Collapsed;
+            EmployeeGrid.Visibility = Visibility.Collapsed;
+            DivisionGrid.Visibility = Visibility.Collapsed;
+            CattleGrid.Visibility = Visibility.Collapsed;
+            ProductGrid.Visibility = Visibility.Collapsed;
+            StatementGrid.Visibility = Visibility.Collapsed;
+            WaybillGrid.Visibility = Visibility.Collapsed;
+            WaybillCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void RecordCardComposition_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            recordCardCompositionCrud.fetchToGrid(RecordCardCompositionGrid);
+
+            RecordCardCompositionGrid.Visibility = Visibility.Visible;
+
+            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
+            DeliveryNoteGrid.Visibility = Visibility.Collapsed;
+            ContractorGrid.Visibility = Visibility.Collapsed;
+            EmployeeGrid.Visibility = Visibility.Collapsed;
+            DivisionGrid.Visibility = Visibility.Collapsed;
+            CattleGrid.Visibility = Visibility.Collapsed;
+            ProductGrid.Visibility = Visibility.Collapsed;
+            StatementGrid.Visibility = Visibility.Collapsed;
+            WaybillGrid.Visibility = Visibility.Collapsed;
+            WaybillCompositionGrid.Visibility = Visibility.Collapsed;
+            RecordCardGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void AdminRegistration_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            RegistrationView registration = new RegistrationView();
+            registration.ShowDialog();
         }
 
         private void AddContractor_Click(object sender, RoutedEventArgs e)
@@ -598,12 +735,194 @@ namespace Warehouse.View.Main
 
         private void EditDeliveryNote_Click(object sender, RoutedEventArgs e)
         {
+            var selectedRow = DeliveryNoteGrid.SelectedItem as DataRowView;
 
+            if (selectedRow != null)
+            {
+                EditDelivery delivery = new EditDelivery(
+                    Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), Convert.ToString(selectedRow.Row.ItemArray[2]),
+                    Convert.ToString(selectedRow.Row.ItemArray[3]), DeliveryNoteGrid);
+
+                delivery.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Не выбрана строка для редактирования", "Ошибка", MessageBoxButton.OK);
+            }
         }
 
         private void DeleteDeliveryNote_Click(object sender, RoutedEventArgs e)
         {
+            var selectedRow = DeliveryNoteGrid.SelectedItem as DataRowView;
 
+            if (selectedRow != null)
+            {
+                try
+                {
+                    long deliveryId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
+
+                    deliveryNoteRepo.deleteDeliveryNote(deliveryId);
+                    deliveryNoteRepo.fetchDeliveryNoteToGrid(DeliveryNoteGrid);
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этой ведомостью!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите поле для удаления!");
+            }
+        }
+
+        private void AddDeliveryComposition_Click(object sender, RoutedEventArgs e)
+        {
+            CreateDeliveryComposition deliveryComposition = new CreateDeliveryComposition(DeliveryCompositionGrid);
+            deliveryComposition.ShowDialog();
+        }
+
+        private void EditDeliveryComposition_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = DeliveryCompositionGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                EditDeliveryComposition delivery = new EditDeliveryComposition(
+                    Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), Convert.ToString(selectedRow.Row.ItemArray[2]),
+                    Convert.ToString(selectedRow.Row.ItemArray[3]), Convert.ToString(selectedRow.Row.ItemArray[4]), Convert.ToString(selectedRow.Row.ItemArray[5]),
+                    Convert.ToString(selectedRow.Row.ItemArray[6]), DeliveryCompositionGrid);
+
+                delivery.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Не выбрана строка для редактирования", "Ошибка", MessageBoxButton.OK);
+            }
+        }
+
+        private void DeleteDeliveryComposition_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = DeliveryCompositionGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                try
+                {
+                    long deliveryCompositionId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
+
+                    deliveryCompositionCrud.delete(deliveryCompositionId);
+                    deliveryCompositionCrud.fetchToGrid(DeliveryCompositionGrid);
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этой ведомостью!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите поле для удаления!");
+            }
+        }
+
+        private void AddRecordCard_Click(object sender, RoutedEventArgs e)
+        {
+            CreateRecordCard recordCard = new CreateRecordCard(RecordCardGrid);
+            recordCard.ShowDialog();
+        }
+
+        private void EditRecordCard_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = RecordCardGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                EditRecordCard recordCard = new EditRecordCard(
+                    Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), Convert.ToString(selectedRow.Row.ItemArray[2]),
+                    Convert.ToString(selectedRow.Row.ItemArray[3]), Convert.ToString(selectedRow.Row.ItemArray[4]), RecordCardGrid);
+
+                recordCard.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Не выбрана строка для редактирования", "Ошибка", MessageBoxButton.OK);
+            }
+        }
+
+        private void DeleteRecordCard_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = RecordCardGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                try
+                {
+                    long recordCardId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
+
+                    recordCardCrud.delete(recordCardId);
+                    recordCardCrud.fetchToGrid(RecordCardGrid);
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этой карточкой!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите поле для удаления!");
+            }
+        }
+
+        private void AddRecordCardComposition_Click(object sender, RoutedEventArgs e)
+        {
+            CreateRecordCardComposition recordCardComposition = new CreateRecordCardComposition(RecordCardCompositionGrid);
+            recordCardComposition.ShowDialog();
+        }
+
+        private void EditRecordCardComposition_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = RecordCardCompositionGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                EditRecordCardComposition recordCard = new EditRecordCardComposition(
+                    Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), Convert.ToString(selectedRow.Row.ItemArray[2]),
+                    Convert.ToString(selectedRow.Row.ItemArray[3]), Convert.ToString(selectedRow.Row.ItemArray[4]), Convert.ToString(selectedRow.Row.ItemArray[5]),
+                    Convert.ToString(selectedRow.Row.ItemArray[6]), RecordCardCompositionGrid);
+
+                recordCard.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Не выбрана строка для редактирования", "Ошибка", MessageBoxButton.OK);
+            }
+        }
+
+        private void DeleteRecordCardComposition_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = RecordCardCompositionGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                try
+                {
+                    long recordCardCompositionId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
+
+                    recordCardCompositionCrud.delete(recordCardCompositionId);
+                    recordCardCompositionCrud.fetchToGrid(RecordCardCompositionGrid);
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этой карточкой!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите поле для удаления!");
+            }
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using Warehouse.Entity;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.Division
 {
@@ -10,15 +11,18 @@ namespace Warehouse.View.Division
         long divisionId;
         DataGrid dataGrid;
         DivisionRepo divisionRepo;
+        DivisionValidation validation;
 
         public EditDivision(long divisionId, string divisionType, DataGrid dataGrid)
         {
             InitializeComponent();
 
             this.divisionId = divisionId;
-            this.divisionRepo = new DivisionRepoImpl();
             this.dataGrid = dataGrid;
 
+            validation = new DivisionValidation();
+            divisionRepo = new DivisionRepoImpl();
+            
             DivisionTypeBox.Text = divisionType;
         }
 
@@ -33,10 +37,13 @@ namespace Warehouse.View.Division
 
             DivisionEntity division = new DivisionEntity(divisionId, divisionType);
 
-            divisionRepo.updateDivision(division);
-            divisionRepo.fetchDivisionToGrid(dataGrid);
+            if (validation.isDivisionValid(division))
+            {
+                divisionRepo.updateDivision(division);
+                divisionRepo.fetchDivisionToGrid(dataGrid);
 
-            this.Close();
+                this.Close();
+            }
         }
     }
 }

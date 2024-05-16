@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Warehouse.Entity;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.Cattle
 {
@@ -21,6 +11,7 @@ namespace Warehouse.View.Cattle
         long cattleId;
         DataGrid dataGrid;
         CattleRepo cattleRepo;
+        CattleValidation cattleValidation;
 
         public EditCattle(long cattleId, string cattleType, DataGrid dataGrid)
         {
@@ -28,7 +19,9 @@ namespace Warehouse.View.Cattle
 
             this.cattleId = cattleId;
             this.dataGrid = dataGrid;
-            this.cattleRepo = new CattleRepoImpl();
+
+            cattleRepo = new CattleRepoImpl();
+            cattleValidation = new CattleValidation();
 
             CattleTypeBox.Text = cattleType;
         }
@@ -39,10 +32,13 @@ namespace Warehouse.View.Cattle
 
             CattleEntity cattle = new CattleEntity(cattleId, cattleType);
 
-            cattleRepo.updateCattle(cattle);
-            cattleRepo.fetchCattleToGrid(dataGrid);
+            if (cattleValidation.isCattleValid(cattle))
+            {
+                cattleRepo.updateCattle(cattle);
+                cattleRepo.fetchCattleToGrid(dataGrid);
 
-            this.Close();
+                this.Close();
+            }
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)

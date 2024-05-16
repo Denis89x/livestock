@@ -2,7 +2,6 @@
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Controls;
-using Warehouse.DTO;
 using Warehouse.Entity;
 
 namespace Warehouse.storage1

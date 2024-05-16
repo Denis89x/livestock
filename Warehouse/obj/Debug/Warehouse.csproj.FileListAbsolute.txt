@@ -81,15 +81,12 @@ C:\Производственная практика\Warehouse\Warehouse\bin\Deb
 C:\Производственная практика\Warehouse\Warehouse\obj\Debug\View\OutputDocuments\MainOutput.g.cs
 C:\Производственная практика\Warehouse\Warehouse\obj\Debug\View\OutputDocuments\MainOutput.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\Warehouse.csproj.AssemblyReference.cache
-D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\Auth\AuthPage.g.cs
-D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\Auth\MainWindow.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\Profile\PrfSettings.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\AddPage\AddFromComboBoxOrder.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\AddPage\OrderAdd.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\AddPage\ProductAdd.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\AddPage\ProductType.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\AddPage\SupplierAdd.g.cs
-D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\AuthView.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\EditPage\ProductEdit.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\EditPage\ProductTypeEdit.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\EditPage\SupplierEdit.g.cs
@@ -142,15 +139,12 @@ D:\Учеба\Диплом\warehouse-main\Warehouse\bin\Debug\Ru\MaterialDesignE
 D:\Учеба\Диплом\warehouse-main\Warehouse\bin\Debug\ru-ru\MaterialDesignExtensions.resources.dll
 D:\Учеба\Диплом\warehouse-main\Warehouse\bin\Debug\uz-Latn-UZ\MaterialDesignExtensions.resources.dll
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\App.baml
-D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\Auth\AuthPage.baml
-D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\Auth\MainWindow.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\Profile\PrfSettings.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\AddPage\AddFromComboBoxOrder.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\AddPage\OrderAdd.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\AddPage\ProductAdd.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\AddPage\ProductType.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\AddPage\SupplierAdd.baml
-D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\AuthView.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\EditPage\ProductEdit.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\EditPage\ProductTypeEdit.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\EditPage\SupplierEdit.baml
@@ -197,3 +191,21 @@ D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\WaybillCompos
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\WaybillComposition\EditWaybillComposition.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNote\CreateDelivery.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNote\CreateDelivery.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNote\EditDelivery.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNote\EditDelivery.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNoteComposition\CreateDeliveryComposition.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNoteComposition\CreateDeliveryComposition.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNoteComposition\EditDeliveryComposition.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNoteComposition\EditDeliveryComposition.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\RecordCard\CreateRecordCard.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\RecordCard\EditRecordCard.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\RecordCard\CreateRecordCard.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\RecordCard\EditRecordCard.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\RecordCardComposition\CreateRecordCardComposition.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\RecordCardComposition\EditRecordCardComposition.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\RecordCardComposition\CreateRecordCardComposition.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\RecordCardComposition\EditRecordCardComposition.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Auth\AuthView.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Auth\RegistrationView.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Auth\AuthView.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Auth\RegistrationView.baml

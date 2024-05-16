@@ -15,5 +15,9 @@ namespace Warehouse.storage1
         void insertContractorIntoComboBox(ComboBox box);
 
         void insertWaybillIntoComboBox(ComboBox box);
+
+        void insertDeliveryIntoComboBox(ComboBox box);
+
+        void insertRecordCardIntoComboBox(ComboBox box);
     }
 }

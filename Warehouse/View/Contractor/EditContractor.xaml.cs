@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.Contractor
 {
@@ -9,6 +10,7 @@ namespace Warehouse.View.Contractor
         long contractorId;
         DataGrid dataGrid;
         ContractorRepo contractorRepo;
+        ContractorValidation validation;
 
         public EditContractor(long contractorId, string address, string title, string settlementAccount, string phoneNumber, string bankName, DataGrid dataGrid)
         {
@@ -24,6 +26,7 @@ namespace Warehouse.View.Contractor
             BankBox.Text = bankName;
 
             contractorRepo = new ContractorRepoImpl();
+            validation = new ContractorValidation();
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)
@@ -41,10 +44,13 @@ namespace Warehouse.View.Contractor
 
             ContractorEntity contractor = new ContractorEntity(contractorId, address, title, settlementAccount, phoneNumber, bankName);
 
-            contractorRepo.updateContractor(contractor);
-            contractorRepo.fetchContractorToGrid(dataGrid);
+            if (validation.isContractorValid(contractor))
+            {
+                contractorRepo.updateContractor(contractor);
+                contractorRepo.fetchContractorToGrid(dataGrid);
 
-            this.Close();
+                this.Close();
+            }
         }
     }
 }
