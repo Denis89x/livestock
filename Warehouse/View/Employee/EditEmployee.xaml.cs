@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using Warehouse.Entity;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.Employee
 {
@@ -10,6 +11,7 @@ namespace Warehouse.View.Employee
         long employeeId;
         DataGrid dataGrid;
         EmployeeRepo employeeRepo;
+        EmployeeValidation validation;
 
         public EditEmployee(long employeeId, string surname, string firstName, string patronymic, string position, DataGrid dataGrid)
         {
@@ -24,6 +26,7 @@ namespace Warehouse.View.Employee
             PositionBox.Text = position;
 
             employeeRepo = new EmployeeRepoImpl();
+            validation = new EmployeeValidation();
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)
@@ -40,10 +43,13 @@ namespace Warehouse.View.Employee
 
             EmployeeEntity employee = new EmployeeEntity(employeeId, surname, firstName, patronymic, position);
 
-            employeeRepo.updateEmployee(employee);
-            employeeRepo.fetchEmployeeToGrid(dataGrid);
+            if (validation.isEmployeeValid(employee))
+            {
+                employeeRepo.updateEmployee(employee);
+                employeeRepo.fetchEmployeeToGrid(dataGrid);
 
-            this.Close();
+                this.Close();
+            }
         }
     }
 }

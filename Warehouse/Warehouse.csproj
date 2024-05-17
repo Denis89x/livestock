@@ -159,7 +159,11 @@
     <Compile Include="Validation\CattleValidation.cs" />
     <Compile Include="Validation\CommonValidation.cs" />
     <Compile Include="Validation\ContractorValidation.cs" />
+    <Compile Include="Validation\DeliveryNoteValidation.cs" />
     <Compile Include="Validation\DivisionValidation.cs" />
+    <Compile Include="Validation\EmployeeValidation.cs" />
+    <Compile Include="Validation\ProductValidation.cs" />
+    <Compile Include="Validation\RecordCardCompositionValidation.cs" />
     <Compile Include="Validation\UserValidation.cs" />
     <Compile Include="View\AddPage\AddFromComboBoxOrder.xaml.cs">
       <DependentUpon>AddFromComboBoxOrder.xaml</DependentUpon>

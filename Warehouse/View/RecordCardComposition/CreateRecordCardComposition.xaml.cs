@@ -3,14 +3,16 @@ using System.Windows;
 using System.Windows.Controls;
 using Warehouse.Entity;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.RecordCardComposition
 {
     public partial class CreateRecordCardComposition : Window
     {
-        DataGrid dataGrid;
-        ComboBoxRepo comboBoxRepo;
-        CrudRepo<RecordCardCompositionEntity> crudRepo;
+        private DataGrid dataGrid;
+        private ComboBoxRepo comboBoxRepo;
+        private CrudRepo<RecordCardCompositionEntity> crudRepo;
+        private RecordCardCompositionValidation validation;
 
         public CreateRecordCardComposition(DataGrid dataGrid)
         {
@@ -20,6 +22,7 @@ namespace Warehouse.View.RecordCardComposition
 
             comboBoxRepo = new ComboBoxRepoImpl();
             crudRepo = new RecordCardCompositionRepoImpl();
+            validation = new RecordCardCompositionValidation();
 
             comboBoxRepo.insertRecordCardIntoComboBox(RecordCardCombo);
 
@@ -74,12 +77,22 @@ namespace Warehouse.View.RecordCardComposition
             {
                 string date = DatePicker.SelectedDate.Value.ToString("yyyy-MM-dd");
 
-                RecordCardCompositionEntity recordCardComposition = new RecordCardCompositionEntity(recordCard.id, date, cowQuantity, milkMorning, milkMidday, milkEvening);
+                if (recordCard != null)
+                {
+                    RecordCardCompositionEntity recordCardComposition = new RecordCardCompositionEntity(recordCard.id, date, cowQuantity, milkMorning, milkMidday, milkEvening);
 
-                crudRepo.create(recordCardComposition);
-                crudRepo.fetchToGrid(dataGrid);
+                    if (validation.isRecordCardCompositionValid(recordCardComposition))
+                    {
+                        crudRepo.create(recordCardComposition);
+                        crudRepo.fetchToGrid(dataGrid);
 
-                this.Close();
+                        this.Close();
+                    }
+                } else
+                {
+                    MessageBox.Show("Выберите карточку!");
+                }
+                
             }
             catch (InvalidOperationException)
             {

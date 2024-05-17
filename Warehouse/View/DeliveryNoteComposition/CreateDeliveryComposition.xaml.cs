@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using Warehouse.Entity;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.DeliveryNoteComposition
 {
@@ -10,6 +11,7 @@ namespace Warehouse.View.DeliveryNoteComposition
         DataGrid dataGrid;
         ComboBoxRepo comboBoxRepo;
         CrudRepo<DeliveryCompositionEntity> crudRepo;
+        CommonValidation commonValidation;
 
         public CreateDeliveryComposition(DataGrid dataGrid)
         {
@@ -19,6 +21,7 @@ namespace Warehouse.View.DeliveryNoteComposition
 
             comboBoxRepo = new ComboBoxRepoImpl();
             crudRepo = new DeliveryCompositionRepoImpl();
+            commonValidation = new CommonValidation();
 
             comboBoxRepo.insertProductsIntoComboBox(ProductCombo);
             comboBoxRepo.insertDeliveryIntoComboBox(DeliveryCombo);
@@ -34,24 +37,31 @@ namespace Warehouse.View.DeliveryNoteComposition
             ComboBoxEntity product = (ComboBoxEntity)ProductCombo.SelectedItem;
             ComboBoxEntity delivery = (ComboBoxEntity)DeliveryCombo.SelectedItem;
 
-            string unit = UnitBox.Text;
+            string unit = ((ComboBoxItem)UnitCombo.SelectedItem).Content.ToString();
             string requested = RequestedBox.Text;
             string released = ReleasedBox.Text;
             string price = PriceBox.Text;
 
-            DeliveryCompositionEntity deliveryComposition = new DeliveryCompositionEntity(delivery.id, product.id, unit, requested, released, price);
-        
-            crudRepo.create(deliveryComposition);
-            crudRepo.fetchToGrid(dataGrid);
+            if (product != null && delivery != null && unit != " " && price != null && released != null && requested != null && commonValidation.isNumberInRange(requested, 2000) && commonValidation.isNumberInRange(released, 2000) && commonValidation.isNumberInRange(price, 2000))
+            {
+                DeliveryCompositionEntity deliveryComposition = new DeliveryCompositionEntity(delivery.id, product.id, unit, requested, released, price);
 
-            this.Close();
+                crudRepo.create(deliveryComposition);
+                crudRepo.fetchToGrid(dataGrid);
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Введите корректные значения!");
+            }
         }
 
         private void ReturnFirst_Click(object sender, RoutedEventArgs e)
         {
             DeliveryCombo.Visibility = Visibility.Visible;
             ProductCombo.Visibility = Visibility.Visible;
-            UnitBox.Visibility = Visibility.Visible;
+            UnitCombo.Visibility = Visibility.Visible;
             RequestedBox.Visibility = Visibility.Visible;
             NextFirst.Visibility = Visibility.Visible;
             Close.Visibility = Visibility.Visible;
@@ -71,7 +81,7 @@ namespace Warehouse.View.DeliveryNoteComposition
 
             DeliveryCombo.Visibility = Visibility.Collapsed;
             ProductCombo.Visibility = Visibility.Collapsed;
-            UnitBox.Visibility = Visibility.Collapsed;
+            UnitCombo.Visibility = Visibility.Collapsed;
             RequestedBox.Visibility = Visibility.Collapsed;
             NextFirst.Visibility = Visibility.Collapsed;
             Close.Visibility = Visibility.Collapsed;

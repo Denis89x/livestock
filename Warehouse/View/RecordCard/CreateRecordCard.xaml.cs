@@ -3,11 +3,13 @@ using System.Windows;
 using System.Windows.Controls;
 using Warehouse.Entity;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.RecordCard
 {
     public partial class CreateRecordCard : Window
     {
+        private CommonValidation commonValidation;
         private DataGrid dataGrid;
         private ComboBoxRepo comboBoxRepo;
         private CrudRepo<RecordCardEntity> crudRepo;
@@ -20,6 +22,7 @@ namespace Warehouse.View.RecordCard
 
             comboBoxRepo = new ComboBoxRepoImpl();
             crudRepo = new RecordCardRepoImpl();
+            commonValidation = new CommonValidation();
 
             DatePicker.Text = DateTime.Today.ToString("yyyy-MM-dd");
 
@@ -41,14 +44,22 @@ namespace Warehouse.View.RecordCard
 
             try
             {
-                string date = DatePicker.SelectedDate.Value.ToString("yyyy-MM-dd");
+                if (division != null && employee != null && product != null) {
+                    string date = DatePicker.SelectedDate.Value.ToString("yyyy-MM-dd");
+                    if (commonValidation.isDateValid(date))
+                    {
+                        RecordCardEntity recordCard = new RecordCardEntity(product.id, division.id, employee.id, date);
 
-                RecordCardEntity recordCard = new RecordCardEntity(product.id, division.id, employee.id, date);
+                        crudRepo.create(recordCard);
+                        crudRepo.fetchToGrid(dataGrid);
 
-                crudRepo.create(recordCard);
-                crudRepo.fetchToGrid(dataGrid);
-
-                this.Close();
+                        this.Close();
+                    }
+                } else
+                {
+                    MessageBox.Show("Заполните все поля!");
+                }
+                
             }
             catch (InvalidOperationException)
             {

@@ -86,7 +86,7 @@ namespace Warehouse.View.Main
 
             contractorRepo.fetchContractorToGrid(ContractorGrid);
 
-            UserInfoLabel.Content = $"Имя пользователя: {AuthSession.CurrentUsername}" + "".PadLeft(30, ' ') +  $"Должность: {userPosition}";
+            UserInfoLabel.Content = $"Должность: {userPosition}";
         }
 
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)

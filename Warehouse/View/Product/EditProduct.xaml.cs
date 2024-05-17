@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Warehouse.Entity;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.Product
 {
@@ -22,31 +12,47 @@ namespace Warehouse.View.Product
         DataGrid dataGrid;
         ProductRepo productRepo;
 
+        ProductValidation validation;
+
         public EditProduct(long productId, string title, string sort, string unit, DataGrid dataGrid)
         {
             InitializeComponent();
 
             this.productId = productId;
             this.dataGrid = dataGrid;
-            this.productRepo = new ProductRepoImpl();
+
+            productRepo = new ProductRepoImpl();
+            validation = new ProductValidation();
 
             TitleBox.Text = title;
             SortBox.Text = sort;
-            UnitBox.Text = unit;
+            UnitCombo.Text = unit;
         }
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
             string title = TitleBox.Text;
             string sort = SortBox.Text;
-            string unit = UnitBox.Text;
+            string unit = ((ComboBoxItem)UnitCombo.SelectedItem).Content.ToString();
 
-            ProductEntity product = new ProductEntity(productId, title, sort, unit);
+            if (unit != null)
+            {
 
-            productRepo.updateProduct(product);
-            productRepo.fetchProductToGrid(dataGrid);
+                ProductEntity product = new ProductEntity(productId, title, sort, unit);
 
-            this.Close();
+                if (validation.isProductValid(product))
+                {
+
+                    productRepo.updateProduct(product);
+                    productRepo.fetchProductToGrid(dataGrid);
+
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите единицу измерения!");
+            }
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)

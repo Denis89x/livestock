@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using Warehouse.Entity;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.Product
 {
@@ -13,27 +11,40 @@ namespace Warehouse.View.Product
         ProductRepo productRepo;
         DataGrid dataGrid;
 
+        ProductValidation validation;
+
         public CreateProduct(DataGrid dataGrid)
         {
             InitializeComponent();
+
             this.dataGrid = dataGrid;
-            this.productRepo = new ProductRepoImpl();
+
+            productRepo = new ProductRepoImpl();
+            validation = new ProductValidation();
         }
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
             string title = TitleBox.Text;
             string sort = SortBox.Text;
-            string unit = UnitBox.Text;
+            string unit = ((ComboBoxItem)UnitCombo.SelectedItem).Content.ToString();
 
-            ProductEntity product = new ProductEntity(title, sort, unit);
+            if (unit != null)
+            {
+                ProductEntity product = new ProductEntity(title, sort, unit);
 
-            productRepo.createProduct(product);
-            productRepo.fetchProductToGrid(dataGrid);
+                if (validation.isProductValid(product))
+                {
+                    productRepo.createProduct(product);
+                    productRepo.fetchProductToGrid(dataGrid);
 
-            TitleBox.Text = "";
-            SortBox.Text = "";
-            UnitBox.Text = "";
+                    TitleBox.Text = "";
+                    SortBox.Text = "";
+                }
+            } else
+            {
+                MessageBox.Show("Выберите единицу измерения!");
+            }
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)

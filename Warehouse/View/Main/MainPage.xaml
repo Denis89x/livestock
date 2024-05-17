@@ -36,40 +36,40 @@
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
                 <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="150"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="180"/>
             </DoubleAnimationUsingKeyFrames>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ContractorGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EmployeeGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DivisionGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="CattleGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ProductGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="StatementGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillCompositionGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryNoteGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryCompositionGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardCompositionGrid" From="90,60,30,30" To="180,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="UserInfoLabel" From="90,18,739,819" To="180,18,739,819" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ContractorGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EmployeeGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DivisionGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="CattleGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ProductGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="StatementGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillCompositionGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryNoteGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryCompositionGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardCompositionGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="UserInfoLabel" From="90,18,739,819" To="210,18,739,819" Duration="0:0:0.5"/>
         </Storyboard>
         <Storyboard x:Key="MenuClose">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="150"/>
+                <EasingDoubleKeyFrame KeyTime="0" Value="180"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="60"/>
             </DoubleAnimationUsingKeyFrames>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ContractorGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EmployeeGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DivisionGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="CattleGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ProductGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="StatementGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillCompositionGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryNoteGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryCompositionGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardCompositionGrid" From="180,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="UserInfoLabel" From="180,18,739,819" To="90,18,739,819" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ContractorGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EmployeeGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DivisionGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="CattleGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ProductGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="StatementGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillCompositionGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryNoteGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryCompositionGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardCompositionGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="UserInfoLabel" From="210,18,739,819" To="90,18,739,819" Duration="0:0:0.5"/>
         </Storyboard>
     </Window.Resources>
     <Window.Triggers>
@@ -551,62 +551,62 @@
                     </ListViewItem>
                     <ListViewItem Height="60" x:Name="Division" Visibility="Visible" PreviewMouseLeftButtonDown="Division_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="PackageVariantPlus" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Kind="AccountGroup" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Подразделение" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="Cettle" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="Cettle_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="PackageVariant" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Kind="Pig" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Группы скота" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="Product" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="Product_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="MicrosoftWord" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Kind="ScriptOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Продукция" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="Statement" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="Statement_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="CogOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Kind="PiHole" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Расход кормов" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="Waybill" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="Waybill_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="CogOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Kind="FileDocument" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="ТТН" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="WaybillComposition" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="WaybillComposition_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="CogOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Kind="FileDocumentEdit" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Состав ТТН" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="DeliveryNote" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="DeliveryNote_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="CogOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Требования накладная" VerticalAlignment="Center" Margin="0 10"/>
+                            <materialDesign:PackIcon Kind="TextBoxOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Требования" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="DeliveryNoteComposition" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="DeliveryNoteComposition_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="CogOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Состав накладной" VerticalAlignment="Center" Margin="0 10"/>
+                            <materialDesign:PackIcon Kind="TextBoxPlusOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Состав требования" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="RecordCard" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="RecordCard_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="CogOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Состав накладной" VerticalAlignment="Center" Margin="0 10"/>
+                            <materialDesign:PackIcon Kind="CardOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Карточка" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="RecordCardComposition" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="RecordCardComposition_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="CogOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Состав накладной" VerticalAlignment="Center" Margin="0 10"/>
+                            <materialDesign:PackIcon Kind="CardPlusOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Состав карточки" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="AdminRegistration" Height="60" Visibility="Collapsed" PreviewMouseLeftButtonDown="AdminRegistration_PreviewMouseLeftButtonDown">

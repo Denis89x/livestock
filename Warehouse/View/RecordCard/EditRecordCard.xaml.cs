@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Warehouse.Entity;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.RecordCard
 {
@@ -12,6 +13,7 @@ namespace Warehouse.View.RecordCard
         private DataGrid dataGrid;
         private ComboBoxRepo comboBoxRepo;
         private CrudRepo<RecordCardEntity> crudRepo;
+        private CommonValidation commonValidation;
 
         public EditRecordCard(long recordCardId, string product, string division, string employee, string date, DataGrid dataGrid)
         {
@@ -22,6 +24,7 @@ namespace Warehouse.View.RecordCard
 
             comboBoxRepo = new ComboBoxRepoImpl();
             crudRepo = new RecordCardRepoImpl();
+            commonValidation = new CommonValidation();
 
             DatePicker.Text = DateTime.Today.ToString("yyyy-MM-dd");
 
@@ -45,14 +48,23 @@ namespace Warehouse.View.RecordCard
 
             try
             {
-                string date = DatePicker.SelectedDate.Value.ToString("yyyy-MM-dd");
+                if (division != null && employee != null && product != null)
+                {
+                    string date = DatePicker.SelectedDate.Value.ToString("yyyy-MM-dd");
+                    if (commonValidation.isDateValid(date))
+                    {
+                        RecordCardEntity recordCard = new RecordCardEntity(recordCardId, product.id, division.id, employee.id, date);
 
-                RecordCardEntity recordCard = new RecordCardEntity(recordCardId, product.id, division.id, employee.id, date);
+                        crudRepo.update(recordCard);
+                        crudRepo.fetchToGrid(dataGrid);
 
-                crudRepo.update(recordCard);
-                crudRepo.fetchToGrid(dataGrid);
-
-                this.Close();
+                         this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Заполните все поля!");
+                }
             }
             catch (InvalidOperationException)
             {

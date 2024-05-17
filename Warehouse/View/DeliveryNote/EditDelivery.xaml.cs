@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using Warehouse.Entity;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.DeliveryNote
 {
@@ -11,6 +12,7 @@ namespace Warehouse.View.DeliveryNote
         DataGrid dataGrid;
         ComboBoxRepo comboBoxRepo;
         DeliveryNoteRepo deliveryNoteRepo;
+        DeliveryNoteValidation validation;
 
         public EditDelivery(long deliveryId, string division, string date, string assignment, DataGrid dataGrid)
         {
@@ -19,6 +21,7 @@ namespace Warehouse.View.DeliveryNote
             this.dataGrid = dataGrid;
             this.deliveryId = deliveryId;
 
+            validation = new DeliveryNoteValidation();
             comboBoxRepo = new ComboBoxRepoImpl();
             deliveryNoteRepo = new DeliveryNoteRepoImpl();
 
@@ -40,12 +43,22 @@ namespace Warehouse.View.DeliveryNote
             string date = DatePicker.SelectedDate.Value.ToString("yyyy-MM-dd");
             string assignment = AssignmentBox.Text;
 
-            DeliveryNoteEntity deliveryNote = new DeliveryNoteEntity(deliveryId, division.id, date, assignment);
+            if (division != null)
+            {
+                DeliveryNoteEntity deliveryNote = new DeliveryNoteEntity(deliveryId, division.id, date, assignment);
 
-            deliveryNoteRepo.updateDeliveryNote(deliveryNote);
-            deliveryNoteRepo.fetchDeliveryNoteToGrid(dataGrid);
+                if (validation.isDeliveryNoteValid(deliveryNote))
+                {
+                    deliveryNoteRepo.updateDeliveryNote(deliveryNote);
+                    deliveryNoteRepo.fetchDeliveryNoteToGrid(dataGrid);
 
-            this.Close();
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите подразделение!");
+            }
         }
     }
 }

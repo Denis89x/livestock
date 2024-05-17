@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Warehouse.Entity;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.RecordCardComposition
 {
@@ -12,6 +13,7 @@ namespace Warehouse.View.RecordCardComposition
         private DataGrid dataGrid;
         private ComboBoxRepo comboBoxRepo;
         private CrudRepo<RecordCardCompositionEntity> crudRepo;
+        private RecordCardCompositionValidation validation;
 
         public EditRecordCardComposition(long recordCardCompositionId, string recordCard, string date, string cowQuantity, string milkMorning, string milkMidday, string milkEvening, DataGrid dataGrid)
         {
@@ -22,6 +24,7 @@ namespace Warehouse.View.RecordCardComposition
 
             comboBoxRepo = new ComboBoxRepoImpl();
             crudRepo = new RecordCardCompositionRepoImpl();
+            validation = new RecordCardCompositionValidation();
 
             comboBoxRepo.insertRecordCardIntoComboBox(RecordCardCombo);
 
@@ -79,14 +82,24 @@ namespace Warehouse.View.RecordCardComposition
             try
             {
                 string date = DatePicker.SelectedDate.Value.ToString("yyyy-MM-dd");
-                MessageBox.Show("ID: " + recordCardCompositionId);
 
-                RecordCardCompositionEntity recordCardComposition = new RecordCardCompositionEntity(recordCardCompositionId, recordCard.id, date, cowQuantity, milkMorning, milkMidday, milkEvening);
+                if (recordCard != null)
+                {
+                    RecordCardCompositionEntity recordCardComposition = new RecordCardCompositionEntity(recordCardCompositionId, recordCard.id, date, cowQuantity, milkMorning, milkMidday, milkEvening);
 
-                crudRepo.update(recordCardComposition);
-                crudRepo.fetchToGrid(dataGrid);
 
-                this.Close();
+                    if (validation.isRecordCardCompositionValid(recordCardComposition))
+                    {
+                        crudRepo.update(recordCardComposition);
+                        crudRepo.fetchToGrid(dataGrid);
+
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Выберите карточку!");
+                }
             }
             catch (InvalidOperationException)
             {

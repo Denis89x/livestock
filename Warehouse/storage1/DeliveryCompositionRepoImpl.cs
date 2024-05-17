@@ -28,7 +28,7 @@ namespace Warehouse.storage1
 
         public void fetchToGrid(DataGrid dataGrid)
         {
-            string query = "SELECT delivery_note_composition_id, delivery_note_composition.delivery_note_id, finished_product.title, delivery_note_composition.unit, requested, released, price, amount FROM delivery_note_composition, delivery_note, finished_product WHERE delivery_note_composition.product_id = finished_product.product_id";
+            string query = "SELECT delivery_note_composition_id, delivery_note_composition.delivery_note_id, finished_product.title, delivery_note_composition.unit, requested, released, price, amount FROM delivery_note_composition, delivery_note, finished_product WHERE delivery_note_composition.product_id = finished_product.product_id AND delivery_note_composition.delivery_note_id = delivery_note.delivery_note_id";
 
             database.selectQuery(query, dataGrid);
         }
