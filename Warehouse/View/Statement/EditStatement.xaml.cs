@@ -3,15 +3,17 @@ using System.Windows;
 using System.Windows.Controls;
 using Warehouse.Entity;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.Statement
 {
     public partial class EditStatement : Window
     {
-        long statementId;
-        DataGrid dataGrid;
-        StatementRepo statementRepo;
-        StatementComboBoxRepo statementComboBoxRepo;
+        private long statementId;
+        private DataGrid dataGrid;
+        private StatementRepo statementRepo;
+        private StatementComboBoxRepo statementComboBoxRepo;
+        private StatementValidation validation;
 
         public EditStatement(long statementId, string division, string cattle, string employee,  
             string product, string date, string foundation, string title, string unit, string supplyRate,
@@ -22,19 +24,9 @@ namespace Warehouse.View.Statement
             this.statementId = statementId;
             this.dataGrid = dataGrid;
 
+            validation = new StatementValidation();
             statementRepo = new StatementRepoImpl();
             statementComboBoxRepo = new StatementComboBoxRepoImpl();
-
-            /*            statementComboBoxRepo.insertDivisionsIntoComboBox(DivisionComboBox);
-                        DivisionComboBox.SelectedItem = DivisionComboBox.Items.IndexOf(division); TODO: CHANGE */
-            /*DivisionComboBox.Items.Add(division);
-            DivisionComboBox.SelectedIndex = 0;
-            EmployeeComboBox.Items.Add(employee); 
-            EmployeeComboBox.SelectedIndex = 0;
-            CattleComboBox.Items.Add(cattle);
-            CattleComboBox.SelectedIndex = 0;
-            ProductComboBox.Items.Add(product);
-            ProductComboBox.SelectedIndex = 0;*/
 
             statementComboBoxRepo.insertCattleIntoComboBox(CattleComboBox);
             statementComboBoxRepo.insertDivisionsIntoComboBox(DivisionComboBox);
@@ -44,7 +36,7 @@ namespace Warehouse.View.Statement
             DatePicker.Text = date;
             FoundationBox.Text = foundation;
             TitleBox.Text = title;
-            UnitBox.Text = unit;
+            UnitCombo.Text = unit;
             SupplyRateBox.Text = supplyRate;
             AnimalQuantityBox.Text = animalQuantity;
             FeedQuantity.Text = feedQuantity;
@@ -59,7 +51,6 @@ namespace Warehouse.View.Statement
 
             string foundation = FoundationBox.Text;
             string title = TitleBox.Text;
-            string unit = UnitBox.Text;
             string supplyRate = SupplyRateBox.Text;
             string animalQuantity = AnimalQuantityBox.Text;
             string feedQuantity = FeedQuantity.Text;
@@ -68,12 +59,23 @@ namespace Warehouse.View.Statement
             {
                 string date = DatePicker.SelectedDate.Value.ToString("yyyy-MM-dd");
 
-                StatementEntity statement = new StatementEntity(statementId, division.id, cattle.id, employee.id, product.id, date, foundation, title, unit, supplyRate, animalQuantity, feedQuantity);
+                if (division != null && employee != null && cattle != null && product != null && (ComboBoxItem)UnitCombo.SelectedItem != null)
+                {
+                    string unit = ((ComboBoxItem)UnitCombo.SelectedItem).Content.ToString();
+                    StatementEntity statement = new StatementEntity(statementId, division.id, cattle.id, employee.id, product.id, date, foundation, title, unit, supplyRate, animalQuantity, feedQuantity);
+                    
+                    if (validation.isStatementValid(statement))
+                    {
+                        statementRepo.updateStatement(statement);
+                        statementRepo.fetchStatementToGrid(dataGrid);
 
-                statementRepo.updateStatement(statement);
-                statementRepo.fetchStatementToGrid(dataGrid);
-
-                this.Close();
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Укажите все данные!");
+                }
             }
             catch (InvalidOperationException)
             {
@@ -91,7 +93,7 @@ namespace Warehouse.View.Statement
             DatePicker.Visibility = Visibility.Visible;
             FoundationBox.Visibility = Visibility.Visible;
             TitleBox.Visibility = Visibility.Visible;
-            UnitBox.Visibility = Visibility.Visible;
+            UnitCombo.Visibility = Visibility.Visible;
             PreviewFirst.Visibility = Visibility.Visible;
             NextSecond.Visibility = Visibility.Visible;
 
@@ -117,7 +119,7 @@ namespace Warehouse.View.Statement
             DatePicker.Visibility = Visibility.Collapsed;
             FoundationBox.Visibility = Visibility.Collapsed;
             TitleBox.Visibility = Visibility.Collapsed;
-            UnitBox.Visibility = Visibility.Collapsed;
+            UnitCombo.Visibility = Visibility.Collapsed;
         }
 
         private void NextSecond_Click(object sender, RoutedEventArgs e)
@@ -131,7 +133,7 @@ namespace Warehouse.View.Statement
             DatePicker.Visibility = Visibility.Collapsed;
             FoundationBox.Visibility = Visibility.Collapsed;
             TitleBox.Visibility = Visibility.Collapsed;
-            UnitBox.Visibility = Visibility.Collapsed;
+            UnitCombo.Visibility = Visibility.Collapsed;
             ReturnFirst.Visibility = Visibility.Collapsed;
             NextFirst.Visibility = Visibility.Collapsed;
         }
@@ -141,7 +143,7 @@ namespace Warehouse.View.Statement
             DatePicker.Visibility = Visibility.Visible;
             FoundationBox.Visibility = Visibility.Visible;
             TitleBox.Visibility = Visibility.Visible;
-            UnitBox.Visibility = Visibility.Visible;
+            UnitCombo.Visibility = Visibility.Visible;
             ReturnFirst.Visibility = Visibility.Visible;
             NextFirst.Visibility = Visibility.Visible;
 

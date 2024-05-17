@@ -27,10 +27,11 @@ namespace Warehouse.View.Product
         {
             string title = TitleBox.Text;
             string sort = SortBox.Text;
-            string unit = ((ComboBoxItem)UnitCombo.SelectedItem).Content.ToString();
-
-            if (unit != null)
+            
+            if ((ComboBoxItem)UnitCombo.SelectedItem != null)
             {
+                string unit = ((ComboBoxItem)UnitCombo.SelectedItem).Content.ToString();
+
                 ProductEntity product = new ProductEntity(title, sort, unit);
 
                 if (validation.isProductValid(product))

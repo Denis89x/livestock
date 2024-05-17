@@ -130,18 +130,20 @@
             Margin="0 40 0 0"
             BorderBrush="#BC989393">
         </TextBox>
-        <TextBox
-            x:Name="UnitBox"
-            Visibility="Collapsed"
-            materialDesign:HintAssist.Hint="Единица измерения"
-            FontSize="15px"
-            Padding="12 10 2 2"
-            Height="40px"
+        <ComboBox
+            x:Name="UnitCombo"
             Width="225px"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+            Height="40px"
+            Visibility="Collapsed"
+            FontSize="15px"
+            Padding="12 0 12 0"
             Margin="0 140 0 0"
+            materialDesign:HintAssist.Hint="Единица измерения"
+            Style="{StaticResource MaterialDesignOutlinedComboBox}"
             BorderBrush="#BC989393">
-        </TextBox>
+            <ComboBoxItem Content="Литр"/>
+            <ComboBoxItem Content="Килограмм"/>
+        </ComboBox>
         <TextBox 
             x:Name="SupplyRateBox"
             Visibility="Collapsed"

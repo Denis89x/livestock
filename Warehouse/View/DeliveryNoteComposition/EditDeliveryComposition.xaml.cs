@@ -44,13 +44,13 @@ namespace Warehouse.View.DeliveryNoteComposition
             ComboBoxEntity product = (ComboBoxEntity)ProductCombo.SelectedItem;
             ComboBoxEntity delivery = (ComboBoxEntity)DeliveryCombo.SelectedItem;
 
-            string unit = ((ComboBoxItem)UnitCombo.SelectedItem).Content.ToString();
             string requested = RequestedBox.Text;
             string released = ReleasedBox.Text;
             string price = PriceBox.Text;
 
-            if (product != null && delivery != null && price != null && released != null && requested != null && commonValidation.isNumberInRange(requested, 2000) && commonValidation.isNumberInRange(released, 2000) && commonValidation.isNumberInRange(price, 2000))
+            if (product != null && delivery != null && price != null && released != null && requested != null && (ComboBoxItem)UnitCombo.SelectedItem != null && commonValidation.isNumberInRange(requested, 2000) && commonValidation.isNumberInRange(released, 2000) && commonValidation.isNumberInRange(price, 2000))
             {
+                string unit = ((ComboBoxItem)UnitCombo.SelectedItem).Content.ToString();
                 DeliveryCompositionEntity deliveryComposition = new DeliveryCompositionEntity(deliveryCompositionId, delivery.id, product.id, unit, requested, released, price);
 
                 crudRepo.update(deliveryComposition);

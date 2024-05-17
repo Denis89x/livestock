@@ -3,14 +3,16 @@ using System.Windows;
 using System.Windows.Controls;
 using Warehouse.Entity;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.Waybill
 {
     public partial class CreateWaybill : Window
     {
-        DataGrid dataGrid;
-        WaybillRepo waybillRepo;
-        WaybillComboBoxRepo waybillComboBoxRepo;
+        private DataGrid dataGrid;
+        private WaybillRepo waybillRepo;
+        private WaybillComboBoxRepo waybillComboBoxRepo;
+        private WaybillValidation validation;
 
         public CreateWaybill(DataGrid dataGrid)
         {
@@ -18,11 +20,14 @@ namespace Warehouse.View.Waybill
 
             this.dataGrid = dataGrid;
 
+            validation = new WaybillValidation();
             waybillRepo = new WaybillRepoImpl();
             waybillComboBoxRepo = new WaybillComboBoxRepoImpl();
 
             waybillComboBoxRepo.insertEmployeeIntoComboBox(EmployeeComboBox);
             waybillComboBoxRepo.insertContractorIntoComboBox(ContractorComboBox);
+
+            DatePicker.Text = DateTime.Today.ToString("yyyy-MM-dd");
         }
 
         private void ReturnFirst_Click(object sender, RoutedEventArgs e)
@@ -146,12 +151,21 @@ namespace Warehouse.View.Waybill
                 string routeNumber = RouteNumber.Text;
                 string date = DatePicker.SelectedDate.Value.ToString("yyyy-MM-dd");
 
-                WaybillEntity waybill = new WaybillEntity(contractor.id, employee.id, carOwner, date, vehicle, shipper, consignor, loadingPoint, unloadingPoint, treaty, vehicleNumber, guide, routeNumber);
+                if (contractor != null && employee != null)
+                {
+                    WaybillEntity waybill = new WaybillEntity(contractor.id, employee.id, carOwner, date, vehicle, shipper, consignor, loadingPoint, unloadingPoint, treaty, vehicleNumber, guide, routeNumber);
 
-                waybillRepo.createWaybill(waybill);
-                waybillRepo.fetchWaybillToGrid(dataGrid);
+                    if (validation.isWaybillValid(waybill))
+                    {
+                        waybillRepo.createWaybill(waybill);
+                        waybillRepo.fetchWaybillToGrid(dataGrid);
 
-                this.Close();
+                        this.Close();
+                    }
+                } else
+                {
+                    MessageBox.Show("Укажите все данные!");
+                }
             }
             catch (InvalidOperationException)
             {

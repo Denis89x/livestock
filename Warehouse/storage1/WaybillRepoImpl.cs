@@ -14,7 +14,7 @@ namespace Warehouse.storage1
 
         public void createWaybill(WaybillEntity waybill)
         {
-            string query = $"INSERT INTO waybill(contractor_id, employee_id, document_number, car_owner, date, vehicle, shipper, consignor, loading_point, unloading_point, treaty, vehicle_number, guide_list_number, route_number) VALUES('{waybill.contractorId}', '{waybill.employeeId}', '{waybill.documentNumber}', N'{waybill.carOwner}', '{waybill.date}', N'{waybill.vehicle}', N'{waybill.shipper}', N'{waybill.consignor}', N'{waybill.loadingPoint}', N'{waybill.unloadingPoint}', N'{waybill.treaty}', '{waybill.vehicleNumber}', '{waybill.guideListNumber}', '{waybill.routeNumber}')";
+            string query = $"INSERT INTO waybill(contractor_id, employee_id, document_number, car_owner, date, vehicle, shipper, consignor, loading_point, unloading_point, treaty, vehicle_number, guide_list_number, route_number) VALUES('{waybill.contractorId}', '{waybill.employeeId}', '{waybill.documentNumber}', N'{waybill.carOwner}', '{waybill.date}', N'{waybill.vehicle}', N'{waybill.shipper}', N'{waybill.consignor}', N'{waybill.loadingPoint}', N'{waybill.unloadingPoint}', N'{waybill.treaty}', N'{waybill.vehicleNumber}', '{waybill.guideListNumber}', '{waybill.routeNumber}')";
         
             database.executeQuery(query);
         }

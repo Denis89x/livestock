@@ -115,6 +115,7 @@
     <Compile Include="Entity\StatementEntity.cs" />
     <Compile Include="Entity\UserEntity.cs" />
     <Compile Include="Entity\WaybillCompositionEntity.cs" />
+    <Compile Include="Validation\WaybillCompositionValidation.cs" />
     <Compile Include="Entity\WaybillEntity.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Profile\PrfSettings.xaml.cs">
@@ -164,7 +165,9 @@
     <Compile Include="Validation\EmployeeValidation.cs" />
     <Compile Include="Validation\ProductValidation.cs" />
     <Compile Include="Validation\RecordCardCompositionValidation.cs" />
+    <Compile Include="Validation\StatementValidation.cs" />
     <Compile Include="Validation\UserValidation.cs" />
+    <Compile Include="Validation\WaybillValidation.cs" />
     <Compile Include="View\AddPage\AddFromComboBoxOrder.xaml.cs">
       <DependentUpon>AddFromComboBoxOrder.xaml</DependentUpon>
     </Compile>

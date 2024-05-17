@@ -1,15 +1,18 @@
-﻿using System.Windows;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Windows;
 using System.Windows.Controls;
 using Warehouse.Entity;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.WaybillComposition
 {
     public partial class CreateWaybillComposition : Window
     {
-        DataGrid dataGrid;
-        ComboBoxRepo comboBoxRepo;
-        WaybillCompositionRepo waybillCompositionRepo;
+        private DataGrid dataGrid;
+        private ComboBoxRepo comboBoxRepo;
+        private WaybillCompositionRepo waybillCompositionRepo;
+        private WaybillCompositionValidation validation;
 
         public CreateWaybillComposition(DataGrid dataGrid)
         {
@@ -17,6 +20,7 @@ namespace Warehouse.View.WaybillComposition
 
             this.dataGrid = dataGrid;
 
+            validation = new WaybillCompositionValidation();
             comboBoxRepo = new ComboBoxRepoImpl();
             waybillCompositionRepo = new WaybillCompositionRepoImpl();
 
@@ -152,12 +156,22 @@ namespace Warehouse.View.WaybillComposition
             string netto = NettoBox.Text;
             string grade = GradeBox.Text;
 
-            WaybillCompositionEntity waybillComposition = new WaybillCompositionEntity(waybill.id, product.id, waybillType, fat, mass, acidity, temperature, cleaningGroup, density, sort, packagingType, quantity, brutto, tara, netto, grade);
+            if (waybill != null && product != null)
+            {
+                WaybillCompositionEntity waybillComposition = new WaybillCompositionEntity(waybill.id, product.id, waybillType, fat, mass, acidity, temperature, cleaningGroup, density, sort, packagingType, quantity, brutto, tara, netto, grade);
 
-            waybillCompositionRepo.createWaybillComposition(waybillComposition);
-            waybillCompositionRepo.fetchWaybillCompositionToGrid(dataGrid);
+                if (validation.isWaybillCompositionValid(waybillComposition))
+                {
+                    waybillCompositionRepo.createWaybillComposition(waybillComposition);
+                    waybillCompositionRepo.fetchWaybillCompositionToGrid(dataGrid);
 
-            this.Close();
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Укажите все поля!");
+            }  
         }
     }
 }

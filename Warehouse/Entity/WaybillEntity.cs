@@ -8,15 +8,15 @@ namespace Warehouse.Entity
 
         public long contractorId { get; set; }
 
-        public long employeeId {  get; set; }
+        public long employeeId { get; set; }
 
-        public int documentNumber {  get; set; }
+        public int documentNumber { get; set; }
 
-        public string carOwner {  get; set; }
+        public string carOwner { get; set; }
 
-        public string date {  get; set; }
+        public string date { get; set; }
 
-        public string vehicle {  get; set; }
+        public string vehicle { get; set; }
 
         public string shipper {  get; set; }
 
@@ -26,13 +26,13 @@ namespace Warehouse.Entity
 
         public string unloadingPoint { get; set; }
 
-        public string treaty {  get; set; }
+        public string treaty { get; set; }
 
-        public string vehicleNumber {  get; set; }
+        public string vehicleNumber { get; set; }
 
         public string guideListNumber { get; set; }
 
-        public string routeNumber {  get; set; }
+        public string routeNumber { get; set; }
 
         private Random random;
 

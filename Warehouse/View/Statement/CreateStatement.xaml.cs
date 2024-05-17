@@ -3,14 +3,16 @@ using System.Windows;
 using System.Windows.Controls;
 using Warehouse.Entity;
 using Warehouse.storage1;
+using Warehouse.Validation;
 
 namespace Warehouse.View.Statement
 {
     public partial class CreateStatement : Window
     {
-        DataGrid dataGrid;
-        StatementRepo statementRepo;
-        StatementComboBoxRepo statementComboBoxRepo;
+        private DataGrid dataGrid;
+        private StatementRepo statementRepo;
+        private StatementComboBoxRepo statementComboBoxRepo;
+        private StatementValidation validation;
 
         public CreateStatement(DataGrid dataGrid)
         {
@@ -18,6 +20,7 @@ namespace Warehouse.View.Statement
 
             this.dataGrid = dataGrid;
 
+            validation = new StatementValidation();
             statementRepo = new StatementRepoImpl();
             statementComboBoxRepo = new StatementComboBoxRepoImpl();
 
@@ -25,6 +28,8 @@ namespace Warehouse.View.Statement
             statementComboBoxRepo.insertCattleIntoComboBox(CattleComboBox);
             statementComboBoxRepo.insertEmployeesIntoComboBox(EmployeeComboBox);
             statementComboBoxRepo.insertProductsIntoComboBox(ProductComboBox);
+
+            DatePicker.Text = DateTime.Today.ToString("yyyy-MM-dd");
         }
 
         private void ReturnFirst_Click(object sender, RoutedEventArgs e)
@@ -37,7 +42,7 @@ namespace Warehouse.View.Statement
             DatePicker.Visibility = Visibility.Visible;
             FoundationBox.Visibility = Visibility.Visible;
             TitleBox.Visibility = Visibility.Visible;
-            UnitBox.Visibility = Visibility.Visible;
+            UnitCombo.Visibility = Visibility.Visible;
             PreviewFirst.Visibility = Visibility.Visible;
             NextSecond.Visibility = Visibility.Visible;
 
@@ -63,7 +68,7 @@ namespace Warehouse.View.Statement
             DatePicker.Visibility = Visibility.Collapsed;
             FoundationBox.Visibility = Visibility.Collapsed;
             TitleBox.Visibility = Visibility.Collapsed;
-            UnitBox.Visibility = Visibility.Collapsed;
+            UnitCombo.Visibility = Visibility.Collapsed;
         }
 
         private void NextSecond_Click(object sender, RoutedEventArgs e)
@@ -77,7 +82,7 @@ namespace Warehouse.View.Statement
             DatePicker.Visibility = Visibility.Collapsed;
             FoundationBox.Visibility = Visibility.Collapsed;
             TitleBox.Visibility = Visibility.Collapsed;
-            UnitBox.Visibility = Visibility.Collapsed;
+            UnitCombo.Visibility = Visibility.Collapsed;
             ReturnFirst.Visibility = Visibility.Collapsed;
             NextFirst.Visibility = Visibility.Collapsed;
         }
@@ -87,7 +92,7 @@ namespace Warehouse.View.Statement
             DatePicker.Visibility = Visibility.Visible;
             FoundationBox.Visibility = Visibility.Visible;
             TitleBox.Visibility = Visibility.Visible;
-            UnitBox.Visibility = Visibility.Visible;
+            UnitCombo.Visibility = Visibility.Visible;
             ReturnFirst.Visibility = Visibility.Visible;
             NextFirst.Visibility = Visibility.Visible;
 
@@ -110,17 +115,27 @@ namespace Warehouse.View.Statement
                 string date = DatePicker.SelectedDate.Value.ToString("yyyy-MM-dd");
                 string foundation = FoundationBox.Text;
                 string title = TitleBox.Text;
-                string unit = UnitBox.Text;
                 string supplyRate = SupplyRateBox.Text;
                 string animalQuantity = AnimalQuantityBox.Text;
                 string feedQuantity = FeedQuantity.Text;
 
-                StatementEntity statement = new StatementEntity(division.id, cattle.id, employee.id, product.id, date, foundation, title, unit, supplyRate, animalQuantity, feedQuantity);
+                if (division != null && employee != null && cattle != null && product != null && (ComboBoxItem)UnitCombo.SelectedItem != null)
+                {
+                    string unit = ((ComboBoxItem)UnitCombo.SelectedItem).Content.ToString();
+                    StatementEntity statement = new StatementEntity(division.id, cattle.id, employee.id, product.id, date, foundation, title, unit, supplyRate, animalQuantity, feedQuantity);
 
-                statementRepo.createStatement(statement);
-                statementRepo.fetchStatementToGrid(dataGrid);
+                    if (validation.isStatementValid(statement))
+                    {
+                        statementRepo.createStatement(statement);
+                        statementRepo.fetchStatementToGrid(dataGrid);
 
-                this.Close();
+                        this.Close();
+                    }
+
+                } else
+                {
+                    MessageBox.Show("Укажите все данные!");
+                }
             }
             catch (InvalidOperationException)
             {
