@@ -7,10 +7,10 @@ namespace Warehouse.View.Contractor
 {
     public partial class EditContractor : Window
     {
-        long contractorId;
-        DataGrid dataGrid;
-        ContractorRepo contractorRepo;
-        ContractorValidation validation;
+        private long contractorId;
+        private DataGrid dataGrid;
+        private CrudRepo<ContractorEntity> contractorCrud;
+        private ContractorValidation validation;
 
         public EditContractor(long contractorId, string address, string title, string settlementAccount, string phoneNumber, string bankName, DataGrid dataGrid)
         {
@@ -25,7 +25,7 @@ namespace Warehouse.View.Contractor
             PhoneBox.Text = phoneNumber;
             BankBox.Text = bankName;
 
-            contractorRepo = new ContractorRepoImpl();
+            contractorCrud = new ContractorRepoImpl();
             validation = new ContractorValidation();
         }
 
@@ -46,8 +46,8 @@ namespace Warehouse.View.Contractor
 
             if (validation.isContractorValid(contractor))
             {
-                contractorRepo.updateContractor(contractor);
-                contractorRepo.fetchContractorToGrid(dataGrid);
+                contractorCrud.update(contractor);
+                contractorCrud.fetchToGrid(dataGrid);
 
                 this.Close();
             }

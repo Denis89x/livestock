@@ -11,8 +11,8 @@ namespace Warehouse.View.Waybill
     {
         private long waybillId;
         private DataGrid dataGrid;
-        private WaybillRepo waybillRepo;
-        private WaybillComboBoxRepo waybillComboRepo;
+        private CrudRepo<WaybillEntity> waybillCrud;
+        private ComboBoxRepo comboBoxRepo;
         private WaybillValidation validation;
 
         public EditWaybill(long waybillId, string contractor, string employee, string carOwner, string date,
@@ -25,11 +25,11 @@ namespace Warehouse.View.Waybill
             this.dataGrid = dataGrid;
 
             validation = new WaybillValidation();
-            waybillRepo = new WaybillRepoImpl();
-            waybillComboRepo = new WaybillComboBoxRepoImpl();
+            waybillCrud = new WaybillRepoImpl();
+            comboBoxRepo = new ComboBoxRepoImpl();
 
-            waybillComboRepo.insertEmployeeIntoComboBox(EmployeeComboBox);
-            waybillComboRepo.insertContractorIntoComboBox(ContractorComboBox);
+            comboBoxRepo.insertEmployeesIntoComboBox(EmployeeComboBox);
+            comboBoxRepo.insertContractorIntoComboBox(ContractorComboBox);
 
             CarOwnerBox.Text = carOwner;
             VehicleBox.Text = vehicle;
@@ -171,8 +171,8 @@ namespace Warehouse.View.Waybill
                     
                     if (validation.isWaybillValid(waybill))
                     {
-                        waybillRepo.updateWaybill(waybill);
-                        waybillRepo.fetchWaybillToGrid(dataGrid);
+                        waybillCrud.update(waybill);
+                        waybillCrud.fetchToGrid(dataGrid);
 
                         this.Close();
                     }

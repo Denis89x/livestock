@@ -22,35 +22,35 @@ namespace Warehouse.View.Main
 {
     public partial class MainPage : Window
     {
-        private CrudRepo<DeliveryCompositionEntity> deliveryCompositionCrud;
+        private CrudRepo<CattleEntity> cattleCrud;
+        private CrudRepo<ProductEntity> productCrud;
+        private CrudRepo<WaybillEntity> waybillCrud;
+        private CrudRepo<DivisionEntity> divisionCrud;
+        private CrudRepo<EmployeeEntity> employeeCrud;
+        private CrudRepo<StatementEntity> statementCrud;
+        private CrudRepo<ContractorEntity> contractorCrud;
         private CrudRepo<RecordCardEntity> recordCardCrud;
+        private CrudRepo<DeliveryNoteEntity> deliveryNoteCrud;
+        private CrudRepo<WaybillCompositionEntity> waybillCompositionCrud;
+        private CrudRepo<DeliveryCompositionEntity> deliveryCompositionCrud;
         private CrudRepo<RecordCardCompositionEntity> recordCardCompositionCrud;
-        private CattleRepo cattleRepo;
-        private ProductRepo productRepo;
-        private WaybillRepo waybillRepo;
-        private DivisionRepo divisionRepo;
-        private EmployeeRepo employeeRepo;
-        private StatementRepo statementRepo;
-        private ContractorRepo contractorRepo;
-        private DeliveryNoteRepo deliveryNoteRepo;
-        private WaybillCompositionRepo waybillCompositionRepo;
 
         public MainPage(string userRole)
         {
             InitializeComponent();
 
-            deliveryCompositionCrud = new DeliveryCompositionRepoImpl();
-            waybillCompositionRepo = new WaybillCompositionRepoImpl();
-            recordCardCompositionCrud = new RecordCardCompositionRepoImpl();
+            cattleCrud = new CattleRepoImpl();
+            productCrud = new ProductRepoImpl();
+            waybillCrud = new WaybillRepoImpl();
+            divisionCrud = new DivisionRepoImpl();
+            employeeCrud = new EmployeeRepoImpl();
+            statementCrud = new StatementRepoImpl();
+            contractorCrud = new ContractorRepoImpl();
             recordCardCrud = new RecordCardRepoImpl();
-            deliveryNoteRepo = new DeliveryNoteRepoImpl();
-            contractorRepo = new ContractorRepoImpl();
-            statementRepo = new StatementRepoImpl();
-            employeeRepo = new EmployeeRepoImpl();
-            divisionRepo = new DivisionRepoImpl();
-            productRepo = new ProductRepoImpl();
-            waybillRepo = new WaybillRepoImpl();
-            cattleRepo = new CattleRepoImpl();
+            deliveryNoteCrud = new DeliveryNoteRepoImpl();
+            waybillCompositionCrud = new WaybillCompositionRepoImpl();
+            deliveryCompositionCrud = new DeliveryCompositionRepoImpl();
+            recordCardCompositionCrud = new RecordCardCompositionRepoImpl();
 
             if (userRole.Equals("ROLE_ADMIN"))
             {
@@ -84,7 +84,7 @@ namespace Warehouse.View.Main
                 userPosition = "Заведующий фермой";
             }
 
-            contractorRepo.fetchContractorToGrid(ContractorGrid);
+            contractorCrud.fetchToGrid(ContractorGrid);
 
             UserInfoLabel.Content = $"Должность: {userPosition}";
         }
@@ -108,7 +108,7 @@ namespace Warehouse.View.Main
 
         private void Contractor_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            contractorRepo.fetchContractorToGrid(ContractorGrid);
+            contractorCrud.fetchToGrid(ContractorGrid);
 
             ContractorGrid.Visibility = Visibility.Visible;
 
@@ -127,7 +127,7 @@ namespace Warehouse.View.Main
 
         private void Employee_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            employeeRepo.fetchEmployeeToGrid(EmployeeGrid);
+            employeeCrud.fetchToGrid(EmployeeGrid);
 
             EmployeeGrid.Visibility = Visibility.Visible;
 
@@ -146,7 +146,7 @@ namespace Warehouse.View.Main
 
         private void Division_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            divisionRepo.fetchDivisionToGrid(DivisionGrid);
+            divisionCrud.fetchToGrid(DivisionGrid);
 
             DivisionGrid.Visibility = Visibility.Visible;
 
@@ -165,7 +165,7 @@ namespace Warehouse.View.Main
 
         private void Cettle_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            cattleRepo.fetchCattleToGrid(CattleGrid);
+            cattleCrud.fetchToGrid(CattleGrid);
 
             CattleGrid.Visibility = Visibility.Visible;
 
@@ -184,7 +184,7 @@ namespace Warehouse.View.Main
 
         private void Product_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            productRepo.fetchProductToGrid(ProductGrid);
+            productCrud.fetchToGrid(ProductGrid);
 
             ProductGrid.Visibility = Visibility.Visible;
 
@@ -203,7 +203,7 @@ namespace Warehouse.View.Main
 
         private void Statement_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            statementRepo.fetchStatementToGrid(StatementGrid);
+            statementCrud.fetchToGrid(StatementGrid);
 
             StatementGrid.Visibility = Visibility.Visible;
 
@@ -222,7 +222,7 @@ namespace Warehouse.View.Main
 
         private void Waybill_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            waybillRepo.fetchWaybillToGrid(WaybillGrid);
+            waybillCrud.fetchToGrid(WaybillGrid);
 
             WaybillGrid.Visibility = Visibility.Visible;
 
@@ -241,7 +241,7 @@ namespace Warehouse.View.Main
 
         private void WaybillComposition_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            waybillCompositionRepo.fetchWaybillCompositionToGrid(WaybillCompositionGrid);
+            waybillCompositionCrud.fetchToGrid(WaybillCompositionGrid);
 
             WaybillCompositionGrid.Visibility = Visibility.Visible;
 
@@ -260,7 +260,7 @@ namespace Warehouse.View.Main
 
         private void DeliveryNote_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            deliveryNoteRepo.fetchDeliveryNoteToGrid(DeliveryNoteGrid);
+            deliveryNoteCrud.fetchToGrid(DeliveryNoteGrid);
 
             DeliveryNoteGrid.Visibility = Visibility.Visible;
 
@@ -371,8 +371,8 @@ namespace Warehouse.View.Main
                 {
                     long contractorId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
-                    contractorRepo.deleteContractor(contractorId);
-                    contractorRepo.fetchContractorToGrid(ContractorGrid);
+                    contractorCrud.delete(contractorId);
+                    contractorCrud.fetchToGrid(ContractorGrid);
                 }
                 catch (SqlException)
                 {
@@ -417,8 +417,8 @@ namespace Warehouse.View.Main
                 {
                     long employeeId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
-                    employeeRepo.deleteEmployee(employeeId);
-                    employeeRepo.fetchEmployeeToGrid(EmployeeGrid);
+                    employeeCrud.delete(employeeId);
+                    employeeCrud.fetchToGrid(EmployeeGrid);
                 }
                 catch (SqlException)
                 {
@@ -463,8 +463,8 @@ namespace Warehouse.View.Main
                 {
                     long divisionId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
-                    divisionRepo.deleteDivision(divisionId);
-                    divisionRepo.fetchDivisionToGrid(DivisionGrid);
+                    divisionCrud.delete(divisionId);
+                    divisionCrud.fetchToGrid(DivisionGrid);
                 }
                 catch (SqlException)
                 {
@@ -509,8 +509,8 @@ namespace Warehouse.View.Main
                 {
                     long cattleId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
-                    cattleRepo.deleteCattle(cattleId);
-                    cattleRepo.fetchCattleToGrid(CattleGrid);
+                    cattleCrud.delete(cattleId);
+                    cattleCrud.fetchToGrid(CattleGrid);
                 }
                 catch (SqlException)
                 {
@@ -555,8 +555,8 @@ namespace Warehouse.View.Main
                 {
                     long productId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
-                    productRepo.deleteProduct(productId);
-                    productRepo.fetchProductToGrid(ProductGrid);
+                    productCrud.delete(productId);
+                    productCrud.fetchToGrid(ProductGrid);
                 }
                 catch (SqlException)
                 {
@@ -607,8 +607,8 @@ namespace Warehouse.View.Main
                 {
                     long statementId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
-                    statementRepo.deleteStatement(statementId);
-                    statementRepo.fetchStatementToGrid(StatementGrid);
+                    statementCrud.delete(statementId);
+                    statementCrud.fetchToGrid(StatementGrid);
                 }
                 catch (SqlException)
                 {
@@ -659,8 +659,8 @@ namespace Warehouse.View.Main
                 {
                     long waybillId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
-                    waybillRepo.deleteWaybill(waybillId);
-                    waybillRepo.fetchWaybillToGrid(WaybillGrid);
+                    waybillCrud.delete(waybillId);
+                    waybillCrud.fetchToGrid(WaybillGrid);
                 }
                 catch (SqlException)
                 {
@@ -712,8 +712,8 @@ namespace Warehouse.View.Main
                 {
                     long waybillCompositionId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
-                    waybillCompositionRepo.deleteWaybillComposition(waybillCompositionId);
-                    waybillCompositionRepo.fetchWaybillCompositionToGrid(WaybillCompositionGrid);
+                    waybillCompositionCrud.delete(waybillCompositionId);
+                    waybillCompositionCrud.fetchToGrid(WaybillCompositionGrid);
                 }
                 catch (SqlException)
                 {
@@ -761,8 +761,8 @@ namespace Warehouse.View.Main
                 {
                     long deliveryId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
-                    deliveryNoteRepo.deleteDeliveryNote(deliveryId);
-                    deliveryNoteRepo.fetchDeliveryNoteToGrid(DeliveryNoteGrid);
+                    deliveryNoteCrud.delete(deliveryId);
+                    deliveryNoteCrud.fetchToGrid(DeliveryNoteGrid);
                 }
                 catch (SqlException)
                 {

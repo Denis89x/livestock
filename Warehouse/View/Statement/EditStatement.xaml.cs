@@ -11,8 +11,8 @@ namespace Warehouse.View.Statement
     {
         private long statementId;
         private DataGrid dataGrid;
-        private StatementRepo statementRepo;
-        private StatementComboBoxRepo statementComboBoxRepo;
+        private CrudRepo<StatementEntity> statementCrud;
+        private ComboBoxRepo comboBoxRepo;
         private StatementValidation validation;
 
         public EditStatement(long statementId, string division, string cattle, string employee,  
@@ -25,13 +25,13 @@ namespace Warehouse.View.Statement
             this.dataGrid = dataGrid;
 
             validation = new StatementValidation();
-            statementRepo = new StatementRepoImpl();
-            statementComboBoxRepo = new StatementComboBoxRepoImpl();
+            statementCrud = new StatementRepoImpl();
+            comboBoxRepo = new ComboBoxRepoImpl();
 
-            statementComboBoxRepo.insertCattleIntoComboBox(CattleComboBox);
-            statementComboBoxRepo.insertDivisionsIntoComboBox(DivisionComboBox);
-            statementComboBoxRepo.insertEmployeesIntoComboBox(EmployeeComboBox);
-            statementComboBoxRepo.insertProductsIntoComboBox(ProductComboBox);
+            comboBoxRepo.insertCattleIntoComboBox(CattleComboBox);
+            comboBoxRepo.insertDivisionsIntoComboBox(DivisionComboBox);
+            comboBoxRepo.insertEmployeesIntoComboBox(EmployeeComboBox);
+            comboBoxRepo.insertProductsIntoComboBox(ProductComboBox);
 
             DatePicker.Text = date;
             FoundationBox.Text = foundation;
@@ -66,8 +66,8 @@ namespace Warehouse.View.Statement
                     
                     if (validation.isStatementValid(statement))
                     {
-                        statementRepo.updateStatement(statement);
-                        statementRepo.fetchStatementToGrid(dataGrid);
+                        statementCrud.update(statement);
+                        statementCrud.fetchToGrid(dataGrid);
 
                         this.Close();
                     }

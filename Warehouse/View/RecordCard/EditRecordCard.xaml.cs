@@ -12,7 +12,7 @@ namespace Warehouse.View.RecordCard
         private long recordCardId;
         private DataGrid dataGrid;
         private ComboBoxRepo comboBoxRepo;
-        private CrudRepo<RecordCardEntity> crudRepo;
+        private CrudRepo<RecordCardEntity> recordCrud;
         private CommonValidation commonValidation;
 
         public EditRecordCard(long recordCardId, string product, string division, string employee, string date, DataGrid dataGrid)
@@ -23,7 +23,7 @@ namespace Warehouse.View.RecordCard
             this.dataGrid = dataGrid;
 
             comboBoxRepo = new ComboBoxRepoImpl();
-            crudRepo = new RecordCardRepoImpl();
+            recordCrud = new RecordCardRepoImpl();
             commonValidation = new CommonValidation();
 
             DatePicker.Text = DateTime.Today.ToString("yyyy-MM-dd");
@@ -55,8 +55,8 @@ namespace Warehouse.View.RecordCard
                     {
                         RecordCardEntity recordCard = new RecordCardEntity(recordCardId, product.id, division.id, employee.id, date);
 
-                        crudRepo.update(recordCard);
-                        crudRepo.fetchToGrid(dataGrid);
+                        recordCrud.update(recordCard);
+                        recordCrud.fetchToGrid(dataGrid);
 
                          this.Close();
                     }

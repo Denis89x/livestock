@@ -8,16 +8,16 @@ namespace Warehouse.View.Cattle
 {
     public partial class CreateCattle : Window
     {
-        CattleValidation cattleValidation;
-        CattleRepo cattleRepo;
+        private CattleValidation cattleValidation;
+        private CrudRepo<CattleEntity> cattleCrud;
 
-        DataGrid dataGrid;
+        private DataGrid dataGrid;
 
         public CreateCattle(DataGrid dataGrid)
         {
             InitializeComponent();
 
-            cattleRepo = new CattleRepoImpl();
+            cattleCrud = new CattleRepoImpl();
             cattleValidation = new CattleValidation();
 
             this.dataGrid = dataGrid;
@@ -36,8 +36,8 @@ namespace Warehouse.View.Cattle
 
             if (cattleValidation.isCattleValid(cattle))
             {
-                cattleRepo.createCattle(cattle);
-                cattleRepo.fetchCattleToGrid(dataGrid);
+                cattleCrud.create(cattle);
+                cattleCrud.fetchToGrid(dataGrid);
 
                 CattleTypeBox.Text = "";
             }

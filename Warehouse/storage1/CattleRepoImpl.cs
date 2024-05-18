@@ -3,7 +3,7 @@ using Warehouse.Entity;
 
 namespace Warehouse.storage1
 {
-    internal class CattleRepoImpl : CattleRepo
+    internal class CattleRepoImpl : CrudRepo<CattleEntity>
     {
         Database database;
 
@@ -12,30 +12,30 @@ namespace Warehouse.storage1
             this.database = new Database();
         }
 
-        public void createCattle(CattleEntity cattle)
+        public void create(CattleEntity entity)
         {
-            string query = $"INSERT INTO cattle(cattle_type) VALUES(N'{cattle.cattleType}')";
+            string query = $"INSERT INTO cattle(cattle_type) VALUES(N'{entity.cattleType}')";
 
             database.executeQuery(query);
         }
 
-        public void deleteCattle(long cattleId)
+        public void delete(long entityId)
         {
-            string query = $"DELETE FROM cattle WHERE cattle_id = '{cattleId}'";
+            string query = $"DELETE FROM cattle WHERE cattle_id = '{entityId}'";
 
             database.executeQuery(query);
         }
 
-        public void fetchCattleToGrid(DataGrid dataGrid)
+        public void fetchToGrid(DataGrid dataGrid)
         {
             string query = $"SELECT * FROM cattle";
 
             database.selectQuery(query, dataGrid);
         }
 
-        public void updateCattle(CattleEntity cattle)
+        public void update(CattleEntity entity)
         {
-            string query = $"UPDATE cattle SET cattle_type = N'{cattle.cattleType}' WHERE cattle_id = '{cattle.cattleId}'";
+            string query = $"UPDATE cattle SET cattle_type = N'{entity.cattleType}' WHERE cattle_id = '{entity.cattleId}'";
 
             database.executeQuery(query);
         }

@@ -8,11 +8,11 @@ namespace Warehouse.View.DeliveryNote
 {
     public partial class EditDelivery : Window
     {
-        long deliveryId;
-        DataGrid dataGrid;
-        ComboBoxRepo comboBoxRepo;
-        DeliveryNoteRepo deliveryNoteRepo;
-        DeliveryNoteValidation validation;
+        private long deliveryId;
+        private DataGrid dataGrid;
+        private ComboBoxRepo comboBoxRepo;
+        private CrudRepo<DeliveryNoteEntity> deliveryNoteCrud;
+        private DeliveryNoteValidation validation;
 
         public EditDelivery(long deliveryId, string division, string date, string assignment, DataGrid dataGrid)
         {
@@ -23,7 +23,7 @@ namespace Warehouse.View.DeliveryNote
 
             validation = new DeliveryNoteValidation();
             comboBoxRepo = new ComboBoxRepoImpl();
-            deliveryNoteRepo = new DeliveryNoteRepoImpl();
+            deliveryNoteCrud = new DeliveryNoteRepoImpl();
 
             DatePicker.Text = date;
             AssignmentBox.Text = assignment;
@@ -49,8 +49,8 @@ namespace Warehouse.View.DeliveryNote
 
                 if (validation.isDeliveryNoteValid(deliveryNote))
                 {
-                    deliveryNoteRepo.updateDeliveryNote(deliveryNote);
-                    deliveryNoteRepo.fetchDeliveryNoteToGrid(dataGrid);
+                    deliveryNoteCrud.update(deliveryNote);
+                    deliveryNoteCrud.fetchToGrid(dataGrid);
 
                     this.Close();
                 }

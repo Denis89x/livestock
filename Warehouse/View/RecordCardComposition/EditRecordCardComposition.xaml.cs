@@ -12,7 +12,7 @@ namespace Warehouse.View.RecordCardComposition
         private long recordCardCompositionId;
         private DataGrid dataGrid;
         private ComboBoxRepo comboBoxRepo;
-        private CrudRepo<RecordCardCompositionEntity> crudRepo;
+        private CrudRepo<RecordCardCompositionEntity> recordCrud;
         private RecordCardCompositionValidation validation;
 
         public EditRecordCardComposition(long recordCardCompositionId, string recordCard, string date, string cowQuantity, string milkMorning, string milkMidday, string milkEvening, DataGrid dataGrid)
@@ -23,7 +23,7 @@ namespace Warehouse.View.RecordCardComposition
             this.dataGrid = dataGrid;
 
             comboBoxRepo = new ComboBoxRepoImpl();
-            crudRepo = new RecordCardCompositionRepoImpl();
+            recordCrud = new RecordCardCompositionRepoImpl();
             validation = new RecordCardCompositionValidation();
 
             comboBoxRepo.insertRecordCardIntoComboBox(RecordCardCombo);
@@ -90,8 +90,8 @@ namespace Warehouse.View.RecordCardComposition
 
                     if (validation.isRecordCardCompositionValid(recordCardComposition))
                     {
-                        crudRepo.update(recordCardComposition);
-                        crudRepo.fetchToGrid(dataGrid);
+                        recordCrud.update(recordCardComposition);
+                        recordCrud.fetchToGrid(dataGrid);
 
                         this.Close();
                     }

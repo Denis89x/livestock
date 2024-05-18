@@ -10,7 +10,7 @@ namespace Warehouse.View.DeliveryNoteComposition
     {
         DataGrid dataGrid;
         ComboBoxRepo comboBoxRepo;
-        CrudRepo<DeliveryCompositionEntity> crudRepo;
+        CrudRepo<DeliveryCompositionEntity> deliveryCrud;
         CommonValidation commonValidation;
 
         public CreateDeliveryComposition(DataGrid dataGrid)
@@ -20,7 +20,7 @@ namespace Warehouse.View.DeliveryNoteComposition
             this.dataGrid = dataGrid;
 
             comboBoxRepo = new ComboBoxRepoImpl();
-            crudRepo = new DeliveryCompositionRepoImpl();
+            deliveryCrud = new DeliveryCompositionRepoImpl();
             commonValidation = new CommonValidation();
 
             comboBoxRepo.insertProductsIntoComboBox(ProductCombo);
@@ -46,8 +46,8 @@ namespace Warehouse.View.DeliveryNoteComposition
                 string unit = ((ComboBoxItem)UnitCombo.SelectedItem).Content.ToString();
                 DeliveryCompositionEntity deliveryComposition = new DeliveryCompositionEntity(delivery.id, product.id, unit, requested, released, price);
 
-                crudRepo.create(deliveryComposition);
-                crudRepo.fetchToGrid(dataGrid);
+                deliveryCrud.create(deliveryComposition);
+                deliveryCrud.fetchToGrid(dataGrid);
 
                 this.Close();
             }

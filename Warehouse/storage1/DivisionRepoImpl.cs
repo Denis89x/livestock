@@ -3,7 +3,7 @@ using Warehouse.Entity;
 
 namespace Warehouse.storage1
 {
-    internal class DivisionRepoImpl : DivisionRepo
+    internal class DivisionRepoImpl : CrudRepo<DivisionEntity>
     {
         Database database;
 
@@ -12,30 +12,30 @@ namespace Warehouse.storage1
             this.database = new Database();
         }
 
-        public void createDivision(DivisionEntity division)
+        public void create(DivisionEntity entity)
         {
-            string query = $"INSERT INTO division(division_type) VALUES(N'{division.divisionType}')";
+            string query = $"INSERT INTO division(division_type) VALUES(N'{entity.divisionType}')";
 
             database.executeQuery(query);
         }
 
-        public void deleteDivision(long divisionId)
+        public void delete(long entityId)
         {
-            string query = $"DELETE FROM division WHERE division_id = '{divisionId}'";
+            string query = $"DELETE FROM division WHERE division_id = '{entityId}'";
 
             database.executeQuery(query);
         }
 
-        public void fetchDivisionToGrid(DataGrid dataGrid)
+        public void fetchToGrid(DataGrid dataGrid)
         {
             string query = $"SELECT * FROM division";
 
             database.selectQuery(query, dataGrid);
         }
 
-        public void updateDivision(DivisionEntity division)
+        public void update(DivisionEntity entity)
         {
-            string query = $"UPDATE division SET division_type = N'{division.divisionType}' WHERE division_id = '{division.divisionId}'";
+            string query = $"UPDATE division SET division_type = N'{entity.divisionType}' WHERE division_id = '{entity.divisionId}'";
 
             database.executeQuery(query);
         }

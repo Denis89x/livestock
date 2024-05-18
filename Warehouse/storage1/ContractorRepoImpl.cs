@@ -2,7 +2,7 @@
 
 namespace Warehouse.storage1
 {
-    internal class ContractorRepoImpl : ContractorRepo
+    internal class ContractorRepoImpl : CrudRepo<ContractorEntity>
     {
         private Database database;
 
@@ -11,30 +11,29 @@ namespace Warehouse.storage1
             this.database = new Database();
         }
 
-        public void createContractor(ContractorEntity contractor)
+        public void create(ContractorEntity entity)
         {
-            string query = $"INSERT INTO contractor(address, title, settlement_account, phone_number, bank_name) VALUES(N'{contractor.address}', N'{contractor.title}', N'{contractor.settlementAccount}', N'{contractor.phoneNumber}', N'{contractor.bankName}')";
+            string query = $"INSERT INTO contractor(address, title, settlement_account, phone_number, bank_name) VALUES(N'{entity.address}', N'{entity.title}', N'{entity.settlementAccount}', N'{entity.phoneNumber}', N'{entity.bankName}')";
+            
+            database.executeQuery(query);
+        }
+
+        public void delete(long entityId)
+        {
+            string query = $"DELETE FROM contractor WHERE contractor_id = '{entityId}'";
+            database.executeQuery(query);
+        }
+
         
-            database.executeQuery(query);
-        }
-
-        public void deleteContractor(long contractorId)
-        {
-            string query = $"DELETE FROM contractor WHERE contractor_id = '{contractorId}'";
-
-            database.executeQuery(query);
-        }
-
-        public void fetchContractorToGrid(DataGrid dataGrid)
+        public void fetchToGrid(DataGrid dataGrid)
         {
             string query = $"SELECT * FROM contractor";
 
             database.selectQuery(query, dataGrid);
         }
-
-        public void updateContractor(ContractorEntity contractor)
+        public void update(ContractorEntity entity)
         {
-            string query = $"UPDATE contractor SET address = N'{contractor.address}', title = N'{contractor.title}', settlement_account = N'{contractor.settlementAccount}', phone_number = N'{contractor.phoneNumber}', bank_name = N'{contractor.bankName}' where contractor_id = '{contractor.contractorId}'";
+            string query = $"UPDATE contractor SET address = N'{entity.address}', title = N'{entity.title}', settlement_account = N'{entity.settlementAccount}', phone_number = N'{entity.phoneNumber}', bank_name = N'{entity.bankName}' where contractor_id = '{entity.contractorId}'";
 
             database.executeQuery(query);
         }

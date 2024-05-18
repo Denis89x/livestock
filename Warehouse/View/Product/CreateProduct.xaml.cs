@@ -8,10 +8,10 @@ namespace Warehouse.View.Product
 {
     public partial class CreateProduct : Window
     {
-        ProductRepo productRepo;
-        DataGrid dataGrid;
+        private CrudRepo<ProductEntity> productCrud;
+        private DataGrid dataGrid;
 
-        ProductValidation validation;
+        private ProductValidation validation;
 
         public CreateProduct(DataGrid dataGrid)
         {
@@ -19,7 +19,7 @@ namespace Warehouse.View.Product
 
             this.dataGrid = dataGrid;
 
-            productRepo = new ProductRepoImpl();
+            productCrud = new ProductRepoImpl();
             validation = new ProductValidation();
         }
 
@@ -36,8 +36,8 @@ namespace Warehouse.View.Product
 
                 if (validation.isProductValid(product))
                 {
-                    productRepo.createProduct(product);
-                    productRepo.fetchProductToGrid(dataGrid);
+                    productCrud.create(product);
+                    productCrud.fetchToGrid(dataGrid);
 
                     TitleBox.Text = "";
                     SortBox.Text = "";

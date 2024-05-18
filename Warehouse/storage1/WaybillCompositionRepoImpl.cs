@@ -5,7 +5,7 @@ using Warehouse.Entity;
 
 namespace Warehouse.storage1
 {
-    internal class WaybillCompositionRepoImpl : WaybillCompositionRepo
+    internal class WaybillCompositionRepoImpl : CrudRepo<WaybillCompositionEntity>
     {
         Database database;
 
@@ -14,36 +14,37 @@ namespace Warehouse.storage1
             this.database = new Database();
         }
 
-        public void createWaybillComposition(WaybillCompositionEntity waybillComposition)
+        public void create(WaybillCompositionEntity entity)
         {
-            if (isWaybillCompositionExist(waybillComposition.waybillId))
+            if (isWaybillCompositionExist(entity.waybillId))
             {
                 MessageBox.Show("Данная ТТН уже заполнена!");
-            } else
+            }
+            else
             {
-                string query = $"INSERT INTO waybill_composition(waybill_id, product_id, waybill_type, fat, mass, acidity, temperature, cleaning_group, density, sort, packaging_type, quantity, brutto, tara, netto, grade) VALUES('{waybillComposition.waybillId}', '{waybillComposition.productId}', N'{waybillComposition.waybillType}', N'{waybillComposition.fat}', N'{waybillComposition.mass}', N'{waybillComposition.acidity}', N'{waybillComposition.temperature}', N'{waybillComposition.cleaningGroup}', N'{waybillComposition.density}', '{waybillComposition.sort}', '{waybillComposition.packagingType}', N'{waybillComposition.quantity}', N'{waybillComposition.brutto}', N'{waybillComposition.tara}', N'{waybillComposition.netto}', N'{waybillComposition.grade}')";
+                string query = $"INSERT INTO waybill_composition(waybill_id, product_id, waybill_type, fat, mass, acidity, temperature, cleaning_group, density, sort, packaging_type, quantity, brutto, tara, netto, grade) VALUES('{entity.waybillId}', '{entity.productId}', N'{entity.waybillType}', N'{entity.fat}', N'{entity.mass}', N'{entity.acidity}', N'{entity.temperature}', N'{entity.cleaningGroup}', N'{entity.density}', '{entity.sort}', '{entity.packagingType}', N'{entity.quantity}', N'{entity.brutto}', N'{entity.tara}', N'{entity.netto}', N'{entity.grade}')";
 
                 database.executeQuery(query);
             }
         }
 
-        public void deleteWaybillComposition(long waybillCompositionId)
+        public void delete(long entityId)
         {
-            string query = $"DELETE FROM waybill_composition WHERE waybill_composition_id = '{waybillCompositionId}'";
+            string query = $"DELETE FROM waybill_composition WHERE waybill_composition_id = '{entityId}'";
 
             database.executeQuery(query);
         }
 
-        public void fetchWaybillCompositionToGrid(DataGrid dataGrid)
+        public void fetchToGrid(DataGrid dataGrid)
         {
             string query = $"SELECT waybill_composition_id, waybill.document_number, finished_product.title, waybill_type, fat, mass, acidity, temperature, cleaning_group, density, waybill_composition.sort, packaging_type, quantity, brutto, tara, netto, grade FROM waybill, waybill_composition, finished_product WHERE waybill_composition.waybill_id = waybill.waybill_id AND waybill_composition.product_id = finished_product.product_id";
 
             database.selectQuery(query, dataGrid);
         }
 
-        public void updateWaybillComposition(WaybillCompositionEntity waybillComposition)
+        public void update(WaybillCompositionEntity entity)
         {
-            string query = $"UPDATE waybill_composition SET product_id = '{waybillComposition.productId}', fat = N'{waybillComposition.fat}', mass = N'{waybillComposition.mass}', acidity = N'{waybillComposition.acidity}', temperature = N'{waybillComposition.temperature}', cleaning_group = N'{waybillComposition.cleaningGroup}', density = N'{waybillComposition.density}', sort = N'{waybillComposition.sort}', packaging_type = N'{waybillComposition.packagingType}', quantity = N'{waybillComposition.quantity}', brutto = N'{waybillComposition.brutto}', tara = N'{waybillComposition.tara}', netto = N'{waybillComposition.tara}', grade = N'{waybillComposition.grade}' WHERE waybill_composition_id = '{waybillComposition.waybillId}'";
+            string query = $"UPDATE waybill_composition SET product_id = '{entity.productId}', fat = N'{entity.fat}', mass = N'{entity.mass}', acidity = N'{entity.acidity}', temperature = N'{entity.temperature}', cleaning_group = N'{entity.cleaningGroup}', density = N'{entity.density}', sort = N'{entity.sort}', packaging_type = N'{entity.packagingType}', quantity = N'{entity.quantity}', brutto = N'{entity.brutto}', tara = N'{entity.tara}', netto = N'{entity.tara}', grade = N'{entity.grade}' WHERE waybill_composition_id = '{entity.waybillId}'";
 
             database.executeQuery(query);
         }

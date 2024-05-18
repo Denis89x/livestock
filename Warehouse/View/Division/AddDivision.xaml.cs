@@ -8,10 +8,10 @@ namespace Warehouse.View.Division
 {
     public partial class AddDivision : Window
     {
-        DivisionRepo divisionRepo;
-        DivisionValidation validation;
+        private CrudRepo<DivisionEntity> divisionCrud;
+        private DivisionValidation validation;
 
-        DataGrid dataGrid;
+        private DataGrid dataGrid;
 
         public AddDivision(DataGrid dataGrid)
         {
@@ -19,7 +19,7 @@ namespace Warehouse.View.Division
 
             this.dataGrid = dataGrid;
 
-            divisionRepo = new DivisionRepoImpl();
+            divisionCrud = new DivisionRepoImpl();
             validation = new DivisionValidation();
         }
 
@@ -31,8 +31,8 @@ namespace Warehouse.View.Division
 
             if (validation.isDivisionValid(division))
             {
-                divisionRepo.createDivision(division);
-                divisionRepo.fetchDivisionToGrid(dataGrid);
+                divisionCrud.create(division);
+                divisionCrud.fetchToGrid(dataGrid);
 
                 DivisionTypeBox.Text = "";
             }

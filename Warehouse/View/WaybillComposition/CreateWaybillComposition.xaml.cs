@@ -11,7 +11,7 @@ namespace Warehouse.View.WaybillComposition
     {
         private DataGrid dataGrid;
         private ComboBoxRepo comboBoxRepo;
-        private WaybillCompositionRepo waybillCompositionRepo;
+        private CrudRepo<WaybillCompositionEntity> waybillCrud;
         private WaybillCompositionValidation validation;
 
         public CreateWaybillComposition(DataGrid dataGrid)
@@ -22,7 +22,7 @@ namespace Warehouse.View.WaybillComposition
 
             validation = new WaybillCompositionValidation();
             comboBoxRepo = new ComboBoxRepoImpl();
-            waybillCompositionRepo = new WaybillCompositionRepoImpl();
+            waybillCrud = new WaybillCompositionRepoImpl();
 
             comboBoxRepo.insertWaybillIntoComboBox(WaybillComboBox);
             comboBoxRepo.insertProductsIntoComboBox(ProductComboBox);
@@ -162,8 +162,8 @@ namespace Warehouse.View.WaybillComposition
 
                 if (validation.isWaybillCompositionValid(waybillComposition))
                 {
-                    waybillCompositionRepo.createWaybillComposition(waybillComposition);
-                    waybillCompositionRepo.fetchWaybillCompositionToGrid(dataGrid);
+                    waybillCrud.create(waybillComposition);
+                    waybillCrud.fetchToGrid(dataGrid);
 
                     this.Close();
                 }

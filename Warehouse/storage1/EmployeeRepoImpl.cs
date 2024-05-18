@@ -4,7 +4,7 @@ using Warehouse.Entity;
 
 namespace Warehouse.storage1
 {
-    internal class EmployeeRepoImpl : EmployeeRepo
+    internal class EmployeeRepoImpl : CrudRepo<EmployeeEntity>
     {
         Database database;
 
@@ -13,30 +13,30 @@ namespace Warehouse.storage1
             this.database = new Database();
         }
 
-        public void createEmployee(EmployeeEntity employee)
+        public void create(EmployeeEntity entity)
         {
-            string query = $"INSERT INTO employee(surname, first_name, patronymic, position) VALUES(N'{employee.surname}', N'{employee.firstName}', N'{employee.patronymic}', N'{employee.position}')";
-        
-            database.executeQuery(query);
-        }
-
-        public void deleteEmployee(long employeeId)
-        {
-            string query = $"DELETE FROM employee WHERE employee_id = '{employeeId}'";
+            string query = $"INSERT INTO employee(surname, first_name, patronymic, position) VALUES(N'{entity.surname}', N'{entity.firstName}', N'{entity.patronymic}', N'{entity.position}')";
 
             database.executeQuery(query);
         }
 
-        public void fetchEmployeeToGrid(DataGrid dataGrid)
+        public void delete(long entityId)
+        {
+            string query = $"DELETE FROM employee WHERE employee_id = '{entityId}'";
+
+            database.executeQuery(query);
+        }
+
+        public void fetchToGrid(DataGrid dataGrid)
         {
             string query = $"SELECT * FROM employee";
 
             database.selectQuery(query, dataGrid);
         }
 
-        public void updateEmployee(EmployeeEntity employee)
+        public void update(EmployeeEntity entity)
         {
-            string query = $"UPDATE employee SET surname = N'{employee.surname}', first_name = N'{employee.firstName}', patronymic = N'{employee.patronymic}', position = N'{employee.position}'";
+            string query = $"UPDATE employee SET surname = N'{entity.surname}', first_name = N'{entity.firstName}', patronymic = N'{entity.patronymic}', position = N'{entity.position}'";
 
             database.executeQuery(query);
         }

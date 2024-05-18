@@ -10,8 +10,8 @@ namespace Warehouse.View.Waybill
     public partial class CreateWaybill : Window
     {
         private DataGrid dataGrid;
-        private WaybillRepo waybillRepo;
-        private WaybillComboBoxRepo waybillComboBoxRepo;
+        private CrudRepo<WaybillEntity> waybillCrud;
+        private ComboBoxRepo comboBoxRepo;
         private WaybillValidation validation;
 
         public CreateWaybill(DataGrid dataGrid)
@@ -21,11 +21,11 @@ namespace Warehouse.View.Waybill
             this.dataGrid = dataGrid;
 
             validation = new WaybillValidation();
-            waybillRepo = new WaybillRepoImpl();
-            waybillComboBoxRepo = new WaybillComboBoxRepoImpl();
+            waybillCrud = new WaybillRepoImpl();
+            comboBoxRepo = new ComboBoxRepoImpl();
 
-            waybillComboBoxRepo.insertEmployeeIntoComboBox(EmployeeComboBox);
-            waybillComboBoxRepo.insertContractorIntoComboBox(ContractorComboBox);
+            comboBoxRepo.insertEmployeesIntoComboBox(EmployeeComboBox);
+            comboBoxRepo.insertContractorIntoComboBox(ContractorComboBox);
 
             DatePicker.Text = DateTime.Today.ToString("yyyy-MM-dd");
         }
@@ -157,8 +157,8 @@ namespace Warehouse.View.Waybill
 
                     if (validation.isWaybillValid(waybill))
                     {
-                        waybillRepo.createWaybill(waybill);
-                        waybillRepo.fetchWaybillToGrid(dataGrid);
+                        waybillCrud.create(waybill);
+                        waybillCrud.fetchToGrid(dataGrid);
 
                         this.Close();
                     }

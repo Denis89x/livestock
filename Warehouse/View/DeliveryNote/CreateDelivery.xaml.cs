@@ -9,10 +9,10 @@ namespace Warehouse.View.DeliveryNote
 {
     public partial class CreateDelivery : Window
     {
-        DataGrid dataGrid;
-        ComboBoxRepo comboBoxRepo;
-        DeliveryNoteRepo deliveryNoteRepo;
-        DeliveryNoteValidation validation;
+        private DataGrid dataGrid;
+        private ComboBoxRepo comboBoxRepo;
+        private CrudRepo<DeliveryNoteEntity> deliveryNoteCrud;
+        private DeliveryNoteValidation validation;
 
         public CreateDelivery(DataGrid dataGrid)
         {
@@ -22,7 +22,7 @@ namespace Warehouse.View.DeliveryNote
 
             validation = new DeliveryNoteValidation();
             comboBoxRepo = new ComboBoxRepoImpl();
-            deliveryNoteRepo = new DeliveryNoteRepoImpl();
+            deliveryNoteCrud = new DeliveryNoteRepoImpl();
 
             DatePicker.Text = DateTime.Today.ToString("yyyy-MM-dd");
 
@@ -47,8 +47,8 @@ namespace Warehouse.View.DeliveryNote
 
                 if (validation.isDeliveryNoteValid(deliveryNote))
                 {
-                    deliveryNoteRepo.createDeliveryNote(deliveryNote);
-                    deliveryNoteRepo.fetchDeliveryNoteToGrid(dataGrid);
+                    deliveryNoteCrud.create(deliveryNote);
+                    deliveryNoteCrud.fetchToGrid(dataGrid);
 
                     this.Close();
                 }

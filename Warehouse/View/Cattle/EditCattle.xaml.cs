@@ -8,10 +8,10 @@ namespace Warehouse.View.Cattle
 {
     public partial class EditCattle : Window
     {
-        long cattleId;
-        DataGrid dataGrid;
-        CattleRepo cattleRepo;
-        CattleValidation cattleValidation;
+        private long cattleId;
+        private DataGrid dataGrid;
+        private CrudRepo<CattleEntity> cattleCrud;
+        private CattleValidation cattleValidation;
 
         public EditCattle(long cattleId, string cattleType, DataGrid dataGrid)
         {
@@ -20,7 +20,7 @@ namespace Warehouse.View.Cattle
             this.cattleId = cattleId;
             this.dataGrid = dataGrid;
 
-            cattleRepo = new CattleRepoImpl();
+            cattleCrud = new CattleRepoImpl();
             cattleValidation = new CattleValidation();
 
             CattleTypeBox.Text = cattleType;
@@ -34,8 +34,8 @@ namespace Warehouse.View.Cattle
 
             if (cattleValidation.isCattleValid(cattle))
             {
-                cattleRepo.updateCattle(cattle);
-                cattleRepo.fetchCattleToGrid(dataGrid);
+                cattleCrud.update(cattle);
+                cattleCrud.fetchToGrid(dataGrid);
 
                 this.Close();
             }

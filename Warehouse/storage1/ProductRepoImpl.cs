@@ -3,7 +3,7 @@ using Warehouse.Entity;
 
 namespace Warehouse.storage1
 {
-    internal class ProductRepoImpl : ProductRepo
+    internal class ProductRepoImpl : CrudRepo<ProductEntity>
     {
         Database database;
 
@@ -12,30 +12,30 @@ namespace Warehouse.storage1
             this.database = new Database();
         }
 
-        public void createProduct(ProductEntity product)
+        public void create(ProductEntity entity)
         {
-            string query = $"INSERT INTO finished_product(title, sort, unit) VALUES(N'{product.title}', N'{product.sort}', N'{product.unit}')";
+            string query = $"INSERT INTO finished_product(title, sort, unit) VALUES(N'{entity.title}', N'{entity.sort}', N'{entity.unit}')";
 
             database.executeQuery(query);
         }
 
-        public void deleteProduct(long productId)
+        public void delete(long entityId)
         {
-            string query = $"DELETE FROM finished_product WHERE product_id = '{productId}'";
+            string query = $"DELETE FROM finished_product WHERE product_id = '{entityId}'";
 
             database.executeQuery(query);
         }
 
-        public void fetchProductToGrid(DataGrid dataGrid)
+        public void fetchToGrid(DataGrid dataGrid)
         {
             string query = $"SELECT * FROM finished_product";
 
             database.selectQuery(query, dataGrid);
         }
 
-        public void updateProduct(ProductEntity product)
+        public void update(ProductEntity entity)
         {
-            string query = $"UPDATE finished_product SET title = N'{product.title}', sort = N'{product.sort}', unit = N'{product.unit}' WHERE product_id = '{product.productId}'";
+            string query = $"UPDATE finished_product SET title = N'{entity.title}', sort = N'{entity.sort}', unit = N'{entity.unit}' WHERE product_id = '{entity.productId}'";
 
             database.executeQuery(query);
         }

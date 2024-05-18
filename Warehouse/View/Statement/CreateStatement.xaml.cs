@@ -10,9 +10,9 @@ namespace Warehouse.View.Statement
     public partial class CreateStatement : Window
     {
         private DataGrid dataGrid;
-        private StatementRepo statementRepo;
-        private StatementComboBoxRepo statementComboBoxRepo;
+        private CrudRepo<StatementEntity> statementCrud;
         private StatementValidation validation;
+        private ComboBoxRepo comboBoxRepo;
 
         public CreateStatement(DataGrid dataGrid)
         {
@@ -21,13 +21,13 @@ namespace Warehouse.View.Statement
             this.dataGrid = dataGrid;
 
             validation = new StatementValidation();
-            statementRepo = new StatementRepoImpl();
-            statementComboBoxRepo = new StatementComboBoxRepoImpl();
+            statementCrud = new StatementRepoImpl();
+            comboBoxRepo = new ComboBoxRepoImpl();
 
-            statementComboBoxRepo.insertDivisionsIntoComboBox(DivisionComboBox);
-            statementComboBoxRepo.insertCattleIntoComboBox(CattleComboBox);
-            statementComboBoxRepo.insertEmployeesIntoComboBox(EmployeeComboBox);
-            statementComboBoxRepo.insertProductsIntoComboBox(ProductComboBox);
+            comboBoxRepo.insertDivisionsIntoComboBox(DivisionComboBox);
+            comboBoxRepo.insertCattleIntoComboBox(CattleComboBox);
+            comboBoxRepo.insertEmployeesIntoComboBox(EmployeeComboBox);
+            comboBoxRepo.insertProductsIntoComboBox(ProductComboBox);
 
             DatePicker.Text = DateTime.Today.ToString("yyyy-MM-dd");
         }
@@ -126,8 +126,8 @@ namespace Warehouse.View.Statement
 
                     if (validation.isStatementValid(statement))
                     {
-                        statementRepo.createStatement(statement);
-                        statementRepo.fetchStatementToGrid(dataGrid);
+                        statementCrud.create(statement);
+                        statementCrud.fetchToGrid(dataGrid);
 
                         this.Close();
                     }

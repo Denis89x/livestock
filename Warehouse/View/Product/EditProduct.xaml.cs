@@ -8,11 +8,11 @@ namespace Warehouse.View.Product
 {
     public partial class EditProduct : Window
     {
-        long productId;
-        DataGrid dataGrid;
-        ProductRepo productRepo;
+        private long productId;
+        private DataGrid dataGrid;
+        private CrudRepo<ProductEntity> productCrud;
 
-        ProductValidation validation;
+        private ProductValidation validation;
 
         public EditProduct(long productId, string title, string sort, string unit, DataGrid dataGrid)
         {
@@ -21,7 +21,7 @@ namespace Warehouse.View.Product
             this.productId = productId;
             this.dataGrid = dataGrid;
 
-            productRepo = new ProductRepoImpl();
+            productCrud = new ProductRepoImpl();
             validation = new ProductValidation();
 
             TitleBox.Text = title;
@@ -43,8 +43,8 @@ namespace Warehouse.View.Product
                 if (validation.isProductValid(product))
                 {
 
-                    productRepo.updateProduct(product);
-                    productRepo.fetchProductToGrid(dataGrid);
+                    productCrud.update(product);
+                    productCrud.fetchToGrid(dataGrid);
 
                     this.Close();
                 }

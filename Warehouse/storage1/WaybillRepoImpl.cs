@@ -3,7 +3,7 @@ using Warehouse.Entity;
 
 namespace Warehouse.storage1
 {
-    internal class WaybillRepoImpl : WaybillRepo
+    internal class WaybillRepoImpl : CrudRepo<WaybillEntity>
     {
         Database database;
 
@@ -12,30 +12,30 @@ namespace Warehouse.storage1
             this.database = new Database();
         }
 
-        public void createWaybill(WaybillEntity waybill)
+        public void create(WaybillEntity entity)
         {
-            string query = $"INSERT INTO waybill(contractor_id, employee_id, document_number, car_owner, date, vehicle, shipper, consignor, loading_point, unloading_point, treaty, vehicle_number, guide_list_number, route_number) VALUES('{waybill.contractorId}', '{waybill.employeeId}', '{waybill.documentNumber}', N'{waybill.carOwner}', '{waybill.date}', N'{waybill.vehicle}', N'{waybill.shipper}', N'{waybill.consignor}', N'{waybill.loadingPoint}', N'{waybill.unloadingPoint}', N'{waybill.treaty}', N'{waybill.vehicleNumber}', '{waybill.guideListNumber}', '{waybill.routeNumber}')";
-        
-            database.executeQuery(query);
-        }
-
-        public void deleteWaybill(long waybillId)
-        {
-            string query = $"DELETE FROM waybill WHERE waybill_id = '{waybillId}'";
+            string query = $"INSERT INTO waybill(contractor_id, employee_id, document_number, car_owner, date, vehicle, shipper, consignor, loading_point, unloading_point, treaty, vehicle_number, guide_list_number, route_number) VALUES('{entity.contractorId}', '{entity.employeeId}', '{entity.documentNumber}', N'{entity.carOwner}', '{entity.date}', N'{entity.vehicle}', N'{entity.shipper}', N'{entity.consignor}', N'{entity.loadingPoint}', N'{entity.unloadingPoint}', N'{entity.treaty}', N'{entity.vehicleNumber}', '{entity.guideListNumber}', '{entity.routeNumber}')";
 
             database.executeQuery(query);
         }
 
-        public void fetchWaybillToGrid(DataGrid dataGrid)
+        public void delete(long entityId)
+        {
+            string query = $"DELETE FROM waybill WHERE waybill_id = '{entityId}'";
+
+            database.executeQuery(query);
+        }
+
+        public void fetchToGrid(DataGrid dataGrid)
         {
             string query = $"SELECT waybill_id, contractor.title, employee.surname, document_number, car_owner, date, vehicle, shipper, consignor, loading_point, unloading_point, treaty, vehicle_number, guide_list_number, route_number FROM waybill, employee, contractor WHERE waybill.employee_id = employee.employee_id AND waybill.contractor_id = contractor.contractor_id";
 
             database.selectQuery(query, dataGrid);
         }
 
-        public void updateWaybill(WaybillEntity waybill)
+        public void update(WaybillEntity entity)
         {
-            string query = $"UPDATE waybill SET contractor_id = '{waybill.contractorId}', employee_id = '{waybill.employeeId}', car_owner = N'{waybill.carOwner}', date = '{waybill.date}', vehicle = N'{waybill.vehicle}', shipper = N'{waybill.shipper}', consignor = N'{waybill.consignor}', loading_point = N'{waybill.loadingPoint}', unloading_point = N'{waybill.unloadingPoint}', treaty = N'{waybill.treaty}', vehicle_number = '{waybill.vehicleNumber}', guide_list_number = '{waybill.guideListNumber}', route_number = '{waybill.routeNumber}'";
+            string query = $"UPDATE waybill SET contractor_id = '{entity.contractorId}', employee_id = '{entity.employeeId}', car_owner = N'{entity.carOwner}', date = '{entity.date}', vehicle = N'{entity.vehicle}', shipper = N'{entity.shipper}', consignor = N'{entity.consignor}', loading_point = N'{entity.loadingPoint}', unloading_point = N'{entity.unloadingPoint}', treaty = N'{entity.treaty}', vehicle_number = '{entity.vehicleNumber}', guide_list_number = '{entity.guideListNumber}', route_number = '{entity.routeNumber}'";
 
             database.executeQuery(query);
         }

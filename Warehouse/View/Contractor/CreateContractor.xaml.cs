@@ -7,10 +7,10 @@ namespace Warehouse.View.Contractor
 {
     public partial class CreateContractor : Window
     {
-        ContractorValidation validation;
-        DataGrid dataGrid;
+        private ContractorValidation validation;
+        private DataGrid dataGrid;
 
-        ContractorRepo contractorRepo;
+        private CrudRepo<ContractorEntity> contractorCrud;
 
         public CreateContractor(DataGrid dataGrid)
         {
@@ -18,7 +18,7 @@ namespace Warehouse.View.Contractor
 
             this.dataGrid = dataGrid;
 
-            contractorRepo = new ContractorRepoImpl();
+            contractorCrud = new ContractorRepoImpl();
             validation = new ContractorValidation();
         }
 
@@ -39,8 +39,8 @@ namespace Warehouse.View.Contractor
 
             if (validation.isContractorValid(contractor))
             {
-                contractorRepo.createContractor(contractor);
-                contractorRepo.fetchContractorToGrid(dataGrid);
+                contractorCrud.create(contractor);
+                contractorCrud.fetchToGrid(dataGrid);
 
                 AddressBox.Text = "";
                 TitleBox.Text = "";
