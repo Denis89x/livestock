@@ -1,25 +1,25 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using Warehouse.Entity;
-using Warehouse.storage1;
+using Warehouse.Storage;
 using Warehouse.Validation;
 
 namespace Warehouse.View.Employee
 {
     public partial class CreateEmployee : Window
     {
-        DataGrid dataGrid;
+        private DataGrid dataGrid;
 
-        EmployeeValidation validation;
-        EmployeeRepo employeeRepo;
+        private EmployeeValidation validation;
+        private CrudRepo<EmployeeEntity> employeeCrud;
 
         public CreateEmployee(DataGrid dataGrid)
         {
             InitializeComponent();
 
             this.dataGrid = dataGrid;
-            
-            employeeRepo = new EmployeeRepoImpl();
+
+            employeeCrud = new EmployeeRepoImpl();
             validation = new EmployeeValidation();
         }
 
@@ -34,8 +34,8 @@ namespace Warehouse.View.Employee
 
             if (validation.isEmployeeValid(employee))
             {
-                employeeRepo.createEmployee(employee);
-                employeeRepo.fetchEmployeeToGrid(dataGrid);
+                employeeCrud.create(employee);
+                employeeCrud.fetchToGrid(dataGrid);
 
                 SurnameBox.Text = "";
                 FirstnameBox.Text = "";

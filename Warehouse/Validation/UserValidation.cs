@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using System.Windows;
 using Warehouse.Entity;
-using Warehouse.storage1;
+using Warehouse.Storage;
 
 namespace Warehouse.Validation
 {

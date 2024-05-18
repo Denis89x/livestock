@@ -104,7 +104,6 @@
     <Compile Include="Entity\CattleEntity.cs" />
     <Compile Include="Entity\ComboBoxEntity.cs" />
     <Compile Include="Entity\ContractorEntity.cs" />
-    <Compile Include="DTO\ComboBoxDTO.cs" />
     <Compile Include="Entity\DeliveryCompositionEntity.cs" />
     <Compile Include="Entity\DeliveryNoteEntity.cs" />
     <Compile Include="Entity\DivisionEntity.cs" />
@@ -115,48 +114,29 @@
     <Compile Include="Entity\StatementEntity.cs" />
     <Compile Include="Entity\UserEntity.cs" />
     <Compile Include="Entity\WaybillCompositionEntity.cs" />
+    <Compile Include="Service\GridUtility.cs" />
+    <Compile Include="Service\GridUtilityImpl.cs" />
     <Compile Include="Validation\WaybillCompositionValidation.cs" />
     <Compile Include="Entity\WaybillEntity.cs" />
-    <Compile Include="Model\Product.cs" />
-    <Compile Include="Profile\PrfSettings.xaml.cs">
-      <DependentUpon>PrfSettings.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Service\MainLogic.cs" />
-    <Compile Include="Service\OutputService.cs" />
-    <Compile Include="Service\ValidationFileds.cs" />
-    <Compile Include="storage1\AuthRepo.cs" />
-    <Compile Include="storage1\AuthRepoImpl.cs" />
-    <Compile Include="storage1\AuthSession.cs" />
-    <Compile Include="storage1\CattleRepo.cs" />
-    <Compile Include="storage1\CattleRepoImpl.cs" />
-    <Compile Include="storage1\ComboBoxRepo.cs" />
-    <Compile Include="storage1\ComboBoxRepoImpl.cs" />
-    <Compile Include="storage1\ContractorRepo.cs" />
-    <Compile Include="storage1\ContractorRepoImpl.cs" />
-    <Compile Include="storage1\CrudRepo.cs" />
-    <Compile Include="storage1\Database.cs" />
-    <Compile Include="storage1\DeliveryCompositionRepoImpl.cs" />
-    <Compile Include="storage1\DeliveryNoteRepo.cs" />
-    <Compile Include="storage1\DeliveryNoteRepoImpl.cs" />
-    <Compile Include="storage1\DivisionRepo.cs" />
-    <Compile Include="storage1\DivisionRepoImpl.cs" />
-    <Compile Include="storage1\EmployeeRepo.cs" />
-    <Compile Include="storage1\EmployeeRepoImpl.cs" />
-    <Compile Include="storage1\ProductRepo.cs" />
-    <Compile Include="storage1\ProductRepoImpl.cs" />
-    <Compile Include="storage1\RecordCardCompositionRepoImpl.cs" />
-    <Compile Include="storage1\RecordCardRepoImpl.cs" />
-    <Compile Include="storage1\StatementComboBoxRepo.cs" />
-    <Compile Include="storage1\StatementComboBoxRepoImpl.cs" />
-    <Compile Include="storage1\StatementRepo.cs" />
-    <Compile Include="storage1\StatementRepoImpl.cs" />
-    <Compile Include="storage1\WaybillComboBoxRepo.cs" />
-    <Compile Include="storage1\WaybillComboBoxRepoImpl.cs" />
-    <Compile Include="storage1\WaybillCompositionRepo.cs" />
-    <Compile Include="storage1\WaybillCompositionRepoImpl.cs" />
-    <Compile Include="storage1\WaybillRepo.cs" />
-    <Compile Include="storage1\WaybillRepoImpl.cs" />
-    <Compile Include="Storage\ComboBoxOrder.cs" />
+    <Compile Include="Storage\AuthRepo.cs" />
+    <Compile Include="Storage\AuthRepoImpl.cs" />
+    <Compile Include="Storage\AuthSession.cs" />
+    <Compile Include="Storage\CattleRepoImpl.cs" />
+    <Compile Include="Storage\ComboBoxRepo.cs" />
+    <Compile Include="Storage\ComboBoxRepoImpl.cs" />
+    <Compile Include="Storage\ContractorRepoImpl.cs" />
+    <Compile Include="Storage\CrudRepo.cs" />
+    <Compile Include="Storage\Database.cs" />
+    <Compile Include="Storage\DeliveryCompositionRepoImpl.cs" />
+    <Compile Include="Storage\DeliveryNoteRepoImpl.cs" />
+    <Compile Include="Storage\DivisionRepoImpl.cs" />
+    <Compile Include="Storage\EmployeeRepoImpl.cs" />
+    <Compile Include="Storage\ProductRepoImpl.cs" />
+    <Compile Include="Storage\RecordCardCompositionRepoImpl.cs" />
+    <Compile Include="Storage\RecordCardRepoImpl.cs" />
+    <Compile Include="Storage\StatementRepoImpl.cs" />
+    <Compile Include="Storage\WaybillCompositionRepoImpl.cs" />
+    <Compile Include="Storage\WaybillRepoImpl.cs" />
     <Compile Include="Validation\CattleValidation.cs" />
     <Compile Include="Validation\CommonValidation.cs" />
     <Compile Include="Validation\ContractorValidation.cs" />
@@ -168,21 +148,6 @@
     <Compile Include="Validation\StatementValidation.cs" />
     <Compile Include="Validation\UserValidation.cs" />
     <Compile Include="Validation\WaybillValidation.cs" />
-    <Compile Include="View\AddPage\AddFromComboBoxOrder.xaml.cs">
-      <DependentUpon>AddFromComboBoxOrder.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\AddPage\OrderAdd.xaml.cs">
-      <DependentUpon>OrderAdd.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\AddPage\ProductAdd.xaml.cs">
-      <DependentUpon>ProductAdd.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\AddPage\ProductType.xaml.cs">
-      <DependentUpon>ProductType.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\AddPage\SupplierAdd.xaml.cs">
-      <DependentUpon>SupplierAdd.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Auth\AuthView.xaml.cs">
       <DependentUpon>AuthView.xaml</DependentUpon>
     </Compile>
@@ -219,15 +184,6 @@
     <Compile Include="View\Division\EditDivision.xaml.cs">
       <DependentUpon>EditDivision.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\EditPage\ProductEdit.xaml.cs">
-      <DependentUpon>ProductEdit.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\EditPage\ProductTypeEdit.xaml.cs">
-      <DependentUpon>ProductTypeEdit.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\EditPage\SupplierEdit.xaml.cs">
-      <DependentUpon>SupplierEdit.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Employee\CreateEmployee.xaml.cs">
       <DependentUpon>CreateEmployee.xaml</DependentUpon>
     </Compile>
@@ -242,9 +198,6 @@
     </Compile>
     <Compile Include="View\Main\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\OutputDocuments\MainOutput.xaml.cs">
-      <DependentUpon>MainOutput.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Product\CreateProduct.xaml.cs">
       <DependentUpon>CreateProduct.xaml</DependentUpon>
@@ -286,33 +239,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Service\PasswordEncoder.cs" />
-    <Compile Include="Storage\AuthManager.cs" />
-    <Compile Include="Storage\Database.cs" />
-    <Page Include="Profile\PrfSettings.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\AddPage\AddFromComboBoxOrder.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\AddPage\OrderAdd.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\AddPage\ProductAdd.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\AddPage\ProductType.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\AddPage\SupplierAdd.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Auth\AuthView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -361,18 +287,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\EditPage\ProductEdit.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\EditPage\ProductTypeEdit.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\EditPage\SupplierEdit.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Employee\CreateEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -390,10 +304,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Main\MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\OutputDocuments\MainOutput.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

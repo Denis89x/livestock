@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using Warehouse.storage1;
+using Warehouse.Storage;
 using Warehouse.Validation;
 using Warehouse.View.Main;
 
@@ -23,7 +23,7 @@ namespace Warehouse.View
 
             if (authRepo.isUserCredentialsValid(username, password))
             {
-                AuthSession.CurrentUsername = username;
+                AuthSession.currentUsername = username;
 
                 this.Hide();
 

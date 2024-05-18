@@ -3,36 +3,24 @@
   "WorkspaceRootPath": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\deliverynotecomposition\\createdeliverycomposition.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\deliverynotecomposition\\createdeliverycomposition.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\main\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\main\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\deliverynotecomposition\\editdeliverycomposition.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\deliverynotecomposition\\editdeliverycomposition.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\deliverynotecomposition\\createdeliverycomposition.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\deliverynotecomposition\\createdeliverycomposition.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\statement\\editstatement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\statement\\editstatement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\main\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\main\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\statement\\createstatement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\statement\\createstatement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\employee\\editemployee.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\employee\\editemployee.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\product\\createproduct.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\product\\createproduct.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\validation\\waybillcompositionvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\validation\\waybillcompositionvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\outputdocuments\\mainoutput.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\outputdocuments\\mainoutput.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\outputdocuments\\mainoutput.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\outputdocuments\\mainoutput.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\employee\\createemployee.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\employee\\createemployee.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\waybillcomposition\\editwaybillcomposition.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,12 +31,48 @@
       "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\waybillcomposition\\createwaybillcomposition.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\entity\\waybillcompositionentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\entity\\waybillcompositionentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\waybill\\editwaybill.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\waybill\\editwaybill.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\waybillcomposition\\createwaybillcomposition.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\waybillcomposition\\createwaybillcomposition.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\waybill\\createwaybill.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\waybill\\createwaybill.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\statement\\editstatement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\statement\\editstatement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\statement\\createstatement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\statement\\createstatement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\recordcardcomposition\\editrecordcardcomposition.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\recordcardcomposition\\editrecordcardcomposition.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\recordcardcomposition\\createrecordcardcomposition.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\recordcardcomposition\\createrecordcardcomposition.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\recordcard\\editrecordcard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\recordcard\\editrecordcard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\recordcard\\createrecordcard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\recordcard\\createrecordcard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\product\\editproduct.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\product\\editproduct.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\product\\createproduct.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\product\\createproduct.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\deliverynotecomposition\\editdeliverycomposition.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\deliverynotecomposition\\editdeliverycomposition.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,165 +82,243 @@
       "DocumentGroups": [
         {
           "DockedHeight": 191,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Main\\MainPage.xaml",
+              "RelativeDocumentMoniker": "Warehouse\\View\\Main\\MainPage.xaml",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Main\\MainPage.xaml",
+              "RelativeToolTip": "Warehouse\\View\\Main\\MainPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-18T12:12:04.663Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EditDeliveryComposition.xaml.cs",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNoteComposition\\EditDeliveryComposition.xaml.cs",
-              "RelativeDocumentMoniker": "Warehouse\\View\\DeliveryNoteComposition\\EditDeliveryComposition.xaml.cs",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNoteComposition\\EditDeliveryComposition.xaml.cs",
-              "RelativeToolTip": "Warehouse\\View\\DeliveryNoteComposition\\EditDeliveryComposition.xaml.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAgwDQAAABYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T21:07:19.366Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CreateDeliveryComposition.xaml.cs",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNoteComposition\\CreateDeliveryComposition.xaml.cs",
-              "RelativeDocumentMoniker": "Warehouse\\View\\DeliveryNoteComposition\\CreateDeliveryComposition.xaml.cs",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNoteComposition\\CreateDeliveryComposition.xaml.cs",
-              "RelativeToolTip": "Warehouse\\View\\DeliveryNoteComposition\\CreateDeliveryComposition.xaml.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAgwDIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T21:06:25.641Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EditStatement.xaml.cs",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Statement\\EditStatement.xaml.cs",
-              "RelativeDocumentMoniker": "Warehouse\\View\\Statement\\EditStatement.xaml.cs",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Statement\\EditStatement.xaml.cs",
-              "RelativeToolTip": "Warehouse\\View\\Statement\\EditStatement.xaml.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAgwEIAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T21:05:52.62Z",
+              "Title": "CreateDeliveryComposition.xaml",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNoteComposition\\CreateDeliveryComposition.xaml",
+              "RelativeDocumentMoniker": "Warehouse\\View\\DeliveryNoteComposition\\CreateDeliveryComposition.xaml",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNoteComposition\\CreateDeliveryComposition.xaml",
+              "RelativeToolTip": "Warehouse\\View\\DeliveryNoteComposition\\CreateDeliveryComposition.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-18T12:11:36.333Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "CreateStatement.xaml.cs",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Statement\\CreateStatement.xaml.cs",
-              "RelativeDocumentMoniker": "Warehouse\\View\\Statement\\CreateStatement.xaml.cs",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Statement\\CreateStatement.xaml.cs",
-              "RelativeToolTip": "Warehouse\\View\\Statement\\CreateStatement.xaml.cs",
-              "ViewState": "AQIAAGAAAAAAAAAAAAAmwHsAAABcAAAA",
+              "Title": "EditEmployee.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Employee\\EditEmployee.xaml.cs",
+              "RelativeDocumentMoniker": "Warehouse\\View\\Employee\\EditEmployee.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Employee\\EditEmployee.xaml.cs",
+              "RelativeToolTip": "Warehouse\\View\\Employee\\EditEmployee.xaml.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAgwDYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T21:05:16.999Z",
+              "WhenOpened": "2024-05-18T12:09:55.735Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "CreateProduct.xaml.cs",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Product\\CreateProduct.xaml.cs",
-              "RelativeDocumentMoniker": "Warehouse\\View\\Product\\CreateProduct.xaml.cs",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Product\\CreateProduct.xaml.cs",
-              "RelativeToolTip": "Warehouse\\View\\Product\\CreateProduct.xaml.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Title": "CreateEmployee.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Employee\\CreateEmployee.xaml.cs",
+              "RelativeDocumentMoniker": "Warehouse\\View\\Employee\\CreateEmployee.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Employee\\CreateEmployee.xaml.cs",
+              "RelativeToolTip": "Warehouse\\View\\Employee\\CreateEmployee.xaml.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwCUAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T21:03:45.447Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MainOutput.xaml.cs",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\OutputDocuments\\MainOutput.xaml.cs",
-              "RelativeDocumentMoniker": "Warehouse\\View\\OutputDocuments\\MainOutput.xaml.cs",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\OutputDocuments\\MainOutput.xaml.cs",
-              "RelativeToolTip": "Warehouse\\View\\OutputDocuments\\MainOutput.xaml.cs",
-              "ViewState": "AQIAALUAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T21:01:30.741Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MainOutput.xaml",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\OutputDocuments\\MainOutput.xaml",
-              "RelativeDocumentMoniker": "Warehouse\\View\\OutputDocuments\\MainOutput.xaml",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\OutputDocuments\\MainOutput.xaml",
-              "RelativeToolTip": "Warehouse\\View\\OutputDocuments\\MainOutput.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-17T21:00:40.682Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "EditWaybillComposition.xaml.cs",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\WaybillComposition\\EditWaybillComposition.xaml.cs",
-              "RelativeDocumentMoniker": "Warehouse\\View\\WaybillComposition\\EditWaybillComposition.xaml.cs",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\WaybillComposition\\EditWaybillComposition.xaml.cs",
-              "RelativeToolTip": "Warehouse\\View\\WaybillComposition\\EditWaybillComposition.xaml.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAiwKwAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T20:59:32.5Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CreateWaybillComposition.xaml.cs",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\WaybillComposition\\CreateWaybillComposition.xaml.cs",
-              "RelativeDocumentMoniker": "Warehouse\\View\\WaybillComposition\\CreateWaybillComposition.xaml.cs",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\WaybillComposition\\CreateWaybillComposition.xaml.cs",
-              "RelativeToolTip": "Warehouse\\View\\WaybillComposition\\CreateWaybillComposition.xaml.cs",
-              "ViewState": "AQIAAIsAAAAAAAAAAAAYwK0AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T20:57:58.591Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CreateWaybillComposition.xaml",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\WaybillComposition\\CreateWaybillComposition.xaml",
-              "RelativeDocumentMoniker": "Warehouse\\View\\WaybillComposition\\CreateWaybillComposition.xaml",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\WaybillComposition\\CreateWaybillComposition.xaml",
-              "RelativeToolTip": "Warehouse\\View\\WaybillComposition\\CreateWaybillComposition.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-17T20:57:27.648Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "WaybillCompositionEntity.cs",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\Entity\\WaybillCompositionEntity.cs",
-              "RelativeDocumentMoniker": "Warehouse\\Entity\\WaybillCompositionEntity.cs",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\Entity\\WaybillCompositionEntity.cs",
-              "RelativeToolTip": "Warehouse\\Entity\\WaybillCompositionEntity.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAowCIAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T20:52:16.387Z",
+              "WhenOpened": "2024-05-18T12:09:10.043Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "WaybillCompositionValidation.cs",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\Validation\\WaybillCompositionValidation.cs",
-              "RelativeDocumentMoniker": "Warehouse\\Validation\\WaybillCompositionValidation.cs",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\Validation\\WaybillCompositionValidation.cs",
-              "RelativeToolTip": "Warehouse\\Validation\\WaybillCompositionValidation.cs",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAowGcAAAABAAAA",
+              "Title": "EditWaybillComposition.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\WaybillComposition\\EditWaybillComposition.xaml.cs",
+              "RelativeDocumentMoniker": "Warehouse\\View\\WaybillComposition\\EditWaybillComposition.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\WaybillComposition\\EditWaybillComposition.xaml.cs",
+              "RelativeToolTip": "Warehouse\\View\\WaybillComposition\\EditWaybillComposition.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T20:48:56.905Z",
+              "WhenOpened": "2024-05-18T12:09:06.137Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CreateWaybillComposition.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\WaybillComposition\\CreateWaybillComposition.xaml.cs",
+              "RelativeDocumentMoniker": "Warehouse\\View\\WaybillComposition\\CreateWaybillComposition.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\WaybillComposition\\CreateWaybillComposition.xaml.cs",
+              "RelativeToolTip": "Warehouse\\View\\WaybillComposition\\CreateWaybillComposition.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T12:09:04.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EditWaybill.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Waybill\\EditWaybill.xaml.cs",
+              "RelativeDocumentMoniker": "Warehouse\\View\\Waybill\\EditWaybill.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Waybill\\EditWaybill.xaml.cs",
+              "RelativeToolTip": "Warehouse\\View\\Waybill\\EditWaybill.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T12:09:00.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CreateWaybill.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Waybill\\CreateWaybill.xaml.cs",
+              "RelativeDocumentMoniker": "Warehouse\\View\\Waybill\\CreateWaybill.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Waybill\\CreateWaybill.xaml.cs",
+              "RelativeToolTip": "Warehouse\\View\\Waybill\\CreateWaybill.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T12:08:57.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EditStatement.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Statement\\EditStatement.xaml.cs",
+              "RelativeDocumentMoniker": "Warehouse\\View\\Statement\\EditStatement.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Statement\\EditStatement.xaml.cs",
+              "RelativeToolTip": "Warehouse\\View\\Statement\\EditStatement.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T12:08:54.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Main\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "Warehouse\\View\\Main\\MainPage.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Main\\MainPage.xaml.cs",
+              "RelativeToolTip": "Warehouse\\View\\Main\\MainPage.xaml.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAkwDQAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T12:08:26.686Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CreateStatement.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Statement\\CreateStatement.xaml.cs",
+              "RelativeDocumentMoniker": "Warehouse\\View\\Statement\\CreateStatement.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Statement\\CreateStatement.xaml.cs",
+              "RelativeToolTip": "Warehouse\\View\\Statement\\CreateStatement.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T12:08:52.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EditRecordCardComposition.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\RecordCardComposition\\EditRecordCardComposition.xaml.cs",
+              "RelativeDocumentMoniker": "Warehouse\\View\\RecordCardComposition\\EditRecordCardComposition.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\RecordCardComposition\\EditRecordCardComposition.xaml.cs",
+              "RelativeToolTip": "Warehouse\\View\\RecordCardComposition\\EditRecordCardComposition.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T12:08:49.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CreateRecordCardComposition.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\RecordCardComposition\\CreateRecordCardComposition.xaml.cs",
+              "RelativeDocumentMoniker": "Warehouse\\View\\RecordCardComposition\\CreateRecordCardComposition.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\RecordCardComposition\\CreateRecordCardComposition.xaml.cs",
+              "RelativeToolTip": "Warehouse\\View\\RecordCardComposition\\CreateRecordCardComposition.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T12:08:46.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EditRecordCard.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\RecordCard\\EditRecordCard.xaml.cs",
+              "RelativeDocumentMoniker": "Warehouse\\View\\RecordCard\\EditRecordCard.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\RecordCard\\EditRecordCard.xaml.cs",
+              "RelativeToolTip": "Warehouse\\View\\RecordCard\\EditRecordCard.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T12:08:43.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CreateRecordCard.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\RecordCard\\CreateRecordCard.xaml.cs",
+              "RelativeDocumentMoniker": "Warehouse\\View\\RecordCard\\CreateRecordCard.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\RecordCard\\CreateRecordCard.xaml.cs",
+              "RelativeToolTip": "Warehouse\\View\\RecordCard\\CreateRecordCard.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T12:08:39.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "EditProduct.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Product\\EditProduct.xaml.cs",
+              "RelativeDocumentMoniker": "Warehouse\\View\\Product\\EditProduct.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Product\\EditProduct.xaml.cs",
+              "RelativeToolTip": "Warehouse\\View\\Product\\EditProduct.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T12:08:36.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CreateProduct.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Product\\CreateProduct.xaml.cs",
+              "RelativeDocumentMoniker": "Warehouse\\View\\Product\\CreateProduct.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Product\\CreateProduct.xaml.cs",
+              "RelativeToolTip": "Warehouse\\View\\Product\\CreateProduct.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T12:08:33.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "EditDeliveryComposition.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNoteComposition\\EditDeliveryComposition.xaml.cs",
+              "RelativeDocumentMoniker": "Warehouse\\View\\DeliveryNoteComposition\\EditDeliveryComposition.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNoteComposition\\EditDeliveryComposition.xaml.cs",
+              "RelativeToolTip": "Warehouse\\View\\DeliveryNoteComposition\\EditDeliveryComposition.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T12:08:10.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }

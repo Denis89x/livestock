@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using Warehouse.Entity;
-using Warehouse.storage1;
+using Warehouse.Storage;
 using Warehouse.Validation;
 
 namespace Warehouse.View.Auth

@@ -1,11 +1,5 @@
 ﻿
 FD:\Учеба\Диплом\warehouse-main\Warehouse\App.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\Profile\PrfSettings.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\AddPage\AddFromComboBoxOrder.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\AddPage\OrderAdd.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\AddPage\ProductAdd.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\AddPage\ProductType.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\AddPage\SupplierAdd.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Auth\AuthView.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Auth\RegistrationView.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Cattle\CreateCattle.xaml;;
@@ -18,15 +12,11 @@ FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNote\CreateDel
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNote\EditDelivery.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Division\AddDivision.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Division\EditDivision.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\EditPage\ProductEdit.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\EditPage\ProductTypeEdit.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\EditPage\SupplierEdit.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Employee\CreateEmployee.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Employee\EditEmployee.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\FIltrationAndSearch\Filtration.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\FIltrationAndSearch\Search.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Main\MainPage.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocuments\MainOutput.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Product\CreateProduct.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Product\EditProduct.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\RecordCardComposition\CreateRecordCardComposition.xaml;;

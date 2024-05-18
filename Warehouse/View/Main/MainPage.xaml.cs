@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows;
 using Warehouse.Entity;
-using Warehouse.storage1;
+using Warehouse.Storage;
 using Warehouse.View.Auth;
 using Warehouse.View.Cattle;
 using Warehouse.View.Contractor;
