@@ -66,5 +66,26 @@ namespace Warehouse.Storage
 
             database.insertValuesIntoComboBox(query , box);
         }
+
+        public void insertStatementIntoComboBox(ComboBox box)
+        {
+            string query = "SELECT statement_id, CAST(statement_number AS VARCHAR) as number FROM statement";
+
+            database.insertValuesIntoComboBox(query, box);
+        }
+
+        public void insertValidWaybillIntoComboBox(ComboBox box)
+        {
+            string query = "SELECT waybill.waybill_id, CAST(waybill.document_number AS VARCHAR) AS document_number FROM waybill, waybill_composition WHERE waybill.waybill_id = waybill_composition.waybill_id";
+
+            database.insertValuesIntoComboBox(query, box);
+        }
+
+        public void insertValidDeliveryIntoComboBox(ComboBox box)
+        {
+            string query = "SELECT DISTINCT delivery_note.delivery_note_id, CAST(delivery_note.delivery_note_id AS VARCHAR) AS delivery_note_id FROM delivery_note, delivery_note_composition WHERE delivery_note.delivery_note_id = delivery_note_composition.delivery_note_id";
+
+            database.insertValuesIntoComboBox(query, box);
+        }
     }
 }

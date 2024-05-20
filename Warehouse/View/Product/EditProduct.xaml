@@ -23,7 +23,7 @@
             Width="55px"
             HorizontalAlignment="Center"
             Margin="0 25 0 0"
-            Kind="Plus"
+            Kind="Pencil"
             Foreground="White"/>
         <Border
             Background="White"

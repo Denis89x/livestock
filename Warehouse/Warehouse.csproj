@@ -67,6 +67,10 @@
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1004\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
@@ -114,8 +118,12 @@
     <Compile Include="Entity\StatementEntity.cs" />
     <Compile Include="Entity\UserEntity.cs" />
     <Compile Include="Entity\WaybillCompositionEntity.cs" />
+    <Compile Include="Service\DeliveryNoteOutput.cs" />
     <Compile Include="Service\GridUtility.cs" />
     <Compile Include="Service\GridUtilityImpl.cs" />
+    <Compile Include="Service\RecordCardOutput.cs" />
+    <Compile Include="Service\StatementOutput.cs" />
+    <Compile Include="Service\WaybillOutput.cs" />
     <Compile Include="Validation\WaybillCompositionValidation.cs" />
     <Compile Include="Entity\WaybillEntity.cs" />
     <Compile Include="Storage\AuthRepo.cs" />
@@ -184,20 +192,32 @@
     <Compile Include="View\Division\EditDivision.xaml.cs">
       <DependentUpon>EditDivision.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\OutputDocument\DeliveryNoteView.xaml.cs">
+      <DependentUpon>DeliveryNoteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OutputDocument\DocumentOutput.xaml.cs">
+      <DependentUpon>DocumentOutput.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Employee\CreateEmployee.xaml.cs">
       <DependentUpon>CreateEmployee.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Employee\EditEmployee.xaml.cs">
       <DependentUpon>EditEmployee.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\FIltrationAndSearch\Filtration.xaml.cs">
-      <DependentUpon>Filtration.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\FIltrationAndSearch\Search.xaml.cs">
-      <DependentUpon>Search.xaml</DependentUpon>
+    <Compile Include="View\FetchFieldView.xaml.cs">
+      <DependentUpon>FetchFieldView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Main\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OutputDocument\RecordCardView.xaml.cs">
+      <DependentUpon>RecordCardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OutputDocument\StatementView.xaml.cs">
+      <DependentUpon>StatementView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OutputDocument\WaybillView.xaml.cs">
+      <DependentUpon>WaybillView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Product\CreateProduct.xaml.cs">
       <DependentUpon>CreateProduct.xaml</DependentUpon>
@@ -287,6 +307,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\OutputDocument\DeliveryNoteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OutputDocument\DocumentOutput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Employee\CreateEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -295,15 +323,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\FIltrationAndSearch\Filtration.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\FIltrationAndSearch\Search.xaml">
+    <Page Include="View\FetchFieldView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Main\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OutputDocument\RecordCardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OutputDocument\StatementView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OutputDocument\WaybillView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -380,10 +416,14 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Resources\Card.xlsx" />
+    <None Include="Resources\DeliveryNoteTemplate.docx" />
     <None Include="Resources\Disposal.xlsx" />
     <None Include="Resources\Order.xlsx" />
     <None Include="Resources\Receipt.xlsx" />
+    <None Include="Resources\RecordCardTemplate.docx" />
     <None Include="Resources\Template.xlsx" />
+    <None Include="Resources\VedomostTemplate.docx" />
+    <None Include="Resources\WaybillTemplate.docx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

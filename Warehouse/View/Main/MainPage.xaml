@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:Warehouse.View.Main"
         mc:Ignorable="d"
         Title="Учёт животноводческой продукции" 
-        MinHeight="900"
-        MinWidth="1050"
+        MinHeight="940"
+        MinWidth="1200"
         Icon="/Resources/ColorIcon.png"
         Closing="Window_Closing"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -89,7 +89,7 @@
                 Margin="90,18,739,819"
                 FontSize="15"
                 Foreground="WHITE"
-                >Username: DENIS</Label>
+                >Должность</Label>
             <DataGrid   
                 Margin="90,60,30,30" 
                 Visibility="Visible"
@@ -119,9 +119,9 @@
                         <MenuItem x:Name="AddContractor" Header="Добавить" Click="AddContractor_Click"/>
                         <MenuItem x:Name="EditContractor" Header="Редактировать" Click="EditContractor_Click"/>
                         <MenuItem x:Name="DeleteContractor" Header="Удалить" Click="DeleteContractor_Click"/>
-                        <MenuItem x:Name="FiltrationContractor" Header="Фильтрация"/>
-                        <MenuItem x:Name="SearchContractor" Header="Поиск"/>
-                        <MenuItem x:Name="CancelContractor" Header="Отменить"/>
+                        <MenuItem x:Name="FiltrationContractor" Header="Фильтрация" Click="FiltrationContractor_Click"/>
+                        <MenuItem x:Name="SearchContractor" Header="Поиск" Click="SearchContractor_Click"/>
+                        <MenuItem x:Name="CancelContractor" Header="Отменить" Click="CancelContractor_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
@@ -153,9 +153,9 @@
                         <MenuItem x:Name="AddEmployee" Header="Добавить" Click="AddEmployee_Click"/>
                         <MenuItem x:Name="EditEmployee" Header="Редактировать" Click="EditEmployee_Click"/>
                         <MenuItem x:Name="DeleteEmployee" Header="Удалить" Click="DeleteEmployee_Click"/>
-                        <MenuItem x:Name="FiltrationEmployee" Header="Фильтрация"/>
-                        <MenuItem x:Name="SearchEmployee" Header="Поиск"/>
-                        <MenuItem x:Name="CancelEmployee" Header="Отменить"/>
+                        <MenuItem x:Name="FiltrationEmployee" Header="Фильтрация" Click="FiltrationEmployee_Click"/>
+                        <MenuItem x:Name="SearchEmployee" Header="Поиск" Click="SearchEmployee_Click"/>
+                        <MenuItem x:Name="CancelEmployee" Header="Отменить" Click="CancelEmployee_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
@@ -184,9 +184,9 @@
                         <MenuItem x:Name="AddDivision" Header="Добавить" Click="AddDivision_Click"/>
                         <MenuItem x:Name="EditDivision" Header="Редактировать" Click="EditDivision_Click"/>
                         <MenuItem x:Name="DeleteDivision" Header="Удалить" Click="DeleteDivision_Click"/>
-                        <MenuItem x:Name="FiltrationDivision" Header="Фильтрация"/>
-                        <MenuItem x:Name="SearchDivision" Header="Поиск"/>
-                        <MenuItem x:Name="CancelDivision" Header="Отменить"/>
+                        <MenuItem x:Name="FiltrationDivision" Header="Фильтрация" Click="FiltrationDivision_Click"/>
+                        <MenuItem x:Name="SearchDivision" Header="Поиск" Click="SearchDivision_Click"/>
+                        <MenuItem x:Name="CancelDivision" Header="Отменить" Click="CancelDivision_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
@@ -215,9 +215,9 @@
                         <MenuItem x:Name="AddCattle" Header="Добавить" Click="AddCattle_Click"/>
                         <MenuItem x:Name="EditCattle" Header="Редактировать" Click="EditCattle_Click"/>
                         <MenuItem x:Name="DeleteCattle" Header="Удалить" Click="DeleteCattle_Click"/>
-                        <MenuItem x:Name="FiltrationCattle" Header="Фильтрация"/>
-                        <MenuItem x:Name="SearchCattle" Header="Поиск"/>
-                        <MenuItem x:Name="CancelCattle" Header="Отменить"/>
+                        <MenuItem x:Name="FiltrationCattle" Header="Фильтрация" Click="FiltrationCattle_Click"/>
+                        <MenuItem x:Name="SearchCattle" Header="Поиск" Click="SearchCattle_Click"/>
+                        <MenuItem x:Name="CancelCattle" Header="Отменить" Click="CancelCattle_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
@@ -248,9 +248,9 @@
                         <MenuItem x:Name="AddProduct" Header="Добавить" Click="AddProduct_Click"/>
                         <MenuItem x:Name="EditProduct" Header="Редактировать" Click="EditProduct_Click"/>
                         <MenuItem x:Name="DeleteProduct" Header="Удалить" Click="DeleteProduct_Click"/>
-                        <MenuItem x:Name="FiltrationProduct" Header="Фильтрация"/>
-                        <MenuItem x:Name="SearchProduct" Header="Поиск"/>
-                        <MenuItem x:Name="CancelProduct" Header="Отменить"/>
+                        <MenuItem x:Name="FiltrationProduct" Header="Фильтрация" Click="FiltrationProduct_Click"/>
+                        <MenuItem x:Name="SearchProduct" Header="Поиск" Click="SearchProduct_Click"/>
+                        <MenuItem x:Name="CancelProduct" Header="Отменить" Click="CancelProduct_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
@@ -290,9 +290,9 @@
                         <MenuItem x:Name="AddStatement" Header="Добавить" Click="AddStatement_Click"/>
                         <MenuItem x:Name="EditStatement" Header="Редактировать" Click="EditStatement_Click"/>
                         <MenuItem x:Name="DeleteStatement" Header="Удалить" Click="DeleteStatement_Click"/>
-                        <MenuItem x:Name="FiltrationStatement" Header="Фильтрация"/>
-                        <MenuItem x:Name="SearchStatement" Header="Поиск"/>
-                        <MenuItem x:Name="CancelStatement" Header="Отменить"/>
+                        <MenuItem x:Name="FiltrationStatement" Header="Фильтрация" Click="FiltrationStatement_Click"/>
+                        <MenuItem x:Name="SearchStatement" Header="Поиск" Click="SearchStatement_Click"/>
+                        <MenuItem x:Name="CancelStatement" Header="Отменить" Click="CancelStatement_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
@@ -334,9 +334,9 @@
                         <MenuItem x:Name="AddWaybill" Header="Добавить" Click="AddWaybill_Click"/>
                         <MenuItem x:Name="EditWaybill" Header="Редактировать" Click="EditWaybill_Click"/>
                         <MenuItem x:Name="DeleteWaybill" Header="Удалить" Click="DeleteWaybill_Click"/>
-                        <MenuItem x:Name="FiltrationWaybill" Header="Фильтрация"/>
-                        <MenuItem x:Name="SearchWaybill" Header="Поиск"/>
-                        <MenuItem x:Name="CancelWaybill" Header="Отменить"/>
+                        <MenuItem x:Name="FiltrationWaybill" Header="Фильтрация" Click="FiltrationWaybill_Click"/>
+                        <MenuItem x:Name="SearchWaybill" Header="Поиск" Click="SearchWaybill_Click"/>
+                        <MenuItem x:Name="CancelWaybill" Header="Отменить" Click="CancelWaybill_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
@@ -379,9 +379,9 @@
                         <MenuItem x:Name="AddWaybillComposition" Header="Добавить" Click="AddWaybillComposition_Click"/>
                         <MenuItem x:Name="EditWaybillComposition" Header="Редактировать" Click="EditWaybillComposition_Click"/>
                         <MenuItem x:Name="DeleteWaybillComposition" Header="Удалить" Click="DeleteWaybillComposition_Click"/>
-                        <MenuItem x:Name="FiltrationWaybillComposition" Header="Фильтрация"/>
-                        <MenuItem x:Name="SearchWaybillComposition" Header="Поиск"/>
-                        <MenuItem x:Name="CancelWaybillComposition" Header="Отменить"/>
+                        <MenuItem x:Name="FiltrationWaybillComposition" Header="Фильтрация" Click="FiltrationWaybillComposition_Click"/>
+                        <MenuItem x:Name="SearchWaybillComposition" Header="Поиск" Click="SearchWaybillComposition_Click"/>
+                        <MenuItem x:Name="CancelWaybillComposition" Header="Отменить" Click="CancelWaybillComposition_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
@@ -412,9 +412,9 @@
                         <MenuItem x:Name="AddDeliveryNote" Header="Добавить" Click="AddDeliveryNote_Click"/>
                         <MenuItem x:Name="EditDeliveryNote" Header="Редактировать" Click="EditDeliveryNote_Click"/>
                         <MenuItem x:Name="DeleteDeliveryNote" Header="Удалить" Click="DeleteDeliveryNote_Click"/>
-                        <MenuItem x:Name="FiltrationDeliveryNote" Header="Фильтрация"/>
-                        <MenuItem x:Name="SearchDeliveryNote" Header="Поиск"/>
-                        <MenuItem x:Name="CancelDeliveryNote" Header="Отменить"/>
+                        <MenuItem x:Name="FiltrationDeliveryNote" Header="Фильтрация" Click="FiltrationDeliveryNote_Click"/>
+                        <MenuItem x:Name="SearchDeliveryNote" Header="Поиск" Click="SearchDeliveryNote_Click"/>
+                        <MenuItem x:Name="CancelDeliveryNote" Header="Отменить" Click="CancelDeliveryNote_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
@@ -449,9 +449,9 @@
                         <MenuItem x:Name="AddDeliveryComposition" Header="Добавить" Click="AddDeliveryComposition_Click"/>
                         <MenuItem x:Name="EditDeliveryComposition" Header="Редактировать" Click="EditDeliveryComposition_Click"/>
                         <MenuItem x:Name="DeleteDeliveryComposition" Header="Удалить" Click="DeleteDeliveryComposition_Click"/>
-                        <MenuItem x:Name="FiltrationDeliveryComposition" Header="Фильтрация"/>
-                        <MenuItem x:Name="SearchDeliveryComposition" Header="Поиск"/>
-                        <MenuItem x:Name="CancelDeliveryComposition" Header="Отменить"/>
+                        <MenuItem x:Name="FiltrationDeliveryComposition" Header="Фильтрация" Click="FiltrationDeliveryComposition_Click"/>
+                        <MenuItem x:Name="SearchDeliveryComposition" Header="Поиск" Click="SearchDeliveryComposition_Click"/>
+                        <MenuItem x:Name="CancelDeliveryComposition" Header="Отменить" Click="CancelDeliveryComposition_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
@@ -483,9 +483,9 @@
                         <MenuItem x:Name="AddRecordCard" Header="Добавить" Click="AddRecordCard_Click"/>
                         <MenuItem x:Name="EditRecordCard" Header="Редактировать" Click="EditRecordCard_Click"/>
                         <MenuItem x:Name="DeleteRecordCard" Header="Удалить" Click="DeleteRecordCard_Click"/>
-                        <MenuItem x:Name="FiltrationRecordCard" Header="Фильтрация"/>
-                        <MenuItem x:Name="SearchRecordCard" Header="Поиск"/>
-                        <MenuItem x:Name="CancelRecordCard" Header="Отменить"/>
+                        <MenuItem x:Name="FiltrationRecordCard" Header="Фильтрация" Click="FiltrationRecordCard_Click"/>
+                        <MenuItem x:Name="SearchRecordCard" Header="Поиск" Click="SearchRecordCard_Click"/>
+                        <MenuItem x:Name="CancelRecordCard" Header="Отменить" Click="CancelRecordCard_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
@@ -519,9 +519,9 @@
                         <MenuItem x:Name="AddRecordCardComposition" Header="Добавить" Click="AddRecordCardComposition_Click"/>
                         <MenuItem x:Name="EditRecordCardComposition" Header="Редактировать" Click="EditRecordCardComposition_Click"/>
                         <MenuItem x:Name="DeleteRecordCardComposition" Header="Удалить" Click="DeleteRecordCardComposition_Click"/>
-                        <MenuItem x:Name="FiltrationRecordCardComposition" Header="Фильтрация"/>
-                        <MenuItem x:Name="SearchRecordCardComposition" Header="Поиск"/>
-                        <MenuItem x:Name="CancelRecordCardComposition" Header="Отменить"/>
+                        <MenuItem x:Name="FiltrationRecordCardComposition" Header="Фильтрация" Click="FiltrationRecordCardComposition_Click"/>
+                        <MenuItem x:Name="SearchRecordCardComposition" Header="Поиск" Click="SearchRecordCardComposition_Click"/>
+                        <MenuItem x:Name="CancelRecordCardComposition" Header="Отменить" Click="CancelRecordCardComposition_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
@@ -607,6 +607,12 @@
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="CardPlusOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Состав карточки" VerticalAlignment="Center" Margin="0 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="DocumentOutput" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="DocumentOutput_PreviewMouseLeftButtonDown">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="FileWord" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Вывод документов" VerticalAlignment="Center" Margin="0 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="AdminRegistration" Height="60" Visibility="Collapsed" PreviewMouseLeftButtonDown="AdminRegistration_PreviewMouseLeftButtonDown">

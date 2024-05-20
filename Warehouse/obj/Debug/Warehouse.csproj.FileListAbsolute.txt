@@ -81,8 +81,6 @@ C:\Производственная практика\Warehouse\Warehouse\bin\Deb
 C:\Производственная практика\Warehouse\Warehouse\obj\Debug\View\OutputDocuments\MainOutput.g.cs
 C:\Производственная практика\Warehouse\Warehouse\obj\Debug\View\OutputDocuments\MainOutput.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\Warehouse.csproj.AssemblyReference.cache
-D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\FIltrationAndSearch\Filtration.g.cs
-D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\FIltrationAndSearch\Search.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Main\MainPage.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\App.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\Warehouse_MarkupCompile.cache
@@ -129,8 +127,6 @@ D:\Учеба\Диплом\warehouse-main\Warehouse\bin\Debug\Ru\MaterialDesignE
 D:\Учеба\Диплом\warehouse-main\Warehouse\bin\Debug\ru-ru\MaterialDesignExtensions.resources.dll
 D:\Учеба\Диплом\warehouse-main\Warehouse\bin\Debug\uz-Latn-UZ\MaterialDesignExtensions.resources.dll
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\App.baml
-D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\FIltrationAndSearch\Filtration.baml
-D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\FIltrationAndSearch\Search.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Main\MainPage.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\Warehouse.g.resources
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\Warehouse.Properties.Resources.resources
@@ -189,3 +185,15 @@ D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Auth\AuthView
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Auth\RegistrationView.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Auth\AuthView.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Auth\RegistrationView.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\FetchFieldView.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\FetchFieldView.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\DocumentOutput.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\RecordCardView.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\DocumentOutput.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\RecordCardView.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\StatementView.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\StatementView.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\WaybillView.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\WaybillView.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\DeliveryNoteView.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\DeliveryNoteView.baml

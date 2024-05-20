@@ -12,11 +12,12 @@ FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNote\CreateDel
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNote\EditDelivery.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Division\AddDivision.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Division\EditDivision.xaml;;
+FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\DocumentOutput.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Employee\CreateEmployee.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Employee\EditEmployee.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\FIltrationAndSearch\Filtration.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\FIltrationAndSearch\Search.xaml;;
+FD:\Учеба\Диплом\warehouse-main\Warehouse\View\FetchFieldView.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Main\MainPage.xaml;;
+FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\RecordCardView.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Product\CreateProduct.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Product\EditProduct.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\RecordCardComposition\CreateRecordCardComposition.xaml;;
@@ -29,4 +30,7 @@ FD:\Учеба\Диплом\warehouse-main\Warehouse\View\WaybillComposition\Cre
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\WaybillComposition\EditWaybillComposition.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Waybill\CreateWaybill.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Waybill\EditWaybill.xaml;;
+FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\StatementView.xaml;;
+FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\WaybillView.xaml;;
+FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\DeliveryNoteView.xaml;;
 

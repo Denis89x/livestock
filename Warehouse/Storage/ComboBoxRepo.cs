@@ -19,5 +19,11 @@ namespace Warehouse.Storage
         void insertDeliveryIntoComboBox(ComboBox box);
 
         void insertRecordCardIntoComboBox(ComboBox box);
+
+        void insertStatementIntoComboBox(ComboBox box);
+
+        void insertValidWaybillIntoComboBox(ComboBox box);
+
+        void insertValidDeliveryIntoComboBox(ComboBox box);
     }
 }

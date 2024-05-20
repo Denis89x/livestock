@@ -2,7 +2,9 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows;
+using System.Windows.Controls;
 using Warehouse.Entity;
+using Warehouse.Service;
 using Warehouse.Storage;
 using Warehouse.View.Auth;
 using Warehouse.View.Cattle;
@@ -22,6 +24,8 @@ namespace Warehouse.View.Main
 {
     public partial class MainPage : Window
     {
+        private GridUtility gridUtility;
+
         private CrudRepo<CattleEntity> cattleCrud;
         private CrudRepo<ProductEntity> productCrud;
         private CrudRepo<WaybillEntity> waybillCrud;
@@ -38,6 +42,8 @@ namespace Warehouse.View.Main
         public MainPage(string userRole)
         {
             InitializeComponent();
+
+            gridUtility = new GridUtilityImpl();
 
             cattleCrud = new CattleRepoImpl();
             productCrud = new ProductRepoImpl();
@@ -332,6 +338,12 @@ namespace Warehouse.View.Main
             WaybillGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void DocumentOutput_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            DocumentOutput document = new DocumentOutput();
+            document.ShowDialog();
         }
 
         private void AdminRegistration_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -923,6 +935,208 @@ namespace Warehouse.View.Main
             {
                 MessageBox.Show("Выберите поле для удаления!");
             }
+        }
+
+        private string fetchFieldByView()
+        {
+            FetchFieldView fieldView = new FetchFieldView();
+            fieldView.ShowDialog();
+
+            return fieldView.field;
+        }
+
+        private void filtrateGrid(DataGrid dataGrid)
+        {
+            string field = fetchFieldByView();
+
+            gridUtility.applyFilter(field, dataGrid);
+        }
+
+        private void searchGrid(DataGrid dataGrid)
+        {
+            string field = fetchFieldByView();
+
+            gridUtility.searchAndSort(field, dataGrid);
+        }
+
+        private void FiltrationContractor_Click(object sender, RoutedEventArgs e)
+        {
+            filtrateGrid(ContractorGrid);
+        }
+
+        private void SearchContractor_Click(object sender, RoutedEventArgs e)
+        {
+            searchGrid(ContractorGrid);
+        }
+
+        private void CancelContractor_Click(object sender, RoutedEventArgs e)
+        {
+            contractorCrud.fetchToGrid(ContractorGrid);
+        }
+
+        private void FiltrationEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            filtrateGrid(EmployeeGrid);
+        }
+
+        private void SearchEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            searchGrid(EmployeeGrid);
+        }
+
+        private void CancelEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            employeeCrud.fetchToGrid(EmployeeGrid);
+        }
+
+        private void FiltrationDivision_Click(object sender, RoutedEventArgs e)
+        {
+            filtrateGrid(DivisionGrid);
+        }
+
+        private void SearchDivision_Click(object sender, RoutedEventArgs e)
+        {
+            searchGrid(DivisionGrid);
+        }
+
+        private void CancelDivision_Click(object sender, RoutedEventArgs e)
+        {
+            divisionCrud.fetchToGrid(DivisionGrid);
+        }
+
+        private void FiltrationCattle_Click(object sender, RoutedEventArgs e)
+        {
+            filtrateGrid(CattleGrid);
+        }
+
+        private void SearchCattle_Click(object sender, RoutedEventArgs e)
+        {
+            searchGrid(CattleGrid);
+        }
+
+        private void CancelCattle_Click(object sender, RoutedEventArgs e)
+        {
+            cattleCrud.fetchToGrid(CattleGrid);
+        }
+
+        private void FiltrationProduct_Click(object sender, RoutedEventArgs e)
+        {
+            filtrateGrid(ProductGrid);
+        }
+
+        private void SearchProduct_Click(object sender, RoutedEventArgs e)
+        {
+            searchGrid(ProductGrid);
+        }
+
+        private void CancelProduct_Click(object sender, RoutedEventArgs e)
+        {
+            productCrud.fetchToGrid(ProductGrid);
+        }
+
+        private void FiltrationStatement_Click(object sender, RoutedEventArgs e)
+        {
+            filtrateGrid(StatementGrid);
+        }
+
+        private void SearchStatement_Click(object sender, RoutedEventArgs e)
+        {
+            searchGrid(StatementGrid);
+        }
+
+        private void CancelStatement_Click(object sender, RoutedEventArgs e)
+        {
+            statementCrud.fetchToGrid(StatementGrid);
+        }
+
+        private void FiltrationWaybill_Click(object sender, RoutedEventArgs e)
+        {
+            filtrateGrid(WaybillGrid);
+        }
+
+        private void SearchWaybill_Click(object sender, RoutedEventArgs e)
+        {
+            searchGrid(WaybillGrid);
+        }
+
+        private void CancelWaybill_Click(object sender, RoutedEventArgs e)
+        {
+            waybillCrud.fetchToGrid(WaybillGrid);
+        }
+
+        private void FiltrationWaybillComposition_Click(object sender, RoutedEventArgs e)
+        {
+            filtrateGrid(WaybillCompositionGrid);
+        }
+
+        private void SearchWaybillComposition_Click(object sender, RoutedEventArgs e)
+        {
+            searchGrid(WaybillCompositionGrid);
+        }
+
+        private void CancelWaybillComposition_Click(object sender, RoutedEventArgs e)
+        {
+            waybillCompositionCrud.fetchToGrid(WaybillCompositionGrid);
+        }
+
+        private void FiltrationDeliveryNote_Click(object sender, RoutedEventArgs e)
+        {
+            filtrateGrid(DeliveryNoteGrid);
+        }
+
+        private void SearchDeliveryNote_Click(object sender, RoutedEventArgs e)
+        {
+            searchGrid(DeliveryNoteGrid);
+        }
+
+        private void CancelDeliveryNote_Click(object sender, RoutedEventArgs e)
+        {
+            deliveryNoteCrud.fetchToGrid(DeliveryNoteGrid);
+        }
+
+        private void FiltrationDeliveryComposition_Click(object sender, RoutedEventArgs e)
+        {
+            filtrateGrid(DeliveryCompositionGrid);
+        }
+
+        private void SearchDeliveryComposition_Click(object sender, RoutedEventArgs e)
+        {
+            searchGrid(DeliveryCompositionGrid);
+        }
+
+        private void CancelDeliveryComposition_Click(object sender, RoutedEventArgs e)
+        {
+            deliveryCompositionCrud.fetchToGrid(DeliveryCompositionGrid);
+        }
+
+        private void FiltrationRecordCard_Click(object sender, RoutedEventArgs e)
+        {
+            filtrateGrid(RecordCardGrid);
+        }
+
+        private void SearchRecordCard_Click(object sender, RoutedEventArgs e)
+        {
+            searchGrid(RecordCardGrid);
+        }
+
+        private void CancelRecordCard_Click(object sender, RoutedEventArgs e)
+        {
+            recordCardCrud.fetchToGrid(RecordCardGrid);
+        }
+
+        private void FiltrationRecordCardComposition_Click(object sender, RoutedEventArgs e)
+        {
+            filtrateGrid(RecordCardCompositionGrid);
+        }
+
+        private void SearchRecordCardComposition_Click(object sender, RoutedEventArgs e)
+        {
+            searchGrid(RecordCardCompositionGrid);
+        }
+
+        private void CancelRecordCardComposition_Click(object sender, RoutedEventArgs e)
+        {
+            recordCardCompositionCrud.fetchToGrid(RecordCardCompositionGrid);
         }
     }
 }
