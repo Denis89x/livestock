@@ -28,7 +28,7 @@ namespace Warehouse.View.Employee
             string surname = SurnameBox.Text;
             string firstName = FirstnameBox.Text;
             string patronymic = PatronymicBox.Text;
-            string position = PositionBox.Text;
+            string position = PositionCombo.Text;
 
             EmployeeEntity employee = new EmployeeEntity(surname, firstName, patronymic, position);
 
@@ -40,7 +40,8 @@ namespace Warehouse.View.Employee
                 SurnameBox.Text = "";
                 FirstnameBox.Text = "";
                 PatronymicBox.Text = "";
-                PositionBox.Text = "";
+
+                this.Close();
             }
         }
 

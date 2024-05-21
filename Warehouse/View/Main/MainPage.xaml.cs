@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.Data.SqlClient;
 using System.Windows;
 using System.Windows.Controls;
 using Warehouse.Entity;
@@ -15,7 +14,6 @@ using Warehouse.View.Division;
 using Warehouse.View.Employee;
 using Warehouse.View.Product;
 using Warehouse.View.RecordCard;
-using Warehouse.View.RecordCardComposition;
 using Warehouse.View.Statement;
 using Warehouse.View.Waybill;
 using Warehouse.View.WaybillComposition;
@@ -37,7 +35,6 @@ namespace Warehouse.View.Main
         private CrudRepo<DeliveryNoteEntity> deliveryNoteCrud;
         private CrudRepo<WaybillCompositionEntity> waybillCompositionCrud;
         private CrudRepo<DeliveryCompositionEntity> deliveryCompositionCrud;
-        private CrudRepo<RecordCardCompositionEntity> recordCardCompositionCrud;
 
         public MainPage(string userRole)
         {
@@ -56,7 +53,6 @@ namespace Warehouse.View.Main
             deliveryNoteCrud = new DeliveryNoteRepoImpl();
             waybillCompositionCrud = new WaybillCompositionRepoImpl();
             deliveryCompositionCrud = new DeliveryCompositionRepoImpl();
-            recordCardCompositionCrud = new RecordCardCompositionRepoImpl();
 
             if (userRole.Equals("ROLE_ADMIN"))
             {
@@ -74,7 +70,6 @@ namespace Warehouse.View.Main
                 DeliveryNoteGrid.ContextMenu.Visibility = Visibility.Collapsed;
                 DeliveryCompositionGrid.ContextMenu.Visibility = Visibility.Collapsed;
                 RecordCardGrid.ContextMenu.Visibility = Visibility.Collapsed;
-                RecordCardCompositionGrid.ContextMenu.Visibility = Visibility.Collapsed;
             }
 
             string userPosition = "";
@@ -116,6 +111,8 @@ namespace Warehouse.View.Main
         {
             contractorCrud.fetchToGrid(ContractorGrid);
 
+            GridName.Content = "Справочник: Контрагенты";
+
             ContractorGrid.Visibility = Visibility.Visible;
 
             EmployeeGrid.Visibility = Visibility.Collapsed;
@@ -127,13 +124,14 @@ namespace Warehouse.View.Main
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
             DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
-            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Employee_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             employeeCrud.fetchToGrid(EmployeeGrid);
+
+            GridName.Content = "Справочник: Сотрудники";
 
             EmployeeGrid.Visibility = Visibility.Visible;
 
@@ -146,13 +144,14 @@ namespace Warehouse.View.Main
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
             DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
-            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Division_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             divisionCrud.fetchToGrid(DivisionGrid);
+
+            GridName.Content = "Справочник: Подразделение";
 
             DivisionGrid.Visibility = Visibility.Visible;
 
@@ -165,13 +164,14 @@ namespace Warehouse.View.Main
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
             DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
-            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Cettle_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             cattleCrud.fetchToGrid(CattleGrid);
+
+            GridName.Content = "Справочник: Группа животных";
 
             CattleGrid.Visibility = Visibility.Visible;
 
@@ -184,13 +184,14 @@ namespace Warehouse.View.Main
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
             DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
-            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Product_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             productCrud.fetchToGrid(ProductGrid);
+
+            GridName.Content = "Справочник: Готовая продукция";
 
             ProductGrid.Visibility = Visibility.Visible;
 
@@ -203,13 +204,14 @@ namespace Warehouse.View.Main
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
             DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
-            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Statement_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             statementCrud.fetchToGrid(StatementGrid);
+
+            GridName.Content = "Ведомость учёта расхода кормов";
 
             StatementGrid.Visibility = Visibility.Visible;
 
@@ -222,7 +224,6 @@ namespace Warehouse.View.Main
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
             DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
-            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
@@ -231,6 +232,8 @@ namespace Warehouse.View.Main
             waybillCrud.fetchToGrid(WaybillGrid);
 
             WaybillGrid.Visibility = Visibility.Visible;
+
+            GridName.Content = "Товарно-транспортная накладная";
 
             ContractorGrid.Visibility = Visibility.Collapsed;
             EmployeeGrid.Visibility = Visibility.Collapsed;
@@ -241,7 +244,6 @@ namespace Warehouse.View.Main
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
             DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
-            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
@@ -260,13 +262,14 @@ namespace Warehouse.View.Main
             WaybillGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
             DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
-            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
         private void DeliveryNote_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             deliveryNoteCrud.fetchToGrid(DeliveryNoteGrid);
+
+            GridName.Content = "Требования накладная";
 
             DeliveryNoteGrid.Visibility = Visibility.Visible;
 
@@ -279,7 +282,6 @@ namespace Warehouse.View.Main
             WaybillGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
-            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
@@ -298,13 +300,14 @@ namespace Warehouse.View.Main
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
-            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
         private void RecordCard_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             recordCardCrud.fetchToGrid(RecordCardGrid);
+
+            GridName.Content = "Карточка учёта надоя молока";
 
             RecordCardGrid.Visibility = Visibility.Visible;
 
@@ -318,26 +321,6 @@ namespace Warehouse.View.Main
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
             WaybillCompositionGrid.Visibility = Visibility.Collapsed;
-            RecordCardCompositionGrid.Visibility = Visibility.Collapsed;
-        }
-
-        private void RecordCardComposition_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            recordCardCompositionCrud.fetchToGrid(RecordCardCompositionGrid);
-
-            RecordCardCompositionGrid.Visibility = Visibility.Visible;
-
-            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
-            DeliveryNoteGrid.Visibility = Visibility.Collapsed;
-            ContractorGrid.Visibility = Visibility.Collapsed;
-            EmployeeGrid.Visibility = Visibility.Collapsed;
-            DivisionGrid.Visibility = Visibility.Collapsed;
-            CattleGrid.Visibility = Visibility.Collapsed;
-            ProductGrid.Visibility = Visibility.Collapsed;
-            StatementGrid.Visibility = Visibility.Collapsed;
-            WaybillGrid.Visibility = Visibility.Collapsed;
-            WaybillCompositionGrid.Visibility = Visibility.Collapsed;
-            RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
         private void DocumentOutput_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -379,18 +362,10 @@ namespace Warehouse.View.Main
 
             if (selectedRow != null)
             {
-                try
-                {
                     long contractorId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
                     contractorCrud.delete(contractorId);
                     contractorCrud.fetchToGrid(ContractorGrid);
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этим контрагентом!");
-                    return;
-                }
             }
             else
             {
@@ -425,18 +400,11 @@ namespace Warehouse.View.Main
 
             if (selectedRow != null)
             {
-                try
-                {
+                
                     long employeeId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
                     employeeCrud.delete(employeeId);
-                    employeeCrud.fetchToGrid(EmployeeGrid);
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этим сотрудником!");
-                    return;
-                }
+               
             }
             else
             {
@@ -471,18 +439,11 @@ namespace Warehouse.View.Main
 
             if (selectedRow != null)
             {
-                try
-                {
-                    long divisionId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
+               long divisionId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
                     divisionCrud.delete(divisionId);
                     divisionCrud.fetchToGrid(DivisionGrid);
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этим подразделением!");
-                    return;
-                }
+                
             }
             else
             {
@@ -517,18 +478,12 @@ namespace Warehouse.View.Main
 
             if (selectedRow != null)
             {
-                try
-                {
+               
                     long cattleId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
                     cattleCrud.delete(cattleId);
                     cattleCrud.fetchToGrid(CattleGrid);
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этим видом скота!");
-                    return;
-                }
+                
             }
             else
             {
@@ -563,18 +518,10 @@ namespace Warehouse.View.Main
 
             if (selectedRow != null)
             {
-                try
-                {
-                    long productId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
+                long productId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
-                    productCrud.delete(productId);
-                    productCrud.fetchToGrid(ProductGrid);
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этим видом скота!");
-                    return;
-                }
+                productCrud.delete(productId);
+                productCrud.fetchToGrid(ProductGrid);
             }
             else
             {
@@ -615,18 +562,12 @@ namespace Warehouse.View.Main
 
             if (selectedRow != null)
             {
-                try
-                {
+                
                     long statementId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
                     statementCrud.delete(statementId);
                     statementCrud.fetchToGrid(StatementGrid);
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этой ведомостью!");
-                    return;
-                }
+                
             }
             else
             {
@@ -667,18 +608,12 @@ namespace Warehouse.View.Main
 
             if (selectedRow != null)
             {
-                try
-                {
+                
                     long waybillId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
                     waybillCrud.delete(waybillId);
                     waybillCrud.fetchToGrid(WaybillGrid);
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этой накладной!");
-                    return;
-                }
+               
             }
             else
             {
@@ -720,18 +655,12 @@ namespace Warehouse.View.Main
 
             if (selectedRow != null)
             {
-                try
-                {
+                
                     long waybillCompositionId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
                     waybillCompositionCrud.delete(waybillCompositionId);
                     waybillCompositionCrud.fetchToGrid(WaybillCompositionGrid);
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этой накладной!");
-                    return;
-                }
+                
             }
             else
             {
@@ -769,18 +698,11 @@ namespace Warehouse.View.Main
 
             if (selectedRow != null)
             {
-                try
-                {
+                
                     long deliveryId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
                     deliveryNoteCrud.delete(deliveryId);
                     deliveryNoteCrud.fetchToGrid(DeliveryNoteGrid);
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этой ведомостью!");
-                    return;
-                }
             }
             else
             {
@@ -819,18 +741,12 @@ namespace Warehouse.View.Main
 
             if (selectedRow != null)
             {
-                try
-                {
+                
                     long deliveryCompositionId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
                     deliveryCompositionCrud.delete(deliveryCompositionId);
                     deliveryCompositionCrud.fetchToGrid(DeliveryCompositionGrid);
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этой ведомостью!");
-                    return;
-                }
+                
             }
             else
             {
@@ -852,7 +768,9 @@ namespace Warehouse.View.Main
             {
                 EditRecordCard recordCard = new EditRecordCard(
                     Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), Convert.ToString(selectedRow.Row.ItemArray[2]),
-                    Convert.ToString(selectedRow.Row.ItemArray[3]), Convert.ToString(selectedRow.Row.ItemArray[4]), RecordCardGrid);
+                    Convert.ToString(selectedRow.Row.ItemArray[3]), Convert.ToString(selectedRow.Row.ItemArray[4]), Convert.ToString(selectedRow.Row.ItemArray[5]),
+                    Convert.ToString(selectedRow.Row.ItemArray[6]), Convert.ToString(selectedRow.Row.ItemArray[7]), Convert.ToString(selectedRow.Row.ItemArray[8]),
+                    RecordCardGrid);
 
                 recordCard.ShowDialog();
             }
@@ -868,68 +786,12 @@ namespace Warehouse.View.Main
 
             if (selectedRow != null)
             {
-                try
-                {
+                
                     long recordCardId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
                     recordCardCrud.delete(recordCardId);
                     recordCardCrud.fetchToGrid(RecordCardGrid);
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этой карточкой!");
-                    return;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Выберите поле для удаления!");
-            }
-        }
-
-        private void AddRecordCardComposition_Click(object sender, RoutedEventArgs e)
-        {
-            CreateRecordCardComposition recordCardComposition = new CreateRecordCardComposition(RecordCardCompositionGrid);
-            recordCardComposition.ShowDialog();
-        }
-
-        private void EditRecordCardComposition_Click(object sender, RoutedEventArgs e)
-        {
-            var selectedRow = RecordCardCompositionGrid.SelectedItem as DataRowView;
-
-            if (selectedRow != null)
-            {
-                EditRecordCardComposition recordCard = new EditRecordCardComposition(
-                    Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), Convert.ToString(selectedRow.Row.ItemArray[2]),
-                    Convert.ToString(selectedRow.Row.ItemArray[3]), Convert.ToString(selectedRow.Row.ItemArray[4]), Convert.ToString(selectedRow.Row.ItemArray[5]),
-                    Convert.ToString(selectedRow.Row.ItemArray[6]), RecordCardCompositionGrid);
-
-                recordCard.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Не выбрана строка для редактирования", "Ошибка", MessageBoxButton.OK);
-            }
-        }
-
-        private void DeleteRecordCardComposition_Click(object sender, RoutedEventArgs e)
-        {
-            var selectedRow = RecordCardCompositionGrid.SelectedItem as DataRowView;
-
-            if (selectedRow != null)
-            {
-                try
-                {
-                    long recordCardCompositionId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
-
-                    recordCardCompositionCrud.delete(recordCardCompositionId);
-                    recordCardCompositionCrud.fetchToGrid(RecordCardCompositionGrid);
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Удаление невозможно. Удалите связанные данные с этой карточкой!");
-                    return;
-                }
+                
             }
             else
             {
@@ -949,14 +811,20 @@ namespace Warehouse.View.Main
         {
             string field = fetchFieldByView();
 
-            gridUtility.applyFilter(field, dataGrid);
+            if (field != null)
+            {
+                gridUtility.applyFilter(field, dataGrid);
+            }
         }
 
         private void searchGrid(DataGrid dataGrid)
         {
             string field = fetchFieldByView();
 
-            gridUtility.searchAndSort(field, dataGrid);
+            if (field != null)
+            {
+                gridUtility.searchAndSort(field, dataGrid);
+            }
         }
 
         private void FiltrationContractor_Click(object sender, RoutedEventArgs e)
@@ -1122,21 +990,6 @@ namespace Warehouse.View.Main
         private void CancelRecordCard_Click(object sender, RoutedEventArgs e)
         {
             recordCardCrud.fetchToGrid(RecordCardGrid);
-        }
-
-        private void FiltrationRecordCardComposition_Click(object sender, RoutedEventArgs e)
-        {
-            filtrateGrid(RecordCardCompositionGrid);
-        }
-
-        private void SearchRecordCardComposition_Click(object sender, RoutedEventArgs e)
-        {
-            searchGrid(RecordCardCompositionGrid);
-        }
-
-        private void CancelRecordCardComposition_Click(object sender, RoutedEventArgs e)
-        {
-            recordCardCompositionCrud.fetchToGrid(RecordCardCompositionGrid);
         }
     }
 }

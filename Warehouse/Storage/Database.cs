@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Controls;
 using Warehouse.Entity;
+using System.Windows;
 
 namespace Warehouse.Storage
 {
@@ -47,9 +48,17 @@ namespace Warehouse.Storage
         public void executeQuery(string query)
         {
             checkConnection();
-            SqlCommand command = new SqlCommand(query, sqlConnection);
-            command.ExecuteNonQuery();
-            checkConnection();
+            try
+            {
+                SqlCommand command = new SqlCommand(query, sqlConnection);
+                command.ExecuteNonQuery();
+            } catch (SqlException)
+            {
+                MessageBox.Show("Удалите связанные данные с этим полем!");
+            } finally
+            {
+                checkConnection();
+            }
         }
 
         public void insertValuesIntoComboBox(string query, ComboBox box)

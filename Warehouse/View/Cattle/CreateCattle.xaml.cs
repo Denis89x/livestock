@@ -39,7 +39,7 @@ namespace Warehouse.View.Cattle
                 cattleCrud.create(cattle);
                 cattleCrud.fetchToGrid(dataGrid);
 
-                CattleTypeBox.Text = "";
+                this.Close();
             }
         }
     }

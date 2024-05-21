@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Warehouse.View"
         mc:Ignorable="d"
-                Height="600" Width="650"
+        Height="600" Width="650"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -49,7 +49,7 @@
             Content="Авторизация"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Margin="0 185 0 0">
+            Margin="0 175 0 0">
         </Label>
         <TextBox
             x:Name="UsernameBox"

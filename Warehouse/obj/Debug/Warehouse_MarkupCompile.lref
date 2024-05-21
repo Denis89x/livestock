@@ -2,26 +2,23 @@
 FD:\Учеба\Диплом\warehouse-main\Warehouse\App.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Auth\AuthView.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Auth\RegistrationView.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Cattle\CreateCattle.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Cattle\EditCattle.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Contractor\CreateContractor.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Contractor\EditContractor.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNoteComposition\CreateDeliveryComposition.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNoteComposition\EditDeliveryComposition.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNote\CreateDelivery.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNote\EditDelivery.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Division\AddDivision.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Division\EditDivision.xaml;;
+FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\DeliveryNoteView.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\DocumentOutput.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Employee\CreateEmployee.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Employee\EditEmployee.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\FetchFieldView.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Main\MainPage.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\RecordCardView.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Product\CreateProduct.xaml;;
+FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\StatementView.xaml;;
+FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\WaybillView.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Product\EditProduct.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\RecordCardComposition\CreateRecordCardComposition.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\RecordCardComposition\EditRecordCardComposition.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\RecordCard\CreateRecordCard.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\RecordCard\EditRecordCard.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Statement\CreateStatement.xaml;;
@@ -30,7 +27,4 @@ FD:\Учеба\Диплом\warehouse-main\Warehouse\View\WaybillComposition\Cre
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\WaybillComposition\EditWaybillComposition.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Waybill\CreateWaybill.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Waybill\EditWaybill.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\StatementView.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\WaybillView.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\DeliveryNoteView.xaml;;
 

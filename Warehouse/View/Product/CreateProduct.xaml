@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Warehouse.View.Product"
         mc:Ignorable="d"
+        Title="Добавить продукт"
         Height="600" Width="650"
         Icon="/Resources/ColorIcon.png"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -43,19 +43,19 @@
             </Border.Effect>
         </Border>
         <Label 
-            FontSize="18px"
+            FontSize="20px"
             Height="30px"
             Content="Добавить"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Margin="0,160,0,0">
+            Margin="0,140,0,0">
         </Label>
         <TextBox
             x:Name="TitleBox"
             materialDesign:HintAssist.Hint="Название"
-            FontSize="15px"
+            FontSize="17px"
             Padding="12 10 2 2"
-            Height="40px"
+            Height="45px"
             Width="225px"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
             Margin="0 0 0 120" 
@@ -64,31 +64,31 @@
         <TextBox
             x:Name="SortBox"
             materialDesign:HintAssist.Hint="Сорт"
-            FontSize="15px"
+            FontSize="17px"
             Padding="12 10 2 2"
-            Height="40px"
+            Height="45px"
             Width="225px"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 0 0 20" 
+            Margin="0 0 0 10" 
             BorderBrush="#BC989393">
         </TextBox>
         <ComboBox
             x:Name="UnitCombo"
             Width="225px"
-            Height="40px"
-            FontSize="15px"
+            Height="45px"
+            FontSize="17px"
             Padding="12 0 12 0"
-            Margin="0 80 0 0"
+            Margin="0 100 0 0"
             materialDesign:HintAssist.Hint="Единица измерения"
             Style="{StaticResource MaterialDesignOutlinedComboBox}"
             BorderBrush="#BC989393">
-            <ComboBoxItem Content="Литр"/>
             <ComboBoxItem Content="Килограмм"/>
         </ComboBox>
         <Button
             x:Name="Confirm"
             Width="105px"
-            Height="45px"
+            Height="50px"
+            FontSize="16"
             materialDesign:ButtonAssist.CornerRadius="20"
             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
@@ -96,15 +96,21 @@
             BorderBrush="Transparent"
             HorizontalAlignment="Center" 
             VerticalAlignment="Center" 
-            Content="Добавить"
             RenderOptions.EdgeMode="Aliased"
-            Margin="120 230 0 0"
+            Margin="120 240 0 0"
             Click="Confirm_Click">
+            <materialDesign:PackIcon 
+                Height="30"
+                Width="30"
+                HorizontalAlignment="Center"
+                Kind="Check"
+                Foreground="White"/>
         </Button>
         <Button
             x:Name="Return"
             Width="105px"
-            Height="45px"
+            Height="50px"
+            FontSize="16"
             materialDesign:ButtonAssist.CornerRadius="20"
             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
@@ -112,10 +118,15 @@
             BorderBrush="Transparent"
             HorizontalAlignment="Center" 
             VerticalAlignment="Center" 
-            Content="Вернуться"
             RenderOptions.EdgeMode="Aliased"
-            Margin="0 230 120 0"
+            Margin="0 240 120 0"
             Click="Return_Click">
+            <materialDesign:PackIcon 
+                Height="30"
+                Width="30"
+                HorizontalAlignment="Center"
+                Kind="KeyboardBackspace"
+                Foreground="White"/>
         </Button>
     </Grid>
 </Window>

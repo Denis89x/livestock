@@ -1,4 +1,6 @@
-﻿namespace Warehouse.Entity
+﻿using System;
+
+namespace Warehouse.Entity
 {
     internal class RecordCardEntity
     {
@@ -12,21 +14,45 @@
 
         public string date { get; set; }
 
-        public RecordCardEntity(long productId, long divisionId, long employeeId, string date)
+        public string cowQuantity { get; set; }
+
+        public string morning { get; set; }
+
+        public string midday { get; set; }
+
+        public string evening { get; set; }
+
+        public string cardNumber { get; set; }
+
+        private Random random;
+
+        public RecordCardEntity(long productId, long divisionId, long employeeId, string date, string cowQuantity, string morning, string midday, string evening)
         {
             this.productId = productId;
             this.divisionId = divisionId;
             this.employeeId = employeeId;
             this.date = date;
+            this.cowQuantity = cowQuantity;
+            this.morning = morning;
+            this.midday = midday;
+            this.evening = evening;
+
+            random = new Random();
+
+            cardNumber = random.Next(100000, 999999).ToString();
         }
 
-        public RecordCardEntity(long recordCardId, long productId, long divisionId, long employeeId, string date)
+        public RecordCardEntity(long recordCardId, long productId, long divisionId, long employeeId, string date, string cowQuantity, string morning, string midday, string evening)
         {
             this.recordCardId = recordCardId;
             this.productId = productId;
             this.divisionId = divisionId;
             this.employeeId = employeeId;
             this.date = date;
+            this.cowQuantity = cowQuantity;
+            this.morning = morning;
+            this.midday = midday;
+            this.evening = evening;
         }
     }
 }

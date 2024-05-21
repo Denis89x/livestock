@@ -13,9 +13,9 @@ namespace Warehouse.View.RecordCard
         private DataGrid dataGrid;
         private ComboBoxRepo comboBoxRepo;
         private CrudRepo<RecordCardEntity> recordCrud;
-        private CommonValidation commonValidation;
+        private RecordCardValidation recordCardValidation;
 
-        public EditRecordCard(long recordCardId, string product, string division, string employee, string date, DataGrid dataGrid)
+        public EditRecordCard(long recordCardId, string product, string division, string employee, string date, string quantity, string morning, string midday, string evening, DataGrid dataGrid)
         {
             InitializeComponent();
 
@@ -24,13 +24,18 @@ namespace Warehouse.View.RecordCard
 
             comboBoxRepo = new ComboBoxRepoImpl();
             recordCrud = new RecordCardRepoImpl();
-            commonValidation = new CommonValidation();
+            recordCardValidation = new RecordCardValidation();
 
             DatePicker.Text = DateTime.Today.ToString("yyyy-MM-dd");
 
             comboBoxRepo.insertDivisionsIntoComboBox(DivisionCombo);
             comboBoxRepo.insertEmployeesIntoComboBox(EmployeeCombo);
             comboBoxRepo.insertProductsIntoComboBox(ProductCombo);
+
+            QuantityBox.Text = quantity;
+            MorningBox.Text = morning;
+            MiddayBox.Text = midday;
+            EveningBox.Text = evening;
 
             DatePicker.Text = date;
         }
@@ -46,19 +51,24 @@ namespace Warehouse.View.RecordCard
             ComboBoxEntity employee = (ComboBoxEntity)EmployeeCombo.SelectedItem;
             ComboBoxEntity product = (ComboBoxEntity)ProductCombo.SelectedItem;
 
+            string quantity = QuantityBox.Text;
+            string morning = MorningBox.Text;
+            string midday = MiddayBox.Text;
+            string evening = EveningBox.Text;
+
             try
             {
                 if (division != null && employee != null && product != null)
                 {
                     string date = DatePicker.SelectedDate.Value.ToString("yyyy-MM-dd");
-                    if (commonValidation.isDateValid(date))
-                    {
-                        RecordCardEntity recordCard = new RecordCardEntity(recordCardId, product.id, division.id, employee.id, date);
 
+                    RecordCardEntity recordCard = new RecordCardEntity(recordCardId, product.id, division.id, employee.id, date, quantity, morning, midday, evening);
+                    if (recordCardValidation.isRecordCardValid(recordCard))
+                    {
                         recordCrud.update(recordCard);
                         recordCrud.fetchToGrid(dataGrid);
 
-                         this.Close();
+                        this.Close();
                     }
                 }
                 else

@@ -36,7 +36,7 @@ namespace Warehouse.Storage
 
         public void update(EmployeeEntity entity)
         {
-            string query = $"UPDATE employee SET surname = N'{entity.surname}', first_name = N'{entity.firstName}', patronymic = N'{entity.patronymic}', position = N'{entity.position}'";
+            string query = $"UPDATE employee SET surname = N'{entity.surname}', first_name = N'{entity.firstName}', patronymic = N'{entity.patronymic}', position = N'{entity.position}' WHERE employee_id = '{entity.employeeId}'";
 
             database.executeQuery(query);
         }

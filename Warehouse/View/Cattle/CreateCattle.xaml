@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Warehouse.View.Cattle"
         mc:Ignorable="d"
+        Title="Добавить вид скота"
         Icon="/Resources/ColorIcon.png"
-        Height="600" Width="650"
+        Height="400" Width="550"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -22,14 +22,14 @@
             Height="55px"
             Width="55px"
             HorizontalAlignment="Center"
-            Margin="0 35 0 0"
+            Margin="0 10 0 0"
             Kind="Plus"
             Foreground="White"/>
         <Border 
             Background="White"
             CornerRadius="10" 
             BorderBrush="Black"
-            Height="200" 
+            Height="220" 
             Width="300px" 
             Padding="10">
             <Border.Effect>
@@ -43,56 +43,67 @@
             </Border.Effect>
         </Border>
         <Label 
-            FontSize="18px"
+            FontSize="20px"
             Height="30px"
             Content="Добавить"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Margin="0 0 0 120">
+            Margin="0 0 0 150">
         </Label>
         <TextBox
-            x:Name="CattleTypeBox"
-            materialDesign:HintAssist.Hint="Вид скота"
-            FontSize="15px"
-            Padding="12 10 2 2"
-            Height="40px"
-            Width="225px"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 0 0 20" 
-            BorderBrush="#BC989393">
+             x:Name="CattleTypeBox"
+             materialDesign:HintAssist.Hint="Вид скота"
+             FontSize="17px"
+             Padding="12 10 2 2"
+             Height="45px"
+             Width="225px"
+             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+             Margin="0 0 0 30" 
+             BorderBrush="#BC989393">
         </TextBox>
         <Button
-            x:Name="Confirm"
-            Width="105px"
-            Height="45px"
-            materialDesign:ButtonAssist.CornerRadius="20"
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Background="#FF249AD7"
-            BorderBrush="Transparent"
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Content="Добавить"
-            RenderOptions.EdgeMode="Aliased"
-            Margin="120 120 0 0"
-            Click="Confirm_Click">
+              x:Name="Confirm"
+              Width="105px"
+              Height="50px"
+              FontSize="16"
+              materialDesign:ButtonAssist.CornerRadius="20"
+              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+              Style="{StaticResource MaterialDesignRaisedDarkButton}"
+              Background="#FF249AD7"
+              BorderBrush="Transparent"
+              HorizontalAlignment="Center" 
+              VerticalAlignment="Center" 
+              RenderOptions.EdgeMode="Aliased"
+              Margin="120 120 0 0"
+              Click="Confirm_Click">
+            <materialDesign:PackIcon 
+                  Height="30"
+                  Width="30"
+                  HorizontalAlignment="Center"
+                  Kind="Check"
+                  Foreground="White"/>
         </Button>
         <Button
-            x:Name="Return"
-            Width="105px"
-            Height="45px"
-            materialDesign:ButtonAssist.CornerRadius="20"
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Background="#FF249AD7"
-            BorderBrush="Transparent"
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Content="Вернуться"
-            RenderOptions.EdgeMode="Aliased"
-            Margin="0 120 120 0"
-            Click="Return_Click">
+             x:Name="Return"
+             Width="105px"
+             Height="50px"
+             FontSize="16"
+             materialDesign:ButtonAssist.CornerRadius="20"
+             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+             Style="{StaticResource MaterialDesignRaisedDarkButton}"
+             Background="#FF249AD7"
+             BorderBrush="Transparent"
+             HorizontalAlignment="Center" 
+             VerticalAlignment="Center" 
+             RenderOptions.EdgeMode="Aliased"
+             Margin="0 120 120 0"
+             Click="Return_Click">
+            <materialDesign:PackIcon 
+                 Height="30"
+                 Width="30"
+                 HorizontalAlignment="Center"
+                 Kind="KeyboardBackspace"
+                 Foreground="White"/>
         </Button>
     </Grid>
 </Window>
-

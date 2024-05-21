@@ -39,8 +39,7 @@ namespace Warehouse.View.Product
                     productCrud.create(product);
                     productCrud.fetchToGrid(dataGrid);
 
-                    TitleBox.Text = "";
-                    SortBox.Text = "";
+                    this.Close();
                 }
             } else
             {

@@ -34,7 +34,7 @@ namespace Warehouse.View.Division
                 divisionCrud.create(division);
                 divisionCrud.fetchToGrid(dataGrid);
 
-                DivisionTypeBox.Text = "";
+                this.Close();
             }
         }
 

@@ -177,10 +177,6 @@ D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\RecordCard\Cr
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\RecordCard\EditRecordCard.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\RecordCard\CreateRecordCard.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\RecordCard\EditRecordCard.baml
-D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\RecordCardComposition\CreateRecordCardComposition.g.cs
-D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\RecordCardComposition\EditRecordCardComposition.g.cs
-D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\RecordCardComposition\CreateRecordCardComposition.baml
-D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\RecordCardComposition\EditRecordCardComposition.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Auth\AuthView.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Auth\RegistrationView.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Auth\AuthView.baml

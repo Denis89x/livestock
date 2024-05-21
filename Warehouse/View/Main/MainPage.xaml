@@ -3,17 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Warehouse.View.Main"
         mc:Ignorable="d"
         Title="Учёт животноводческой продукции" 
-        MinHeight="940"
+        MinHeight="1000"
         MinWidth="1200"
         Icon="/Resources/ColorIcon.png"
         Closing="Window_Closing"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
-        TextElement.FontSize="13"
+        TextElement.FontSize="15"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         FontFamily="{DynamicResource MaterialDesignFont}"
@@ -49,8 +48,7 @@
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryNoteGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryCompositionGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardCompositionGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="UserInfoLabel" From="90,18,739,819" To="210,18,739,819" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="GridName" From="90,18,739,819" To="210,18,739,819" Duration="0:0:0.5"/>
         </Storyboard>
         <Storyboard x:Key="MenuClose">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -68,8 +66,8 @@
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryNoteGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryCompositionGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardCompositionGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="UserInfoLabel" From="210,18,739,819" To="90,18,739,819" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="GridName" From="210,18,739,819" To="90,18,739,819" Duration="0:0:0.5"/>
+            
         </Storyboard>
     </Window.Resources>
     <Window.Triggers>
@@ -85,11 +83,25 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch">
             <Label
-                x:Name="UserInfoLabel"
+                x:Name="GridName"
                 Margin="90,18,739,819"
-                FontSize="15"
+                FontSize="17"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
                 Foreground="WHITE"
-                >Должность</Label>
+            >
+                Справочник: Контрагенты
+            </Label>
+            <Label
+                x:Name="UserInfoLabel"
+                FontSize="17    "
+                Foreground="WHITE"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="0 18 30 0"
+            >
+                Должность
+            </Label>
             <DataGrid   
                 Margin="90,60,30,30" 
                 Visibility="Visible"
@@ -103,6 +115,7 @@
                 SelectionUnit="FullRow" 
                 CanUserResizeRows="False" 
                 IsReadOnly="True"
+                FontSize="15px"
                 Foreground="#FF7643D2"
                 ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                 ScrollViewer.VerticalScrollBarVisibility="Hidden">
@@ -114,7 +127,7 @@
                     <DataGridTextColumn Header="Номер телефона" Width="*" Binding="{Binding phone_number}"/>
                     <DataGridTextColumn Header="Название банка" Width="*" Binding="{Binding bank_name}"/>
                 </DataGrid.Columns>
-                <DataGrid.ContextMenu x:Uid="123">
+                <DataGrid.ContextMenu>
                     <ContextMenu>
                         <MenuItem x:Name="AddContractor" Header="Добавить" Click="AddContractor_Click"/>
                         <MenuItem x:Name="EditContractor" Header="Редактировать" Click="EditContractor_Click"/>
@@ -133,6 +146,7 @@
                 CanUserResizeColumns="False" 
                 CanUserAddRows="False" 
                 CanUserDeleteRows="False" 
+                FontSize="15px"
                 CanUserReorderColumns="False" 
                 SelectionMode="Single" 
                 SelectionUnit="FullRow" 
@@ -163,6 +177,7 @@
                 Margin="90,60,30,30"
                 Visibility="Collapsed"
                 x:Name="DivisionGrid" 
+                FontSize="15px"
                 AutoGenerateColumns="false"
                 CanUserResizeColumns="False" 
                 CanUserAddRows="False" 
@@ -177,7 +192,7 @@
                 ScrollViewer.VerticalScrollBarVisibility="Hidden">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="DivisionId" Binding="{Binding division_id}" Visibility="Hidden"/>
-                    <DataGridTextColumn Header="Тип подразделения" Width="*" Binding="{Binding division_type}"/>
+                    <DataGridTextColumn Header="Название подразделения" Width="*" Binding="{Binding division_type}"/>
                 </DataGrid.Columns>
                 <DataGrid.ContextMenu>
                     <ContextMenu>
@@ -201,6 +216,7 @@
                 CanUserReorderColumns="False" 
                 SelectionMode="Single" 
                 SelectionUnit="FullRow" 
+                FontSize="15px"
                 CanUserResizeRows="False" 
                 IsReadOnly="True"
                 Foreground="#FF7643D2"
@@ -231,6 +247,7 @@
                 CanUserDeleteRows="False" 
                 CanUserReorderColumns="False" 
                 SelectionMode="Single" 
+                FontSize="15px"
                 SelectionUnit="FullRow" 
                 CanUserResizeRows="False" 
                 IsReadOnly="True"
@@ -242,6 +259,7 @@
                     <DataGridTextColumn Header="Название" Width="*" Binding="{Binding title}"/>
                     <DataGridTextColumn Header="Сорт" Width="*" Binding="{Binding sort}"/>
                     <DataGridTextColumn Header="Единица измерения" Width="*" Binding="{Binding unit}"/>
+                    <DataGridTextColumn Header="Остаток" Width="*" Binding="{Binding quantity}"/>
                 </DataGrid.Columns>
                 <DataGrid.ContextMenu>
                     <ContextMenu>
@@ -262,6 +280,7 @@
                 CanUserResizeColumns="False" 
                 CanUserAddRows="False" 
                 CanUserDeleteRows="False" 
+                FontSize="15px"
                 CanUserReorderColumns="False" 
                 SelectionMode="Single" 
                 SelectionUnit="FullRow" 
@@ -304,6 +323,7 @@
                 CanUserResizeColumns="False" 
                 CanUserAddRows="False" 
                 CanUserDeleteRows="False" 
+                FontSize="15px"
                 CanUserReorderColumns="False" 
                 SelectionMode="Single" 
                 SelectionUnit="FullRow" 
@@ -346,6 +366,7 @@
                 x:Name="WaybillCompositionGrid" 
                 AutoGenerateColumns="false"
                 CanUserResizeColumns="False" 
+                FontSize="15px"
                 CanUserAddRows="False" 
                 CanUserDeleteRows="False" 
                 CanUserReorderColumns="False" 
@@ -393,6 +414,7 @@
                 CanUserResizeColumns="False" 
                 CanUserAddRows="False" 
                 CanUserDeleteRows="False" 
+                FontSize="15px"
                 CanUserReorderColumns="False" 
                 SelectionMode="Single" 
                 SelectionUnit="FullRow" 
@@ -426,6 +448,7 @@
                 CanUserResizeColumns="False" 
                 CanUserAddRows="False" 
                 CanUserDeleteRows="False" 
+                FontSize="15px"
                 CanUserReorderColumns="False" 
                 SelectionMode="Single" 
                 SelectionUnit="FullRow" 
@@ -461,6 +484,7 @@
                 x:Name="RecordCardGrid" 
                 AutoGenerateColumns="false"
                 CanUserResizeColumns="False" 
+                FontSize="15px"
                 CanUserAddRows="False" 
                 CanUserDeleteRows="False" 
                 CanUserReorderColumns="False" 
@@ -472,11 +496,16 @@
                 ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                 ScrollViewer.VerticalScrollBarVisibility="Hidden">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Номер карточки" Binding="{Binding record_card_id}"/>
+                    <DataGridTextColumn Header="CardId" Binding="{Binding record_card_id}" Visibility="Collapsed"/>
+                    <DataGridTextColumn Header="Номер карточки" Width="*" Binding="{Binding card_number}"/>
+                    <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding date, StringFormat=dd.MM.yyyy}"/>
                     <DataGridTextColumn Header="Продукт" Width="*" Binding="{Binding title}"/>
                     <DataGridTextColumn Header="Подразделение" Width="*" Binding="{Binding division_type}"/>
                     <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding surname}"/>
-                    <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding date, StringFormat=dd.MM.yyyy}"/>
+                    <DataGridTextColumn Header="Количество коров" Width="*" Binding="{Binding cow_quantity}"/>
+                    <DataGridTextColumn Header="Утро" Width="*" Binding="{Binding morning}"/>
+                    <DataGridTextColumn Header="Полдень" Width="*" Binding="{Binding midday}"/>
+                    <DataGridTextColumn Header="Вечер" Width="*" Binding="{Binding evening}"/>
                 </DataGrid.Columns>
                 <DataGrid.ContextMenu>
                     <ContextMenu>
@@ -489,136 +518,99 @@
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
-            <DataGrid   
-                 Margin="90,60,30,30"
-                 Visibility="Collapsed"
-                 x:Name="RecordCardCompositionGrid" 
-                 AutoGenerateColumns="false"
-                 CanUserResizeColumns="False" 
-                 CanUserAddRows="False" 
-                 CanUserDeleteRows="False" 
-                 CanUserReorderColumns="False" 
-                 SelectionMode="Single" 
-                 SelectionUnit="FullRow" 
-                 CanUserResizeRows="False" 
-                 IsReadOnly="True"
-                 Foreground="#FF7643D2"
-                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                ScrollViewer.VerticalScrollBarVisibility="Hidden">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="RecordCardCompositionId" Binding="{Binding record_card_composition_id}" Visibility="Hidden"/>
-                    <DataGridTextColumn Header="Номер книжки" Width="*" Binding="{Binding record_card_id}"/>
-                    <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding date, StringFormat=dd.MM.yyyy}"/>
-                    <DataGridTextColumn Header="Количество коров" Width="*" Binding="{Binding cow_quantity}"/>
-                    <DataGridTextColumn Header="Надой(утро)" Width="*" Binding="{Binding milk_yield_morning}"/>
-                    <DataGridTextColumn Header="Надой(день)" Width="*" Binding="{Binding milk_yield_midday}"/>
-                    <DataGridTextColumn Header="Надой(вечер)" Width="*" Binding="{Binding milk_yield_evening}"/>
-                </DataGrid.Columns>
-                <DataGrid.ContextMenu>
-                    <ContextMenu>
-                        <MenuItem x:Name="AddRecordCardComposition" Header="Добавить" Click="AddRecordCardComposition_Click"/>
-                        <MenuItem x:Name="EditRecordCardComposition" Header="Редактировать" Click="EditRecordCardComposition_Click"/>
-                        <MenuItem x:Name="DeleteRecordCardComposition" Header="Удалить" Click="DeleteRecordCardComposition_Click"/>
-                        <MenuItem x:Name="FiltrationRecordCardComposition" Header="Фильтрация" Click="FiltrationRecordCardComposition_Click"/>
-                        <MenuItem x:Name="SearchRecordCardComposition" Header="Поиск" Click="SearchRecordCardComposition_Click"/>
-                        <MenuItem x:Name="CancelRecordCardComposition" Header="Отменить" Click="CancelRecordCardComposition_Click"/>
-                    </ContextMenu>
-                </DataGrid.ContextMenu>
-            </DataGrid>
         </Grid>
         <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#19000000">
             <StackPanel>
                 <Grid Height="60">
                     <Button x:Name="ButtonCloseMenu" Width="60" Height="60" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="ButtonCloseMenu_Click" Background="#66673AB7">
-                        <materialDesign:PackIcon Kind="ArrowLeft" Foreground="#FF003B75" Width="25" Height="25"/>
+                        <materialDesign:PackIcon Kind="ArrowLeft" Foreground="WHITE" Width="25" Height="25"/>
                     </Button>
                     <Button x:Name="ButtonOpenMenu" Width="60" Height="60" VerticalAlignment="Top" HorizontalAlignment="Right" Click="ButtonOpenMenu_Click" Background="#66673AB7">
-                        <materialDesign:PackIcon Kind="Menu" Foreground="#FF003B75" Width="25" Height="25"/>
+                        <materialDesign:PackIcon Kind="Menu" Foreground="WHITE" Width="25" Height="25"/>
                     </Button>
                 </Grid>
-                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FF003B75">
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FF003B75" FontSize="15px">
                     <ListViewItem x:Name="Contractor" Height="60" PreviewMouseLeftButtonDown="Contractor_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="NewspaperPlus" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Контрагенты" VerticalAlignment="Center" Margin="0 10"/>
+                            <materialDesign:PackIcon Kind="NewspaperPlus" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
+                            <TextBlock Text="Контрагенты" VerticalAlignment="Center" Margin="0 10" Foreground="White" FontWeight="Medium" Opacity="0.7"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="60" x:Name="Employee" Visibility="Visible" PreviewMouseLeftButtonDown="Employee_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="BookAccount" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Сотрудники" VerticalAlignment="Center" Margin="0 10"/>
+                            <materialDesign:PackIcon Kind="BookAccount" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
+                            <TextBlock Text="Сотрудники" VerticalAlignment="Center" Margin="0 10" Foreground="White" FontWeight="Medium" Opacity="0.7"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="60" x:Name="Division" Visibility="Visible" PreviewMouseLeftButtonDown="Division_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="AccountGroup" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Подразделение" VerticalAlignment="Center" Margin="0 10"/>
+                            <materialDesign:PackIcon Kind="AccountGroup" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
+                            <TextBlock Text="Подразделение" VerticalAlignment="Center" Margin="0 10" Foreground="White" FontWeight="Medium" Opacity="0.7"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="Cettle" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="Cettle_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Pig" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Группы скота" VerticalAlignment="Center" Margin="0 10"/>
+                            <materialDesign:PackIcon Kind="Pig" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
+                            <TextBlock Text="Группы скота" VerticalAlignment="Center" Margin="0 10" Foreground="White" FontWeight="Medium" Opacity="0.7"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="Product" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="Product_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="ScriptOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Продукция" VerticalAlignment="Center" Margin="0 10"/>
+                            <materialDesign:PackIcon Kind="ScriptOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
+                            <TextBlock Text="Продукция" VerticalAlignment="Center" Margin="0 10" Foreground="White" FontWeight="Medium" Opacity="0.7"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Height="2" Background="White" Margin="0 0" Padding="0 0"/>
+                    <ListViewItem x:Name="RecordCard" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="RecordCard_PreviewMouseLeftButtonDown">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="CardOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
+                            <TextBlock VerticalAlignment="Center" Margin="0 0" TextWrapping="Wrap" Width="150" FontWeight="Medium" Foreground="White" Opacity="0.7">
+                                <Run Text="Карточка учёта"/><LineBreak/>
+                                <Run Text="надоя молока"/>
+                            </TextBlock>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="Statement" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="Statement_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="PiHole" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Расход кормов" VerticalAlignment="Center" Margin="0 10"/>
+                            <materialDesign:PackIcon Kind="PiHole" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
+                            <TextBlock Text="Расход кормов" VerticalAlignment="Center" Margin="0 10" FontWeight="Medium" Foreground="White" Opacity="0.7"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="Waybill" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="Waybill_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="FileDocument" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="ТТН" VerticalAlignment="Center" Margin="0 10"/>
+                            <materialDesign:PackIcon Kind="FileDocument" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
+                            <TextBlock Text="Реализация" VerticalAlignment="Center" Margin="0 10" FontWeight="Medium" Foreground="White" Opacity="0.7"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="WaybillComposition" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="WaybillComposition_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="FileDocumentEdit" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Состав ТТН" VerticalAlignment="Center" Margin="0 10"/>
+                            <materialDesign:PackIcon Kind="FileDocumentEdit" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
+                            <TextBlock Text="Состав ТТН" VerticalAlignment="Center" Margin="0 10" FontWeight="Medium" Foreground="White" Opacity="0.7"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="DeliveryNote" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="DeliveryNote_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="TextBoxOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Требования" VerticalAlignment="Center" Margin="0 10"/>
+                            <materialDesign:PackIcon Kind="TextBoxOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
+                            <TextBlock Text="Требования" VerticalAlignment="Center" Margin="0 10" FontWeight="Medium" Foreground="White" Opacity="0.7"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="DeliveryNoteComposition" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="DeliveryNoteComposition_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="TextBoxPlusOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Состав требования" VerticalAlignment="Center" Margin="0 10"/>
+                            <materialDesign:PackIcon Kind="TextBoxPlusOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
+                            <TextBlock Text="Состав требования" VerticalAlignment="Center" Margin="0 10" FontWeight="Medium" Foreground="White" Opacity="0.7"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="RecordCard" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="RecordCard_PreviewMouseLeftButtonDown">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="CardOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Карточка" VerticalAlignment="Center" Margin="0 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem x:Name="RecordCardComposition" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="RecordCardComposition_PreviewMouseLeftButtonDown">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="CardPlusOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Состав карточки" VerticalAlignment="Center" Margin="0 10"/>
-                        </StackPanel>
-                    </ListViewItem>
+                    <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Height="2" Background="White" Margin="0 0" Padding="0 0"/>
                     <ListViewItem x:Name="DocumentOutput" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="DocumentOutput_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="FileWord" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Вывод документов" VerticalAlignment="Center" Margin="0 10"/>
+                            <materialDesign:PackIcon Kind="FileWord" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
+                            <TextBlock Text="Документы" VerticalAlignment="Center" Margin="0 10" FontWeight="Medium" Foreground="White" Opacity="0.7"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="AdminRegistration" Height="60" Visibility="Collapsed" PreviewMouseLeftButtonDown="AdminRegistration_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal" >
-                            <materialDesign:PackIcon Kind="AccountPlusOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Регистрация" VerticalAlignment="Center" Margin="0 10"/>
+                            <materialDesign:PackIcon Kind="AccountPlusOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
+                            <TextBlock Text="Регистрация" VerticalAlignment="Center" Margin="0 10" FontWeight="Medium" Foreground="White" Opacity="0.7"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

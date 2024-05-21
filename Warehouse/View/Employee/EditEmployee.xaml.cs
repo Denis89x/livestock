@@ -23,7 +23,7 @@ namespace Warehouse.View.Employee
             SurnameBox.Text = surname;
             FirstnameBox.Text = firstName;
             PatronymicBox.Text = patronymic;
-            PositionBox.Text = position;
+            PositionCombo.Text = position;
 
             employeeCrud = new EmployeeRepoImpl();
             validation = new EmployeeValidation();
@@ -39,7 +39,7 @@ namespace Warehouse.View.Employee
             string surname = SurnameBox.Text;
             string firstName = FirstnameBox.Text;
             string patronymic = PatronymicBox.Text;
-            string position = PositionBox.Text;
+            string position = PositionCombo.Text;
 
             EmployeeEntity employee = new EmployeeEntity(employeeId, surname, firstName, patronymic, position);
 

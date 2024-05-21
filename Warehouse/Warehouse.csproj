@@ -113,7 +113,6 @@
     <Compile Include="Entity\DivisionEntity.cs" />
     <Compile Include="Entity\EmployeeEntity.cs" />
     <Compile Include="Entity\ProductEntity.cs" />
-    <Compile Include="Entity\RecordCardCompositionEntity.cs" />
     <Compile Include="Entity\RecordCardEntity.cs" />
     <Compile Include="Entity\StatementEntity.cs" />
     <Compile Include="Entity\UserEntity.cs" />
@@ -124,6 +123,7 @@
     <Compile Include="Service\RecordCardOutput.cs" />
     <Compile Include="Service\StatementOutput.cs" />
     <Compile Include="Service\WaybillOutput.cs" />
+    <Compile Include="Validation\RecordCardValidation.cs" />
     <Compile Include="Validation\WaybillCompositionValidation.cs" />
     <Compile Include="Entity\WaybillEntity.cs" />
     <Compile Include="Storage\AuthRepo.cs" />
@@ -140,7 +140,6 @@
     <Compile Include="Storage\DivisionRepoImpl.cs" />
     <Compile Include="Storage\EmployeeRepoImpl.cs" />
     <Compile Include="Storage\ProductRepoImpl.cs" />
-    <Compile Include="Storage\RecordCardCompositionRepoImpl.cs" />
     <Compile Include="Storage\RecordCardRepoImpl.cs" />
     <Compile Include="Storage\StatementRepoImpl.cs" />
     <Compile Include="Storage\WaybillCompositionRepoImpl.cs" />
@@ -152,7 +151,6 @@
     <Compile Include="Validation\DivisionValidation.cs" />
     <Compile Include="Validation\EmployeeValidation.cs" />
     <Compile Include="Validation\ProductValidation.cs" />
-    <Compile Include="Validation\RecordCardCompositionValidation.cs" />
     <Compile Include="Validation\StatementValidation.cs" />
     <Compile Include="Validation\UserValidation.cs" />
     <Compile Include="Validation\WaybillValidation.cs" />
@@ -224,12 +222,6 @@
     </Compile>
     <Compile Include="View\Product\EditProduct.xaml.cs">
       <DependentUpon>EditProduct.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordCardComposition\CreateRecordCardComposition.xaml.cs">
-      <DependentUpon>CreateRecordCardComposition.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordCardComposition\EditRecordCardComposition.xaml.cs">
-      <DependentUpon>EditRecordCardComposition.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RecordCard\CreateRecordCard.xaml.cs">
       <DependentUpon>CreateRecordCard.xaml</DependentUpon>
@@ -348,14 +340,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Product\EditProduct.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\RecordCardComposition\CreateRecordCardComposition.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\RecordCardComposition\EditRecordCardComposition.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

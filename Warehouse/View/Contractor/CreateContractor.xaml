@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Warehouse.View.Contractor"
         mc:Ignorable="d"
-        Height="640" Width="650"
+        Height="640" Width="640"
+        Title="Добавить контрагента"
         Icon="/Resources/ColorIcon.png"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -29,7 +30,7 @@
             Background="White"
             CornerRadius="10" 
             BorderBrush="Black"
-            Height="400px" 
+            Height="420px" 
             Width="300px" 
             Padding="10">
             <Border.Effect>
@@ -43,52 +44,56 @@
             </Border.Effect>
         </Border>
         <Label 
-            FontSize="18px"
+            FontSize="20px"
             Height="30px"
-            Content="Добавить"
+            Content="Добавить контрагента"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Margin="0,140,0,0">
+            Margin="0,110,0,0">
         </Label>
         <TextBox
             x:Name="AddressBox"
             materialDesign:HintAssist.Hint="Адрес"
-            FontSize="15px"
+            materialDesign:HintAssist.HelperTextFontSize="18"
+            FontSize="17px"
             Padding="12 10 2 2"
-            Height="40px"
+            Height="45px"
             Width="225px"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 0 0 200" 
+            Margin="0 0 0 230" 
             BorderBrush="#BC989393">
         </TextBox>
         <TextBox
             x:Name="TitleBox"
             materialDesign:HintAssist.Hint="Название"
-            FontSize="15px"
+            materialDesign:HintAssist.HelperTextFontSize="18"
+            FontSize="17px"
             Padding="12 10 2 2"
-            Height="40px"
+            Height="45px"
             Width="225px"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 0 0 100" 
+            Margin="0 0 0 120" 
             BorderBrush="#BC989393">
         </TextBox>
         <TextBox
             x:Name="SettlementBox"
             materialDesign:HintAssist.Hint="Расчётный счёт"
-            FontSize="15px"
+            materialDesign:HintAssist.HelperTextFontSize="18"
+            FontSize="17px"
             Padding="12 10 2 2"
-            Height="40px"
+            Height="45px"
             Width="225px"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 0 0 0" 
+            Margin="0 0 0 10" 
             BorderBrush="#BC989393">
         </TextBox>
         <TextBox
             x:Name="PhoneBox"
             materialDesign:HintAssist.Hint="Номер телефона"
-            FontSize="15px"
+            materialDesign:HintAssist.HelperTextFontSize="18"
+            FontSize="17px"
             Padding="12 10 2 2"
-            Height="40px"
+            Height="45px"
             Width="225px"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
             Margin="0 100 0 0" 
@@ -97,34 +102,42 @@
         <TextBox
             x:Name="BankBox"
             materialDesign:HintAssist.Hint="Название банка"
-            FontSize="15px"
+            materialDesign:HintAssist.HelperTextFontSize="18"
+            FontSize="17px"
             Padding="12 10 2 2"
-            Height="40px"
+            Height="45px"
             Width="225px"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 200 0 0" 
+            Margin="0 210 0 0" 
             BorderBrush="#BC989393">
         </TextBox>
         <Button
-            x:Name="Confirm"
-            Width="105px"
-            Height="45px"
-            materialDesign:ButtonAssist.CornerRadius="20"
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Background="#FF249AD7"
-            BorderBrush="Transparent"
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Content="Добавить"
-            RenderOptions.EdgeMode="Aliased"
-            Margin="120 320 0 0"
-            Click="Confirm_Click">
+             x:Name="Confirm"
+             Width="105px"
+             Height="50px"
+             FontSize="16"
+             materialDesign:ButtonAssist.CornerRadius="20"
+             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+             Style="{StaticResource MaterialDesignRaisedDarkButton}"
+             Background="#FF249AD7"
+             BorderBrush="Transparent"
+             HorizontalAlignment="Center" 
+             VerticalAlignment="Center" 
+             RenderOptions.EdgeMode="Aliased"
+             Margin="120 340 0 0"
+             Click="Confirm_Click">
+            <materialDesign:PackIcon 
+                 Height="30"
+                 Width="30"
+                 HorizontalAlignment="Center"
+                 Kind="Check"
+                 Foreground="White"/>
         </Button>
         <Button
             x:Name="Return"
             Width="105px"
-            Height="45px"
+            Height="50px"
+            FontSize="16"
             materialDesign:ButtonAssist.CornerRadius="20"
             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
@@ -132,10 +145,15 @@
             BorderBrush="Transparent"
             HorizontalAlignment="Center" 
             VerticalAlignment="Center" 
-            Content="Вернуться"
             RenderOptions.EdgeMode="Aliased"
-            Margin="0 320 120 0"
+            Margin="0 340 120 0"
             Click="Return_Click">
+            <materialDesign:PackIcon 
+                Height="30"
+                Width="30"
+                HorizontalAlignment="Center"
+                Kind="KeyboardBackspace"
+                Foreground="White"/>
         </Button>
     </Grid>
 </Window>
