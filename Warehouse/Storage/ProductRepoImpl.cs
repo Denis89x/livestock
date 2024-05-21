@@ -14,7 +14,7 @@ namespace Warehouse.Storage
 
         public void create(ProductEntity entity)
         {
-            string query = $"INSERT INTO finished_product(title, sort, unit) VALUES(N'{entity.title}', N'{entity.sort}', N'{entity.unit}')";
+            string query = $"INSERT INTO finished_product(title, sort, unit, quantity) VALUES(N'{entity.title}', N'{entity.sort}', N'{entity.unit}', '{entity.quantity}')";
 
             database.executeQuery(query);
         }

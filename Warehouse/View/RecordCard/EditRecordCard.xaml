@@ -57,6 +57,7 @@
             FontSize="17px"
             Padding="12 0 12 0"
             Margin="0 0 180 260"
+            IsEnabled="False"
             materialDesign:HintAssist.Hint="Готовая продукция"
             Style="{StaticResource MaterialDesignOutlinedComboBox}"
             BorderBrush="#BC989393">

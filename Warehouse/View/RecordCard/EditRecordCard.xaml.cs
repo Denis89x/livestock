@@ -30,8 +30,9 @@ namespace Warehouse.View.RecordCard
 
             comboBoxRepo.insertDivisionsIntoComboBox(DivisionCombo);
             comboBoxRepo.insertEmployeesIntoComboBox(EmployeeCombo);
-            comboBoxRepo.insertProductsIntoComboBox(ProductCombo);
 
+            ProductCombo.Items.Add(product);
+            ProductCombo.SelectedIndex = 0;
             QuantityBox.Text = quantity;
             MorningBox.Text = morning;
             MiddayBox.Text = midday;
@@ -49,7 +50,6 @@ namespace Warehouse.View.RecordCard
         {
             ComboBoxEntity division = (ComboBoxEntity)DivisionCombo.SelectedItem;
             ComboBoxEntity employee = (ComboBoxEntity)EmployeeCombo.SelectedItem;
-            ComboBoxEntity product = (ComboBoxEntity)ProductCombo.SelectedItem;
 
             string quantity = QuantityBox.Text;
             string morning = MorningBox.Text;
@@ -58,11 +58,11 @@ namespace Warehouse.View.RecordCard
 
             try
             {
-                if (division != null && employee != null && product != null)
+                if (division != null && employee != null)
                 {
                     string date = DatePicker.SelectedDate.Value.ToString("yyyy-MM-dd");
 
-                    RecordCardEntity recordCard = new RecordCardEntity(recordCardId, product.id, division.id, employee.id, date, quantity, morning, midday, evening);
+                    RecordCardEntity recordCard = new RecordCardEntity(recordCardId, 0, division.id, employee.id, date, quantity, morning, midday, evening);
                     if (recordCardValidation.isRecordCardValid(recordCard))
                     {
                         recordCrud.update(recordCard);

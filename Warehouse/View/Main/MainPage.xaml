@@ -67,7 +67,6 @@
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryCompositionGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="GridName" From="210,18,739,819" To="90,18,739,819" Duration="0:0:0.5"/>
-            
         </Storyboard>
     </Window.Resources>
     <Window.Triggers>
@@ -291,18 +290,70 @@
                 ScrollViewer.VerticalScrollBarVisibility="Hidden">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="StatementId" Binding="{Binding statement_id}" Visibility="Hidden"/>
-                    <DataGridTextColumn Header="Номер ведомости" Width="*" Binding="{Binding statement_number}"/>
-                    <DataGridTextColumn Header="Подразделение" Width="*" Binding="{Binding division_type}"/>
-                    <DataGridTextColumn Header="Группа скота" Width="*" Binding="{Binding cattle_type}"/>
-                    <DataGridTextColumn Header="Сотрудник" Width="*" Binding="{Binding surname}"/>
-                    <DataGridTextColumn Header="Г/П" Width="*" Binding="{Binding product_title}"/>
+                    <DataGridTemplateColumn Width="*">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="Номер &#x0a;ведомости" TextWrapping="Wrap" TextAlignment="Left"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding statement_number}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding date, StringFormat=dd.MM.yyyy}"/>
-                    <DataGridTextColumn Header="Основание" Width="*" Binding="{Binding foundation}"/>
-                    <DataGridTextColumn Header="Наименование" Width="*" Binding="{Binding title}"/>
-                    <DataGridTextColumn Header="Ед.изм" Width="*" Binding="{Binding unit}"/>
-                    <DataGridTextColumn Header="Норма поставки" Width="*" Binding="{Binding supply_rate}"/>
-                    <DataGridTextColumn Header="Кол-во животных" Width="*" Binding="{Binding animal_quantity}"/>
-                    <DataGridTextColumn Header="Кол-во кормов" Width="*" Binding="{Binding feed_quantity}"/>
+                    <DataGridTextColumn Header="Подразделение" Width="150" Binding="{Binding division_type}"/>
+                    <DataGridTemplateColumn Width="*">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="Группа &#x0a;скота" TextWrapping="Wrap" TextAlignment="Left"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding cattle_type}" TextWrapping="Wrap"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Сотрудник" Width="*" Binding="{Binding surname}"/>
+                    <DataGridTextColumn Header="Продукция" Width="*" Binding="{Binding product_title}"/>
+                    <DataGridTemplateColumn Width="*">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="Норма&#x0a;отпуска" TextWrapping="Wrap" TextAlignment="Left"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding supply_rate}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="*">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="Кол-во&#x0a;животных" TextWrapping="Wrap" TextAlignment="Left"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding animal_quantity}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="*">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="Кол-во кормов&#x0a;по норме" TextWrapping="Wrap" TextAlignment="Left"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding feed_quantity}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="150">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="Фактическое кол-во&#x0a;отпущенного корма" TextWrapping="Wrap" TextAlignment="Left"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding actual_rate}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
                 <DataGrid.ContextMenu>
                     <ContextMenu>
@@ -334,20 +385,23 @@
                 ScrollViewer.VerticalScrollBarVisibility="Hidden">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="WaybillId" Binding="{Binding waybill_id}" Visibility="Collapsed"/>
+                    <DataGridTextColumn Header="Номер" Width="*" Binding="{Binding document_number}"/>
+                    <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding date, StringFormat=dd.MM.yyyy}"/>
                     <DataGridTextColumn Header="Контрагент" Width="*" Binding="{Binding title}"/>
                     <DataGridTextColumn Header="Сотрудник" Width="*" Binding="{Binding surname}"/>
-                    <DataGridTextColumn Header="Номер ТТН" Width="*" Binding="{Binding document_number}"/>
+                    <DataGridTextColumn Header="Продукция" Width="*" Binding="{Binding title}"/>
                     <DataGridTextColumn Header="Владелец авто" Width="*" Binding="{Binding car_owner}"/>
-                    <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding date, StringFormat=dd.MM.yyyy}"/>
                     <DataGridTextColumn Header="Авто" Width="*" Binding="{Binding vehicle}"/>
                     <DataGridTextColumn Header="Грузоотправитель" Width="*" Binding="{Binding shipper}"/>
                     <DataGridTextColumn Header="Грузополучатель" Width="*" Binding="{Binding consignor}"/>
                     <DataGridTextColumn Header="Место погрузки" Width="*" Binding="{Binding loading_point}"/>
-                    <DataGridTextColumn Header="Место отгрузки" Width="*" Binding="{Binding unloading_point}"/>
+                    <DataGridTextColumn Header="Место разгрузки" Width="*" Binding="{Binding unloading_point}"/>
                     <DataGridTextColumn Header="Договор" Width="*" Binding="{Binding treaty}"/>
                     <DataGridTextColumn Header="Номер авто" Width="*" Binding="{Binding vehicle_number}"/>
-                    <DataGridTextColumn Header="Путеводительный лист" Width="*" Binding="{Binding guide_list_number}"/>
+                    <DataGridTextColumn Header="Путевой лист" Width="*" Binding="{Binding guide_list_number}"/>
+                    <DataGridTextColumn Header="Водитель" Width="*" Binding="{Binding driver}"/>
                     <DataGridTextColumn Header="Маршрут" Width="*" Binding="{Binding route_number}"/>
+                    <DataGridTextColumn Header="Вид перевозки" Width="*" Binding="{Binding trans_type}"/>
                 </DataGrid.Columns>
                 <DataGrid.ContextMenu>
                     <ContextMenu>
@@ -580,12 +634,6 @@
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="FileDocument" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
                             <TextBlock Text="Реализация" VerticalAlignment="Center" Margin="0 10" FontWeight="Medium" Foreground="White" Opacity="0.7"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem x:Name="WaybillComposition" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="WaybillComposition_PreviewMouseLeftButtonDown">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="FileDocumentEdit" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
-                            <TextBlock Text="Состав ТТН" VerticalAlignment="Center" Margin="0 10" FontWeight="Medium" Foreground="White" Opacity="0.7"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="DeliveryNote" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="DeliveryNote_PreviewMouseLeftButtonDown">

@@ -544,8 +544,7 @@ namespace Warehouse.View.Main
                 EditStatement statement = new EditStatement(
                     Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), Convert.ToString(selectedRow.Row.ItemArray[2]), 
                     Convert.ToString(selectedRow.Row.ItemArray[3]), Convert.ToString(selectedRow.Row.ItemArray[4]), Convert.ToString(selectedRow.Row.ItemArray[5]),
-                    Convert.ToString(selectedRow.Row.ItemArray[6]), Convert.ToString(selectedRow.Row.ItemArray[8]), Convert.ToString(selectedRow.Row.ItemArray[9]),
-                    Convert.ToString(selectedRow.Row.ItemArray[10]), Convert.ToString(selectedRow.Row.ItemArray[11]), Convert.ToString(selectedRow.Row.ItemArray[12]),
+                    Convert.ToString(selectedRow.Row.ItemArray[7]), Convert.ToString(selectedRow.Row.ItemArray[8]), Convert.ToString(selectedRow.Row.ItemArray[10]),
                     StatementGrid);
 
                 statement.ShowDialog();

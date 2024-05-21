@@ -10,6 +10,8 @@
 
         public string unit { get; set; }
 
+        public string quantity {  get; set; }
+
         public ProductEntity() { }
 
         public ProductEntity(long productId, string title, string sort, string unit)
@@ -25,6 +27,7 @@
             this.title = title;
             this.sort = sort;
             this.unit = unit;
+            this.quantity = "0";
         }
     }
 }

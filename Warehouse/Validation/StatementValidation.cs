@@ -14,18 +14,6 @@ namespace Warehouse.Validation
 
         public bool isStatementValid(StatementEntity statement)
         {
-            if (!commonValidation.isStringFieldValid(statement.foundation))
-            {
-                MessageBox.Show("Основание должно содержать хотя бы одну букву, может содержать буквы, цифры и символы, но не должен состоять только из цифр. Длина не должна превышать 35 символов.");
-                return false;
-            }
-
-            if (!commonValidation.isStringFieldValid(statement.title))
-            {
-                MessageBox.Show("Название должно содержать хотя бы одну букву, может содержать буквы, цифры и символы, но не должен состоять только из цифр. Длина не должна превышать 35 символов.");
-                return false;
-            }
-
             if (!commonValidation.isNumberInRange(statement.supplyRate, 100))
             {
                 MessageBox.Show("Норма отпуска должна быть от 1 до 100");
@@ -38,9 +26,9 @@ namespace Warehouse.Validation
                 return false;
             }
 
-            if (!commonValidation.isNumberInRange(statement.feedQuantity, 1000))
+            if (!commonValidation.isNumberInRange(statement.actualRate, 10000))
             {
-                MessageBox.Show("Количество корма должно быть от 1 до 1000");
+                MessageBox.Show("Количество фактически отпущенного корма должно быть от 1 до 10000");
                 return false;
             }
 

@@ -35,7 +35,7 @@ namespace Warehouse.Storage
 
         public void update(RecordCardEntity entity)
         {
-            string query = $"UPDATE record_card SET product_id = '{entity.productId}', division_id = '{entity.divisionId}', employee_id = '{entity.employeeId}', date = '{entity.date}', cow_quantity = '{entity.cowQuantity}', morning = '{entity.morning}', midday = '{entity.midday}', evening = '{entity.evening}' WHERE record_card_id = '{entity.recordCardId}'";
+            string query = $"UPDATE record_card SET division_id = '{entity.divisionId}', employee_id = '{entity.employeeId}', date = '{entity.date}', cow_quantity = '{entity.cowQuantity}', morning = '{entity.morning}', midday = '{entity.midday}', evening = '{entity.evening}' WHERE record_card_id = '{entity.recordCardId}'";
 
             database.executeQuery(query);
         }

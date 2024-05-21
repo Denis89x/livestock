@@ -147,7 +147,7 @@ namespace Warehouse.View.Waybill
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
-            ComboBoxEntity contractor = (ComboBoxEntity)ContractorComboBox.SelectedItem;
+            /*ComboBoxEntity contractor = (ComboBoxEntity)ContractorComboBox.SelectedItem;
             ComboBoxEntity employee = (ComboBoxEntity)EmployeeComboBox.SelectedItem;
 
             string carOwner = CarOwnerBox.Text;
@@ -185,7 +185,7 @@ namespace Warehouse.View.Waybill
             catch (InvalidOperationException)
             {
                 MessageBox.Show("Выберите дату!");
-            }
+            }*/
         }
     }
 }

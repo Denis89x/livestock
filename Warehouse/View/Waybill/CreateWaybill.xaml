@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Warehouse.View.Waybill"
         mc:Ignorable="d"
+        Title="Добавить товарно-транспортную накладную"
         Icon="/Resources/ColorIcon.png"
-        Height="640" Width="650"
+        Height="1000" Width="1200"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -22,15 +22,15 @@
             Height="55px"
             Width="55px"
             HorizontalAlignment="Center"
-            Margin="0 35 0 0"
+            Margin="0 15 0 0"
             Kind="Plus"
             Foreground="White"/>
         <Border 
             Background="White"
             CornerRadius="10" 
             BorderBrush="Black"
-            Height="360px" 
-            Width="300px" 
+            Height="800px" 
+            Width="1060px" 
             Padding="10">
             <Border.Effect>
                 <DropShadowEffect 
@@ -43,21 +43,175 @@
             </Border.Effect>
         </Border>
         <Label 
-            FontSize="18px"
+            FontSize="20px"
             Height="30px"
-            Content="Добавить"
+            Content="Добавить товарно-транспортную накладную"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Margin="0,0,0,270">
+            VerticalAlignment="Top"
+            Margin="0 105 0 0">
         </Label>
+        <GroupBox
+            Width="480"
+            Height="360"
+            Margin="100 280 0 0"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Header="Отправлено"
+            FontSize="17"
+        >
+            <GroupBox.BorderBrush>
+                <SolidColorBrush Color="#BC989393"/>
+            </GroupBox.BorderBrush>
+            <GroupBox.BorderThickness>
+                <Thickness>1</Thickness>
+            </GroupBox.BorderThickness>
+            <GroupBox.Template>
+                <ControlTemplate TargetType="{x:Type GroupBox}">
+                    <Border 
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter Margin="10"/>
+                    </Border>
+                </ControlTemplate>
+            </GroupBox.Template>
+            <GroupBox.Background>
+                <SolidColorBrush Color="Transparent"/>
+            </GroupBox.Background>
+        </GroupBox>
+        <Label 
+            FontSize="18px"
+            FontWeight="Medium"
+            Height="30px"
+            Content="Отправлено"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Foreground="Gray"
+            Margin="110 0 0 30">
+        </Label>
+        <Separator 
+            Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" 
+            Height="1" 
+            Width="460px"
+            HorizontalAlignment="Left"
+            Background="#BC989393" 
+            Margin="110 10 0 0" 
+            Padding="0 0"/>
+        <TextBox
+            x:Name="FatBox"
+            Visibility="Visible"
+            materialDesign:HintAssist.Hint="Жирность"
+            FontSize="17px"
+            Padding="12 10 2 2"
+            Height="45px"
+            Width="110px"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+            Margin="110 80 0 0"
+            BorderBrush="#BC989393"/>
+        <TextBox
+            x:Name="MassBox"
+            Visibility="Visible"
+            materialDesign:HintAssist.Hint="Масса"
+            FontSize="17px"
+            Padding="12 10 2 2"
+            Height="45px"
+            Width="110px"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+            Margin="110 200 0 0"
+            BorderBrush="#BC989393">
+        </TextBox>
+        <TextBox
+            x:Name="AcidityBox"
+            Visibility="Visible"
+            materialDesign:HintAssist.Hint="Плотность"
+            FontSize="17px"
+            Padding="12 10 2 2"
+            Height="45px"
+            Width="110px"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+            Margin="110 320 0 0"
+            BorderBrush="#BC989393">
+        </TextBox>
+        <TextBox
+            x:Name="TemperatureBox"
+            Visibility="Visible"
+            materialDesign:HintAssist.Hint="Температура"
+            FontSize="17px"
+            Padding="12 10 2 2"
+            Height="45px"
+            Width="130px"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+            Margin="110 440 0 0"
+            BorderBrush="#BC989393">
+        </TextBox>
+        <ComboBox
+            x:Name="CleningGroupCombo"
+            Width="190px"
+            Height="45px"
+            FontSize="17px"
+            Padding="12 0 12 0"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Margin="110 560 0 0"
+            materialDesign:HintAssist.Hint="Группа по чистоте"
+            Style="{StaticResource MaterialDesignOutlinedComboBox}"
+            BorderBrush="#BC989393">
+            <ComboBoxItem Content="Чистый груз"/>
+            <ComboBoxItem Content="Грязный груз"/>
+            <ComboBoxItem Content="Опасный груз"/>
+            <ComboBoxItem Content="Очищенный груз"/>
+        </ComboBox>
+
+        <GroupBox
+            Width="480"
+            Height="360"
+            Margin="0 280 100 0"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            Header="Отправлено"
+            FontSize="17"
+        >
+            <GroupBox.BorderBrush>
+                <SolidColorBrush Color="#BC989393"/>
+            </GroupBox.BorderBrush>
+            <GroupBox.BorderThickness>
+                <Thickness>1</Thickness>
+            </GroupBox.BorderThickness>
+            <GroupBox.Template>
+                <ControlTemplate TargetType="{x:Type GroupBox}">
+                    <Border 
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter Margin="10"/>
+                    </Border>
+                </ControlTemplate>
+            </GroupBox.Template>
+            <GroupBox.Background>
+                <SolidColorBrush Color="Transparent"/>
+            </GroupBox.Background>
+            <TextBlock Text="My Content" Foreground="Black"/>
+        </GroupBox>
         
         <ComboBox
             x:Name="ContractorComboBox"
             Width="225px"
-            Height="40px"
-            FontSize="15px"
+            Height="45px"
+            FontSize="17px"
             Padding="12 0 12 0"
-            Margin="0 0 0 160"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Margin="100 160 0 0"
             materialDesign:HintAssist.Hint="Контрагент"
             Style="{StaticResource MaterialDesignOutlinedComboBox}"
             BorderBrush="#BC989393">
@@ -65,11 +219,26 @@
         <ComboBox
             x:Name="EmployeeComboBox"
             Width="225px"
-            Height="40px"
-            FontSize="15px"
+            Height="45px"
+            FontSize="17px"
             Padding="12 0 12 0"
-            Margin="0 0 0 60"
+            Margin="100 230 0 0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
             materialDesign:HintAssist.Hint="Сотрудник"
+            Style="{StaticResource MaterialDesignOutlinedComboBox}"
+            BorderBrush="#BC989393">
+        </ComboBox>
+        <ComboBox
+            x:Name="ProductComboBox"
+            Width="225px"
+            Height="45px"
+            FontSize="17px"
+            Padding="12 0 12 0"
+            Margin="100 300 0 0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            materialDesign:HintAssist.Hint="Продукт"
             Style="{StaticResource MaterialDesignOutlinedComboBox}"
             BorderBrush="#BC989393">
         </ComboBox>
@@ -77,274 +246,230 @@
              x:Name="CarOwnerBox"
              Visibility="Visible"
              materialDesign:HintAssist.Hint="Владелец авто"
-             FontSize="15px"
+             FontSize="17px"
              Padding="12 10 2 2"
-             Height="40px"
+             Height="45px"
              Width="225px"
+             VerticalAlignment="Top"
+             HorizontalAlignment="Left"
              Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-             Margin="0 40 0 0"
+             Margin="100 370 0 0"
              BorderBrush="#BC989393">
         </TextBox>
+
         <DatePicker 
             Visibility="Visible"
             x:Name="DatePicker"
-            FontSize="15px"
+            FontSize="17px"
             Padding="12 0 12 0"
-            Height="40px"
+            Height="45px"
             Width="225px"
-            Margin="0 140 0 0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Margin="0 160 250 0"
             Grid.Row="4"
             Grid.Column="4"
             Style="{StaticResource MaterialDesignOutlinedDatePicker}" 
             BorderBrush="#BC989393"/>
-        
         <TextBox
             x:Name="VehicleBox"
-            Visibility="Collapsed"
+            Visibility="Visible"
             materialDesign:HintAssist.Hint="Авто"
-            FontSize="15px"
+            FontSize="17px"
             Padding="12 10 2 2"
-            Height="40px"
+            Height="45px"
             Width="225px"
+                        VerticalAlignment="Top"
+            HorizontalAlignment="Center"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-             Margin="0 0 0 160"
+            Margin="0 230 250 0"
             BorderBrush="#BC989393">
         </TextBox>
         <TextBox
             x:Name="ShipperBox"
-            Visibility="Collapsed"
+            Visibility="Visible"
             materialDesign:HintAssist.Hint="Отправитель"
-            FontSize="15px"
+            FontSize="17px"
             Padding="12 10 2 2"
-            Height="40px"
+            Height="45px"
             Width="225px"
+                        VerticalAlignment="Top"
+            HorizontalAlignment="Center"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 0 0 60"
+            Margin="0 300 250 60"
             BorderBrush="#BC989393">
         </TextBox>
         <TextBox
             x:Name="ConsignorBox"
-            Visibility="Collapsed"
+            Visibility="Visible"
             materialDesign:HintAssist.Hint="Получатель"
-            FontSize="15px"
+            FontSize="17px"
             Padding="12 10 2 2"
-            Height="40px"
+                        VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Height="45px"
             Width="225px"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 40 0 0"
-            BorderBrush="#BC989393">
-        </TextBox>
-        <TextBox 
-            x:Name="LoadingBox"
-            Visibility="Collapsed"
-            materialDesign:HintAssist.Hint="Место погрузки"
-            FontSize="15px"
-            Padding="12 10 2 2"
-            Height="40px"
-            Width="225px"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 140 0 0"
+            Margin="0 370 250 0"
             BorderBrush="#BC989393">
         </TextBox>
 
-        <TextBox
-            x:Name="UnloadingBox"
-            Visibility="Collapsed"
-            materialDesign:HintAssist.Hint="Место отгрузки"
-            FontSize="15px"
+        <TextBox 
+            x:Name="LoadingBox"
+            Visibility="Visible"
+            materialDesign:HintAssist.Hint="Место погрузки"
+            FontSize="17px"
             Padding="12 10 2 2"
-            Height="40px"
+            Height="45px"
+                        VerticalAlignment="Top"
+            HorizontalAlignment="Center"
             Width="225px"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-             Margin="0 0 0 160"
+            Margin="250 160 0 0"
+            BorderBrush="#BC989393">
+        </TextBox>
+        <TextBox
+            x:Name="UnloadingBox"
+            Visibility="Visible"
+            materialDesign:HintAssist.Hint="Место отгрузки"
+            FontSize="17px"
+                        VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Padding="12 10 2 2"
+            Height="45px"
+            Width="225px"
+            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+             Margin="250 230 0 0"
             BorderBrush="#BC989393">
         </TextBox>
         <TextBox
             x:Name="TreatyBox"
-            Visibility="Collapsed"
+            Visibility="Visible"
             materialDesign:HintAssist.Hint="Договор"
-            FontSize="15px"
+            FontSize="17px"
             Padding="12 10 2 2"
-            Height="40px"
+            Height="45px"
             Width="225px"
+                        VerticalAlignment="Top"
+            HorizontalAlignment="Center"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 0 0 60"
+            Margin="250 300 0 0"
             BorderBrush="#BC989393">
         </TextBox>
         <TextBox
             x:Name="VehicleNumberBox"
-            Visibility="Collapsed"
+            Visibility="Visible"
             materialDesign:HintAssist.Hint="Номер авто"
-            FontSize="15px"
+            FontSize="17px"
             Padding="12 10 2 2"
-            Height="40px"
+            Height="45px"
+                        VerticalAlignment="Top"
+            HorizontalAlignment="Center"
             Width="225px"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 40 0 0"
+            Margin="250 370 0 0"
             BorderBrush="#BC989393">
         </TextBox>
+
         <TextBox 
             x:Name="GuideBox"
-            Visibility="Collapsed"
-            materialDesign:HintAssist.Hint="Номер путеводителя"
-            FontSize="15px"
+            Visibility="Visible"
+            materialDesign:HintAssist.Hint="Номер путевого листа"
+            FontSize="17px"
             Padding="12 10 2 2"
-            Height="40px"
+            Height="45px"
             Width="225px"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 140 0 0"
+            Margin="0 160 100 0"
             BorderBrush="#BC989393">
         </TextBox>
-
         <TextBox
             x:Name="RouteNumber"
-            Visibility="Collapsed"
+            Visibility="Visible"
             materialDesign:HintAssist.Hint="Номер маршрута"
-            FontSize="15px"
+            FontSize="17px"
             Padding="12 10 2 2"
-            Height="40px"
+            Height="45px"
             Width="225px"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 0 0 160"
+            Margin="0 230 100 0"
             BorderBrush="#BC989393">
         </TextBox>
-
-        <Button
-            x:Name="ReturnFirst"
-            Width="105px"
+        <ComboBox
+            x:Name="TransTypeCombo"
+            Width="225px"
             Height="45px"
-            materialDesign:ButtonAssist.CornerRadius="20"
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Background="#FF249AD7"
-            BorderBrush="Transparent"
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Content="Вернуться"
-            RenderOptions.EdgeMode="Aliased"
-            Margin="0 265 120 0"
-            Click="ReturnFirst_Click">
-        </Button>
+            FontSize="17px"
+            Padding="12 0 12 0"
+            Margin="0 300 100 0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right"
+            materialDesign:HintAssist.Hint="Вид перевозки"
+            Style="{StaticResource MaterialDesignOutlinedComboBox}"
+            BorderBrush="#BC989393">
+            <ComboBoxItem Content="Автотранспорт"/>
+        </ComboBox>
+        <TextBox
+            x:Name="DriverCombo"
+            Visibility="Visible"
+            materialDesign:HintAssist.Hint="Водитель"
+            FontSize="17px"
+            Padding="12 10 2 2"
+            Height="45px"
+            Width="225px"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right"
+            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+            Margin="0 370 100 0"
+            BorderBrush="#BC989393">
+        </TextBox>
         <Button
-             x:Name="NextFirst"
-             Width="105px"
-             Height="45px"
+             x:Name="Confirm"
+             Width="225px"
+             Height="50px"
+             FontSize="16"
              materialDesign:ButtonAssist.CornerRadius="20"
              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
              Style="{StaticResource MaterialDesignRaisedDarkButton}"
              Background="#FF249AD7"
              BorderBrush="Transparent"
-             HorizontalAlignment="Center" 
-             VerticalAlignment="Center" 
-             Content="Дальше"
+             HorizontalAlignment="Right" 
+             VerticalAlignment="Bottom" 
              RenderOptions.EdgeMode="Aliased"
-             Margin="120 265 0 0"
-             Click="NextFirst_Click">
-        </Button>
-        
-        <Button
-            x:Name="NextSecond"
-            Width="105px"
-            Height="45px"
-            Visibility="Collapsed"
-            materialDesign:ButtonAssist.CornerRadius="20"
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Background="#FF249AD7"
-            BorderBrush="Transparent"
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Content="Дальше"
-            RenderOptions.EdgeMode="Aliased"
-            Margin="120 265 0 0"
-            Click="NextSecond_Click">
+             Margin="0 0 100 95"
+             Click="Confirm_Click">
+            <materialDesign:PackIcon 
+                 Height="30"
+                 Width="30"
+                 HorizontalAlignment="Center"
+                 Kind="Check"
+                 Foreground="White"/>
         </Button>
         <Button
-            x:Name="PreviewFirst"
-            Width="105px"
-            Height="45px"
-            Visibility="Collapsed"
-            materialDesign:ButtonAssist.CornerRadius="20"
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Background="#FF249AD7"
-            BorderBrush="Transparent"
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Content="Назад"
-            RenderOptions.EdgeMode="Aliased"
-            Margin="0 265 120 0"
-            Click="PreviewFirst_Click">
-        </Button>
-        
-        <Button
-            x:Name="PreviewSecond"
-            Width="105px"
-            Height="45px"
-            Visibility="Collapsed"
-            materialDesign:ButtonAssist.CornerRadius="20"
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Background="#FF249AD7"
-            BorderBrush="Transparent"
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Content="Назад"
-            RenderOptions.EdgeMode="Aliased"
-            Margin="0 265 120 0"
-            Click="PreviewSecond_Click">
-        </Button>
-        <Button
-            x:Name="NextThird"
-            Visibility="Collapsed"
-            Width="105px"
-            Height="45px"
-            materialDesign:ButtonAssist.CornerRadius="20"
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Background="#FF249AD7"
-            BorderBrush="Transparent"
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Content="Дальше"
-            RenderOptions.EdgeMode="Aliased"
-            Margin="120 265 0 0"
-            Click="NextThird_Click">
-        </Button>
-        
-        <Button
-            x:Name="PreviewThird"
-            Width="105px"
-            Height="45px"
-            Visibility="Collapsed"
-            materialDesign:ButtonAssist.CornerRadius="20"
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Background="#FF249AD7"
-            BorderBrush="Transparent"
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Content="Назад"
-            RenderOptions.EdgeMode="Aliased"
-            Margin="0 265 120 0"
-            Click="PreviewThird_Click">
-        </Button>
-        <Button
-            x:Name="Confirm"
-            Visibility="Collapsed"
-            Width="105px"
-            Height="45px"
-            materialDesign:ButtonAssist.CornerRadius="20"
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Background="#FF249AD7"
-            BorderBrush="Transparent"
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Content="Добавить"
-            RenderOptions.EdgeMode="Aliased"
-            Margin="120 265 0 0"
-            Click="Confirm_Click">
+             x:Name="Return"
+             Width="225px"
+             Height="50px"
+             FontSize="16"
+             materialDesign:ButtonAssist.CornerRadius="20"
+             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+             Style="{StaticResource MaterialDesignRaisedDarkButton}"
+             Background="#FF249AD7"
+             BorderBrush="Transparent"
+             HorizontalAlignment="Left" 
+             VerticalAlignment="Bottom" 
+             RenderOptions.EdgeMode="Aliased"
+             Margin="100 0 0 95"
+             Click="Return_Click">
+            <materialDesign:PackIcon 
+                 Height="30"
+                 Width="30"
+                 HorizontalAlignment="Center"
+                 Kind="KeyboardBackspace"
+                 Foreground="White"/>
         </Button>
     </Grid>
 </Window>
