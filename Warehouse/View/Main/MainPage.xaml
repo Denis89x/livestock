@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Учёт животноводческой продукции" 
-        MinHeight="1000"
+        MinHeight="800"
         MinWidth="1200"
         Icon="/Resources/ColorIcon.png"
         Closing="Window_Closing"
@@ -45,7 +45,6 @@
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="StatementGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryNoteGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryCompositionGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="GridName" From="90,18,739,819" To="210,18,739,819" Duration="0:0:0.5"/>
         </Storyboard>
@@ -62,7 +61,6 @@
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="StatementGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryNoteGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryCompositionGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="GridName" From="210,18,739,819" To="90,18,739,819" Duration="0:0:0.5"/>
         </Storyboard>
@@ -443,44 +441,7 @@
                         <MenuItem x:Name="FiltrationDeliveryNote" Header="Фильтрация" Click="FiltrationDeliveryNote_Click"/>
                         <MenuItem x:Name="SearchDeliveryNote" Header="Поиск" Click="SearchDeliveryNote_Click"/>
                         <MenuItem x:Name="CancelDeliveryNote" Header="Отменить" Click="CancelDeliveryNote_Click"/>
-                    </ContextMenu>
-                </DataGrid.ContextMenu>
-            </DataGrid>
-            <DataGrid   
-                Margin="90,60,30,30"
-                Visibility="Collapsed"
-                x:Name="DeliveryCompositionGrid" 
-                AutoGenerateColumns="false"
-                CanUserResizeColumns="False" 
-                CanUserAddRows="False" 
-                CanUserDeleteRows="False" 
-                FontSize="15px"
-                CanUserReorderColumns="False" 
-                SelectionMode="Single" 
-                SelectionUnit="FullRow" 
-                CanUserResizeRows="False" 
-                IsReadOnly="True"
-                Foreground="#FF7643D2"
-                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                ScrollViewer.VerticalScrollBarVisibility="Hidden">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="DeliveryCompositionId" Binding="{Binding delivery_note_composition_id}" Visibility="Hidden"/>
-                    <DataGridTextColumn Header="Номер ведомости" Width="*" Binding="{Binding delivery_note_id}"/>
-                    <DataGridTextColumn Header="Продукт" Width="*" Binding="{Binding title}"/>
-                    <DataGridTextColumn Header="Единица измерения" Width="*" Binding="{Binding unit}"/>
-                    <DataGridTextColumn Header="Запрошено" Width="*" Binding="{Binding requested}"/>
-                    <DataGridTextColumn Header="Реализовано" Width="*" Binding="{Binding released}"/>
-                    <DataGridTextColumn Header="Стоимость" Width="*" Binding="{Binding price}"/>
-                    <DataGridTextColumn Header="Сумма" Width="*" Binding="{Binding amount}"/>
-                </DataGrid.Columns>
-                <DataGrid.ContextMenu>
-                    <ContextMenu>
-                        <MenuItem x:Name="AddDeliveryComposition" Header="Добавить" Click="AddDeliveryComposition_Click"/>
-                        <MenuItem x:Name="EditDeliveryComposition" Header="Редактировать" Click="EditDeliveryComposition_Click"/>
-                        <MenuItem x:Name="DeleteDeliveryComposition" Header="Удалить" Click="DeleteDeliveryComposition_Click"/>
-                        <MenuItem x:Name="FiltrationDeliveryComposition" Header="Фильтрация" Click="FiltrationDeliveryComposition_Click"/>
-                        <MenuItem x:Name="SearchDeliveryComposition" Header="Поиск" Click="SearchDeliveryComposition_Click"/>
-                        <MenuItem x:Name="CancelDeliveryComposition" Header="Отменить" Click="CancelDeliveryComposition_Click"/>
+                        <MenuItem x:Name="ViewDeliveryNote" Header="Открыть полностью" Click="ViewDeliveryNote_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
@@ -592,12 +553,6 @@
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="TextBoxOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
                             <TextBlock Text="Требования" VerticalAlignment="Center" Margin="0 10" FontWeight="Medium" Foreground="White" Opacity="0.7"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem x:Name="DeliveryNoteComposition" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="DeliveryNoteComposition_PreviewMouseLeftButtonDown">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="TextBoxPlusOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
-                            <TextBlock Text="Состав требования" VerticalAlignment="Center" Margin="0 10" FontWeight="Medium" Foreground="White" Opacity="0.7"/>
                         </StackPanel>
                     </ListViewItem>
                     <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Height="2" Background="White" Margin="0 0" Padding="0 0"/>

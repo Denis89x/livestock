@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Warehouse.View.DeliveryNote"
         mc:Ignorable="d"
-        Height="600" Width="650"
+        Height="900" Width="950"
+        Title="Добавить требования накладная"
         Icon="/Resources/ColorIcon.png"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -19,18 +20,18 @@
         WindowStartupLocation="CenterScreen">
     <Grid>
         <materialDesign:PackIcon 
-            Height="55px"
-            Width="55px"
+            Height="35px"
+            Width="35px"
             HorizontalAlignment="Center"
-            Margin="0 25 0 0"
+            Margin="0 10 0 0"
             Kind="Plus"
             Foreground="White"/>
         <Border
             Background="White"
             CornerRadius="10" 
             BorderBrush="Black"
-            Height="320px" 
-            Width="300px" 
+            Height="760px" 
+            Width="800px" 
             Padding="10">
             <Border.Effect>
                 <DropShadowEffect 
@@ -43,20 +44,22 @@
             </Border.Effect>
         </Border>
         <Label 
-            FontSize="18px"
+            FontSize="20px"
             Height="30px"
-            Content="Добавить"
+            Content="Добавить требования накладная"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Margin="0,160,0,0">
+            Margin="0,70,0,0">
         </Label>
         <ComboBox
             x:Name="DivisionComboBox"
             Width="225px"
-            Height="40px"
-            FontSize="15px"
+            Height="45px"
+            FontSize="17px"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
             Padding="12 0 12 0"
-            Margin="0 0 0 120"
+            Margin="100 130 0 0"
             materialDesign:HintAssist.Hint="Подразделение"
             Style="{StaticResource MaterialDesignOutlinedComboBox}"
             BorderBrush="#BC989393">
@@ -64,11 +67,13 @@
         <DatePicker 
              Visibility="Visible"
              x:Name="DatePicker"
-             FontSize="15px"
+             FontSize="17px"
              Padding="12 0 12 0"
-             Height="40px"
+             Height="45px"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Top"
              Width="225px"
-             Margin="0 0 0 20"
+             Margin="0 130 0 20"
              Grid.Row="4"
              Grid.Column="4"
              Style="{StaticResource MaterialDesignOutlinedDatePicker}" 
@@ -76,45 +81,96 @@
         <TextBox
             x:Name="AssignmentBox"
             materialDesign:HintAssist.Hint="Назначение"
-            FontSize="15px"
+            FontSize="17px"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
             Padding="12 10 2 2"
-            Height="40px"
+            Height="45px"
             Width="225px"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 80 0 0" 
+            Margin="0 130 100 0" 
             BorderBrush="#BC989393">
         </TextBox>
+
+        <DataGrid   
+            Margin="0 50 0 0" 
+            Height="520px"
+            Width="735px"
+            Visibility="Visible"
+            x:Name="ContractorGrid" 
+            AutoGenerateColumns="false"
+            CanUserResizeColumns="True" 
+            CanUserAddRows="False" 
+            CanUserDeleteRows="False" 
+            CanUserReorderColumns="False" 
+            SelectionMode="Single" 
+            SelectionUnit="FullRow" 
+            CanUserResizeRows="True" 
+            IsReadOnly="True"
+            FontSize="15px"
+            Foreground="#FF7643D2"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Продукция" Width="*" Binding="{Binding productId}" Visibility="Collapsed"/>
+                <DataGridTextColumn Header="Продукция" Width="*" Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Запрошено" Width="*" Binding="{Binding requested}"/>
+                <DataGridTextColumn Header="Реализовано" Width="*" Binding="{Binding released}"/>
+                <DataGridTextColumn Header="Стоимость" Width="*" Binding="{Binding price}"/>
+                <DataGridTextColumn Header="Сумма" Width="*" Binding="{Binding amount}"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="AddContractor" Header="Добавить" Click="AddContractor_Click"/>
+                    <MenuItem x:Name="EditContractor" Header="Редактировать" Click="EditContractor_Click"/>
+                    <MenuItem x:Name="DeleteContractor" Header="Удалить" Click="DeleteContractor_Click"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+
         <Button
-            x:Name="Confirm"
-            Width="105px"
-            Height="45px"
-            materialDesign:ButtonAssist.CornerRadius="20"
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Background="#FF249AD7"
-            BorderBrush="Transparent"
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Content="Добавить"
-            RenderOptions.EdgeMode="Aliased"
-            Margin="120 230 0 0"
-            Click="Confirm_Click">
+             x:Name="Confirm"
+             Width="225px"
+             Height="50px"
+             FontSize="16"
+             materialDesign:ButtonAssist.CornerRadius="20"
+             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+             Style="{StaticResource MaterialDesignRaisedDarkButton}"
+             Background="#FF249AD7"
+             BorderBrush="Transparent"
+             HorizontalAlignment="Right" 
+             VerticalAlignment="Bottom" 
+             RenderOptions.EdgeMode="Aliased"
+             Margin="0 0 100 70"
+             Click="Confirm_Click">
+            <materialDesign:PackIcon 
+                 Height="30"
+                 Width="30"
+                 HorizontalAlignment="Center"
+                 Kind="Check"
+                 Foreground="White"/>
         </Button>
         <Button
-            x:Name="Return"
-            Width="105px"
-            Height="45px"
-            materialDesign:ButtonAssist.CornerRadius="20"
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Background="#FF249AD7"
-            BorderBrush="Transparent"
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Content="Вернуться"
-            RenderOptions.EdgeMode="Aliased"
-            Margin="0 230 120 0"
-            Click="Return_Click">
+             x:Name="Return"
+             Width="225px"
+             Height="50px"
+             FontSize="16"
+             materialDesign:ButtonAssist.CornerRadius="20"
+             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+             Style="{StaticResource MaterialDesignRaisedDarkButton}"
+             Background="#FF249AD7"
+             BorderBrush="Transparent"
+             HorizontalAlignment="Left" 
+             VerticalAlignment="Bottom" 
+             RenderOptions.EdgeMode="Aliased"
+             Margin="100 0 0 70"
+             Click="Return_Click">
+            <materialDesign:PackIcon 
+                 Height="30"
+                 Width="30"
+                 HorizontalAlignment="Center"
+                 Kind="KeyboardBackspace"
+                 Foreground="White"/>
         </Button>
     </Grid>
 </Window>

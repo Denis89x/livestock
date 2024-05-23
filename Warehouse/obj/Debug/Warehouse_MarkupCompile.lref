@@ -7,7 +7,6 @@ FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Contractor\CreateContr
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNoteComposition\CreateDeliveryComposition.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNoteComposition\EditDeliveryComposition.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNote\CreateDelivery.xaml;;
-FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNote\EditDelivery.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Division\AddDivision.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Division\EditDivision.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\DeliveryNoteView.xaml;;
@@ -24,4 +23,7 @@ FD:\Учеба\Диплом\warehouse-main\Warehouse\View\RecordCard\EditRecordC
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Statement\CreateStatement.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Statement\EditStatement.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Waybill\ViewWaybill.xaml;;
+FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNote\DeliveryView.xaml;;
+FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNote\AddDeliveryCom.xaml;;
+FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNote\EditDeliveryComp.xaml;;
 

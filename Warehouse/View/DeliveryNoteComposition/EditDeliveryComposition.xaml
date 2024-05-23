@@ -5,122 +5,76 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Warehouse.View.DeliveryNoteComposition"
         mc:Ignorable="d"
-                Icon="/Resources/ColorIcon.png"
-        Height="640" Width="650"
+        Title="Редактировать"
+        Icon="/Resources/ColorIcon.png"
+        Height="440" Width="340"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
-        Background="#FF22A4E8"
-        ResizeMode="CanMinimize"
+        Background="White"
+        ResizeMode="NoResize"
         FontFamily="{DynamicResource MaterialDesignFont}"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <materialDesign:PackIcon 
-            Height="55px"
-            Width="55px"
-            HorizontalAlignment="Center"
-            Margin="0 35 0 0"
-            Kind="Pencil"
-            Foreground="White"/>
-        <Border 
-            Background="White"
-            CornerRadius="10" 
-            BorderBrush="Black"
-            Height="360px" 
-            Width="300px" 
-            Padding="10">
-            <Border.Effect>
-                <DropShadowEffect 
-                    ShadowDepth="0" 
-                    Color="Black" 
-                    Opacity="0.3" 
-                    BlurRadius="15" 
-                    Direction="360" 
-                    RenderingBias="Quality"/>
-            </Border.Effect>
-        </Border>
         <Label 
-            FontSize="18px"
+            FontSize="20px"
             Height="30px"
             Content="Редактировать"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Margin="0,0,0,270">
+            VerticalAlignment="Top"
+            Margin="0 20 0 0">
         </Label>
 
         <ComboBox
-            x:Name="DeliveryCombo"
-            Width="225px"
-            Height="40px"
-            FontSize="15px"
-            Padding="12 0 12 0"
-            Margin="0 0 0 160"
-            materialDesign:HintAssist.Hint="Ведомость"
-            Style="{StaticResource MaterialDesignOutlinedComboBox}"
-            BorderBrush="#BC989393">
-        </ComboBox>
-        <ComboBox
             x:Name="ProductCombo"
             Width="225px"
-            Height="40px"
-            FontSize="15px"
+            Height="45px"
+            FontSize="17px"
             Padding="12 0 12 0"
-            Margin="0 0 0 60"
+            Margin="0 0 0 200"
+            IsEnabled="False"
+            Visibility="Visible"
             materialDesign:HintAssist.Hint="Готовая продукция"
             Style="{StaticResource MaterialDesignOutlinedComboBox}"
             BorderBrush="#BC989393">
-        </ComboBox>
-        <ComboBox
-             x:Name="UnitCombo"
-             Width="225px"
-             Height="40px"
-             FontSize="15px"
-             Padding="12 0 12 0"
-             Margin="0 40 0 0"
-             materialDesign:HintAssist.Hint="Единица измерения"
-             Style="{StaticResource MaterialDesignOutlinedComboBox}"
-             BorderBrush="#BC989393">
-            <ComboBoxItem Content="Литр"/>
-            <ComboBoxItem Content="Килограмм"/>
         </ComboBox>
         <TextBox
              x:Name="RequestedBox"
              Visibility="Visible"
              materialDesign:HintAssist.Hint="Запрошено (кол-во)"
-             FontSize="15px"
+             FontSize="17px"
              Padding="12 10 2 2"
-             Height="40px"
+             Height="45px"
              Width="225px"
              Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-             Margin="0 140 0 0"
+             Margin="0 0 0 80"
              BorderBrush="#BC989393">
         </TextBox>
-
         <TextBox
              x:Name="ReleasedBox"
              materialDesign:HintAssist.Hint="Отпущено (кол-во)"
-             Visibility="Collapsed"
-             FontSize="15px"
+             Visibility="Visible"
+             FontSize="17px"
              Padding="12 10 2 2"
-             Height="40px"
+             Height="45px"
              Width="225px"
              Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-             Margin="0 0 0 160"
+             Margin="0 40 0 0"
              BorderBrush="#BC989393">
         </TextBox>
         <TextBox
             x:Name="PriceBox"
-            Visibility="Collapsed"
-            materialDesign:HintAssist.Hint="Цена"
-            FontSize="15px"
+            Visibility="Visible"
+            materialDesign:HintAssist.Hint="Стоимость"
+            FontSize="17px"
             Padding="12 10 2 2"
-            Height="40px"
+            Height="45px"
             Width="225px"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 0 0 60"
+            Margin="0 160 0 0"
             BorderBrush="#BC989393">
         </TextBox>
 
@@ -134,62 +88,38 @@
             Background="#FF249AD7"
             BorderBrush="Transparent"
             HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Content="Вернуться"
+            VerticalAlignment="Bottom" 
             RenderOptions.EdgeMode="Aliased"
-            Margin="0 265 120 0"
+            Margin="0 0 120 30"
             Click="Close_Click">
-        </Button>
-        <Button
-            x:Name="NextFirst"
-            Width="105px"
-            Height="45px"
-            materialDesign:ButtonAssist.CornerRadius="20"
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Background="#FF249AD7"
-            BorderBrush="Transparent"
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Content="Дальше"
-            RenderOptions.EdgeMode="Aliased"
-            Margin="120 265 0 0"
-            Click="NextFirst_Click">
-        </Button>
-
-        <Button
-            x:Name="ReturnFirst"
-            Width="105px"
-            Height="45px"
-            Visibility="Collapsed"
-            materialDesign:ButtonAssist.CornerRadius="20"
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Background="#FF249AD7"
-            BorderBrush="Transparent"
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Content="Вернуться"
-            RenderOptions.EdgeMode="Aliased"
-            Margin="0 265 120 0"
-            Click="ReturnFirst_Click">
+            <materialDesign:PackIcon 
+                Height="30"
+                Width="30"
+                HorizontalAlignment="Center"
+                Kind="KeyboardBackspace"
+                Foreground="White"/>
         </Button>
         <Button
             x:Name="Confirm"
             Width="105px"
             Height="45px"
-            Visibility="Collapsed"
+            Visibility="Visible"
             materialDesign:ButtonAssist.CornerRadius="20"
             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Background="#FF249AD7"
             BorderBrush="Transparent"
             HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Content="Сохранить"
+            VerticalAlignment="Bottom" 
             RenderOptions.EdgeMode="Aliased"
-            Margin="120 265 0 0"
+            Margin="120 0 0 30"
             Click="Confirm_Click">
+            <materialDesign:PackIcon 
+                Height="30"
+                Width="30"
+                HorizontalAlignment="Center"
+                Kind="Check"
+                Foreground="White"/>
         </Button>
     </Grid>
 </Window>

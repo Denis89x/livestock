@@ -22,6 +22,7 @@ namespace Warehouse.View.Main
     public partial class MainPage : Window
     {
         private GridUtility gridUtility;
+        private WaybillDelete waybillDelete;
 
         private CrudRepo<CattleEntity> cattleCrud;
         private CrudRepo<ProductEntity> productCrud;
@@ -64,7 +65,6 @@ namespace Warehouse.View.Main
                 StatementGrid.ContextMenu.Visibility = Visibility.Collapsed;
                 WaybillGrid.ContextMenu.Visibility = Visibility.Collapsed;
                 DeliveryNoteGrid.ContextMenu.Visibility = Visibility.Collapsed;
-                DeliveryCompositionGrid.ContextMenu.Visibility = Visibility.Collapsed;
                 RecordCardGrid.ContextMenu.Visibility = Visibility.Collapsed;
             }
 
@@ -118,7 +118,6 @@ namespace Warehouse.View.Main
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
-            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
@@ -137,7 +136,6 @@ namespace Warehouse.View.Main
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
-            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
@@ -156,7 +154,6 @@ namespace Warehouse.View.Main
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
-            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
@@ -175,7 +172,6 @@ namespace Warehouse.View.Main
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
-            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
@@ -194,7 +190,6 @@ namespace Warehouse.View.Main
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
-            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
@@ -213,7 +208,6 @@ namespace Warehouse.View.Main
             ProductGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
-            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
@@ -232,7 +226,6 @@ namespace Warehouse.View.Main
             ProductGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
-            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
@@ -251,24 +244,6 @@ namespace Warehouse.View.Main
             ProductGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
-            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
-            RecordCardGrid.Visibility = Visibility.Collapsed;
-        }
-
-        private void DeliveryNoteComposition_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            deliveryCompositionCrud.fetchToGrid(DeliveryCompositionGrid);
-
-            DeliveryCompositionGrid.Visibility = Visibility.Visible;
-
-            DeliveryNoteGrid.Visibility = Visibility.Collapsed;
-            ContractorGrid.Visibility = Visibility.Collapsed;
-            EmployeeGrid.Visibility = Visibility.Collapsed;
-            DivisionGrid.Visibility = Visibility.Collapsed;
-            CattleGrid.Visibility = Visibility.Collapsed;
-            ProductGrid.Visibility = Visibility.Collapsed;
-            StatementGrid.Visibility = Visibility.Collapsed;
-            WaybillGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
@@ -280,7 +255,6 @@ namespace Warehouse.View.Main
 
             RecordCardGrid.Visibility = Visibility.Visible;
 
-            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
             ContractorGrid.Visibility = Visibility.Collapsed;
             EmployeeGrid.Visibility = Visibility.Collapsed;
@@ -570,12 +544,12 @@ namespace Warehouse.View.Main
 
             if (selectedRow != null)
             {
-                
-                    long waybillId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
+                long waybillId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
-                    waybillCrud.delete(waybillId);
-                    waybillCrud.fetchToGrid(WaybillGrid);
-               
+                waybillDelete = new WaybillDelete(waybillId);
+
+                waybillDelete.deleteWaybill();
+                waybillCrud.fetchToGrid(WaybillGrid);
             }
             else
             {
@@ -591,82 +565,12 @@ namespace Warehouse.View.Main
 
         private void EditDeliveryNote_Click(object sender, RoutedEventArgs e)
         {
-            var selectedRow = DeliveryNoteGrid.SelectedItem as DataRowView;
-
-            if (selectedRow != null)
-            {
-                EditDelivery delivery = new EditDelivery(
-                    Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), Convert.ToString(selectedRow.Row.ItemArray[2]),
-                    Convert.ToString(selectedRow.Row.ItemArray[3]), DeliveryNoteGrid);
-
-                delivery.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Не выбрана строка для редактирования", "Ошибка", MessageBoxButton.OK);
-            }
+            
         }
 
         private void DeleteDeliveryNote_Click(object sender, RoutedEventArgs e)
         {
-            var selectedRow = DeliveryNoteGrid.SelectedItem as DataRowView;
-
-            if (selectedRow != null)
-            {
-                
-                    long deliveryId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
-
-                    deliveryNoteCrud.delete(deliveryId);
-                    deliveryNoteCrud.fetchToGrid(DeliveryNoteGrid);
-            }
-            else
-            {
-                MessageBox.Show("Выберите поле для удаления!");
-            }
-        }
-
-        private void AddDeliveryComposition_Click(object sender, RoutedEventArgs e)
-        {
-            CreateDeliveryComposition deliveryComposition = new CreateDeliveryComposition(DeliveryCompositionGrid);
-            deliveryComposition.ShowDialog();
-        }
-
-        private void EditDeliveryComposition_Click(object sender, RoutedEventArgs e)
-        {
-            var selectedRow = DeliveryCompositionGrid.SelectedItem as DataRowView;
-
-            if (selectedRow != null)
-            {
-                EditDeliveryComposition delivery = new EditDeliveryComposition(
-                    Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), Convert.ToString(selectedRow.Row.ItemArray[2]),
-                    Convert.ToString(selectedRow.Row.ItemArray[3]), Convert.ToString(selectedRow.Row.ItemArray[4]), Convert.ToString(selectedRow.Row.ItemArray[5]),
-                    Convert.ToString(selectedRow.Row.ItemArray[6]), DeliveryCompositionGrid);
-
-                delivery.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Не выбрана строка для редактирования", "Ошибка", MessageBoxButton.OK);
-            }
-        }
-
-        private void DeleteDeliveryComposition_Click(object sender, RoutedEventArgs e)
-        {
-            var selectedRow = DeliveryCompositionGrid.SelectedItem as DataRowView;
-
-            if (selectedRow != null)
-            {
-                
-                    long deliveryCompositionId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
-
-                    deliveryCompositionCrud.delete(deliveryCompositionId);
-                    deliveryCompositionCrud.fetchToGrid(DeliveryCompositionGrid);
-                
-            }
-            else
-            {
-                MessageBox.Show("Выберите поле для удаления!");
-            }
+            // TODO
         }
 
         private void AddRecordCard_Click(object sender, RoutedEventArgs e)
@@ -701,12 +605,10 @@ namespace Warehouse.View.Main
 
             if (selectedRow != null)
             {
-                
-                    long recordCardId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
+                long recordCardId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
 
-                    recordCardCrud.delete(recordCardId);
-                    recordCardCrud.fetchToGrid(RecordCardGrid);
-                
+                recordCardCrud.delete(recordCardId);
+                recordCardCrud.fetchToGrid(RecordCardGrid);
             }
             else
             {
@@ -862,21 +764,6 @@ namespace Warehouse.View.Main
             deliveryNoteCrud.fetchToGrid(DeliveryNoteGrid);
         }
 
-        private void FiltrationDeliveryComposition_Click(object sender, RoutedEventArgs e)
-        {
-            filtrateGrid(DeliveryCompositionGrid);
-        }
-
-        private void SearchDeliveryComposition_Click(object sender, RoutedEventArgs e)
-        {
-            searchGrid(DeliveryCompositionGrid);
-        }
-
-        private void CancelDeliveryComposition_Click(object sender, RoutedEventArgs e)
-        {
-            deliveryCompositionCrud.fetchToGrid(DeliveryCompositionGrid);
-        }
-
         private void FiltrationRecordCard_Click(object sender, RoutedEventArgs e)
         {
             filtrateGrid(RecordCardGrid);
@@ -900,6 +787,21 @@ namespace Warehouse.View.Main
             {
                 ViewWaybill waybill = new ViewWaybill(Convert.ToInt64(selectedRow.Row.ItemArray[0]));
                 waybill.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Не выбрана строка!", "Ошибка", MessageBoxButton.OK);
+            }
+        }
+
+        private void ViewDeliveryNote_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = DeliveryNoteGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                DeliveryView delivery = new DeliveryView(Convert.ToInt64(selectedRow.Row.ItemArray[0]));
+                delivery.ShowDialog();
             }
             else
             {

@@ -68,6 +68,7 @@ namespace Warehouse.View.Waybill
 
                     if (waybillValidation.isWaybillValid(waybill))
                     {
+                        database = new Database();
                         using (SqlConnection connection = database.getSqlConnection())
                         {
                             database.checkConnection();
@@ -76,7 +77,7 @@ namespace Warehouse.View.Waybill
                             try
                             {
                                 long waybillId = createWaybillAndReturnId(waybill, transaction);
-      
+
                                 string fat = FatBox.Text;
                                 string mass = MassBox.Text;
                                 string acidity = AcidityBox.Text;
@@ -94,9 +95,7 @@ namespace Warehouse.View.Waybill
 
                                 if (waybillCompositionValidation.isWaybillCompositionValid(waybillComposition))
                                 {
-                  
                                     createWaybillComposition(waybillComposition, transaction);
-                     
                                     transaction.Commit();
                                     waybillCrud.fetchToGrid(dataGrid);
                                     database.checkConnection();
@@ -146,10 +145,16 @@ namespace Warehouse.View.Waybill
 
         private void createWaybillComposition(WaybillCompositionEntity entity, SqlTransaction transaction)
         {
-            string query = $"INSERT INTO waybill_composition(waybill_id, waybill_type, fat, mass, acidity, temperature, cleaning_group, density, packaging_type, brutto, tara, netto, grade, quantity) VALUES('{entity.waybillId}', N'{entity.waybillType}', N'{entity.fat}', N'{entity.mass}', N'{entity.acidity}', N'{entity.temperature}', N'{entity.cleaningGroup}', N'{entity.density}', N'{entity.packagingType}', N'{entity.brutto}', N'{entity.tara}', N'{entity.netto}', N'{entity.grade}', '{entity.quantity}')";
-            SqlCommand command = new SqlCommand(query, transaction.Connection, transaction);
+            try
+            {
+                string query = $"INSERT INTO waybill_composition(waybill_id, waybill_type, fat, mass, acidity, temperature, cleaning_group, density, packaging_type, brutto, tara, netto, grade, quantity) VALUES('{entity.waybillId}', N'{entity.waybillType}', N'{entity.fat}', N'{entity.mass}', N'{entity.acidity}', N'{entity.temperature}', N'{entity.cleaningGroup}', N'{entity.density}', N'{entity.packagingType}', N'{entity.brutto}', N'{entity.tara}', N'{entity.netto}', N'{entity.grade}', '{entity.quantity}')";
+                SqlCommand command = new SqlCommand(query, transaction.Connection, transaction);
 
-            command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
+            } catch (SqlException ex)
+            {
+                MessageBox.Show("Введите допустимое количество продукта!");
+            }
         }
     }
 }

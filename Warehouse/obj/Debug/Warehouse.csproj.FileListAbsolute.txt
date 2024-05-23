@@ -191,3 +191,9 @@ D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocumen
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\DeliveryNoteView.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Waybill\ViewWaybill.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\Waybill\ViewWaybill.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNote\DeliveryView.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNote\DeliveryView.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNote\AddDeliveryCom.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNote\AddDeliveryCom.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNote\EditDeliveryComp.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNote\EditDeliveryComp.baml

@@ -10,7 +10,7 @@ namespace Warehouse.Entity
 
         public long productId {  get; set; }
 
-        public string unit {  get; set; }
+        public string name { get; set; }
 
         public string requested {  get; set; }
 
@@ -20,23 +20,44 @@ namespace Warehouse.Entity
 
         public string amount { get; set; }
 
-        public DeliveryCompositionEntity(long deliveryId, long productId, string unit, string requested, string released, string price)
+        public DeliveryCompositionEntity()
+        {
+        }
+
+        public DeliveryCompositionEntity(long deliveryId, long productId, string requested, string released, string price)
         {
             this.deliveryId = deliveryId;
             this.productId = productId;
-            this.unit = unit;
             this.requested = requested;
             this.released = released;
             this.price = price;
             this.amount = (Convert.ToInt64(price) * Convert.ToInt64(requested)).ToString();
         }
 
-        public DeliveryCompositionEntity(long deliveryCompositionId, long deliveryId, long productId, string unit, string requested, string released, string price)
+        public DeliveryCompositionEntity(long deliveryCompositionId, string requested, string released, string price)
+        {
+            this.deliveryCompositionId = deliveryCompositionId;
+            this.requested = requested;
+            this.released = released;
+            this.price = price;
+            this.amount = (Convert.ToInt64(price) * Convert.ToInt64(requested)).ToString();
+        }
+
+        public DeliveryCompositionEntity(long productId, string name, string requested, string released, string price)
+        {
+            this.productId = productId;
+            this.requested = requested;
+            this.name = name;
+            this.released = released;
+            this.price = price;
+            this.amount = (Convert.ToInt64(price) * Convert.ToInt64(requested)).ToString();
+        }
+
+        public DeliveryCompositionEntity(long deliveryCompositionId, long deliveryId, long productId, string requested, string released, string price)
         {
             this.deliveryCompositionId = deliveryCompositionId;
             this.deliveryId = deliveryId;
             this.productId = productId;
-            this.unit = unit;
             this.requested = requested;
             this.released = released;
             this.price = price;

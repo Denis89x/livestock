@@ -123,6 +123,7 @@
     <Compile Include="Service\RecordCardOutput.cs" />
     <Compile Include="Service\StatementOutput.cs" />
     <Compile Include="Service\WaybillOutput.cs" />
+    <Compile Include="Storage\WaybillDelete.cs" />
     <Compile Include="Validation\RecordCardValidation.cs" />
     <Compile Include="Validation\WaybillCompositionValidation.cs" />
     <Compile Include="Entity\WaybillEntity.cs" />
@@ -178,11 +179,20 @@
     <Compile Include="View\DeliveryNoteComposition\EditDeliveryComposition.xaml.cs">
       <DependentUpon>EditDeliveryComposition.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DeliveryNote\AddDeliveryCom.xaml.cs">
+      <DependentUpon>AddDeliveryCom.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DeliveryNote\CreateDelivery.xaml.cs">
       <DependentUpon>CreateDelivery.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DeliveryNote\DeliveryView.xaml.cs">
+      <DependentUpon>DeliveryView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DeliveryNote\EditDelivery.xaml.cs">
       <DependentUpon>EditDelivery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DeliveryNote\EditDeliveryComp.xaml.cs">
+      <DependentUpon>EditDeliveryComp.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Division\AddDivision.xaml.cs">
       <DependentUpon>AddDivision.xaml</DependentUpon>
@@ -280,11 +290,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\DeliveryNote\AddDeliveryCom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DeliveryNote\CreateDelivery.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\DeliveryNote\DeliveryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DeliveryNote\EditDelivery.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DeliveryNote\EditDeliveryComp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
