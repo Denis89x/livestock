@@ -16,7 +16,6 @@ using Warehouse.View.Product;
 using Warehouse.View.RecordCard;
 using Warehouse.View.Statement;
 using Warehouse.View.Waybill;
-using Warehouse.View.WaybillComposition;
 
 namespace Warehouse.View.Main
 {
@@ -33,7 +32,6 @@ namespace Warehouse.View.Main
         private CrudRepo<ContractorEntity> contractorCrud;
         private CrudRepo<RecordCardEntity> recordCardCrud;
         private CrudRepo<DeliveryNoteEntity> deliveryNoteCrud;
-        private CrudRepo<WaybillCompositionEntity> waybillCompositionCrud;
         private CrudRepo<DeliveryCompositionEntity> deliveryCompositionCrud;
 
         public MainPage(string userRole)
@@ -51,7 +49,6 @@ namespace Warehouse.View.Main
             contractorCrud = new ContractorRepoImpl();
             recordCardCrud = new RecordCardRepoImpl();
             deliveryNoteCrud = new DeliveryNoteRepoImpl();
-            waybillCompositionCrud = new WaybillCompositionRepoImpl();
             deliveryCompositionCrud = new DeliveryCompositionRepoImpl();
 
             if (userRole.Equals("ROLE_ADMIN"))
@@ -66,7 +63,6 @@ namespace Warehouse.View.Main
                 ProductGrid.ContextMenu.Visibility = Visibility.Collapsed;
                 StatementGrid.ContextMenu.Visibility = Visibility.Collapsed;
                 WaybillGrid.ContextMenu.Visibility = Visibility.Collapsed;
-                WaybillCompositionGrid.ContextMenu.Visibility = Visibility.Collapsed;
                 DeliveryNoteGrid.ContextMenu.Visibility = Visibility.Collapsed;
                 DeliveryCompositionGrid.ContextMenu.Visibility = Visibility.Collapsed;
                 RecordCardGrid.ContextMenu.Visibility = Visibility.Collapsed;
@@ -121,7 +117,6 @@ namespace Warehouse.View.Main
             ProductGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
-            WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
             DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
@@ -141,7 +136,6 @@ namespace Warehouse.View.Main
             ProductGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
-            WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
             DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
@@ -161,7 +155,6 @@ namespace Warehouse.View.Main
             ProductGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
-            WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
             DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
@@ -181,7 +174,6 @@ namespace Warehouse.View.Main
             ProductGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
-            WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
             DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
@@ -201,7 +193,6 @@ namespace Warehouse.View.Main
             CattleGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
-            WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
             DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
@@ -221,7 +212,6 @@ namespace Warehouse.View.Main
             CattleGrid.Visibility = Visibility.Collapsed;
             ProductGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
-            WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
             DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
@@ -241,25 +231,6 @@ namespace Warehouse.View.Main
             CattleGrid.Visibility = Visibility.Collapsed;
             ProductGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
-            WaybillCompositionGrid.Visibility = Visibility.Collapsed;
-            DeliveryNoteGrid.Visibility = Visibility.Collapsed;
-            DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
-            RecordCardGrid.Visibility = Visibility.Collapsed;
-        }
-
-        private void WaybillComposition_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            waybillCompositionCrud.fetchToGrid(WaybillCompositionGrid);
-
-            WaybillCompositionGrid.Visibility = Visibility.Visible;
-
-            ContractorGrid.Visibility = Visibility.Collapsed;
-            EmployeeGrid.Visibility = Visibility.Collapsed;
-            DivisionGrid.Visibility = Visibility.Collapsed;
-            CattleGrid.Visibility = Visibility.Collapsed;
-            ProductGrid.Visibility = Visibility.Collapsed;
-            StatementGrid.Visibility = Visibility.Collapsed;
-            WaybillGrid.Visibility = Visibility.Collapsed;
             DeliveryNoteGrid.Visibility = Visibility.Collapsed;
             DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
@@ -280,7 +251,6 @@ namespace Warehouse.View.Main
             ProductGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
-            WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             DeliveryCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
@@ -299,7 +269,6 @@ namespace Warehouse.View.Main
             ProductGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
-            WaybillCompositionGrid.Visibility = Visibility.Collapsed;
             RecordCardGrid.Visibility = Visibility.Collapsed;
         }
 
@@ -320,7 +289,6 @@ namespace Warehouse.View.Main
             ProductGrid.Visibility = Visibility.Collapsed;
             StatementGrid.Visibility = Visibility.Collapsed;
             WaybillGrid.Visibility = Visibility.Collapsed;
-            WaybillCompositionGrid.Visibility = Visibility.Collapsed;
         }
 
         private void DocumentOutput_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -586,12 +554,7 @@ namespace Warehouse.View.Main
 
             if (selectedRow != null)
             {
-                EditWaybill waybill = new EditWaybill(
-                    Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), Convert.ToString(selectedRow.Row.ItemArray[2]),
-                    Convert.ToString(selectedRow.Row.ItemArray[4]), Convert.ToString(selectedRow.Row.ItemArray[5]), Convert.ToString(selectedRow.Row.ItemArray[6]),
-                    Convert.ToString(selectedRow.Row.ItemArray[7]), Convert.ToString(selectedRow.Row.ItemArray[8]), Convert.ToString(selectedRow.Row.ItemArray[9]),
-                    Convert.ToString(selectedRow.Row.ItemArray[10]), Convert.ToString(selectedRow.Row.ItemArray[11]), Convert.ToString(selectedRow.Row.ItemArray[12]),
-                    Convert.ToString(selectedRow.Row.ItemArray[13]), Convert.ToString(selectedRow.Row.ItemArray[14]), WaybillGrid);
+                EditWaybill waybill = new EditWaybill(Convert.ToInt64(selectedRow.Row.ItemArray[0]), WaybillGrid);
 
                 waybill.ShowDialog();
             }
@@ -613,53 +576,6 @@ namespace Warehouse.View.Main
                     waybillCrud.delete(waybillId);
                     waybillCrud.fetchToGrid(WaybillGrid);
                
-            }
-            else
-            {
-                MessageBox.Show("Выберите поле для удаления!");
-            }
-        }
-
-        private void AddWaybillComposition_Click(object sender, RoutedEventArgs e)
-        {
-            CreateWaybillComposition waybillComposition = new CreateWaybillComposition(WaybillCompositionGrid);
-            waybillComposition.ShowDialog();
-        }
-
-        private void EditWaybillComposition_Click(object sender, RoutedEventArgs e)
-        {
-            var selectedRow = WaybillCompositionGrid.SelectedItem as DataRowView;
-
-            if (selectedRow != null)
-            {
-                EditWaybillComposition waybill = new EditWaybillComposition(
-                    Convert.ToInt64(selectedRow.Row.ItemArray[0]), Convert.ToString(selectedRow.Row.ItemArray[1]), Convert.ToString(selectedRow.Row.ItemArray[2]),
-                    Convert.ToString(selectedRow.Row.ItemArray[4]), Convert.ToString(selectedRow.Row.ItemArray[5]), Convert.ToString(selectedRow.Row.ItemArray[6]),
-                    Convert.ToString(selectedRow.Row.ItemArray[7]), Convert.ToString(selectedRow.Row.ItemArray[8]), Convert.ToString(selectedRow.Row.ItemArray[9]),
-                    Convert.ToString(selectedRow.Row.ItemArray[10]), Convert.ToString(selectedRow.Row.ItemArray[11]), Convert.ToString(selectedRow.Row.ItemArray[12]),
-                    Convert.ToString(selectedRow.Row.ItemArray[13]), Convert.ToString(selectedRow.Row.ItemArray[14]), Convert.ToString(selectedRow.Row.ItemArray[15]),
-                    Convert.ToString(selectedRow.Row.ItemArray[16]), WaybillCompositionGrid);
-
-                waybill.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Не выбрана строка для редактирования", "Ошибка", MessageBoxButton.OK);
-            }
-        }
-
-        private void DeleteWaybillComposition_Click(object sender, RoutedEventArgs e)
-        {
-            var selectedRow = WaybillCompositionGrid.SelectedItem as DataRowView;
-
-            if (selectedRow != null)
-            {
-                
-                    long waybillCompositionId = Convert.ToInt64(selectedRow.Row.ItemArray[0]);
-
-                    waybillCompositionCrud.delete(waybillCompositionId);
-                    waybillCompositionCrud.fetchToGrid(WaybillCompositionGrid);
-                
             }
             else
             {
@@ -931,21 +847,6 @@ namespace Warehouse.View.Main
             waybillCrud.fetchToGrid(WaybillGrid);
         }
 
-        private void FiltrationWaybillComposition_Click(object sender, RoutedEventArgs e)
-        {
-            filtrateGrid(WaybillCompositionGrid);
-        }
-
-        private void SearchWaybillComposition_Click(object sender, RoutedEventArgs e)
-        {
-            searchGrid(WaybillCompositionGrid);
-        }
-
-        private void CancelWaybillComposition_Click(object sender, RoutedEventArgs e)
-        {
-            waybillCompositionCrud.fetchToGrid(WaybillCompositionGrid);
-        }
-
         private void FiltrationDeliveryNote_Click(object sender, RoutedEventArgs e)
         {
             filtrateGrid(DeliveryNoteGrid);
@@ -989,6 +890,21 @@ namespace Warehouse.View.Main
         private void CancelRecordCard_Click(object sender, RoutedEventArgs e)
         {
             recordCardCrud.fetchToGrid(RecordCardGrid);
+        }
+
+        private void ViewWaybill_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = WaybillGrid.SelectedItem as DataRowView;
+
+            if (selectedRow != null)
+            {
+                ViewWaybill waybill = new ViewWaybill(Convert.ToInt64(selectedRow.Row.ItemArray[0]));
+                waybill.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Не выбрана строка!", "Ошибка", MessageBoxButton.OK);
+            }
         }
     }
 }

@@ -28,8 +28,6 @@ namespace Warehouse.Entity
 
         public string unloadingPoint { get; set; }
 
-        public string treaty { get; set; }
-
         public string vehicleNumber { get; set; }
 
         public string guideListNumber { get; set; }
@@ -42,7 +40,11 @@ namespace Warehouse.Entity
 
         private Random random;
 
-        public WaybillEntity(long contractorId, long employeeId, string carOwner, string date, string vehicle, string shipper, string consignor, string loadingPoint, string unloadingPoint, string treaty, string vehicleNumber, string guideListNumber, string routeNumber, long productId, string driver, string transType)
+        public WaybillEntity()
+        {
+        }
+
+        public WaybillEntity(long contractorId, long employeeId, long productId, string carOwner, string date, string vehicle, string shipper, string consignor, string loadingPoint, string unloadingPoint, string vehicleNumber, string guideListNumber, string routeNumber, string driver, string transType)
         {
             this.contractorId = contractorId;
             this.employeeId = employeeId;
@@ -53,7 +55,6 @@ namespace Warehouse.Entity
             this.consignor = consignor;
             this.loadingPoint = loadingPoint;
             this.unloadingPoint = unloadingPoint;
-            this.treaty = treaty;
             this.vehicleNumber = vehicleNumber;
             this.guideListNumber = guideListNumber;
             this.routeNumber = routeNumber;
@@ -66,11 +67,12 @@ namespace Warehouse.Entity
             documentNumber = random.Next(100000, 999999);
         }
 
-        public WaybillEntity(long waybillId, long contractorId, long employeeId, string carOwner, string date, string vehicle, string shipper, string consignor, string loadingPoint, string unloadingPoint, string treaty, string vehicleNumber, string guideListNumber, string routeNumber, string driver, string transType)
+        public WaybillEntity(long waybillId, long contractorId, long productId, long employeeId, string carOwner, string date, string vehicle, string shipper, string consignor, string loadingPoint, string unloadingPoint, string vehicleNumber, string guideListNumber, string routeNumber, string driver, string transType)
         {
             this.waybillId = waybillId;
             this.contractorId = contractorId;
             this.employeeId = employeeId;
+            this.productId = productId;
             this.carOwner = carOwner;
             this.date = date;
             this.vehicle = vehicle;
@@ -78,7 +80,6 @@ namespace Warehouse.Entity
             this.consignor = consignor;
             this.loadingPoint = loadingPoint;
             this.unloadingPoint = unloadingPoint;
-            this.treaty = treaty;
             this.vehicleNumber = vehicleNumber;
             this.guideListNumber = guideListNumber;
             this.routeNumber = routeNumber;

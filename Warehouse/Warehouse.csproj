@@ -235,12 +235,6 @@
     <Compile Include="View\Statement\EditStatement.xaml.cs">
       <DependentUpon>EditStatement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\WaybillComposition\CreateWaybillComposition.xaml.cs">
-      <DependentUpon>CreateWaybillComposition.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\WaybillComposition\EditWaybillComposition.xaml.cs">
-      <DependentUpon>EditWaybillComposition.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Waybill\CreateWaybill.xaml.cs">
       <DependentUpon>CreateWaybill.xaml</DependentUpon>
     </Compile>
@@ -250,6 +244,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\Waybill\ViewWaybill.xaml.cs">
+      <DependentUpon>ViewWaybill.xaml</DependentUpon>
     </Compile>
     <Page Include="View\Auth\AuthView.xaml">
       <SubType>Designer</SubType>
@@ -359,19 +356,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\WaybillComposition\CreateWaybillComposition.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\WaybillComposition\EditWaybillComposition.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Waybill\CreateWaybill.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Waybill\EditWaybill.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Waybill\ViewWaybill.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

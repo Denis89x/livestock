@@ -38,39 +38,9 @@ namespace Warehouse.Validation
                 return false;
             }
 
-            if (!commonValidation.isNumberInRange(waybillCompositionEntity.cleaningGroup, 3))
-            {
-                MessageBox.Show("Группа уборки должна состоять только из цифр и быть от 1 до 3!");
-                return false;
-            }
-
             if (!commonValidation.isNumberInRange(waybillCompositionEntity.density, 100))
             {
                 MessageBox.Show("Плотность должна состоять только из цифр и быть от 1 до 100!");
-                return false;
-            }
-
-            if (!commonValidation.isNumberInRange(waybillCompositionEntity.sort, 5))
-            {
-                MessageBox.Show("Сорт должен состоять только из цифр и быть от 1 до 5!");
-                return false;
-            }
-
-            if (!commonValidation.isNumberInRange(waybillCompositionEntity.fat, 100))
-            {
-                MessageBox.Show("Жирность должна состоять только из цифр и быть от 1 до 100!");
-                return false;
-            }
-
-            if (!commonValidation.isNumberInRange(waybillCompositionEntity.packagingType, 5))
-            {
-                MessageBox.Show("Тип упаковки должен состоять только из цифр и быть от 1 до 5!");
-                return false;
-            }
-
-            if (!commonValidation.isNumberInRange(waybillCompositionEntity.quantity, 1000))
-            {
-                MessageBox.Show("Количество должно состоять только из цифр и быть от 1 до 1000!");
                 return false;
             }
 
@@ -89,12 +59,6 @@ namespace Warehouse.Validation
             if (!commonValidation.isNumberInRange(waybillCompositionEntity.netto, 100))
             {
                 MessageBox.Show("Нетто должно состоять только из цифр и быть от 1 до 100!");
-                return false;
-            }
-
-            if (!commonValidation.isNumberInRange(waybillCompositionEntity.grade, 5))
-            {
-                MessageBox.Show("Класс должен состоять только из цифр и быть от 1 до 5!");
                 return false;
             }
 

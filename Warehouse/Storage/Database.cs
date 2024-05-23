@@ -78,5 +78,26 @@ namespace Warehouse.Storage
             reader.Close();
             checkConnection();
         }
+
+        public string fetchStringFieldByQueryAndName(string query, string fieldName)
+        {
+            SqlCommand command = new SqlCommand(query, sqlConnection);
+
+            checkConnection();
+
+            string field = "";
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    field = reader[fieldName].ToString();
+                }
+            }
+
+            checkConnection();
+
+            return field;
+        }
     }
 }

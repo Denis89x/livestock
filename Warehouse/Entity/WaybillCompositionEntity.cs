@@ -2,9 +2,9 @@
 {
     internal class WaybillCompositionEntity
     {
-        public long waybillId { get; set; }
+        public long waybillCompositionId {  get; set; }
 
-        public long productId { get; set; }
+        public long waybillId { get; set; }
 
         public string waybillType { get; set; }
 
@@ -20,11 +20,7 @@
 
         public string density { get; set; }
 
-        public string sort { get; set; }
-
         public string packagingType { get; set; }
-
-        public string quantity { get; set; }
 
         public string brutto { get; set; }
 
@@ -34,10 +30,15 @@
 
         public string grade { get; set; }
 
-        public WaybillCompositionEntity(long waybillId, long productId, string waybillType, string fat, string mass, string acidity, string temperature, string cleaningGroup, string density, string sort, string packagingType, string quantity, string brutto, string tara, string netto, string grade)
+        public string quantity {  get; set; }
+
+        public WaybillCompositionEntity()
+        {
+        }
+
+        public WaybillCompositionEntity(long waybillId, string waybillType, string fat, string mass, string acidity, string temperature, string cleaningGroup, string density, string packagingType, string brutto, string tara, string netto, string grade, string quantity)
         {
             this.waybillId = waybillId;
-            this.productId = productId;
             this.waybillType = waybillType;
             this.fat = fat;
             this.mass = mass;
@@ -45,33 +46,31 @@
             this.temperature = temperature;
             this.cleaningGroup = cleaningGroup;
             this.density = density;
-            this.sort = sort;
             this.packagingType = packagingType;
-            this.quantity = quantity;
             this.brutto = brutto;
             this.tara = tara;
             this.netto = netto;
             this.grade = grade;
+            this.quantity = quantity;
         }
 
-        public override string ToString()
+        public WaybillCompositionEntity(long waybillCompositionId, long waybillId, string waybillType, string fat, string mass, string acidity, string temperature, string cleaningGroup, string density, string packagingType, string brutto, string tara, string netto, string grade, string quantity)
         {
-            return $"WaybillId: {waybillId}, " +
-                   $"ProductId: {productId}, " +
-                   $"WaybillType: {waybillType}, " +
-                   $"Fat: {fat}, " +
-                   $"Mass: {mass}, " +
-                   $"Acidity: {acidity}, " +
-                   $"Temperature: {temperature}, " +
-                   $"CleaningGroup: {cleaningGroup}, " +
-                   $"Density: {density}, " +
-                   $"Sort: {sort}, " +
-                   $"PackagingType: {packagingType}, " +
-                   $"Quantity: {quantity}, " +
-                   $"Brutto: {brutto}, " +
-                   $"Tara: {tara}, " +
-                   $"Netto: {netto}, " +
-                   $"Grade: {grade}";
+            this.waybillCompositionId = waybillCompositionId;
+            this.waybillId = waybillId;
+            this.waybillType = waybillType;
+            this.fat = fat;
+            this.mass = mass;
+            this.acidity = acidity;
+            this.temperature = temperature;
+            this.cleaningGroup = cleaningGroup;
+            this.density = density;
+            this.packagingType = packagingType;
+            this.brutto = brutto;
+            this.tara = tara;
+            this.netto = netto;
+            this.grade = grade;
+            this.quantity = quantity;
         }
     }
 }

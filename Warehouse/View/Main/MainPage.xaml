@@ -44,7 +44,6 @@
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ProductGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="StatementGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillCompositionGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryNoteGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryCompositionGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
@@ -62,7 +61,6 @@
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ProductGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="StatementGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillCompositionGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryNoteGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryCompositionGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
             <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
@@ -396,7 +394,6 @@
                     <DataGridTextColumn Header="Грузополучатель" Width="*" Binding="{Binding consignor}"/>
                     <DataGridTextColumn Header="Место погрузки" Width="*" Binding="{Binding loading_point}"/>
                     <DataGridTextColumn Header="Место разгрузки" Width="*" Binding="{Binding unloading_point}"/>
-                    <DataGridTextColumn Header="Договор" Width="*" Binding="{Binding treaty}"/>
                     <DataGridTextColumn Header="Номер авто" Width="*" Binding="{Binding vehicle_number}"/>
                     <DataGridTextColumn Header="Путевой лист" Width="*" Binding="{Binding guide_list_number}"/>
                     <DataGridTextColumn Header="Водитель" Width="*" Binding="{Binding driver}"/>
@@ -411,52 +408,7 @@
                         <MenuItem x:Name="FiltrationWaybill" Header="Фильтрация" Click="FiltrationWaybill_Click"/>
                         <MenuItem x:Name="SearchWaybill" Header="Поиск" Click="SearchWaybill_Click"/>
                         <MenuItem x:Name="CancelWaybill" Header="Отменить" Click="CancelWaybill_Click"/>
-                    </ContextMenu>
-                </DataGrid.ContextMenu>
-            </DataGrid>
-            <DataGrid   
-                Margin="90,60,30,30"
-                Visibility="Collapsed"
-                x:Name="WaybillCompositionGrid" 
-                AutoGenerateColumns="false"
-                CanUserResizeColumns="False" 
-                FontSize="15px"
-                CanUserAddRows="False" 
-                CanUserDeleteRows="False" 
-                CanUserReorderColumns="False" 
-                SelectionMode="Single" 
-                SelectionUnit="FullRow" 
-                CanUserResizeRows="False" 
-                IsReadOnly="True"
-                Foreground="#FF7643D2"
-                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                ScrollViewer.VerticalScrollBarVisibility="Hidden">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="WaybillCompositionId" Binding="{Binding waybill_composition_id}" Visibility="Collapsed"/>
-                    <DataGridTextColumn Header="Номер ТТН" Width="*" Binding="{Binding document_number}"/>
-                    <DataGridTextColumn Header="Продукт" Width="*" Binding="{Binding title}"/>
-                    <DataGridTextColumn Header="Жирность" Width="*" Binding="{Binding fat}"/>
-                    <DataGridTextColumn Header="Масса" Width="*" Binding="{Binding mass}"/>
-                    <DataGridTextColumn Header="Кислотность" Width="*" Binding="{Binding acidity}"/>
-                    <DataGridTextColumn Header="Температура" Width="*" Binding="{Binding temperature}"/>
-                    <DataGridTextColumn Header="Группа" Width="*" Binding="{Binding cleaning_group}"/>
-                    <DataGridTextColumn Header="Плотность" Width="*" Binding="{Binding density}"/>
-                    <DataGridTextColumn Header="Сорт" Width="*" Binding="{Binding sort}"/>
-                    <DataGridTextColumn Header="Упаковка" Width="*" Binding="{Binding packaging_type}"/>
-                    <DataGridTextColumn Header="Количество" Width="*" Binding="{Binding quantity}"/>
-                    <DataGridTextColumn Header="Брутто" Width="*" Binding="{Binding brutto}"/>
-                    <DataGridTextColumn Header="Тара" Width="*" Binding="{Binding tara}"/>
-                    <DataGridTextColumn Header="Нетто" Width="*" Binding="{Binding netto}"/>
-                    <DataGridTextColumn Header="Класс" Width="*" Binding="{Binding grade}"/>
-                </DataGrid.Columns>
-                <DataGrid.ContextMenu>
-                    <ContextMenu>
-                        <MenuItem x:Name="AddWaybillComposition" Header="Добавить" Click="AddWaybillComposition_Click"/>
-                        <MenuItem x:Name="EditWaybillComposition" Header="Редактировать" Click="EditWaybillComposition_Click"/>
-                        <MenuItem x:Name="DeleteWaybillComposition" Header="Удалить" Click="DeleteWaybillComposition_Click"/>
-                        <MenuItem x:Name="FiltrationWaybillComposition" Header="Фильтрация" Click="FiltrationWaybillComposition_Click"/>
-                        <MenuItem x:Name="SearchWaybillComposition" Header="Поиск" Click="SearchWaybillComposition_Click"/>
-                        <MenuItem x:Name="CancelWaybillComposition" Header="Отменить" Click="CancelWaybillComposition_Click"/>
+                        <MenuItem x:Name="ViewWaybill" Header="Открыть полностью" Click="ViewWaybill_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
