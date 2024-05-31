@@ -3,42 +3,22 @@
   "WorkspaceRootPath": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\deliverynote\\deliveryview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\deliverynote\\deliveryview.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\main\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\main\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\deliverynote\\deliveryview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\deliverynote\\deliveryview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\deliverynote\\editdeliverycomp.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\deliverynote\\editdeliverycomp.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\entity\\deliverycompositionentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\entity\\deliverycompositionentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\deliverynote\\editdeliverycomp.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\deliverynote\\editdeliverycomp.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\deliverynote\\adddeliverycom.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\deliverynote\\adddeliverycom.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\deliverynote\\adddeliverycom.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\deliverynote\\adddeliverycom.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u0434\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\warehouse\\view\\main\\mainpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{A0CBEF35-6B88-4959-AF23-0EE7E7E326E0}|Warehouse\\Warehouse.csproj|solutionrelative:warehouse\\view\\main\\mainpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 290,
-          "SelectedChildIndex": 3,
+          "DockedHeight": 239,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,90 +26,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DeliveryCompositionEntity.cs",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\Entity\\DeliveryCompositionEntity.cs",
-              "RelativeDocumentMoniker": "Warehouse\\Entity\\DeliveryCompositionEntity.cs",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\Entity\\DeliveryCompositionEntity.cs",
-              "RelativeToolTip": "Warehouse\\Entity\\DeliveryCompositionEntity.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAADgvyYAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T16:19:53.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DeliveryView.xaml",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNote\\DeliveryView.xaml",
-              "RelativeDocumentMoniker": "Warehouse\\View\\DeliveryNote\\DeliveryView.xaml",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNote\\DeliveryView.xaml",
-              "RelativeToolTip": "Warehouse\\View\\DeliveryNote\\DeliveryView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-23T16:12:41.176Z",
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Main\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "Warehouse\\View\\Main\\MainPage.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Main\\MainPage.xaml.cs",
+              "RelativeToolTip": "Warehouse\\View\\Main\\MainPage.xaml.cs",
+              "ViewState": "AQIAANoEAAAAAAAAAAAIwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T11:25:25.682Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DeliveryView.xaml.cs",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNote\\DeliveryView.xaml.cs",
-              "RelativeDocumentMoniker": "Warehouse\\View\\DeliveryNote\\DeliveryView.xaml.cs",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNote\\DeliveryView.xaml.cs",
-              "RelativeToolTip": "Warehouse\\View\\DeliveryNote\\DeliveryView.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T16:06:17.139Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AddDeliveryCom.xaml.cs",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNote\\AddDeliveryCom.xaml.cs",
-              "RelativeDocumentMoniker": "Warehouse\\View\\DeliveryNote\\AddDeliveryCom.xaml.cs",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNote\\AddDeliveryCom.xaml.cs",
-              "RelativeToolTip": "Warehouse\\View\\DeliveryNote\\AddDeliveryCom.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T16:02:54.897Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EditDeliveryComp.xaml.cs",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNote\\EditDeliveryComp.xaml.cs",
-              "RelativeDocumentMoniker": "Warehouse\\View\\DeliveryNote\\EditDeliveryComp.xaml.cs",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNote\\EditDeliveryComp.xaml.cs",
-              "RelativeToolTip": "Warehouse\\View\\DeliveryNote\\EditDeliveryComp.xaml.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T16:02:51.279Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EditDeliveryComp.xaml",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNote\\EditDeliveryComp.xaml",
-              "RelativeDocumentMoniker": "Warehouse\\View\\DeliveryNote\\EditDeliveryComp.xaml",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNote\\EditDeliveryComp.xaml",
-              "RelativeToolTip": "Warehouse\\View\\DeliveryNote\\EditDeliveryComp.xaml",
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Main\\MainPage.xaml",
+              "RelativeDocumentMoniker": "Warehouse\\View\\Main\\MainPage.xaml",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\Main\\MainPage.xaml",
+              "RelativeToolTip": "Warehouse\\View\\Main\\MainPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-23T16:02:13.51Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AddDeliveryCom.xaml",
-              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNote\\AddDeliveryCom.xaml",
-              "RelativeDocumentMoniker": "Warehouse\\View\\DeliveryNote\\AddDeliveryCom.xaml",
-              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u0414\u0438\u043F\u043B\u043E\u043C\\warehouse-main\\Warehouse\\View\\DeliveryNote\\AddDeliveryCom.xaml",
-              "RelativeToolTip": "Warehouse\\View\\DeliveryNote\\AddDeliveryCom.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-23T16:02:08.504Z",
+              "WhenOpened": "2024-05-31T11:24:38.531Z",
               "EditorCaption": ""
             }
           ]

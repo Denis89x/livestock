@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Учеба\Диплом\warehouse-main\Warehouse\App.xaml
-33-672298684
+37-948972866
 
-8767049487
+92-338974429
 34-1943902390
-View\Auth\AuthView.xaml;View\Auth\RegistrationView.xaml;View\Cattle\CreateCattle.xaml;View\Cattle\EditCattle.xaml;View\Contractor\CreateContractor.xaml;View\Contractor\EditContractor.xaml;View\DeliveryNoteComposition\CreateDeliveryComposition.xaml;View\DeliveryNoteComposition\EditDeliveryComposition.xaml;View\DeliveryNote\AddDeliveryCom.xaml;View\DeliveryNote\CreateDelivery.xaml;View\DeliveryNote\DeliveryView.xaml;View\DeliveryNote\EditDelivery.xaml;View\DeliveryNote\EditDeliveryComp.xaml;View\Division\AddDivision.xaml;View\Division\EditDivision.xaml;View\OutputDocument\DeliveryNoteView.xaml;View\OutputDocument\DocumentOutput.xaml;View\Employee\CreateEmployee.xaml;View\Employee\EditEmployee.xaml;View\FetchFieldView.xaml;View\Main\MainPage.xaml;View\OutputDocument\RecordCardView.xaml;View\OutputDocument\StatementView.xaml;View\OutputDocument\WaybillView.xaml;View\Product\CreateProduct.xaml;View\Product\EditProduct.xaml;View\RecordCard\CreateRecordCard.xaml;View\RecordCard\EditRecordCard.xaml;View\Statement\CreateStatement.xaml;View\Statement\EditStatement.xaml;View\Waybill\CreateWaybill.xaml;View\Waybill\EditWaybill.xaml;View\Waybill\ViewWaybill.xaml;
+View\Auth\AuthView.xaml;View\Auth\RegistrationView.xaml;View\Cattle\CreateCattle.xaml;View\Cattle\EditCattle.xaml;View\Contractor\CreateContractor.xaml;View\Contractor\EditContractor.xaml;View\DeliveryNoteComposition\CreateDeliveryComposition.xaml;View\DeliveryNoteComposition\EditDeliveryComposition.xaml;View\DeliveryNote\AddDeliveryCom.xaml;View\DeliveryNote\CreateDelivery.xaml;View\DeliveryNote\DeliveryView.xaml;View\DeliveryNote\EditDelivery.xaml;View\DeliveryNote\EditDeliveryComp.xaml;View\Division\AddDivision.xaml;View\Division\EditDivision.xaml;View\OutputDocument\DeliveryNoteView.xaml;View\OutputDocument\DocumentOutput.xaml;View\Employee\CreateEmployee.xaml;View\Employee\EditEmployee.xaml;View\FetchFieldView.xaml;View\Main\MainPage.xaml;View\OutputDocument\RecordCardView.xaml;View\OutputDocument\RecordOutView.xaml;View\OutputDocument\StatementOutView.xaml;View\OutputDocument\StatementView.xaml;View\OutputDocument\TotalOutView.xaml;View\OutputDocument\WaybillOutView.xaml;View\OutputDocument\WaybillView.xaml;View\Product\CreateProduct.xaml;View\Product\EditProduct.xaml;View\RecordCard\CreateRecordCard.xaml;View\RecordCard\EditRecordCard.xaml;View\Statement\CreateStatement.xaml;View\Statement\EditStatement.xaml;View\Waybill\CreateWaybill.xaml;View\Waybill\EditWaybill.xaml;View\Waybill\ViewWaybill.xaml;
 
 False
 

@@ -28,14 +28,14 @@ namespace Warehouse.Storage
 
         public void fetchToGrid(DataGrid dataGrid)
         {
-            string query = $"SELECT delivery_note_id, division_type, date, assignment FROM delivery_note, division WHERE delivery_note.division_id = division.division_id";
+            string query = $"SELECT delivery_note_id, division_type, date, assignment, broker FROM delivery_note, division WHERE delivery_note.division_id = division.division_id";
 
             database.selectQuery(query, dataGrid);
         }
 
         public void update(DeliveryNoteEntity entity)
         {
-            string query = $"UPDATE delivery_note SET division_id = '{entity.divisionId}', date = '{entity.date}', assignment = N'{entity.assignment}' WHERE delivery_note_id = '{entity.deliveryNoteId}'";
+            string query = $"UPDATE delivery_note SET division_id = '{entity.divisionId}', date = '{entity.date}', assignment = N'{entity.assignment}', broker = N'{entity.broker}' WHERE delivery_note_id = '{entity.deliveryNoteId}'";
 
             database.executeQuery(query);
         }

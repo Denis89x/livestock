@@ -14,6 +14,7 @@ namespace Warehouse.View.Waybill
         private DataGrid dataGrid;
         private CrudRepo<WaybillEntity> waybillCrud;
         private ComboBoxRepo comboBoxRepo;
+        private CommonValidation commonValidation;
         private WaybillValidation waybillValidation;
         private WaybillCompositionValidation waybillCompositionValidation;
 
@@ -28,9 +29,11 @@ namespace Warehouse.View.Waybill
             waybillCompositionValidation = new WaybillCompositionValidation();
             waybillCrud = new WaybillRepoImpl();
             comboBoxRepo = new ComboBoxRepoImpl();
+            commonValidation = new CommonValidation();
 
             comboBoxRepo.insertEmployeesIntoComboBox(EmployeeComboBox);
             comboBoxRepo.insertContractorIntoComboBox(ContractorComboBox);
+            comboBoxRepo.insertContractorIntoComboBox(CarOwnerBox);
             comboBoxRepo.insertProductsIntoComboBox(ProductComboBox);
 
             DatePicker.Text = DateTime.Today.ToString("yyyy-MM-dd");
@@ -44,9 +47,9 @@ namespace Warehouse.View.Waybill
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
             ComboBoxEntity contractor = (ComboBoxEntity)ContractorComboBox.SelectedItem;
+            ComboBoxEntity carOwner = (ComboBoxEntity)ContractorComboBox.SelectedItem;
             ComboBoxEntity employee = (ComboBoxEntity)EmployeeComboBox.SelectedItem;
             ComboBoxEntity product = (ComboBoxEntity)ProductComboBox.SelectedItem;
-            string carOwner = CarOwnerBox.Text;
             string vehicle = VehicleBox.Text;
             string shipper = ShipperBox.Text;
             string consignor = ConsignorBox.Text;
@@ -64,41 +67,45 @@ namespace Warehouse.View.Waybill
 
                 if (contractor != null && employee != null && product != null)
                 {
-                    WaybillEntity waybill = new WaybillEntity(contractor.id, employee.id, product.id, carOwner, date, vehicle, shipper, consignor, loadingPoint, unloadingPoint, vehicleNumber, guide, routeNumber, driver, trastType);
+                    WaybillEntity waybill = new WaybillEntity(contractor.id, employee.id, product.id, carOwner.name, date, vehicle, shipper, consignor, loadingPoint, unloadingPoint, vehicleNumber, guide, routeNumber, driver, trastType);
 
                     if (waybillValidation.isWaybillValid(waybill))
                     {
                         database = new Database();
                         using (SqlConnection connection = database.getSqlConnection())
                         {
-                            database.checkConnection();
-                            SqlTransaction transaction = connection.BeginTransaction();
+                            database = new Database();
+                            connection.Open();
 
+                            SqlTransaction transaction = connection.BeginTransaction();
                             try
                             {
                                 long waybillId = createWaybillAndReturnId(waybill, transaction);
-
                                 string fat = FatBox.Text;
                                 string mass = MassBox.Text;
+                                string massResult = MassResultBox.Text;
                                 string acidity = AcidityBox.Text;
                                 string temperature = TemperatureBox.Text;
                                 string cleaningGroup = CleningGroupCombo.Text;
                                 string density = DensityBox.Text;
-                                string packagingType = PackagingTypeCombo.Text;
                                 string brutto = BruttoBox.Text;
                                 string netto = NettoBox.Text;
                                 string grade = GradeCombo.Text;
                                 string tara = TaraBox.Text;
                                 string quantity = QuantityBox.Text;
+                                string sort = SortCombo.Text;
 
-                                WaybillCompositionEntity waybillComposition = new WaybillCompositionEntity(waybillId, "posted", fat, mass, acidity, temperature, cleaningGroup, density, packagingType, brutto, tara, netto, grade, quantity);
-
+                                WaybillCompositionEntity waybillComposition = new WaybillCompositionEntity(waybillId, "posted", fat, mass, massResult, acidity, temperature, cleaningGroup, density, "Без упаковки", brutto, tara, netto, grade, quantity, sort);
+  
                                 if (waybillCompositionValidation.isWaybillCompositionValid(waybillComposition))
                                 {
                                     createWaybillComposition(waybillComposition, transaction);
+ 
                                     transaction.Commit();
+
                                     waybillCrud.fetchToGrid(dataGrid);
-                                    database.checkConnection();
+
+                                    connection.Close();
                        
                                     this.Close();
                                 }
@@ -110,6 +117,8 @@ namespace Warehouse.View.Waybill
                             catch (Exception ex)
                             {
                                 transaction.Rollback();
+                                connection.Close();
+                                return;
                             }
                         }
                     }
@@ -121,7 +130,7 @@ namespace Warehouse.View.Waybill
             }
             catch (InvalidOperationException ex)
             {
-                MessageBox.Show("Выберите дату!" + ex.Message);
+                MessageBox.Show("Выберите дату!");
             }
         }
 
@@ -147,13 +156,39 @@ namespace Warehouse.View.Waybill
         {
             try
             {
-                string query = $"INSERT INTO waybill_composition(waybill_id, waybill_type, fat, mass, acidity, temperature, cleaning_group, density, packaging_type, brutto, tara, netto, grade, quantity) VALUES('{entity.waybillId}', N'{entity.waybillType}', N'{entity.fat}', N'{entity.mass}', N'{entity.acidity}', N'{entity.temperature}', N'{entity.cleaningGroup}', N'{entity.density}', N'{entity.packagingType}', N'{entity.brutto}', N'{entity.tara}', N'{entity.netto}', N'{entity.grade}', '{entity.quantity}')";
+                string massResult = Convert.ToDouble(entity.massResult).ToString(System.Globalization.CultureInfo.InvariantCulture);
+
+                string query = $"INSERT INTO waybill_composition(waybill_id, waybill_type, fat, mass, mass_result, acidity, temperature, cleaning_group, density, packaging_type, brutto, tara, netto, grade, quantity, sort) VALUES('{entity.waybillId}', N'{entity.waybillType}', '{entity.fat}', '{entity.mass}', '{massResult}', '{entity.acidity}', '{entity.temperature}', N'{entity.cleaningGroup}', N'{entity.density}', N'{entity.packagingType}', '{entity.brutto}', N'{entity.tara}', N'{entity.netto}', N'{entity.grade}', '{entity.quantity}', N'{entity.sort}')";
                 SqlCommand command = new SqlCommand(query, transaction.Connection, transaction);
 
                 command.ExecuteNonQuery();
             } catch (SqlException ex)
             {
-                MessageBox.Show("Введите допустимое количество продукта!");
+                MessageBox.Show("Введите допустимое количество продукта!" + ex);
+            }
+        }
+
+        private void MassBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            calculateMassResult();
+        }
+
+        private void FatBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            calculateMassResult();
+        }
+
+        private void calculateMassResult()
+        {
+            if (FatBox.Text.Length > 0 && MassBox.Text.Length > 0)
+            {
+                string fat = FatBox.Text;
+                string mass = MassBox.Text;
+
+                if (commonValidation.isDoubleNumberInRange(fat, 3.0, 5.4) && commonValidation.isDoubleNumberInRange(mass, 10, 10000))
+                {
+                    MassResultBox.Text = (((Convert.ToDouble(fat) / 100) * Convert.ToDouble(mass)) / 0.034).ToString("0.00");
+                }
             }
         }
     }

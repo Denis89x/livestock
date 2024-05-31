@@ -123,6 +123,7 @@
     <Compile Include="Service\RecordCardOutput.cs" />
     <Compile Include="Service\StatementOutput.cs" />
     <Compile Include="Service\WaybillOutput.cs" />
+    <Compile Include="Storage\DeliveryDelete.cs" />
     <Compile Include="Storage\WaybillDelete.cs" />
     <Compile Include="Validation\RecordCardValidation.cs" />
     <Compile Include="Validation\WaybillCompositionValidation.cs" />
@@ -221,8 +222,20 @@
     <Compile Include="View\OutputDocument\RecordCardView.xaml.cs">
       <DependentUpon>RecordCardView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\OutputDocument\RecordOutView.xaml.cs">
+      <DependentUpon>RecordOutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OutputDocument\StatementOutView.xaml.cs">
+      <DependentUpon>StatementOutView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\OutputDocument\StatementView.xaml.cs">
       <DependentUpon>StatementView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OutputDocument\TotalOutView.xaml.cs">
+      <DependentUpon>TotalOutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OutputDocument\WaybillOutView.xaml.cs">
+      <DependentUpon>WaybillOutView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OutputDocument\WaybillView.xaml.cs">
       <DependentUpon>WaybillView.xaml</DependentUpon>
@@ -346,7 +359,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\OutputDocument\RecordOutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OutputDocument\StatementOutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\OutputDocument\StatementView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OutputDocument\TotalOutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OutputDocument\WaybillOutView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -420,9 +449,11 @@
     <None Include="Resources\Order.xlsx" />
     <None Include="Resources\Receipt.xlsx" />
     <None Include="Resources\RecordCardTemplate.docx" />
+    <None Include="Resources\StatementTemplate.docx" />
     <None Include="Resources\Template.xlsx" />
-    <None Include="Resources\VedomostTemplate.docx" />
+    <None Include="Resources\TotalTemplate.docx" />
     <None Include="Resources\WaybillTemplate.docx" />
+    <None Include="Resources\WaybillTotal.docx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

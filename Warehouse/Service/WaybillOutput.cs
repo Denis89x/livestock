@@ -4,8 +4,6 @@ using System;
 using Warehouse.Storage;
 using System.Windows;
 using Application = Microsoft.Office.Interop.Word.Application;
-using System.IO;
-using System.Diagnostics;
 
 namespace Warehouse.Service
 {
@@ -20,138 +18,187 @@ namespace Warehouse.Service
         public WaybillOutput()
         {
             database = new Database();
-            wordApplication = new Application();
-            try
-            {
-                document = wordApplication.Documents.Open(templatePath);
-            } catch (Exception)
-            {
-                MessageBox.Show("Закройте шаблон этого файла!");
-            }
         }
 
         public void generateWordDocument(long waybillId)
         {
-            if (document != null)
+            try
             {
-                /*if (IsWordRunning())
-                {
-                    MessageBox.Show("Закройте Microsoft Word перед генерацией документа.");
-                    return;
-                }*/
-
-                string query = $"SELECT contractor.title + ' ' + contractor.address + ' ' + contractor.settlement_account + ' ' + contractor.bank_name as contractor, employee.surname + ' ' + employee.first_name + ' ' + employee.patronymic + ' ' + employee.position as fio, waybill.document_number, car_owner, date, vehicle, shipper, consignor, loading_point, unloading_point, treaty, vehicle_number, guide_list_number, route_number, finished_product.title as product_title, fat, mass, acidity, temperature, cleaning_group, density, waybill_composition.sort, waybill_composition.packaging_type, quantity, brutto, netto, tara, grade FROM waybill, waybill_composition, finished_product, employee, contractor WHERE waybill.contractor_id = contractor.contractor_id AND waybill.employee_id = employee.employee_id AND waybill_composition.waybill_id = waybill.waybill_id AND waybill_composition.product_id = finished_product.product_id AND waybill_composition.waybill_id = '{waybillId}'";
-
-                database.checkConnection();
+                wordApplication = new Application();
+                document = wordApplication.Documents.Open(templatePath);
 
                 string fileName = "Товарно-транспортная накладная";
                 string outputPath = @"D:\Учеба\Диплом\warehouse-main\Warehouse\Resources\" + fileName + ".docx";
 
-                if (File.Exists(outputPath))
+                string headerQuery = $"SELECT document_number, shipper, consignor, contractor.title as con_t, date, vehicle, guide_list_number, car_owner, driver, trans_type, contractor.title + ', ' + contractor.address + ', ' + contractor.settlement_account + ', ' + contractor.bank_name as contractor, loading_point, unloading_point, route_number, finished_product.title as product_title, employee.position + ', ' + employee.surname + ' ' + employee.first_name + ' ' + employee.patronymic as fio FROM waybill, finished_product, employee, contractor WHERE waybill.product_id = finished_product.product_id AND employee.employee_id = waybill.employee_id AND contractor.contractor_id = waybill.contractor_id AND waybill_id = '{waybillId}'";
+
+                using (SqlConnection connection = database.getSqlConnection())
                 {
-                    try
+                    connection.Open();
+                    using (SqlCommand sqlCommand = new SqlCommand(headerQuery, connection))
                     {
-                        File.Delete(outputPath);
-                    }
-                    catch (IOException ex)
-                    {
-                        MessageBox.Show($"Ошибка удаления файла: {ex.Message}");
-                        return;
-                    }
-                }
+                        SqlDataReader reader = sqlCommand.ExecuteReader();
 
-                using (SqlCommand sqlCommand = new SqlCommand(query, database.getSqlConnection()))
-                {
-                    SqlDataReader reader = sqlCommand.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            string documentNumber = reader["document_number"].ToString();
+                            string shipper = reader["shipper"].ToString();
+                            string consignor = reader["consignor"].ToString();
+                            string conT = reader["con_t"].ToString();
 
-                    if (reader.Read())
-                    {
-                        string contractor = reader["contractor"].ToString();
-                        string fio = reader["fio"].ToString();
-                        string documentNumber = reader["document_number"].ToString();
-                        string carOwner = reader["car_owner"].ToString();
-                        string vehicle = reader["vehicle"].ToString();
-                        string shipper = reader["shipper"].ToString();
-                        string consignor = reader["consignor"].ToString();
-                        string loading = reader["loading_point"].ToString();
-                        string unloading = reader["unloading_point"].ToString();
-                        string treaty = reader["treaty"].ToString();
-                        string vehicleNumber = reader["vehicle_number"].ToString();
-                        string guideList = reader["guide_list_number"].ToString();
-                        string routeNumber = reader["route_number"].ToString();
-                        string productTitle = reader["product_title"].ToString();
-                        string fat = reader["fat"].ToString();
-                        string mass = reader["mass"].ToString();
-                        string acidity = reader["acidity"].ToString();
-                        string temperature = reader["temperature"].ToString();
-                        string cleaningGroup = reader["cleaning_group"].ToString();
-                        string density = reader["density"].ToString();
-                        string sort = reader["sort"].ToString();
-                        string packagingType = reader["packaging_type"].ToString();
-                        string quantity = reader["quantity"].ToString();
-                        string brutto = reader["brutto"].ToString();
-                        string netto = reader["netto"].ToString();
-                        string tara = reader["tara"].ToString();
-                        string grade = reader["grade"].ToString();
+                            DateTime date = Convert.ToDateTime(reader["date"]);
+                            string day = date.Day.ToString();
+                            string month = date.ToString("MMMM", System.Globalization.CultureInfo.CurrentCulture);
+                            string year = date.Year.ToString();
 
-                        DateTime date = Convert.ToDateTime(reader["date"]);
-                        int day = date.Day;
-                        int month = date.Month;
-                        int year = date.Year;
+                            string vehicle = reader["vehicle"].ToString();
+                            string guideNumber = reader["guide_list_number"].ToString();
+                            string carOwner = reader["car_owner"].ToString();
+                            string driver = reader["driver"].ToString();
+                            string transType = reader["trans_type"].ToString();
+                            string contractor = reader["contractor"].ToString();
+                            string loading = reader["loading_point"].ToString();
+                            string unloading = reader["unloading_point"].ToString();
+                            string routeNumber = reader["route_number"].ToString();
+                            string productTitle = reader["product_title"].ToString();
+                            string fio = reader["fio"].ToString();
 
-                        string monthName = date.ToString("MMMM", System.Globalization.CultureInfo.CurrentCulture);
+                            replaceField("{shipper}", shipper);
+                            replaceField("{consignor}", consignor);
+                            replaceField("{con_t}", conT);
+                            replaceField("{number}", documentNumber);
+                            replaceField("{day}", day);
+                            replaceField("{month}", month);
+                            replaceField("{year}", year);
+                            replaceField("{vehicle}", vehicle);
+                            replaceField("{guide_number}", guideNumber);
+                            replaceField("{car_owner}", carOwner);
+                            replaceField("{driver}", driver);
+                            replaceField("{trans_type}", transType);
+                            replaceField("{contractor}", contractor);
+                            replaceField("{loading}", loading);
+                            replaceField("{unloading}", unloading);
+                            replaceField("{route_number}", routeNumber);
+                            replaceField("{product_title}", productTitle);
+                            replaceField("{fio}", fio);
+                        }
 
-                        replaceField("{day}", day.ToString());
-                        replaceField("{number}", documentNumber);
-                        replaceField("{month}", monthName);
-                        replaceField("{year}", year.ToString());
-                        replaceField("{vehicle}", vehicle);
-                        replaceField("{guide_number}", guideList);
-                        replaceField("{car_owner}", carOwner);
-                        replaceField("{contractor}", contractor);
-                        replaceField("{shipper}", shipper);
-                        replaceField("{consignor}", consignor);
-                        replaceField("{loading}", loading);
-                        replaceField("{unloading}", unloading);
-                        replaceField("{route_number}", routeNumber);
-                        replaceField("{treaty}", treaty);
-                        replaceField("{product_title}", productTitle);
-                        replaceField("{fat}", fat);
-                        replaceField("{mass}", mass);
-                        replaceField("{acidit}", acidity);
-                        replaceField("{temp}", temperature);
-                        replaceField("{group}", cleaningGroup);
-                        replaceField("{class}", grade);
-                        replaceField("{densi}", density);
-                        replaceField("{sor}", sort);
-                        replaceField("{type}", packagingType);
-                        replaceField("{quant}", quantity);
-                        replaceField("{brut}", brutto);
-                        replaceField("{tar}", tara);
-                        replaceField("{net}", netto);
-                        replaceField("{fio}", fio);
-                        replaceField("{net}", netto);
+                        reader.Close();
                     }
 
-                    reader.Close();
+                    string waybillCompQuery = $"SELECT fat, mass, acidity, temperature, cleaning_group, density, packaging_type, brutto, tara, netto, grade, quantity, sort FROM waybill_composition WHERE waybill_id = '{waybillId}' AND waybill_type = 'posted'";
+
+                    using (SqlCommand sqlCommand = new SqlCommand(waybillCompQuery, connection))
+                    {
+                        SqlDataReader reader = sqlCommand.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            string fat = reader["fat"].ToString();
+                            string mass = reader["mass"].ToString();
+                            string acidity = reader["acidity"].ToString();
+                            string temperature = reader["temperature"].ToString();
+                            string cleaningGroup = reader["cleaning_group"].ToString();
+                            string density = reader["density"].ToString();
+                            string packagingType = reader["packaging_type"].ToString();
+                            string quantity = reader["quantity"].ToString();
+                            string brutto = reader["brutto"].ToString();
+                            string netto = reader["netto"].ToString();
+                            string tara = reader["tara"].ToString();
+                            string grade = reader["grade"].ToString();
+                            string sort = reader["sort"].ToString();
+
+                            replaceField("{fat}", fat);
+                            replaceField("{mass}", mass);
+                            replaceField("{acidit}", acidity);
+                            replaceField("{temp}", temperature);
+                            replaceField("{group}", cleaningGroup);
+                            replaceField("{class}", grade);
+                            replaceField("{densi}", density);
+                            replaceField("{sor}", sort);
+                            replaceField("{type}", packagingType);
+                            replaceField("{quant}", quantity);
+                            replaceField("{brut}", brutto);
+                            replaceField("{tar}", tara);
+                            replaceField("{net}", netto);
+                        }
+
+                        reader.Close();
+                    }
+
+                    string waybillCompAccQuery = $"SELECT fat, mass, acidity, temperature, cleaning_group, density, packaging_type, brutto, tara, netto, grade, quantity, sort FROM waybill_composition WHERE waybill_id = '{waybillId}' AND waybill_type = 'accepted'";
+
+                    using (SqlCommand sqlCommand = new SqlCommand(waybillCompAccQuery, connection))
+                    {
+                        SqlDataReader reader = sqlCommand.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            string fat = reader["fat"].ToString();
+                            string mass = reader["mass"].ToString();
+                            string acidity = reader["acidity"].ToString();
+                            string temperature = reader["temperature"].ToString();
+                            string cleaningGroup = reader["cleaning_group"].ToString();
+                            string density = reader["density"].ToString();
+                            string packagingType = reader["packaging_type"].ToString();
+                            string quantity = reader["quantity"].ToString();
+                            string brutto = reader["brutto"].ToString();
+                            string netto = reader["netto"].ToString();
+                            string tara = reader["tara"].ToString();
+                            string grade = reader["grade"].ToString();
+                            string sort = reader["sort"].ToString();
+
+                            replaceField("{ft}", fat);
+                            replaceField("{ms}", mass);
+                            replaceField("{ac}", acidity);
+                            replaceField("{tmp}", temperature);
+                            replaceField("{gr}", cleaningGroup);
+                            replaceField("{cl}", grade);
+                            replaceField("{dn}", density);
+                            replaceField("{sr}", sort);
+                            replaceField("{tp}", packagingType);
+                            replaceField("{qt}", quantity);
+                            replaceField("{br}", brutto);
+                            replaceField("{ta}", tara);
+                            replaceField("{ne}", netto);
+                        } else
+                        {
+                            replaceField("{ft}", "");
+                            replaceField("{ms}", "");
+                            replaceField("{ac}", "");
+                            replaceField("{tmp}", "");
+                            replaceField("{gr}", "");
+                            replaceField("{cl}", "");
+                            replaceField("{dn}", "");
+                            replaceField("{sr}", "");
+                            replaceField("{tp}", "");
+                            replaceField("{qt}", "");
+                            replaceField("{br}", "");
+                            replaceField("{ta}", "");
+                            replaceField("{ne}", "");
+                        }
+
+                        reader.Close();
+                    }
+
+                    connection.Close();
                 }
 
-                try
-                {
-                    document.SaveAs2(outputPath);
-                    document.Close();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Закройте текущий файл перед созданием нового!");
-                }
+                document.SaveAs2(outputPath);
+                document.Close();
 
                 System.Diagnostics.Process.Start(outputPath);
-
-                database.checkConnection();
-            } else
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Закройте word!");
+                MessageBox.Show("Произошла ошибка. Закройте все экземпляры Microsoft Word и попробуйте снова!" + ex);
+
+                foreach (var process in System.Diagnostics.Process.GetProcessesByName("WINWORD"))
+                {
+                    process.Kill();
+                }
+
+                return;
             }
         }
 
@@ -159,13 +206,6 @@ namespace Warehouse.Service
         {
             document.Content.Find.ClearFormatting();
             document.Content.Find.Execute(FindText: field, ReplaceWith: value);
-        }
-
-        private bool IsWordRunning()
-        {
-            Process[] processes = Process.GetProcessesByName("WINWORD");
-
-            return processes.Length > 0;
         }
     }
 }

@@ -26,4 +26,8 @@ FD:\Учеба\Диплом\warehouse-main\Warehouse\View\Waybill\ViewWaybill.xa
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNote\DeliveryView.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNote\AddDeliveryCom.xaml;;
 FD:\Учеба\Диплом\warehouse-main\Warehouse\View\DeliveryNote\EditDeliveryComp.xaml;;
+FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\StatementOutView.xaml;;
+FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\RecordOutView.xaml;;
+FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\WaybillOutView.xaml;;
+FD:\Учеба\Диплом\warehouse-main\Warehouse\View\OutputDocument\TotalOutView.xaml;;
 

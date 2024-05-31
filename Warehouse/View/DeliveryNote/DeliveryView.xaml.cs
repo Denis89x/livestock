@@ -14,7 +14,7 @@ namespace Warehouse.View.DeliveryNote
 
         private CrudRepo<DeliveryCompositionEntity> deliveryRepo;
 
-        public DeliveryView(long deliveryId)
+        public DeliveryView(long deliveryId, string userRole)
         {
             InitializeComponent();
 
@@ -22,6 +22,13 @@ namespace Warehouse.View.DeliveryNote
             deliveryRepo = new DeliveryCompositionRepoImpl();
 
             this.deliveryId = deliveryId;
+
+            if (userRole.Equals("ROLE_ACCOUNTANT"))
+            {
+                AddContractor.Visibility = Visibility.Collapsed;
+                EditContractor.Visibility = Visibility.Collapsed;
+                DeleteContractor.Visibility = Visibility.Collapsed;
+            }
 
             fetchDelivery();
             fetchDeliveryCompositions();
@@ -34,7 +41,7 @@ namespace Warehouse.View.DeliveryNote
 
         private void fetchDelivery()
         {
-            string query = $"SELECT division.division_type as division, date, assignment FROM delivery_note, division WHERE delivery_note.division_id = division.division_id AND delivery_note_id = '{deliveryId}'";
+            string query = $"SELECT division.division_type as division, date, assignment, broker FROM delivery_note, division WHERE delivery_note.division_id = division.division_id AND delivery_note_id = '{deliveryId}'";
 
             SqlCommand command = new SqlCommand(query, database.getSqlConnection());
 
@@ -50,6 +57,7 @@ namespace Warehouse.View.DeliveryNote
                     DivisionComboBox.SelectedIndex = 0;
                     DatePicker.Text = Convert.ToDateTime(reader["date"]).ToString("dd.MM.yyyy");
                     AssignmentBox.Text = reader["assignment"].ToString();
+                    BrokerBox.Text = reader["broker"].ToString();
                 }
             }
 

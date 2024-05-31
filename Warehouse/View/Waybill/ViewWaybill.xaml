@@ -46,14 +46,14 @@
             Margin="0 105 0 0">
         </Label>
         <GroupBox
-            Width="480"
-            Height="300"
-            Margin="100 280 0 0"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Left"
-            Header="Отправлено"
-            FontSize="17"
-        >
+    Width="480"
+    Height="360"
+    Margin="100 270 0 0"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Left"
+    Header="Отправлено"
+    FontSize="17"
+>
             <GroupBox.BorderBrush>
                 <SolidColorBrush Color="#BC989393"/>
             </GroupBox.BorderBrush>
@@ -63,10 +63,10 @@
             <GroupBox.Template>
                 <ControlTemplate TargetType="{x:Type GroupBox}">
                     <Border 
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="10"
-                        Background="{TemplateBinding Background}">
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="10"
+                Background="{TemplateBinding Background}">
                         <ContentPresenter Margin="10"/>
                     </Border>
                 </ControlTemplate>
@@ -76,235 +76,253 @@
             </GroupBox.Background>
         </GroupBox>
         <Label 
-            FontSize="18px"
-            FontWeight="Medium"
-            Height="30px"
-            Content="Отправлено"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Foreground="Gray"
-            Margin="110 30 0 0">
+    FontSize="18px"
+    FontWeight="Medium"
+    Height="30px"
+    Content="Отправлено"
+    HorizontalAlignment="Left"
+    VerticalAlignment="Center"
+    Foreground="Gray"
+    Margin="110 0 0 40">
         </Label>
         <Separator 
-            Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" 
-            Height="1" 
-            Width="460px"
-            HorizontalAlignment="Left"
-            Background="#BC989393" 
-            Margin="110 70 0 0" 
-            Padding="0 0"/>
-        <TextBox
-            x:Name="FatBox"
+    Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" 
+    Height="1" 
+    Width="460px"
+    HorizontalAlignment="Left"
+    Background="#BC989393" 
+    Margin="110 0 0 0"
             IsEnabled="False"
-            Visibility="Visible"
-            materialDesign:HintAssist.Hint="Жирность"
-            FontSize="17px"
-            Padding="12 10 2 2"
-            Height="45px"
-            Width="130px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Left"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="110 150 0 0"
-            BorderBrush="#BC989393"/>
+    Padding="0 0"/>
         <TextBox
-            x:Name="MassBox"
+    x:Name="FatBox"
+    Visibility="Visible"
+    materialDesign:HintAssist.Hint="Жирность"
+    FontSize="17px"
+    Padding="12 10 2 2"
             IsEnabled="False"
-            Visibility="Visible"
-            materialDesign:HintAssist.Hint="Масса"
-            FontSize="17px"
-            Padding="12 10 2 2"
-            Height="45px"
-            Width="130px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Left"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="110 270 0 0"
-            BorderBrush="#BC989393">
+    Height="45px"
+    Width="130px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Left"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="110 150 0 0"
+    BorderBrush="#BC989393"/>
+        <TextBox
+    x:Name="MassBox"
+    Visibility="Visible"
+            IsEnabled="False"
+    materialDesign:HintAssist.Hint="Масса, кг"
+    FontSize="17px"
+    Padding="12 10 2 2"
+    Height="45px"
+    Width="130px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Left"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="110 270 0 0"
+    BorderBrush="#BC989393">
         </TextBox>
         <TextBox
-            x:Name="AcidityBox"
-            IsEnabled="False"
-            Visibility="Visible"
-            materialDesign:HintAssist.Hint="Кислотность"
-            FontSize="17px"
-            Padding="12 10 2 2"
-            Height="45px"
-            Width="130px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Left"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="110 390 0 0"
-            BorderBrush="#BC989393">
+    x:Name="MassResultBox"
+    Visibility="Visible"
+    materialDesign:HintAssist.Hint="Масса, %"
+    FontSize="17px"
+    Padding="12 10 2 2"
+    IsEnabled="False"
+    Height="45px"
+    Width="130px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Left"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="110 390 0 0"
+    BorderBrush="#BC989393">
         </TextBox>
         <ComboBox
-            x:Name="CleningGroupCombo"
-            Width="130px"
-            Height="45px"
+    x:Name="SortCombo"
+    Width="130px"
+    Height="45px"
+    FontSize="17px"
             IsEnabled="False"
-            FontSize="17px"
-            Padding="12 0 12 0"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Left"
-            Margin="110 510 0 0"
-            materialDesign:HintAssist.Hint="Группа ч."
-            Style="{StaticResource MaterialDesignOutlinedComboBox}"
-            BorderBrush="#BC989393">
-            <ComboBoxItem Content="Чистый груз"/>
-            <ComboBoxItem Content="Грязный груз"/>
-            <ComboBoxItem Content="Опасный груз"/>
-            <ComboBoxItem Content="Очищенный груз"/>
+    Padding="12 0 12 0"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Left"
+    Margin="110 510 0 0"
+    materialDesign:HintAssist.Hint="Сорт"
+    Style="{StaticResource MaterialDesignOutlinedComboBox}"
+    BorderBrush="#BC989393">
+            <ComboBoxItem Content="Первый сорт"/>
+            <ComboBoxItem Content="Второй сорт"/>
         </ComboBox>
 
         <Separator 
-            Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" 
-            Width="1" 
-            Height="225"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Background="#BC989393" 
-            Margin="250 330 0 0"/>
+    Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" 
+    Width="1" 
+    Height="285"
+    HorizontalAlignment="Left"
+    VerticalAlignment="Center"
+    Background="#BC989393" 
+    Margin="250 320 0 0"/>
         <TextBox
-            x:Name="DensityBox"
+    x:Name="AcidityBox"
+    Visibility="Visible"
+    materialDesign:HintAssist.Hint="Кислотность"
+    FontSize="17px"
+    Padding="12 10 2 2"
             IsEnabled="False"
-            Visibility="Visible"
-            materialDesign:HintAssist.Hint="Плотность"
-            FontSize="17px"
-            Padding="12 10 2 2"
-            Height="45px"
-            Width="160px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Left"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="260 150 0 0"
-            BorderBrush="#BC989393">
+    Height="45px"
+    Width="160px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Left"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="260 80 0 0"
+    BorderBrush="#BC989393">
         </TextBox>
         <TextBox
-            x:Name="TemperatureBox"
+    x:Name="DensityBox"
             IsEnabled="False"
-            Visibility="Visible"
-            materialDesign:HintAssist.Hint="Температура"
-            FontSize="17px"
-            Padding="12 10 2 2"
-            Height="45px"
-            Width="160px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Left"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="260 270 0 0"
-            BorderBrush="#BC989393">
+    Visibility="Visible"
+    materialDesign:HintAssist.Hint="Плотность"
+    FontSize="17px"
+    Padding="12 10 2 2"
+    Height="45px"
+    Width="160px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Left"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="260 200 0 0"
+    BorderBrush="#BC989393">
+        </TextBox>
+        <TextBox
+    x:Name="TemperatureBox"
+            IsEnabled="False"
+    Visibility="Visible"
+    materialDesign:HintAssist.Hint="Температура"
+    FontSize="17px"
+    Padding="12 10 2 2"
+    Height="45px"
+    Width="160px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Left"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="260 320 0 0"
+    BorderBrush="#BC989393">
         </TextBox>
         <ComboBox
-            x:Name="PackagingTypeCombo"
-            Visibility="Visible"
+    x:Name="GradeCombo"
+    Visibility="Visible"
+    Width="160px"
             IsEnabled="False"
-            Width="160px"
-            Height="45px"
-            FontSize="17px"
-            Padding="12 0 12 0"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Left"
-            Margin="260 390 0 0"
-            materialDesign:HintAssist.Hint="Упаковка"
-            Style="{StaticResource MaterialDesignOutlinedComboBox}"
-            BorderBrush="#BC989393">
-            <ComboBoxItem Content="Пластиковая бутылка"/>
-            <ComboBoxItem Content="Стеклянная бутылка"/>
+    Height="45px"
+    FontSize="17px"
+    Padding="12 0 12 0"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Left"
+    Margin="260 440 0 0"
+    materialDesign:HintAssist.Hint="Бактер. осем."
+    Style="{StaticResource MaterialDesignOutlinedComboBox}"
+    BorderBrush="#BC989393">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
         </ComboBox>
         <ComboBox
-            x:Name="GradeCombo"
+    x:Name="CleningGroupCombo"
+    Width="160px"
+    Height="45px"
             IsEnabled="False"
-            Visibility="Visible"
-            Width="160px"
-            Height="45px"
-            FontSize="17px"
-            Padding="12 0 12 0"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Left"
-            Margin="260 510 0 0"
-            materialDesign:HintAssist.Hint="Бактер. актив."
-            Style="{StaticResource MaterialDesignOutlinedComboBox}"
-            BorderBrush="#BC989393">
-            <ComboBoxItem Content="Пластиковая бутылка"/>
-            <ComboBoxItem Content="Стеклянные бутылка"/>
+    FontSize="17px"
+    Padding="12 0 12 0"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Left"
+    Margin="260 560 0 0"
+    materialDesign:HintAssist.Hint="Группа ч."
+    Style="{StaticResource MaterialDesignOutlinedComboBox}"
+    BorderBrush="#BC989393">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
         </ComboBox>
         <Separator 
-            Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" 
-            Width="1" 
-            Height="225" 
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Background="#BC989393" 
-            Margin="430 330 0 0"/>
+    Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" 
+    Width="1" 
+    Height="285" 
+    HorizontalAlignment="Left"
+    VerticalAlignment="Center"
+    Background="#BC989393" 
+    Margin="430 320 0 0"/>
         <TextBox
-            x:Name="BruttoBox"
-            Visibility="Visible"
+    x:Name="BruttoBox"
+    Visibility="Visible"
             IsEnabled="False"
-            materialDesign:HintAssist.Hint="Брутто"
-            FontSize="17px"
-            Padding="12 10 2 2"
-            Height="45px"
-            Width="130px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Left"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="440 150 0 0"
-            BorderBrush="#BC989393"/>
+    materialDesign:HintAssist.Hint="Брутто"
+    FontSize="17px"
+    Padding="12 10 2 2"
+    Height="45px"
+    Width="130px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Left"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="440 150 0 0"
+    BorderBrush="#BC989393"/>
+        <ComboBox
+    x:Name="TaraBox"
+    Visibility="Visible"
+            IsEnabled="False"
+    Width="130px"
+    Height="45px"
+    FontSize="17px"
+    Padding="12 0 12 0"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Left"
+    Margin="440 270 0 0"
+    materialDesign:HintAssist.Hint="Тара"
+    Style="{StaticResource MaterialDesignOutlinedComboBox}"
+    BorderBrush="#BC989393">
+            <ComboBoxItem Content="Фляга"/>
+            <ComboBoxItem Content="Бидон"/>
+            <ComboBoxItem Content="Без упаковки"/>
+        </ComboBox>
         <TextBox
-            x:Name="TaraBox"
+    x:Name="NettoBox"
+    Visibility="Visible"
+    materialDesign:HintAssist.Hint="Нетто"
+    FontSize="17px"
+    Padding="12 10 2 2"
             IsEnabled="False"
-            Visibility="Visible"
-            materialDesign:HintAssist.Hint="Тара"
-            FontSize="17px"
-            Padding="12 10 2 2"
-            Height="45px"
-            Width="130px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Left"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="440 270 0 0"
-            BorderBrush="#BC989393">
+    Height="45px"
+    Width="130px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Left"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="440 390 0 0"
+    BorderBrush="#BC989393">
         </TextBox>
         <TextBox
-            x:Name="NettoBox"
+    x:Name="QuantityBox"
+    Visibility="Visible"
+    materialDesign:HintAssist.Hint="Количество"
+    FontSize="17px"
+    Padding="12 10 2 2"
+    Height="45px"
             IsEnabled="False"
-            Visibility="Visible"
-            materialDesign:HintAssist.Hint="Нетто"
-            FontSize="17px"
-            Padding="12 10 2 2"
-            Height="45px"
-            Width="130px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Left"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="440 390 0 0"
-            BorderBrush="#BC989393">
-        </TextBox>
-        <TextBox
-            x:Name="QuantityBox"
-            Visibility="Visible"
-            materialDesign:HintAssist.Hint="Количество"
-            FontSize="17px"
-            Padding="12 10 2 2"
-            IsEnabled="False"
-            Height="45px"
-            Width="130px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Left"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="440 510 0 0"
-            BorderBrush="#BC989393">
+    Width="130px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Left"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="440 510 0 0"
+    BorderBrush="#BC989393">
         </TextBox>
 
         <GroupBox
-            Width="480"
-            Height="300"
-            Margin="0 280 100 0"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Right"
-            Header="Отправлено"
-            FontSize="17"
-        >
+    Width="480"
+    Height="360"
+    Margin="0 270 100 0"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Right"
+    Header="Отправлено"
+    FontSize="17"
+>
             <GroupBox.BorderBrush>
                 <SolidColorBrush Color="#BC989393"/>
             </GroupBox.BorderBrush>
@@ -314,10 +332,10 @@
             <GroupBox.Template>
                 <ControlTemplate TargetType="{x:Type GroupBox}">
                     <Border 
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="10"
-                        Background="{TemplateBinding Background}">
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="10"
+                Background="{TemplateBinding Background}">
                         <ContentPresenter Margin="10"/>
                     </Border>
                 </ControlTemplate>
@@ -327,226 +345,243 @@
             </GroupBox.Background>
         </GroupBox>
         <Label 
-            FontSize="18px"
-            FontWeight="Medium"
-            Height="30px"
-            Content="Принято"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Foreground="Gray"
-            Margin="123 30 0 0">
+    FontSize="18px"
+    FontWeight="Medium"
+    Height="30px"
+    Content="Принято"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center"
+    Foreground="Gray"
+    Margin="123 0 0 40">
         </Label>
         <Separator 
-            Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" 
-            Height="1" 
-            Width="460px"
-            HorizontalAlignment="Right"
-            Background="#BC989393" 
-            Margin="0 70 110 0" 
-            Padding="0 0"/>
+    Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" 
+    Height="1" 
+    Width="460px"
+    HorizontalAlignment="Right"
+    Background="#BC989393" 
+    Margin="0 0 110 0" 
+    Padding="0 0"/>
         <TextBox
-            x:Name="FatAccBox"
-            Visibility="Visible"
-            IsEnabled="False"
-            materialDesign:HintAssist.Hint="Жирность"
-            FontSize="17px"
-            Padding="12 10 2 2"
-            Height="45px"
-            Width="130px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="175 150 0 0"
-            BorderBrush="#BC989393"/>
+    x:Name="FatAccBox"
+    Visibility="Visible"
+    IsEnabled="False"
+    materialDesign:HintAssist.Hint="Жирность"
+    FontSize="17px"
+    Padding="12 10 2 2"
+    Height="45px"
+    Width="130px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Center"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="175 150 0 0"
+    BorderBrush="#BC989393"/>
         <TextBox
-            x:Name="MassAccBox"
-            Visibility="Visible"
-            materialDesign:HintAssist.Hint="Масса"
-            FontSize="17px"
-            IsEnabled="False"
-            Padding="12 10 2 2"
-            Height="45px"
-            Width="130px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="175 270 0 0"
-            BorderBrush="#BC989393">
+    x:Name="MassAccBox"
+    Visibility="Visible"
+    materialDesign:HintAssist.Hint="Масса, кг"
+    FontSize="17px"
+    IsEnabled="False"
+    Padding="12 10 2 2"
+    Height="45px"
+    Width="130px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Center"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="175 270 0 0"
+    BorderBrush="#BC989393">
         </TextBox>
         <TextBox
-            x:Name="AcidityAccBox"
-            Visibility="Visible"
-            materialDesign:HintAssist.Hint="Кислотность"
-            FontSize="17px"
-            IsEnabled="False"
-            Padding="12 10 2 2"
-            Height="45px"
-            Width="130px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="175 390 0 0"
-            BorderBrush="#BC989393">
+    x:Name="MassResultAccBox"
+    Visibility="Visible"
+    materialDesign:HintAssist.Hint="Масса, %"
+    FontSize="17px"
+    IsEnabled="False"
+    Padding="12 10 2 2"
+    Height="45px"
+    Width="130px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Center"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="175 390 0 0"
+    BorderBrush="#BC989393">
         </TextBox>
         <ComboBox
-            x:Name="CleningGroupAccCombo"
-            Width="130px"
-            Height="45px"
-            FontSize="17px"
-            IsEnabled="False"
-            Padding="12 0 12 0"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Margin="175 510 0 0"
-            materialDesign:HintAssist.Hint="Группа ч."
-            Style="{StaticResource MaterialDesignOutlinedComboBox}"
-            BorderBrush="#BC989393">
-            <ComboBoxItem Content="Чистый груз"/>
-            <ComboBoxItem Content="Грязный груз"/>
-            <ComboBoxItem Content="Опасный груз"/>
-            <ComboBoxItem Content="Очищенный груз"/>
+    x:Name="SortAccCombo"
+    Width="130px"
+    Height="45px"
+    FontSize="17px"
+    IsEnabled="False"
+    Padding="12 0 12 0"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Center"
+    Margin="175 510 0 0"
+    materialDesign:HintAssist.Hint="Сорт"
+    Style="{StaticResource MaterialDesignOutlinedComboBox}"
+    BorderBrush="#BC989393">
+            <ComboBoxItem Content="Первый сорт"/>
+            <ComboBoxItem Content="Второй сорт"/>
         </ComboBox>
 
         <Separator 
-            Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" 
-            Width="1" 
-            Height="225" 
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Background="#BC989393" 
-            Margin="325 330 0 0"/>
+    Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" 
+    Width="1" 
+    Height="280" 
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center"
+    Background="#BC989393" 
+    Margin="325 320 0 0"/>
         <TextBox
-            x:Name="DensityAccBox"
-            Visibility="Visible"
-            IsEnabled="False"
-            materialDesign:HintAssist.Hint="Плотность"
-            FontSize="17px"
-            Padding="12 10 2 2"
-            Height="45px"
-            Width="160px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="502 150 0 0"
-            BorderBrush="#BC989393">
+    x:Name="AcidityAccBox"
+    Visibility="Visible"
+    materialDesign:HintAssist.Hint="Кислотность"
+    FontSize="17px"
+    Padding="12 10 2 2"
+    Height="45px"
+    IsEnabled="False"
+    Width="160px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Center"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="502 80 0 0"
+    BorderBrush="#BC989393">
         </TextBox>
         <TextBox
-            x:Name="TemperatureAccBox"
-            Visibility="Visible"
-            materialDesign:HintAssist.Hint="Температура"
-            FontSize="17px"
-            Padding="12 10 2 2"
-            IsEnabled="False"
-            Height="45px"
-            Width="160px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="502 270 0 0"
-            BorderBrush="#BC989393">
+    x:Name="DensityAccBox"
+    Visibility="Visible"
+    IsEnabled="False"
+    materialDesign:HintAssist.Hint="Плотность"
+    FontSize="17px"
+    Padding="12 10 2 2"
+    Height="45px"
+    Width="160px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Center"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="502 200 0 0"
+    BorderBrush="#BC989393">
+        </TextBox>
+        <TextBox
+    x:Name="TemperatureAccBox"
+    Visibility="Visible"
+    materialDesign:HintAssist.Hint="Температура"
+    FontSize="17px"
+    Padding="12 10 2 2"
+    IsEnabled="False"
+    Height="45px"
+    Width="160px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Center"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="502 320 0 0"
+    BorderBrush="#BC989393">
         </TextBox>
         <ComboBox
-            x:Name="PackagingTypeAccCombo"
-            Visibility="Visible"
-            Width="160px"
-            Height="45px"
-            IsEnabled="False"
-            FontSize="17px"
-            Padding="12 0 12 0"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Margin="502 390 0 0"
-            materialDesign:HintAssist.Hint="Упаковка"
-            Style="{StaticResource MaterialDesignOutlinedComboBox}"
-            BorderBrush="#BC989393">
-            <ComboBoxItem Content="Пластиковая бутылка"/>
-            <ComboBoxItem Content="Стеклянная бутылка"/>
+     x:Name="GradeAccCombo"
+     Visibility="Visible"
+     Width="160px"
+     Height="45px"
+     FontSize="17px"
+     Padding="12 0 12 0"
+     VerticalAlignment="Center"
+     HorizontalAlignment="Center"
+     Margin="502 440 0 0"
+    IsEnabled="False"
+     materialDesign:HintAssist.Hint="Бактер. осем."
+     Style="{StaticResource MaterialDesignOutlinedComboBox}"
+     BorderBrush="#BC989393">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
         </ComboBox>
         <ComboBox
-            x:Name="GradeAccCombo"
-            Visibility="Visible"
-            Width="160px"
-            Height="45px"
-            IsEnabled="False"
-            FontSize="17px"
-            Padding="12 0 12 0"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Right"
-            Margin="0 510 260 0"
-            materialDesign:HintAssist.Hint="Бактер. актив."
-            Style="{StaticResource MaterialDesignOutlinedComboBox}"
-            BorderBrush="#BC989393">
-            <ComboBoxItem Content="Пластиковая бутылка"/>
-            <ComboBoxItem Content="Стеклянные бутылка"/>
+    x:Name="CleningGroupAccCombo"
+    Width="160px"
+    Height="45px"
+    FontSize="17px"
+    Padding="12 0 12 0"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Center"
+    Margin="502 560 0 0"
+    IsEnabled="False"
+    materialDesign:HintAssist.Hint="Группа ч."
+    Style="{StaticResource MaterialDesignOutlinedComboBox}"
+    BorderBrush="#BC989393">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
         </ComboBox>
         <Separator 
-            Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" 
-            Width="1" 
-            Height="225" 
-            HorizontalAlignment="Right"
-            VerticalAlignment="Center"
-            Background="#BC989393" 
-            Margin="0 330 250 0"/>
+    Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" 
+    Width="1" 
+    Height="225" 
+    HorizontalAlignment="Right"
+    VerticalAlignment="Center"
+    Background="#BC989393" 
+    Margin="0 330 250 0"/>
         <TextBox
-            x:Name="BruttoAccBox"
-            Visibility="Visible"
-            materialDesign:HintAssist.Hint="Брутто"
-            FontSize="17px"
-            IsEnabled="False"
-            Padding="12 10 2 2"
-            Height="45px"
-            Width="130px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Right"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 150 110 0"
-            BorderBrush="#BC989393"/>
+    x:Name="BruttoAccBox"
+    Visibility="Visible"
+    materialDesign:HintAssist.Hint="Брутто"
+    FontSize="17px"
+    IsEnabled="False"
+    Padding="12 10 2 2"
+    Height="45px"
+    Width="130px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Right"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="0 150 110 0"
+    BorderBrush="#BC989393"/>
+        <ComboBox
+    x:Name="TaraAccBox"
+    Visibility="Visible"
+    Width="130px"
+    Height="45px"
+    FontSize="17px"
+    Padding="12 0 12 0"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Right"
+    IsEnabled="False"
+    Margin="0 270 110 0"
+    materialDesign:HintAssist.Hint="Тара"
+    Style="{StaticResource MaterialDesignOutlinedComboBox}"
+    BorderBrush="#BC989393">
+            <ComboBoxItem Content="Фляга"/>
+            <ComboBoxItem Content="Бидон"/>
+            <ComboBoxItem Content="Без упаковки"/>
+        </ComboBox>
         <TextBox
-            x:Name="TaraAccBox"
-            Visibility="Visible"
-            materialDesign:HintAssist.Hint="Тара"
-            FontSize="17px"
-            IsEnabled="False"
-            Padding="12 10 2 2"
-            Height="45px"
-            Width="130px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Right"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 270 110 0"
-            BorderBrush="#BC989393">
+    x:Name="NettoAccBox"
+    Visibility="Visible"
+    materialDesign:HintAssist.Hint="Нетто"
+    FontSize="17px"
+    IsEnabled="False"
+    Padding="12 10 2 2"
+    Height="45px"
+    Width="130px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Right"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="0 390 110 0"
+    BorderBrush="#BC989393">
         </TextBox>
         <TextBox
-            x:Name="NettoAccBox"
-            Visibility="Visible"
-            materialDesign:HintAssist.Hint="Нетто"
-            FontSize="17px"
-            IsEnabled="False"
-            Padding="12 10 2 2"
-            Height="45px"
-            Width="130px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Right"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 390 110 0"
-            BorderBrush="#BC989393">
+    x:Name="QuantityAccBox"
+    Visibility="Visible"
+    materialDesign:HintAssist.Hint="Количество"
+    FontSize="17px"
+    IsEnabled="False"
+    Padding="12 10 2 2"
+    Height="45px"
+    Width="130px"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Right"
+    Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+    Margin="0 510 110 0"
+    BorderBrush="#BC989393">
         </TextBox>
-        <TextBox
-            x:Name="QuantityAccBox"
-            Visibility="Visible"
-            materialDesign:HintAssist.Hint="Количество"
-            FontSize="17px"
-            IsEnabled="False"
-            Padding="12 10 2 2"
-            Height="45px"
-            Width="130px"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Right"
-            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 510 110 0"
-            BorderBrush="#BC989393">
-        </TextBox>
-
+        
         <ComboBox
             x:Name="ContractorComboBox"
             Width="225px"

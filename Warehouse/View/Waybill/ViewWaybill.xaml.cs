@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows;
-using Warehouse.Entity;
 using Warehouse.Storage;
 
 namespace Warehouse.View.Waybill
@@ -32,13 +31,11 @@ namespace Warehouse.View.Waybill
 
         private void fetchPostedWaybill()
         {
-            string compositionPostedQuery = $"SELECT fat, mass, acidity, temperature, cleaning_group, density, packaging_type, brutto, tara, netto, grade, waybill_composition.quantity FROM waybill_composition WHERE waybill_id = '{waybillId}' AND waybill_type = 'posted'";
+            string compositionPostedQuery = $"SELECT fat, mass, mass_result, acidity, temperature, cleaning_group, density, packaging_type, brutto, tara, netto, grade, waybill_composition.quantity, waybill_composition.sort FROM waybill_composition WHERE waybill_id = '{waybillId}' AND waybill_type = 'posted'";
 
             SqlCommand command = new SqlCommand(compositionPostedQuery, database.getSqlConnection());
 
             database.checkConnection();
-
-            WaybillCompositionEntity waybillComposition = new WaybillCompositionEntity();
 
             using (SqlDataReader reader = command.ExecuteReader())
             {
@@ -46,11 +43,12 @@ namespace Warehouse.View.Waybill
                 {
                     FatBox.Text = reader["fat"].ToString();
                     MassBox.Text = reader["mass"].ToString();
+                    SortCombo.Text = reader["sort"].ToString();
+                    MassResultBox.Text = reader["mass_result"].ToString();
                     AcidityBox.Text = reader["acidity"].ToString();
                     TemperatureBox.Text = reader["temperature"].ToString();
                     CleningGroupCombo.Text = reader["cleaning_group"].ToString();
                     DensityBox.Text = reader["density"].ToString();
-                    PackagingTypeCombo.Text = reader["packaging_type"].ToString();
                     BruttoBox.Text = reader["brutto"].ToString();
                     TaraBox.Text = reader["tara"].ToString();
                     NettoBox.Text = reader["netto"].ToString();
@@ -64,13 +62,11 @@ namespace Warehouse.View.Waybill
 
         private void fetchAcceptedWaybill()
         {
-            string compositionAcceptedQuery = $"SELECT fat, mass, acidity, temperature, cleaning_group, density, packaging_type, brutto, tara, netto, grade, waybill_composition.quantity FROM waybill_composition WHERE waybill_id = '{waybillId}' AND waybill_type = 'accepted'";
+            string compositionAcceptedQuery = $"SELECT fat, mass, mass_result, waybill_composition.sort, acidity, temperature, cleaning_group, density, packaging_type, brutto, tara, netto, grade, waybill_composition.quantity FROM waybill_composition WHERE waybill_id = '{waybillId}' AND waybill_type = 'accepted'";
 
             SqlCommand command = new SqlCommand(compositionAcceptedQuery, database.getSqlConnection());
 
             database.checkConnection();
-
-            WaybillCompositionEntity waybillComposition = new WaybillCompositionEntity();
 
             using (SqlDataReader reader = command.ExecuteReader())
             {
@@ -78,11 +74,12 @@ namespace Warehouse.View.Waybill
                 {
                     FatAccBox.Text = reader["fat"].ToString();
                     MassAccBox.Text = reader["mass"].ToString();
+                    MassResultAccBox.Text = reader["mass_result"].ToString();
+                    SortAccCombo.Text = reader["sort"].ToString();
                     AcidityAccBox.Text = reader["acidity"].ToString();
                     TemperatureAccBox.Text = reader["temperature"].ToString();
                     CleningGroupAccCombo.Text = reader["cleaning_group"].ToString();
                     DensityAccBox.Text = reader["density"].ToString();
-                    PackagingTypeAccCombo.Text = reader["packaging_type"].ToString();
                     BruttoAccBox.Text = reader["brutto"].ToString();
                     TaraAccBox.Text = reader["tara"].ToString();
                     NettoAccBox.Text = reader["netto"].ToString();

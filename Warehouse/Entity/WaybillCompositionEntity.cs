@@ -12,6 +12,10 @@
 
         public string mass { get; set; }
 
+        public string massResult { get; set; }
+
+        public string sort {  get; set; }
+
         public string acidity { get; set; }
 
         public string temperature { get; set; }
@@ -36,7 +40,7 @@
         {
         }
 
-        public WaybillCompositionEntity(long waybillId, string waybillType, string fat, string mass, string acidity, string temperature, string cleaningGroup, string density, string packagingType, string brutto, string tara, string netto, string grade, string quantity)
+        public WaybillCompositionEntity(long waybillId, string waybillType, string fat, string mass, string massResult, string acidity, string temperature, string cleaningGroup, string density, string packagingType, string brutto, string tara, string netto, string grade, string quantity, string sort)
         {
             this.waybillId = waybillId;
             this.waybillType = waybillType;
@@ -47,20 +51,23 @@
             this.cleaningGroup = cleaningGroup;
             this.density = density;
             this.packagingType = packagingType;
+            this.massResult = massResult;
             this.brutto = brutto;
             this.tara = tara;
             this.netto = netto;
             this.grade = grade;
             this.quantity = quantity;
+            this.sort = sort;
         }
 
-        public WaybillCompositionEntity(long waybillCompositionId, long waybillId, string waybillType, string fat, string mass, string acidity, string temperature, string cleaningGroup, string density, string packagingType, string brutto, string tara, string netto, string grade, string quantity)
+        public WaybillCompositionEntity(long waybillCompositionId, long waybillId, string waybillType, string fat, string mass, string massResult, string acidity, string temperature, string cleaningGroup, string density, string packagingType, string brutto, string tara, string netto, string grade, string quantity, string sort)
         {
             this.waybillCompositionId = waybillCompositionId;
             this.waybillId = waybillId;
             this.waybillType = waybillType;
             this.fat = fat;
             this.mass = mass;
+            this.massResult = massResult;
             this.acidity = acidity;
             this.temperature = temperature;
             this.cleaningGroup = cleaningGroup;
@@ -71,6 +78,7 @@
             this.netto = netto;
             this.grade = grade;
             this.quantity = quantity;
+            this.sort = sort;
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Warehouse.Validation
 
         public bool isIntFieldValid(string field)
         {
-            string pattern = @"^\d{3,12}$";
+            string pattern = @"^\d{13}$";
 
             return Regex.IsMatch(field, pattern);
         }
@@ -34,6 +34,46 @@ namespace Warehouse.Validation
             }
 
             if (parsedNumber < 1 || parsedNumber > maxValue)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool isDoubleNumberInRange(string number, double minValue, double maxValue)
+        {
+            if (string.IsNullOrWhiteSpace(number))
+            {
+                return false;
+            }
+
+            if (!double.TryParse(number, out double parsedNumber))
+            {
+                return false;
+            }
+
+            if (parsedNumber < minValue || parsedNumber > maxValue)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool isNumberInRange(string number, double minValue, double maxValue)
+        {
+            if (string.IsNullOrWhiteSpace(number))
+            {
+                return false;
+            }
+
+            if (!int.TryParse(number, out int parsedNumber))
+            {
+                return false;
+            }
+
+            if (parsedNumber < 1 || parsedNumber > maxValue || parsedNumber < minValue)
             {
                 return false;
             }

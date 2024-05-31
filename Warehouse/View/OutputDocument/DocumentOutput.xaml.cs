@@ -17,26 +17,26 @@ namespace Warehouse.View
 
         private void RecordCardButton_Click(object sender, RoutedEventArgs e)
         {
-            RecordCardView record = new RecordCardView();
-            record.ShowDialog();
+            RecordOutView recordOut = new RecordOutView();
+            recordOut.ShowDialog();
         }
 
         private void StatementButton_Click(object sender, RoutedEventArgs e)
         {
-            StatementView statement = new StatementView();
-            statement.ShowDialog();
+            StatementOutView statementOutView = new StatementOutView();
+            statementOutView.ShowDialog();
         }
 
         private void WaybillButton_Click(object sender, RoutedEventArgs e)
         {
-            WaybillView waybill = new WaybillView();
-            waybill.ShowDialog();
+            WaybillOutView waybillOutView = new WaybillOutView();
+            waybillOutView.ShowDialog();
         }
 
         private void DeliveryNoteButton_Click(object sender, RoutedEventArgs e)
         {
-            DeliveryNoteView deliveryNoteView = new DeliveryNoteView();
-            deliveryNoteView.ShowDialog();
+            TotalOutView totalOutView = new TotalOutView();
+            totalOutView.ShowDialog();
         }
     }
 }

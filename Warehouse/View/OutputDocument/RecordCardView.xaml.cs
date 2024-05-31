@@ -30,7 +30,6 @@ namespace Warehouse.View.OutputDocument
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
-
             ComboBoxEntity recordCard = (ComboBoxEntity)RecordCardCombo.SelectedItem;
 
             try

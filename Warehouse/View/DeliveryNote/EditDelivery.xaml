@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Height="900" Width="950"
+        Height="540" Width="500"
         Title="Редактировать требования накладная"
         Icon="/Resources/ColorIcon.png"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -18,19 +18,12 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <materialDesign:PackIcon 
-            Height="35px"
-            Width="35px"
-            HorizontalAlignment="Center"
-            Margin="0 10 0 0"
-            Kind="Pencil"
-            Foreground="White"/>
         <Border
             Background="White"
             CornerRadius="10" 
             BorderBrush="Black"
-            Height="760px" 
-            Width="800px" 
+            Height="450px" 
+            Width="400px" 
             Padding="10">
             <Border.Effect>
                 <DropShadowEffect 
@@ -45,20 +38,20 @@
         <Label 
             FontSize="20px"
             Height="30px"
-            Content="Редактировать требования накладная"
+            Content="Редактировать требование накладная"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Margin="0,70,0,0">
+            Margin="0 50 0 0">
         </Label>
         <ComboBox
             x:Name="DivisionComboBox"
-            Width="225px"
+            Width="300px"
             Height="45px"
             FontSize="17px"
-            HorizontalAlignment="Left"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Padding="12 0 12 0"
-            Margin="100 130 0 0"
+            Margin="0 110 0 0"
             materialDesign:HintAssist.Hint="Подразделение"
             Style="{StaticResource MaterialDesignOutlinedComboBox}"
             BorderBrush="#BC989393">
@@ -71,8 +64,8 @@
              Height="45px"
              HorizontalAlignment="Center"
              VerticalAlignment="Top"
-             Width="225px"
-             Margin="0 130 0 20"
+             Width="300px"
+             Margin="0 170 0 0"
              Grid.Row="4"
              Grid.Column="4"
              Style="{StaticResource MaterialDesignOutlinedDatePicker}" 
@@ -81,55 +74,42 @@
             x:Name="AssignmentBox"
             materialDesign:HintAssist.Hint="Назначение"
             FontSize="17px"
-            HorizontalAlignment="Right"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Padding="12 10 2 2"
             Height="45px"
-            Width="225px"
+            Width="300px"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-            Margin="0 130 100 0" 
+            Margin="0 230 0 0" 
             BorderBrush="#BC989393">
         </TextBox>
-
-        <DataGrid   
-            Margin="0 50 0 0" 
-            Height="520px"
-            Width="735px"
-            Visibility="Visible"
-            x:Name="ContractorGrid" 
-            AutoGenerateColumns="false"
-            CanUserResizeColumns="True" 
-            CanUserAddRows="False" 
-            CanUserDeleteRows="False" 
-            CanUserReorderColumns="False" 
-            SelectionMode="Single" 
-            SelectionUnit="FullRow" 
-            CanUserResizeRows="True" 
-            IsReadOnly="True"
-            FontSize="15px"
-            Foreground="#FF7643D2"
-            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-            ScrollViewer.VerticalScrollBarVisibility="Hidden">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Продукция" Width="*" Binding="{Binding productId}" Visibility="Collapsed"/>
-                <DataGridTextColumn Header="Продукция" Width="*" Binding="{Binding name}"/>
-                <DataGridTextColumn Header="Запрошено" Width="*" Binding="{Binding requested}"/>
-                <DataGridTextColumn Header="Реализовано" Width="*" Binding="{Binding released}"/>
-                <DataGridTextColumn Header="Стоимость" Width="*" Binding="{Binding price}"/>
-                <DataGridTextColumn Header="Сумма" Width="*" Binding="{Binding amount}"/>
-            </DataGrid.Columns>
-            <DataGrid.ContextMenu>
-                <ContextMenu>
-                    <MenuItem x:Name="AddContractor" Header="Добавить" Click="AddContractor_Click"/>
-                    <MenuItem x:Name="EditContractor" Header="Редактировать" Click="EditContractor_Click"/>
-                    <MenuItem x:Name="DeleteContractor" Header="Удалить" Click="DeleteContractor_Click"/>
-                </ContextMenu>
-            </DataGrid.ContextMenu>
-        </DataGrid>
+        <TextBox
+            x:Name="BrokerBox"
+            materialDesign:HintAssist.Hint="Через кого (кому)"
+            FontSize="17px"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Padding="12 10 2 2"
+            Height="45px"
+            Width="300px"
+            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+            Margin="0 290 0 0" 
+            BorderBrush="#BC989393">
+        </TextBox>
+        <Label 
+            FontSize="16px"
+            Height="100px"
+            Width="300px"
+            Foreground="Gray"
+            Content="Для редактирования состава&#xA;откройте документ полностью!"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="0 280 0 0">
+        </Label>
 
         <Button
              x:Name="Confirm"
-             Width="225px"
+             Width="130px"
              Height="50px"
              FontSize="16"
              materialDesign:ButtonAssist.CornerRadius="20"
@@ -140,7 +120,7 @@
              HorizontalAlignment="Right" 
              VerticalAlignment="Bottom" 
              RenderOptions.EdgeMode="Aliased"
-             Margin="0 0 100 70"
+             Margin="0 0 90 50"
              Click="Confirm_Click">
             <materialDesign:PackIcon 
                  Height="30"
@@ -151,7 +131,7 @@
         </Button>
         <Button
              x:Name="Return"
-             Width="225px"
+             Width="130px"
              Height="50px"
              FontSize="16"
              materialDesign:ButtonAssist.CornerRadius="20"
@@ -162,7 +142,7 @@
              HorizontalAlignment="Left" 
              VerticalAlignment="Bottom" 
              RenderOptions.EdgeMode="Aliased"
-             Margin="100 0 0 70"
+             Margin="90 0 0 50"
              Click="Return_Click">
             <materialDesign:PackIcon 
                  Height="30"

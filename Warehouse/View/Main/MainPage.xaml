@@ -37,32 +37,90 @@
                 <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="180"/>
             </DoubleAnimationUsingKeyFrames>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ContractorGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EmployeeGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DivisionGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="CattleGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ProductGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="StatementGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryNoteGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardGrid" From="90,60,30,30" To="210,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="GridName" From="90,18,739,819" To="210,18,739,819" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ContractorGrid" From="90,60,30,60" To="210,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EmployeeGrid" From="90,60,30,60" To="210,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DivisionGrid" From="90,60,30,60" To="210,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="CattleGrid" From="90,60,30,60" To="210,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ProductGrid" From="90,60,30,60" To="210,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="StatementGrid" From="90,60,30,60" To="210,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillGrid" From="90,60,30,60" To="210,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryNoteGrid" From="90,60,30,60" To="210,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardGrid" From="90,60,30,60" To="210,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="GridName" From="90,18,0,0" To="210,18,0,0" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddContractorBtn" From="90 0 0 10" To="210 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditContractorBtn" From="220 0 0 10" To="340 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteContractorBtn" From="350 0 0 10" To="470 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddEmployeeBtn" From="90 0 0 10" To="210 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditEmployeeBtn" From="220 0 0 10" To="340 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteEmployeeBtn" From="350 0 0 10" To="470 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddDivisionBtn" From="90 0 0 10" To="210 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditDivisionBtn" From="220 0 0 10" To="340 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteDivisionBtn" From="350 0 0 10" To="470 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddCattleBtn" From="90 0 0 10" To="210 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditCattleBtn" From="220 0 0 10" To="340 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteCattleBtn" From="350 0 0 10" To="470 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddProductBtn" From="90 0 0 10" To="210 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditProductBtn" From="220 0 0 10" To="340 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteProductBtn" From="350 0 0 10" To="470 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddStatementBtn" From="90 0 0 10" To="210 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditStatementBtn" From="220 0 0 10" To="340 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteStatementBtn" From="350 0 0 10" To="470 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddWaybillBtn" From="90 0 0 10" To="210 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditWaybillBtn" From="220 0 0 10" To="340 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteWaybillBtn" From="350 0 0 10" To="470 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WordWaybillBtn" From="470 0 0 10" To="580 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddDeliveryBtn" From="90 0 0 10" To="210 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditDeliveryBtn" From="220 0 0 10" To="340 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteDeliveryBtn" From="350 0 0 10" To="470 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WordDeliveryBtn" From="470 0 0 10" To="580 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddRecordBtn" From="90 0 0 10" To="210 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditRecordBtn" From="220 0 0 10" To="340 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteRecordBtn" From="350 0 0 10" To="470 0 0 10" Duration="0:0:0.5"/>
         </Storyboard>
         <Storyboard x:Key="MenuClose">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
                 <EasingDoubleKeyFrame KeyTime="0" Value="180"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="60"/>
             </DoubleAnimationUsingKeyFrames>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ContractorGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EmployeeGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DivisionGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="CattleGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ProductGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="StatementGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryNoteGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardGrid" From="210,60,30,30" To="90,60,30,30" Duration="0:0:0.5"/>
-            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="GridName" From="210,18,739,819" To="90,18,739,819" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ContractorGrid" From="210,60,30,60" To="90,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EmployeeGrid" From="210,60,30,60" To="90,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DivisionGrid" From="210,60,30,60" To="90,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="CattleGrid" From="210,60,30,60" To="90,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="ProductGrid" From="210,60,30,60" To="90,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="StatementGrid" From="210,60,30,60" To="90,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WaybillGrid" From="210,60,30,60" To="90,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeliveryNoteGrid" From="210,60,30,60" To="90,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="RecordCardGrid" From="210,60,30,60" To="90,60,30,60" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="GridName" From="210,18,0,0" To="90,18,0,0" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddContractorBtn" From="210 0 0 10" To="90 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditContractorBtn" From="340 0 0 10" To="220 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteContractorBtn" From="470 0 0 10" To="350 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddEmployeeBtn" From="210 0 0 10" To="90 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditEmployeeBtn" From="340 0 0 10" To="220 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteEmployeeBtn" From="470 0 0 10" To="350 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddDivisionBtn" From="210 0 0 10" To="90 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditDivisionBtn" From="340 0 0 10" To="220 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteDivisionBtn" From="470 0 0 10" To="350 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddCattleBtn" From="210 0 0 10" To="90 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditCattleBtn" From="340 0 0 10" To="220 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteCattleBtn" From="470 0 0 10" To="350 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddProductBtn" From="210 0 0 10" To="90 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditProductBtn" From="340 0 0 10" To="220 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteProductBtn" From="470 0 0 10" To="350 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddStatementBtn" From="210 0 0 10" To="90 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditStatementBtn" From="340 0 0 10" To="220 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteStatementBtn" From="470 0 0 10" To="350 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddWaybillBtn" From="210 0 0 10" To="90 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditWaybillBtn" From="340 0 0 10" To="220 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteWaybillBtn" From="470 0 0 10" To="350 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WordWaybillBtn" From="580 0 0 10" To="470 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddDeliveryBtn" From="210 0 0 10" To="90 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditDeliveryBtn" From="340 0 0 10" To="220 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteDeliveryBtn" From="470 0 0 10" To="350 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="WordDeliveryBtn" From="580 0 0 10" To="470 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="AddRecordBtn" From="210 0 0 10" To="90 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="EditRecordBtn" From="340 0 0 10" To="220 0 0 10" Duration="0:0:0.5"/>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" Storyboard.TargetName="DeleteRecordBtn" From="470 0 0 10" To="350 0 0 10" Duration="0:0:0.5"/>
         </Storyboard>
     </Window.Resources>
     <Window.Triggers>
@@ -79,7 +137,7 @@
             VerticalAlignment="Stretch">
             <Label
                 x:Name="GridName"
-                Margin="90,18,739,819"
+                Margin="90 18 0 0"
                 FontSize="17"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
@@ -89,7 +147,7 @@
             </Label>
             <Label
                 x:Name="UserInfoLabel"
-                FontSize="17    "
+                FontSize="17"
                 Foreground="WHITE"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
@@ -97,8 +155,74 @@
             >
                 Должность
             </Label>
+            <Button
+                x:Name="AddContractorBtn"
+                Width="105px"
+                Height="40px"
+                FontSize="16"
+                materialDesign:ButtonAssist.CornerRadius="10"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                BorderBrush="Transparent"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Bottom"
+                Background="Transparent"
+                RenderOptions.EdgeMode="Aliased"
+                Click="AddContractorBtn_Click"
+                Margin="90 0 0 10">
+                <materialDesign:PackIcon 
+                    Height="30"
+                    Width="30"
+                    HorizontalAlignment="Center"
+                    Kind="Plus"
+                    Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="EditContractorBtn"
+                 Width="105px"
+                 Height="40px"
+                 FontSize="16"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                 Background="Transparent"
+                Click="EditContractorBtn_Click"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="220 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="Pencil"
+                     Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="DeleteContractorBtn"
+                 Width="105px"
+                 Height="40px"
+                 FontSize="16"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                Click="DeleteContractorBtn_Click"
+                 Margin="350 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="TrashCanOutline"
+                     Foreground="White"/>
+            </Button>
             <DataGrid   
-                Margin="90,60,30,30" 
+                Margin="90,60,30,60" 
                 Visibility="Visible"
                 x:Name="ContractorGrid" 
                 AutoGenerateColumns="false"
@@ -133,8 +257,77 @@
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
+            <Button
+                x:Name="AddEmployeeBtn"
+                Visibility="Collapsed"
+                Width="105px"
+                Height="40px"
+                FontSize="16"
+                materialDesign:ButtonAssist.CornerRadius="10"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                BorderBrush="Transparent"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Bottom"
+                Background="Transparent"
+                Click="AddEmployeeBtn_Click"
+                RenderOptions.EdgeMode="Aliased"
+                Margin="90 0 0 10">
+                <materialDesign:PackIcon 
+                    Height="30"
+                    Width="30"
+                    HorizontalAlignment="Center"
+                    Kind="Plus"
+                    Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="EditEmployeeBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                 FontSize="16"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                Click="EditEmployeeBtn_Click"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="220 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="Pencil"
+                     Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="DeleteEmployeeBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                 FontSize="16"
+                Click="DeleteEmployeeBtn_Click"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="350 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="TrashCanOutline"
+                     Foreground="White"/>
+            </Button>
             <DataGrid   
-                Margin="90,60,30,30"
+                Margin="90,60,30,60"
                 Visibility="Collapsed"
                 x:Name="EmployeeGrid" 
                 AutoGenerateColumns="false"
@@ -168,8 +361,77 @@
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
+            <Button
+                x:Name="AddDivisionBtn"
+                Visibility="Collapsed"
+                Width="105px"
+                Height="40px"
+                FontSize="16"
+                materialDesign:ButtonAssist.CornerRadius="10"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                BorderBrush="Transparent"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Bottom"
+                Click="AddDivisionBtn_Click"
+                Background="Transparent"
+                RenderOptions.EdgeMode="Aliased"
+                Margin="90 0 0 10">
+                <materialDesign:PackIcon 
+                    Height="30"
+                    Width="30"
+                    HorizontalAlignment="Center"
+                    Kind="Plus"
+                    Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="EditDivisionBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                 FontSize="16"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                 Background="Transparent"
+                Click="EditDivisionBtn_Click"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="220 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="Pencil"
+                     Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="DeleteDivisionBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                 FontSize="16"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                Click="DeleteDivisionBtn_Click"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="350 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="TrashCanOutline"
+                     Foreground="White"/>
+            </Button>
             <DataGrid   
-                Margin="90,60,30,30"
+                Margin="90,60,30,60"
                 Visibility="Collapsed"
                 x:Name="DivisionGrid" 
                 FontSize="15px"
@@ -200,8 +462,77 @@
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
+            <Button
+                x:Name="AddCattleBtn"
+                Visibility="Collapsed"
+                Width="105px"
+                Height="40px"
+                FontSize="16"
+                materialDesign:ButtonAssist.CornerRadius="10"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                BorderBrush="Transparent"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Bottom"
+                Click="AddCattleBtn_Click"
+                Background="Transparent"
+                RenderOptions.EdgeMode="Aliased"
+                Margin="90 0 0 10">
+                <materialDesign:PackIcon 
+                    Height="30"
+                    Width="30"
+                    HorizontalAlignment="Center"
+                    Kind="Plus"
+                    Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="EditCattleBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                 FontSize="16"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                Click="EditCattleBtn_Click"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="220 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="Pencil"
+                     Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="DeleteCattleBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                 FontSize="16"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                Click="DeleteCattleBtn_Click"
+                 VerticalAlignment="Bottom"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="350 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="TrashCanOutline"
+                     Foreground="White"/>
+            </Button>
             <DataGrid   
-                Margin="90,60,30,30"
+                Margin="90,60,30,60"
                 Visibility="Collapsed"
                 x:Name="CattleGrid" 
                 AutoGenerateColumns="false"
@@ -232,8 +563,77 @@
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
+            <Button
+                x:Name="AddProductBtn"
+                Visibility="Collapsed"
+                Width="105px"
+                Height="40px"
+                FontSize="16"
+                materialDesign:ButtonAssist.CornerRadius="10"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                BorderBrush="Transparent"
+                HorizontalAlignment="Left" 
+                Click="AddProductBtn_Click"
+                VerticalAlignment="Bottom"
+                Background="Transparent"
+                RenderOptions.EdgeMode="Aliased"
+                Margin="90 0 0 10">
+                <materialDesign:PackIcon 
+                    Height="30"
+                    Width="30"
+                    HorizontalAlignment="Center"
+                    Kind="Plus"
+                    Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="EditProductBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                 FontSize="16"
+                Click="EditProductBtn_Click"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="220 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="Pencil"
+                     Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="DeleteProductBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                 FontSize="16"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                Click="DeleteProductBtn_Click"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="350 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="TrashCanOutline"
+                     Foreground="White"/>
+            </Button>
             <DataGrid   
-                Margin="90,60,30,30"
+                Margin="90,60,30,60"
                 Visibility="Collapsed"
                 x:Name="ProductGrid" 
                 AutoGenerateColumns="false"
@@ -267,8 +667,77 @@
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
+            <Button
+                x:Name="AddStatementBtn"
+                Visibility="Collapsed"
+                Width="105px"
+                Height="40px"
+                Click="AddStatementBtn_Click"
+                FontSize="16"
+                materialDesign:ButtonAssist.CornerRadius="10"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                BorderBrush="Transparent"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Bottom"
+                Background="Transparent"
+                RenderOptions.EdgeMode="Aliased"
+                Margin="90 0 0 10">
+                <materialDesign:PackIcon 
+                    Height="30"
+                    Width="30"
+                    HorizontalAlignment="Center"
+                    Kind="Plus"
+                    Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="EditStatementBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                Click="EditStatementBtn_Click"
+                 FontSize="16"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="220 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="Pencil"
+                     Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="DeleteStatementBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                Click="DeleteStatementBtn_Click"
+                 FontSize="16"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="350 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="TrashCanOutline"
+                     Foreground="White"/>
+            </Button>
             <DataGrid   
-                Margin="90,60,30,30"
+                Margin="90,60,30,60"
                 Visibility="Collapsed"
                 x:Name="StatementGrid" 
                 AutoGenerateColumns="false"
@@ -362,19 +831,111 @@
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
+            <Button
+                x:Name="AddWaybillBtn"
+                Visibility="Collapsed"
+                Width="105px"
+                Height="40px"
+                Click="AddWaybillBtn_Click"
+                FontSize="16"
+                materialDesign:ButtonAssist.CornerRadius="10"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                BorderBrush="Transparent"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Bottom"
+                Background="Transparent"
+                RenderOptions.EdgeMode="Aliased"
+                Margin="90 0 0 10">
+                <materialDesign:PackIcon 
+                    Height="30"
+                    Width="30"
+                    HorizontalAlignment="Center"
+                    Kind="Plus"
+                    Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="EditWaybillBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                Click="EditWaybillBtn_Click"
+                 FontSize="16"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="220 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="Pencil"
+                     Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="DeleteWaybillBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                Click="DeleteWaybillBtn_Click"
+                 FontSize="16"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="350 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="TrashCanOutline"
+                     Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="WordWaybillBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                 FontSize="16"
+                 Click="WordWaybillBtn_Click"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="470 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="FileWordBoxOutline"
+                     Foreground="White"/>
+            </Button>
             <DataGrid   
-                Margin="90,60,30,30"
+                Margin="90,60,30,60"
                 Visibility="Collapsed"
                 x:Name="WaybillGrid" 
                 AutoGenerateColumns="false"
-                CanUserResizeColumns="False" 
+                CanUserResizeColumns="True" 
                 CanUserAddRows="False" 
                 CanUserDeleteRows="False" 
                 FontSize="15px"
                 CanUserReorderColumns="False" 
                 SelectionMode="Single" 
                 SelectionUnit="FullRow" 
-                CanUserResizeRows="False" 
+                CanUserResizeRows="True" 
                 IsReadOnly="True"
                 Foreground="#FF7643D2"
                 ScrollViewer.HorizontalScrollBarVisibility="Hidden"
@@ -407,11 +968,104 @@
                         <MenuItem x:Name="SearchWaybill" Header="Поиск" Click="SearchWaybill_Click"/>
                         <MenuItem x:Name="CancelWaybill" Header="Отменить" Click="CancelWaybill_Click"/>
                         <MenuItem x:Name="ViewWaybill" Header="Открыть полностью" Click="ViewWaybill_Click"/>
+                        <MenuItem x:Name="WordWaybill" Header="Вывести на печать" Click="WordWaybill_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
+            <Button
+                x:Name="AddDeliveryBtn"
+                Visibility="Collapsed"
+                Width="105px"
+                Height="40px"
+                FontSize="16"
+                Click="AddDeliveryBtn_Click"
+                materialDesign:ButtonAssist.CornerRadius="10"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                BorderBrush="Transparent"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Bottom"
+                Background="Transparent"
+                RenderOptions.EdgeMode="Aliased"
+                Margin="90 0 0 10">
+                <materialDesign:PackIcon 
+                    Height="30"
+                    Width="30"
+                    HorizontalAlignment="Center"
+                    Kind="Plus"
+                    Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="EditDeliveryBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                 FontSize="16"
+                Click="EditDeliveryBtn_Click"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="220 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="Pencil"
+                     Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="DeleteDeliveryBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                 FontSize="16"
+                Click="DeleteDeliveryBtn_Click"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="350 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="TrashCanOutline"
+                     Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="WordDeliveryBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                 FontSize="16"
+                 Click="WordDeliveryBtn_Click"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="470 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="FileWordBoxOutline"
+                     Foreground="White"/>
+            </Button>
             <DataGrid   
-                Margin="90,60,30,30"
+                Margin="90,60,30,60"
                 Visibility="Collapsed"
                 x:Name="DeliveryNoteGrid" 
                 AutoGenerateColumns="false"
@@ -432,6 +1086,7 @@
                     <DataGridTextColumn Header="Подразделение" Width="*" Binding="{Binding division_type}"/>
                     <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding date, StringFormat=dd.MM.yyyy}"/>
                     <DataGridTextColumn Header="Назначение" Width="*" Binding="{Binding assignment}"/>
+                    <DataGridTextColumn Header="Через кого" Width="*" Binding="{Binding broker}"/>
                 </DataGrid.Columns>
                 <DataGrid.ContextMenu>
                     <ContextMenu>
@@ -442,11 +1097,81 @@
                         <MenuItem x:Name="SearchDeliveryNote" Header="Поиск" Click="SearchDeliveryNote_Click"/>
                         <MenuItem x:Name="CancelDeliveryNote" Header="Отменить" Click="CancelDeliveryNote_Click"/>
                         <MenuItem x:Name="ViewDeliveryNote" Header="Открыть полностью" Click="ViewDeliveryNote_Click"/>
+                        <MenuItem x:Name="WordDeliveryNote" Header="Вывести на печать" Click="WordDeliveryNote_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
+            <Button
+                x:Name="AddRecordBtn"
+                Visibility="Collapsed"
+                Width="105px"
+                Height="40px"
+                FontSize="16"
+                Click="AddRecordBtn_Click"
+                materialDesign:ButtonAssist.CornerRadius="10"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                BorderBrush="Transparent"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Bottom"
+                Background="Transparent"
+                RenderOptions.EdgeMode="Aliased"
+                Margin="90 0 0 10">
+                <materialDesign:PackIcon 
+                    Height="30"
+                    Width="30"
+                    HorizontalAlignment="Center"
+                    Kind="Plus"
+                    Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="EditRecordBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                 FontSize="16"
+                Click="EditRecordBtn_Click"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="220 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="Pencil"
+                     Foreground="White"/>
+            </Button>
+            <Button
+                 x:Name="DeleteRecordBtn"
+                 Visibility="Collapsed"
+                 Width="105px"
+                 Height="40px"
+                 FontSize="16"
+                Click="DeleteRecordBtn_Click"
+                 materialDesign:ButtonAssist.CornerRadius="10"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                 BorderBrush="Transparent"
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 Margin="350 0 0 10">
+                <materialDesign:PackIcon 
+                     Height="25"
+                     Width="25"
+                     HorizontalAlignment="Center"
+                     Kind="TrashCanOutline"
+                     Foreground="White"/>
+            </Button>
             <DataGrid   
-                Margin="90,60,30,30"
+                Margin="90,60,30,60"
                 Visibility="Collapsed"
                 x:Name="RecordCardGrid" 
                 AutoGenerateColumns="false"
@@ -552,18 +1277,21 @@
                     <ListViewItem x:Name="DeliveryNote" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="DeliveryNote_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="TextBoxOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
-                            <TextBlock Text="Требования" VerticalAlignment="Center" Margin="0 10" FontWeight="Medium" Foreground="White" Opacity="0.7"/>
+                            <TextBlock VerticalAlignment="Center" Margin="0 0" TextWrapping="Wrap" Width="150" FontWeight="Medium" Foreground="White" Opacity="0.7">
+                                <Run Text="Требования"/><LineBreak/>
+                                <Run Text="накладная"/>  
+                            </TextBlock>
                         </StackPanel>
                     </ListViewItem>
                     <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Height="2" Background="White" Margin="0 0" Padding="0 0"/>
                     <ListViewItem x:Name="DocumentOutput" Height="60" Visibility="Visible" PreviewMouseLeftButtonDown="DocumentOutput_PreviewMouseLeftButtonDown">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="FileWord" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
-                            <TextBlock Text="Документы" VerticalAlignment="Center" Margin="0 10" FontWeight="Medium" Foreground="White" Opacity="0.7"/>
+                            <TextBlock Text="Отчёты" VerticalAlignment="Center" Margin="0 10" FontWeight="Medium" Foreground="White" Opacity="0.7"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="AdminRegistration" Height="60" Visibility="Collapsed" PreviewMouseLeftButtonDown="AdminRegistration_PreviewMouseLeftButtonDown">
-                        <StackPanel Orientation="Horizontal" >
+                        <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="AccountPlusOutline" Height="25" Width="25" Margin="10" VerticalAlignment="Center" Foreground="White" Opacity="0.7"/>
                             <TextBlock Text="Регистрация" VerticalAlignment="Center" Margin="0 10" FontWeight="Medium" Foreground="White" Opacity="0.7"/>
                         </StackPanel>

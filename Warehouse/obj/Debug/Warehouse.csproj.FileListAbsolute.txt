@@ -197,3 +197,11 @@ D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNote\
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNote\AddDeliveryCom.baml
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNote\EditDeliveryComp.g.cs
 D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\DeliveryNote\EditDeliveryComp.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\StatementOutView.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\StatementOutView.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\RecordOutView.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\RecordOutView.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\WaybillOutView.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\WaybillOutView.baml
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\TotalOutView.g.cs
+D:\Учеба\Диплом\warehouse-main\Warehouse\obj\Debug\View\OutputDocument\TotalOutView.baml

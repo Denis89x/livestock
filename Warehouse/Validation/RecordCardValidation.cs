@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using Warehouse.Entity;
 
 namespace Warehouse.Validation
@@ -14,30 +15,30 @@ namespace Warehouse.Validation
 
         public bool isRecordCardValid(RecordCardEntity recordCard)
         {
-            if (!commonValidation.isNumberInRange(recordCard.cowQuantity, 1000))
+            if (!commonValidation.isNumberInRange(recordCard.cowQuantity, 10000))
             {
-                MessageBox.Show("Количество коров должно быть от 1 до 1000!");
+                MessageBox.Show("Введите корректное количество коров!");
 
                 return false;
             }
 
-            if (!commonValidation.isNumberInRange(recordCard.morning, 1000))
+            if (!isNumberInRange(recordCard.morning))
             {
-                MessageBox.Show("Надой утром должен быть от 1 до 1000!");
+                MessageBox.Show("Введите корректное количество надоя утром!");
 
                 return false;
             }
 
-            if (!commonValidation.isNumberInRange(recordCard.midday, 1000))
+            if (!isNumberInRange(recordCard.midday))
             {
-                MessageBox.Show("Надой днём должен быть от 1 до 1000!");
+                MessageBox.Show("Введите корректное количество надоя днём!");
 
                 return false;
             }
 
-            if (!commonValidation.isNumberInRange(recordCard.evening, 1000))
+            if (!isNumberInRange(recordCard.evening))
             {
-                MessageBox.Show("Надой вечером должен быть от 1 до 1000!");
+                MessageBox.Show("Введите корректное количество надоя вечером!");
 
                 return false;
             }
@@ -46,6 +47,26 @@ namespace Warehouse.Validation
             {
                 MessageBox.Show("Дата некорректна. Пожалуйста, убедитесь, что введенная дата находится в допустимом формате и соответствует текущей дате. Не позже чем сегодня и не раньше чем 10 дней с сегодняшнего дня!");
 
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool isNumberInRange(string number)
+        {
+            if (string.IsNullOrWhiteSpace(number))
+            {
+                return false;
+            }
+
+            if (!int.TryParse(number, out int parsedNumber))
+            {
+                return false;
+            }
+
+            if (parsedNumber < 1 || parsedNumber > Convert.ToInt32(number) * 30)
+            {
                 return false;
             }
 

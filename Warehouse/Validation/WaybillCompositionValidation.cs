@@ -14,51 +14,51 @@ namespace Warehouse.Validation
 
         public bool isWaybillCompositionValid(WaybillCompositionEntity waybillCompositionEntity)
         {
-            if (!commonValidation.isNumberInRange(waybillCompositionEntity.fat, 100))
+            if (!commonValidation.isDoubleNumberInRange(waybillCompositionEntity.fat, 3.2, 5.4))
             {
-                MessageBox.Show("Жирность должна состоять только из цифр и быть от 1 до 100!");
+                MessageBox.Show("Введите корректную жирность! (3,2% - 5,4%)");
                 return false;
             }
 
-            if (!commonValidation.isNumberInRange(waybillCompositionEntity.mass, 10000))
+            if (!commonValidation.isDoubleNumberInRange(waybillCompositionEntity.mass, 1, 10000))
             {
-                MessageBox.Show("Масса должна состоять только из цифр и быть от 1 до 10000!");
+                MessageBox.Show("Введите корректную массу!");
                 return false;
             }
 
-            if (!commonValidation.isNumberInRange(waybillCompositionEntity.acidity, 100))
+            if (!commonValidation.isDoubleNumberInRange(waybillCompositionEntity.acidity, 1, 100))
             {
-                MessageBox.Show("Кислотность должна состоять только из цифр и быть от 1 до 100!");
+                MessageBox.Show("Введите корректную кислотность!");
                 return false;
             }
 
-            if (!commonValidation.isNumberInRange(waybillCompositionEntity.temperature, 41))
+            if (!commonValidation.isDoubleNumberInRange(waybillCompositionEntity.temperature, 10, 41))
             {
-                MessageBox.Show("Температура должна состоять только из цифр и быть от 1 до 41!");
+                MessageBox.Show("Введите корректную температуру!");
                 return false;
             }
 
-            if (!commonValidation.isNumberInRange(waybillCompositionEntity.density, 100))
+            if (!commonValidation.isDoubleNumberInRange(waybillCompositionEntity.density, 1, 100))
             {
-                MessageBox.Show("Плотность должна состоять только из цифр и быть от 1 до 100!");
+                MessageBox.Show("Введите корректную плотность!");
                 return false;
             }
 
-            if (!commonValidation.isNumberInRange(waybillCompositionEntity.brutto, 100))
+            if (!commonValidation.isDoubleNumberInRange(waybillCompositionEntity.brutto, 1, 100))
             {
-                MessageBox.Show("Брутто должно состоять только из цифр и быть от 1 до 100!");
+                MessageBox.Show("Введите корректное брутто!");
                 return false;
             }
 
-            if (!commonValidation.isNumberInRange(waybillCompositionEntity.tara, 100))
+            if (waybillCompositionEntity.tara == null || waybillCompositionEntity.tara == "" || waybillCompositionEntity.tara == " ")
             {
-                MessageBox.Show("Тара должна состоять только из цифр и быть от 1 до 100!");
+                MessageBox.Show("Выберите тару!");
                 return false;
             }
 
-            if (!commonValidation.isNumberInRange(waybillCompositionEntity.netto, 100))
+            if (!commonValidation.isDoubleNumberInRange(waybillCompositionEntity.netto, 1, 100))
             {
-                MessageBox.Show("Нетто должно состоять только из цифр и быть от 1 до 100!");
+                MessageBox.Show("Введите корректное нетто!");
                 return false;
             }
 

@@ -13,6 +13,7 @@ namespace Warehouse.View.DeliveryNote
     public partial class CreateDelivery : Window
     {
         private Database database;
+
         private DataGrid dataGrid;
         private ComboBoxRepo comboBoxRepo;
         private DeliveryNoteValidation validation;
@@ -48,10 +49,11 @@ namespace Warehouse.View.DeliveryNote
             {
                 string date = DatePicker.SelectedDate.Value.ToString("yyyy-MM-dd");
                 string assignment = AssignmentBox.Text;
+                string broker = BrokerBox.Text;
 
                 if (division != null)
                 {
-                    DeliveryNoteEntity deliveryNote = new DeliveryNoteEntity(division.id, date, assignment);
+                    DeliveryNoteEntity deliveryNote = new DeliveryNoteEntity(division.id, date, assignment, broker);
 
                     if (validation.isDeliveryNoteValid(deliveryNote))
                     {
@@ -131,7 +133,7 @@ namespace Warehouse.View.DeliveryNote
 
         private long createDeliveryAndReturnId(DeliveryNoteEntity entity, SqlTransaction transaction)
         {
-            string query = $"INSERT INTO delivery_note(division_id, date, assignment) OUTPUT INSERTED.delivery_note_id VALUES('{entity.divisionId}', '{entity.date}', N'{entity.assignment}')";
+            string query = $"INSERT INTO delivery_note(division_id, date, assignment, broker) OUTPUT INSERTED.delivery_note_id VALUES('{entity.divisionId}', '{entity.date}', N'{entity.assignment}', N'{entity.broker}')";
 
             SqlCommand command = new SqlCommand(query, transaction.Connection, transaction);
 

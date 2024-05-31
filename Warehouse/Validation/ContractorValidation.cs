@@ -46,7 +46,7 @@ namespace Warehouse.Validation
 
             if (!commonValidation.isIntFieldValid(contractor.settlementAccount))
             {
-                MessageBox.Show("Некорректный расчетный счет контрагента! Расчетный счет должен состоять только из цифр и быть от 3 до 12 символов.");
+                MessageBox.Show("Проверьте корректность расчетного счёта!");
                 return false;
             }
 

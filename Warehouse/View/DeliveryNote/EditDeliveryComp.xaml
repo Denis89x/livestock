@@ -67,7 +67,7 @@
         <TextBox
             x:Name="PriceBox"
             Visibility="Visible"
-            materialDesign:HintAssist.Hint="Стоимость"
+            materialDesign:HintAssist.Hint="Цена за ед"
             FontSize="17px"
             Padding="12 10 2 2"
             Height="45px"

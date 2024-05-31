@@ -23,7 +23,14 @@ namespace Warehouse.Validation
 
             if (!commonValidation.isTitleValid(delivery.assignment))
             {
-                MessageBox.Show("Введите текст, содержащий от 3 до 50 символов.");
+                MessageBox.Show("Проверьте корректность назначения!");
+
+                return false;
+            }
+
+            if (!commonValidation.isTitleValid(delivery.broker))
+            {
+                MessageBox.Show("Проверьте корректность поля 'Через кого'!"); ;
 
                 return false;
             }

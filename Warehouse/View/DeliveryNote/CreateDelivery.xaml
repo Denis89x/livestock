@@ -53,7 +53,7 @@
         </Label>
         <ComboBox
             x:Name="DivisionComboBox"
-            Width="225px"
+            Width="170px"
             Height="45px"
             FontSize="17px"
             HorizontalAlignment="Left"
@@ -72,8 +72,8 @@
              Height="45px"
              HorizontalAlignment="Center"
              VerticalAlignment="Top"
-             Width="225px"
-             Margin="0 130 0 20"
+             Width="170px"
+             Margin="0 130 200 0"
              Grid.Row="4"
              Grid.Column="4"
              Style="{StaticResource MaterialDesignOutlinedDatePicker}" 
@@ -86,7 +86,20 @@
             VerticalAlignment="Top"
             Padding="12 10 2 2"
             Height="45px"
-            Width="225px"
+            Width="170px"
+            Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+            Margin="0 130 290 0" 
+            BorderBrush="#BC989393">
+        </TextBox>
+        <TextBox
+            x:Name="BrokerBox"
+            materialDesign:HintAssist.Hint="Через кого"
+            FontSize="17px"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Padding="12 10 2 2"
+            Height="45px"
+            Width="170px"
             Style="{StaticResource MaterialDesignOutlinedTextBox}" 
             Margin="0 130 100 0" 
             BorderBrush="#BC989393">
@@ -116,7 +129,7 @@
                 <DataGridTextColumn Header="Продукция" Width="*" Binding="{Binding name}"/>
                 <DataGridTextColumn Header="Запрошено" Width="*" Binding="{Binding requested}"/>
                 <DataGridTextColumn Header="Реализовано" Width="*" Binding="{Binding released}"/>
-                <DataGridTextColumn Header="Стоимость" Width="*" Binding="{Binding price}"/>
+                <DataGridTextColumn Header="Цена за ед" Width="*" Binding="{Binding price}"/>
                 <DataGridTextColumn Header="Сумма" Width="*" Binding="{Binding amount}"/>
             </DataGrid.Columns>
             <DataGrid.ContextMenu>
